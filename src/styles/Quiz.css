@@ -1,0 +1,121 @@
+.quiz-page-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+/* Titles aligned with other subpages */
+.quiz-intro h2,
+.question-card h2,
+.quiz-summary h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 0.1rem;
+}
+
+.quiz-intro,
+.question-card,
+.quiz-summary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem; /* reduced from 1rem for tighter spacing */
+}
+
+.quiz-label {
+  font-size: 1rem;
+  margin: 0.25rem 0;
+}
+
+.quiz-select {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 6px;
+}
+
+/* Buttons unified: bold font and centered */
+.quiz-button {
+  background-color: #111;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  width: 100%;
+  max-width: 400px;
+  margin: 0.25rem 0;
+  cursor: pointer;
+}
+
+/* Answer button variants */
+.quiz-button.correct {
+  background-color: #2d6a4f;
+}
+.quiz-button.wrong {
+  background-color: #9b2226;
+}
+
+/* Enlarged and emphasized timer */
+.timer {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+/* Prevent word spillover and center long text */
+.quiz-standard {
+  font-style: italic;
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+  max-width: 450px;     /* ✅ consistent with training tip */
+  text-align: center;
+  line-height: 1.5;
+}
+
+.quiz-question {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin: 1rem 0 0.5rem;
+  max-width: 450px;     /* ✅ same width */
+  text-align: center;
+  line-height: 1.5;
+}
+
+.quiz-feedback {
+  margin-top: 0.75rem;
+  text-align: center;
+  max-width: 90%;
+}
+
+.correct-message {
+  color: #2d6a4f;
+  font-weight: bold;
+}
+.wrong-message {
+  color: #9b2226;
+  font-weight: bold;
+}
+
+.training-tip {
+  font-style: italic;
+  margin-top: 0.5rem;
+  color: #444;
+  max-width: 450px;     /* ✅ controls width like mobile */
+  text-align: center;   /* ✅ centers it */
+  line-height: 1.5;     /* ✅ improves readability */
+}
+
+
+.score-display {
+  font-size: 1.25rem;
+}
+.score-message {
+  font-size: 1rem;
+  color: #555;
+}

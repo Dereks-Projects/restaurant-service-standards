@@ -1,0 +1,117 @@
+/* 📄 FILE: src/styles/IntroductionPage.css */
+/* 🧠 PURPOSE: Styles the IntroductionPage layout for article-like readability */
+
+.intro-page-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem 1rem;
+  background-color: var(--bg-color, #f8f8f8); /* fallback for light background */
+  min-height: 100vh;
+  box-sizing: border-box;
+  margin-bottom: .5rem;
+}
+
+/* ✅ Main article container */
+.intro-article {
+  max-width: 800px;
+  width: 100%;
+  background: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  font-family: var(--font, system-ui);
+  color: var(--text-color, #222);
+}
+
+/* ✅ Each section of the article */
+.intro-section {
+  margin-bottom: 2rem;
+}
+
+/* ✅ Section titles (e.g., 'Dinner Service') */
+.intro-section-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #000;
+  border-left: 4px solid gold;
+  padding-left: 0.5rem;
+}
+
+/* ✅ Paragraph text */
+.intro-section-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+  color: #333;
+}
+
+/* 🔙 Back button styling */
+.intro-back-button {
+  display: block;
+  margin: 2rem auto 0;
+  padding: 0.5rem 2rem;
+  font-size: 1rem;
+  width: 300px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+}
+
+.intro-back-button:hover {
+  background-color: #222;
+}
+
+/* 📺 Vimeo video embed */
+.intro-video-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  aspect-ratio: 16 / 9;
+  margin: 2rem auto; /* centered with auto margins */
+  margin-bottom: 3rem; /* space below video */
+}
+
+.intro-video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* 📱 Mobile-first responsive adjustments */
+@media (max-width: 600px) {
+  .intro-article {
+    padding: 1.5rem 1rem;
+  }
+
+  .intro-video-wrapper {
+    margin-top: 0;
+    margin-bottom: 3rem; /* reduced space below video */
+  }
+
+  .intro-article h2 {
+    margin-bottom: 0.25rem; /* reduced space below title */
+  }
+
+  .intro-section {
+    margin-top: 0; /* removes any extra space above content */
+  }
+
+  .intro-section-title {
+    font-size: 1.1rem;
+  }
+
+  .intro-section-text {
+    font-size: 0.95rem;
+  }
+}
+
+

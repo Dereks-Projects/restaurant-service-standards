@@ -1,0 +1,120 @@
+/* 📄 FILE: Home.css */
+
+/* ✅ Homepage Background */
+.homepage-container {
+  background-color: #fafafa; /* ← clean light background */
+  min-height: 100vh;
+}
+
+/* ✅ Core layout */
+.home-container {
+  height: 100vh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  background-color: var(--bg-color);
+  padding: 3rem 1rem;
+  font-family: var(--font);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* ✅ Tightly stacked header layout */
+.homepage-header-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem; /* Tighter spacing between title, stars, subtitle */
+  margin-bottom: 0.25rem;
+  margin-top: .5rem;
+}
+
+.homepage-header-stack h1 {
+  font-size: 2.8rem;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+  line-height: 1.05;
+  color: var(--primary-color);
+}
+
+.homepage-stars {
+  display: block;
+  height: 50px;
+  margin: .5rem 0 0.5rem;
+}
+
+.homepage-subtitle {
+  margin: 0;
+  padding: 0;
+  font-size: 1.125rem;
+  line-height: 1.4;
+  max-width: 550px;
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* ✅ Buttons */
+.button-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  width: 100%;
+  max-width: 360px;
+}
+
+.button-stack button {
+  background-color: #1b1b1b;
+  color: #ffffff;
+  font-size: 1rem;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.button-stack button:hover {
+  background-color: #333;
+}
+
+/* ✅ Footer */
+.home-footer p {
+  margin-top: 2rem;
+  font-size: 0.75rem !important;
+  color: var(--primary-color);
+  text-align: center;
+  opacity: 0.7;
+  width: 100%;
+}
+
+/* ✅ Scroll lock for desktop only */
+@media (min-width: 501px) {
+  .home-container {
+    overflow: hidden;
+  }
+}
+
+/* ✅ Mobile adjustments */
+@media (max-width: 500px) {
+  .home-container h1 {
+    font-size: 2.2rem;
+    line-height: 1.2;
+    padding: 1.2rem 0 .2rem;
+  }
+
+  .home-container p {
+    font-size: 1rem;
+    max-width: 500px;
+    margin: 1.7 auto 1.7rem;
+  }
+
+  .homepage-stars {
+    height: 30px;
+    margin: 0.3rem 0.3rem 0.5rem;
+  }
+}

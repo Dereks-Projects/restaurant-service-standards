@@ -1,0 +1,37 @@
+/* global.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #fafafa;
+  color: #1b1b1b;
+}
+
+button {
+  background-color: #1b1b1b;
+  color: inherit;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1rem;
+  border-radius: 6px;
+  margin: 8px 0;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+h1, h2, h3 {
+  font-weight: 600;
+}
+
+@media (min-width: 501px) {
+  body.home-scroll-lock {
+    overflow-y: hidden;
+    padding-right: 0.9rem; /* ✅ simulate scrollbar to prevent layout shift */
+  }
+}
+
