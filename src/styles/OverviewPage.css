@@ -1,0 +1,76 @@
+/* 📄 FILE: src/styles/OverviewPage.css */
+
+.overview-page {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem 1.5rem;
+  background-color: white;
+  font-family: var(--font);
+  line-height: 1.6;
+  color: var(--primary-blue);
+}
+
+.overview-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.overview-intro {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  font-style: italic;
+}
+
+.overview-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.overview-item {
+  border-left: 4px solid #FFD700; /* Yellow bar */
+  padding-left: 1rem;
+  margin-bottom: 1.5rem;
+  background-color: #fff;
+}
+
+.overview-item strong {
+  display: block;
+  font-weight: 700;
+  font-size: 1.05rem;
+  margin-bottom: 0.25rem;
+}
+
+.overview-item p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #333;
+}
+
+.overview-back-button {
+  margin-top: 2rem;
+  padding: 0.6rem 1.5rem;
+  font-size: 1rem;
+  background-color: var(--primary-blue);
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.overview-back-button:hover {
+  background-color: #000033;
+}
+
+/* ✅ Page title at the top of OverviewPage */
+.overview-page-title {
+  font-size: 1.9rem;
+  font-weight: strong;
+  margin-bottom: 2rem;
+  color: #000;
+  text-align: left;
+  border: none;            /* ⛔️ removes yellow bar */
+  padding-left: 0;         /* ⛔️ removes left spacing */
+}

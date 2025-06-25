@@ -19,7 +19,7 @@ function IntroductionPage() {
         {/* 🎥 Embedded Vimeo Video */}
         <div className="intro-video-wrapper">
           <iframe
-            src="https://player.vimeo.com/video/1095248867"
+            src="https://player.vimeo.com/video/1096307775"
             width="100%"
             height="360"
             frameBorder="0"
@@ -27,6 +27,7 @@ function IntroductionPage() {
             title="Intro Video"
           />
         </div>
+       
 
         {/* 📌 Loop through JSON sections */}
         {introductionContent.map((section, index) => (

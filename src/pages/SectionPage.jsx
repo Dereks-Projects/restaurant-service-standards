@@ -1,4 +1,5 @@
-// 📄 FILE: src/pages/SectionPage.jsx 
+// 📄 FILE: src/pages/SectionPage.jsx
+
 import { useParams, useNavigate } from "react-router-dom";
 import standards from "../data/standards.json";
 import "../styles/SectionPage.css";
@@ -39,9 +40,11 @@ function SectionPage() {
 
   const classifications = Object.keys(groupedStandards);
 
-  const toggleAccordion = (classification) => {
+  const toggleAccordion = (classification) =>
     setActiveIndex((prev) => (prev === classification ? null : classification));
-  };
+
+  // ✅ Convert section name to sectionId slug for URL (e.g. "Reservation System" → "reservation")
+  const getSectionId = (name) => name.toLowerCase().split(" ")[0];
 
   return (
     <div className="section-page">
@@ -64,7 +67,18 @@ function SectionPage() {
           />
         </div>
 
+        {/* 🆕 Overview Button wrapped to match layout */}
         <div className="button-group">
+          <div className="accordion-item">
+            <button
+              className="accordion-button"
+              onClick={() => navigate(`/overview/${getSectionId(sectionName)}`)}
+            >
+              Overview
+            </button>
+          </div>
+
+          {/* Classification Buttons */}
           {classifications.map((classification) => (
             <div key={classification} className="accordion-item">
               <button
@@ -94,7 +108,7 @@ function SectionPage() {
         Back
       </button>
 
-      {/* ✅ Footer added below */}
+      {/* ✅ Footer */}
       <div className="home-footer">
         <p>
           Presented by{" "}
