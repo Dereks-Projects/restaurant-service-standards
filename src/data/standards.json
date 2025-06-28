@@ -2,8 +2,8 @@
   {
     "section": "Reservation System",
     "classification": "Guest Courtesy",
-    "standard": "The reservationist should be polite and graciously accept the booking.",
-    "trainingTip": "Practice a consistent greeting and avoid sounding scripted. Let your professional personilty show.",
+    "standard": "The reservationist should be polite and graciously accept the booking. Staff taking reservations should demonstrate a genuine interest in the guest, such as asking about special occasions.",
+    "trainingTip": "Practice a consistent greeting and avoid sounding scripted. Let your professional personilty show. Inquire about the guests needs at every step of the way.",
     "quiz": {
       "question": "What is the most appropriate way to greet a guest calling to book?",
       "choices": [
@@ -18,8 +18,8 @@
   {
     "section": "Reservation System",
     "classification": "Guest Courtesy",
-    "standard": "The reservationist should specifically thank the guest for the booking and close the interaction with a polite and appropriate remark.",
-    "trainingTip": "Always conclude calls with appreciation and a pleasant phrase.",
+    "standard": "Phone training always includes a proper way to close the conversation, and all staff should specifically thank the guest for the booking and close the interaction with a polite and appropriate remark.",
+    "trainingTip": "Always conclude calls with appreciation and a pleasant phrase. The tone is always professional and inviting.",
     "quiz": {
       "question": "Which closing phrase reflects the standard best?",
       "choices": [
@@ -30,24 +30,7 @@
       ],
       "answer": "We\u2019ll see you then. Thank you for choosing us!"
     }
-  },
-  {
-    "section": "Reservation System",
-    "classification": "Guest Courtesy",
-    "standard": "Staff taking reservations should demonstrate a genuine interest in the guest, such as asking about special occasions.",
-    "trainingTip": "Look for conversational cues to personalize the experience.",
-    "quiz": {
-      "question": "What\u2019s an example of gracious service when taking a reservation?",
-      "choices": [
-        "Asking if it\u2019s a special occasion",
-        "Only getting the name and time",
-        "Confirming reservation with a flat tone",
-        "Avoiding small talk"
-      ],
-      "answer": "Asking if it\u2019s a special occasion"
-    }
-  },
-
+   },
   {
     "section": "Reservation System",
     "classification": "Technical Execution",
@@ -66,7 +49,23 @@
   },
   {
     "section": "Reservation System",
-    "classification": "Guest Comfort",
+    "classification": "Attention to Detail",
+    "standard": "Reservations should be confirmed prior to visit or upon arrival to establishment.",
+    "trainingTip": "Set up a confirmation process (email or SMS) to reassure the guest. Prior effort to contact the guest regarding confirmation of the reservation should be made.",
+    "quiz": {
+      "question": "Why confirm a guest reservation?",
+      "choices": [
+        "To remind the host",
+        "To lock in a deposit",
+        "To reassure the guest and avoid confusion",
+        "To upsell tasting menus"
+      ],
+      "answer": "To reassure the guest and avoid confusion"
+    }
+  },
+  {
+    "section": "Reservation System",
+    "classification": "Attention to Detail",
     "standard": "If applicable, online reservation sites that the business participates in should be easy to navigate and complete a booking.",
     "trainingTip": "Test your online system regularly and make adjustments based on guest feedback. Routine checking of website functions, as well as all lines of communication is important.",
     "quiz": {
@@ -78,22 +77,6 @@
         "Requires phone confirmation"
       ],
       "answer": "Easy-to-use interface"
-    }
-  },
-  {
-    "section": "Reservation System",
-    "classification": "Guest Comfort",
-    "standard": "Reservations should be confirmed prior to visit or, when in residence, upon arrival to establishment.",
-    "trainingTip": "Set up a confirmation process (email or SMS) to reassure the guest.",
-    "quiz": {
-      "question": "Why confirm a guest reservation?",
-      "choices": [
-        "To remind the host",
-        "To lock in a deposit",
-        "To reassure the guest and avoid confusion",
-        "To upsell tasting menus"
-      ],
-      "answer": "To reassure the guest and avoid confusion"
     }
   },
   {
@@ -114,8 +97,8 @@
   },
     {
     "section": "Reservation System",
-    "classification": "Wellness",
-    "standard": "Staff taking reservations should inquire about dietary restrictions, preferences and/or allergies.",
+    "classification": "Health & Wellness",
+    "standard": "Attention should be paid to those engaging in healthy eating or have any dietary requirments. Staff taking reservations should inquire about dietary restrictions, preferences and/or allergies.",
     "trainingTip": "Always ask if any allergies or restrictions apply to better prepare the kitchen.",
     "quiz": {
       "question": "Why should dietary restrictions be asked during reservation?",
@@ -147,23 +130,7 @@
   {
     "section": "Arrival & Departure",
     "classification": "Guest Courtesy",
-    "standard": "Staff should be highly articulate and avoid slang and excessive use of phrase-fragments.",
-    "trainingTip": "Use complete sentences and avoid casual slang or filler words, even with younger clientel.",
-    "quiz": {
-      "question": "Which of the following best represents articulate speech?",
-      "choices": [
-        "Cool, you got it",
-        "No prob, hold up",
-        "Certainly, I will check that for you right away",
-        "Hang tight, I\u2019ll ping you"
-      ],
-      "answer": "Certainly, I will check that for you right away"
-    }
-  },
-  {
-    "section": "Arrival & Departure",
-    "classification": "Guest Courtesy",
-    "standard": "Staff should always be polite and maintain a gracious tone throughout the interaction.",
+    "standard": "The entire team should always be polite and maintain a gracious tone throughout the interaction. Staff should be highly articulate and avoid slang and excessive use of phrase-fragments.",
     "trainingTip": "Speak with grace, maintaining a calm and unhurried tone. This holds especially true in the busiest of times.",
     "quiz": {
       "question": "How should staff speak when addressing a guest?",
@@ -179,23 +146,7 @@
   {
     "section": "Arrival & Departure",
     "classification": "Guest Courtesy",
-    "standard": "Staff should always smile and maintain an engaging expression.",
-    "trainingTip": "Smile warmly and maintain a pleasant expression throughout the interaction.",
-    "quiz": {
-      "question": "What is an appropriate facial expression for greeting guests?",
-      "choices": [
-        "Neutral and serious",
-        "Focused but frowning",
-        "A warm, engaging smile",
-        "Distracted or distant"
-      ],
-      "answer": "A warm, engaging smile"
-    }
-  },
-  {
-    "section": "Arrival & Departure",
-    "classification": "Guest Courtesy",
-    "standard": "Staff should make an effort to make eye contact and keep focus on the guest.",
+    "standard": "Staff should make an effort to be engaging, and to make eye contact and keep focus on the guest.",
     "trainingTip": "Make direct eye contact and avoid distractions when speaking, providing your undivided attention.",
     "quiz": {
       "question": "What shows the guest they have your full attention?",
@@ -226,7 +177,7 @@
   },
   {
     "section": "Arrival & Departure",
-    "classification": "Guest Comfort",
+    "classification": "Attention to Detail",
     "standard": "If the guest has taken cocktails in the bar, the charges are automatically transferred to the dinner bill; the guest is not presented with a bill in the bar.",
     "trainingTip": "Coordinate with bar staff to ensure seamless billing transitions. Having a system in place for this step is crucial.",
     "quiz": {
@@ -243,7 +194,7 @@
   {
     "section": "Arrival & Departure",
     "classification": "Technical Execution",
-    "standard": "All guests should receive the impression their reservation is confirmed and staff is aware of any special requests.",
+    "standard": "Handle special requests with care. All guests should receive the impression their reservation is confirmed and staff is aware of any additional needs.",
     "trainingTip": "Review reservation details clearly and confirm any special notes. The system in which employees share pertinent information with each other should be polished.",
     "quiz": {
       "question": "How can a host convey that a reservation is confirmed?",
@@ -274,7 +225,7 @@
   },
   {
     "section": "Arrival & Departure",
-    "classification": "Guest Comfort",
+    "classification": "Attention to Detail",
     "standard": "If waiting for a reservation is required, the guest should be made to feel comfortable and welcomed.",
     "trainingTip": "Offer seating, updates, and amenities when wait times are necessary. Avoid uncomfortable lingering around the host area.",
     "quiz": {
@@ -306,8 +257,8 @@
   },
   {
     "section": "Arrival & Departure",
-    "classification": "Guest Courtesy",
-    "standard": "If the guest has ordered cocktails in the bar, staff should attempt to carry beverages to the dining table on a tray.",
+    "classification": "Technical Execution",
+    "standard": "Always exceeding expectations: If the guest has ordered cocktails in the bar, staff should attempt to carry beverages to the dining table on a tray.",
     "trainingTip": "Ensure a smooth transition of service from bar to table. All beverage service is performed using a tray when possible.",
     "quiz": {
       "question": "What is the correct action when transferring drinks to the dining table?",
@@ -339,8 +290,8 @@
   },
   {
     "section": "Arrival & Departure",
-    "classification": "Guest Comfort",
-    "standard": "When appropriate, chair assistance is offered to each guest.",
+    "classification": "Attention to Detail",
+    "standard": "When appropriate, chair assistance should be offered to each guest.",
     "trainingTip": "Offer help with seating when needed without being intrusive.",
     "quiz": {
       "question": "What is a courteous gesture when guests are being seated?",
@@ -355,9 +306,9 @@
   },
   {
     "section": "Arrival & Departure",
-    "classification": "Guest Courtesy",
-    "standard": "If reserved, the table is preset for the exact number of guests upon seating.",
-    "trainingTip": "Ensure preset tables match the guest count in the reservation.",
+    "classification": "Attention to Detail",
+    "standard": "A reserved table should be preset for the exact number of guests upon seating.",
+    "trainingTip": "Ensure preset tables match the guest count in the reservation. Extra place settings should be removed before seating.",
     "quiz": {
       "question": "What detail should be correct before guest arrival?",
       "choices": [
@@ -371,25 +322,9 @@
   },
   {
     "section": "Arrival & Departure",
-    "classification": "Guest Courtesy",
-    "standard": "The guest is greeted warmly and appreciatively.",
-    "trainingTip": "Use warm, personalized greetings and show appreciation.",
-    "quiz": {
-      "question": "How should the host greet the guest?",
-      "choices": [
-        "With a nod",
-        "Warmly and appreciatively",
-        "Quickly and impersonally",
-        "Only ask for their name"
-      ],
-      "answer": "Warmly and appreciatively"
-    }
-  },
-  {
-    "section": "Arrival & Departure",
-    "classification": "Guest Courtesy",
+    "classification": "Attention to Detail",
     "standard": "If the guest has checked coats, staff is aware of this, and retrieves the garments automatically upon departure without reminder from the guest.",
-    "trainingTip": "Keep track of coat check numbers and anticipate guest needs.",
+    "trainingTip": "Keep track of coat check numbers and anticipate guest needs. This step of service is personalized, and shows attention to detail.",
     "quiz": {
       "question": "What should staff do at guest departure regarding coat check?",
       "choices": [
@@ -404,8 +339,8 @@
   {
     "section": "Arrival & Departure",
     "classification": "Guest Courtesy",
-    "standard": "The guest\u2019s departure is handled graciously and thoroughly, including at least a partial escort to the doorway.",
-    "trainingTip": "Ensure a thoughtful goodbye and escort the guest toward the exit.",
+    "standard": "The guest\u2019s departure should be handled graciously and thoroughly, including at least a partial escort to the doorway.",
+    "trainingTip": "Ensure a thoughtful goodbye and escort the guest toward the exit. Make an effort to walk with the guest and show them the way.",
     "quiz": {
       "question": "What is the proper way to conclude a guest\u2019s experience?",
       "choices": [
@@ -420,8 +355,8 @@
   {
     "section": "Dinner Service",
     "classification": "Guest Courtesy",
-    "standard": "Staff is highly articulate and avoids slang and excessive use of phrase-fragments.",
-    "trainingTip": "Use complete sentences and avoid casual slang or filler words.",
+    "standard": "Staff should always be articulate, avoiding slang and excessive use of phrase-fragments.",
+    "trainingTip": "Use complete sentences and avoid casual slang or filler words. Remain professional in all interactions.",
     "quiz": {
       "question": "Which of the following best represents articulate speech?",
       "choices": [
@@ -436,8 +371,8 @@
   {
     "section": "Dinner Service",
     "classification": "Guest Courtesy",
-    "standard": "Staff is polite and maintains a gracious tone and appropriate pace throughout the interaction.",
-    "trainingTip": "Speak with grace, maintaining a calm and unhurried tone.",
+    "standard": "The entire team should always remain polite and maintain a gracious tone and appropriate pace throughout the interaction.",
+    "trainingTip": "Speak with grace, maintaining a calm and unhurried tone. This is especially true in the busiest of times.",
     "quiz": {
       "question": "How should staff speak when addressing a guest?",
       "choices": [
@@ -452,8 +387,8 @@
   {
     "section": "Dinner Service",
     "classification": "Guest Courtesy",
-    "standard": "Staff readily smiles and maintains an engaging expression.",
-    "trainingTip": "Smile warmly and maintain a pleasant expression throughout the interaction.",
+    "standard": "All staff members should maintain an engaging expression.",
+    "trainingTip": "Smile warmly and maintain a pleasant expression throughout the interaction. Always appear to be calm and collected, and easy to converse with.",
     "quiz": {
       "question": "What is an appropriate facial expression for greeting guests?",
       "choices": [
@@ -483,7 +418,7 @@
   },
   {
     "section": "Dinner Service",
-    "classification": "Guest Courtesy",
+    "classification": "Attention to Detail",
     "standard": "Staff exhibits a genuine sense of interest and concern for the guest\u2019s satisfaction and/or demonstrates anticipatory service when appropriate and helpful.",
     "trainingTip": "Proactively check on needs and show authentic interest in guest satisfaction.",
     "quiz": {
@@ -499,9 +434,9 @@
   },
   {
     "section": "Dinner Service",
-    "classification": "Guest Courtesy",
-    "standard": "Staff can confidently exhibit the ability to engage guests with remarks about the food, wine or related topics in a fluent and nonintrusive manner.",
-    "trainingTip": "Train to speak confidently yet respectfully on food and beverage topics.",
+    "classification": "Attention to Detail",
+    "standard": "The entire team can confidently exhibit the ability to engage guests with remarks about the food, wine or related topics in a fluent and nonintrusive manner.",
+    "trainingTip": "Train to speak confidently yet respectfully on food and beverage topics. Knowing the intricacies of each dish is important.",
     "quiz": {
       "question": "How should staff discuss food and wine with guests?",
       "choices": [
@@ -548,8 +483,8 @@
   {
     "section": "Dinner Service",
     "classification": "Guest Courtesy",
-    "standard": "Staff is discreet and unintrusive throughout the meal, while remaining attentive.",
-    "trainingTip": "Stay present without being obtrusive.",
+    "standard": "Staff should remain discreet and unintrusive throughout the meal, while remaining attentive.",
+    "trainingTip": "Stay present without being obtrusive. Maintain a balance between attentiveness and discretion.",
     "quiz": {
       "question": "What is an example of discreet service?",
       "choices": [
@@ -564,8 +499,8 @@
   {
     "section": "Dinner Service",
     "classification": "Guest Courtesy",
-    "standard": "Staff does not decline any request without offering appropriate alternatives.",
-    "trainingTip": "Always offer a viable alternative when a guest request can\u2019t be fulfilled.",
+    "standard": "Members of the team should not decline any request without offering appropriate alternatives.",
+    "trainingTip": "Always offer a viable alternative when a guest request can\u2019t be fulfilled. Smooth suggestive selling is a great skill to have.",
     "quiz": {
       "question": "What should staff do when they can't fulfill a guest request?",
       "choices": [
@@ -580,8 +515,8 @@
   {
     "section": "Dinner Service",
     "classification": "Technical Execution",
-    "standard": "All staff encountered are wearing professional, clean and well-fitted uniforms.",
-    "trainingTip": "Maintain grooming standards and ensure uniform neatness.",
+    "standard": "All staff should be wearing professional, properly designed, clean and well-fitted uniforms.",
+    "trainingTip": "Maintain grooming standards and ensure uniform neatness. All persons in view of the guest should be in proper uniform.",
     "quiz": {
       "question": "How should uniforms appear?",
       "choices": [
@@ -593,27 +528,11 @@
       "answer": "Professional, clean, and well-fitted"
     }
   },
-  {
+ {
     "section": "Dinner Service",
     "classification": "Technical Execution",
-    "standard": "Staff uniforms are exceptional in design and style and appropriate to the setting.",
-    "trainingTip": "Uniforms should reflect the restaurant\u2019s standard of luxury and aesthetic.",
-    "quiz": {
-      "question": "What reflects attention to luxury in staff uniforms?",
-      "choices": [
-        "Generic polo shirts",
-        "Wrinkled aprons",
-        "Stylish, well-designed uniforms",
-        "All black attire"
-      ],
-      "answer": "Stylish, well-designed uniforms"
-    }
-  },
-{
-    "section": "Dinner Service",
-    "classification": "Technical Execution",
-    "standard": "All staff encountered are extremely well-groomed.",
-    "trainingTip": "All staff should meet grooming standards before service.",
+    "standard": "The entire team encountered by guests should be well-groomed.",
+    "trainingTip": "All staff should meet grooming standards before service. This includes hair, nails, and personal hygiene.",
     "quiz": {
       "question": "How should the grooming of staff appear?",
       "choices": [
@@ -627,23 +546,7 @@
   },
   {
     "section": "Dinner Service",
-    "classification": "Technical Execution",
-    "standard": "Staff maintains alert posture and behaves professionally in view of the guest.",
-    "trainingTip": "Staff should always look engaged and stand properly while in guest view.",
-    "quiz": {
-      "question": "What posture is appropriate for staff in guest view?",
-      "choices": [
-        "Leaning on walls",
-        "Sitting at unused tables",
-        "Alert and professional posture",
-        "Hands in pockets"
-      ],
-      "answer": "Alert and professional posture"
-    }
-  },
-  {
-    "section": "Dinner Service",
-    "classification": "Guest Comfort",
+    "classification": "Attention to Detail",
     "standard": "Once the guest is seated, the table is greeted within one minute. The guest is given the opportunity to order pre-dinner beverages.",
     "trainingTip": "Guests should be acknowledged promptly with a beverage offering.",
     "quiz": {
@@ -661,7 +564,7 @@
     "section": "Dinner Service",
     "classification": "Efficiency",
     "standard": "All pre-dinner beverages requested for the table, bar counter or lounge are served within seven minutes of being ordered.",
-    "trainingTip": "Monitor drink ticket times to ensure timely service.",
+    "trainingTip": "Monitor drink ticket times to ensure timely service. Communicate with your leadership team and your guests regarding any delays.",
     "quiz": {
       "question": "When should pre-dinner beverages be served?",
       "choices": [
@@ -676,7 +579,7 @@
   {
     "section": "Dinner Service",
     "classification": "Efficiency",
-    "standard": "Refills or follow-up rounds are readily offered or provided within 30 seconds of the guest\u2019s beverage being fully empty.",
+    "standard": "Refills or follow-up rounds shoukd be readily offered or provided within 30 seconds of the guest\u2019s beverage being fully empty.",
     "trainingTip": "Monitor glass levels and offer refills promptly without prompting.",
     "quiz": {
       "question": "When should beverage refills be offered?",
@@ -692,8 +595,8 @@
   {
     "section": "Dinner Service",
     "classification": "Technical Execution",
-    "standard": "A choice of waters is offered prior to pouring.",
-    "trainingTip": "Offer options such as still, sparkling, or tap before pouring.",
+    "standard": "A choice of waters should be offered prior to pouring. Bottles water should not be immediately poured.",
+    "trainingTip": "Offer options such as still, sparkling, or tap before pouring. There are many places to upsell, always give the guest a choice.",
     "quiz": {
       "question": "What is best practice before pouring water?",
       "choices": [
@@ -707,9 +610,9 @@
   },
   {
     "section": "Dinner Service",
-    "classification": "Wellness",
-    "standard": "Filtered water is available, whether this is bottled or filtered in house.",
-    "trainingTip": "Ensure filtered or bottled options are offered and available.",
+    "classification": "Health & Wellness",
+    "standard": "In addition to tap water, filtered water is available, whether this is bottled or filtered in house.",
+    "trainingTip": "Ensure filtered or bottled options are offered and available. Know your selection of non-alcoholic beverage well.",
     "quiz": {
       "question": "Which type of water should always be available?",
       "choices": [
@@ -756,7 +659,7 @@
   {
     "section": "Dinner Service",
     "classification": "Technical Execution",
-    "standard": "All food and beverage menus are elegant and distinctive.",
+    "standard": "All food and beverage menus should be elegant and distinctive, reflecting the establishments decor.",
     "trainingTip": "Ensure menus reflect the restaurant\u2019s brand and elevate the guest impression.",
     "quiz": {
       "question": "How should food and beverage menus appear?",
@@ -773,7 +676,7 @@
     "section": "Dinner Service",
     "classification": "Technical Execution",
     "standard": "At least five well-chosen and diverse red wines, five white wines and three Champagne/sparkling wines by the glass are available.",
-    "trainingTip": "Maintain a diverse and balanced wine list by the glass.",
+    "trainingTip": "Maintain as diverse and balanced of a wine list by the glass as permitted by the establishment.",
     "quiz": {
       "question": "What is expected for wines by the glass?",
       "choices": [
@@ -805,7 +708,7 @@
     "section": "Dinner Service",
     "classification": "Guest Courtesy",
     "standard": "Wine service includes the offer of a tasting sample.",
-    "trainingTip": "Offer a tasting pour before full service to ensure approval.",
+    "trainingTip": "Offer a tasting pour before full service to ensure approval. This should be done 100% of the time for by the bottle service.",
     "quiz": {
       "question": "What is part of proper wine service?",
       "choices": [
@@ -835,9 +738,9 @@
   },
   {
     "section": "Dinner Service",
-    "classification": "Guest Comfort",
-    "standard": "The wine list is thoughtfully compiled. Wines listed are all available. Reserve bins are treated equally and listed together among all wines.",
-    "trainingTip": "Keep the wine list updated and formatted logically.",
+    "classification": "Attention to Detail",
+    "standard": "The wine list should be thoughtfully compiled. Wines listed are all available, or the service team has knowledge of the 86 list.",
+    "trainingTip": "Keep the wine list updated and formatted logically. All 86'd items of conveyed to the guest in a clear manner at the time of ordering.",
     "quiz": {
       "question": "What defines a thoughtfully compiled wine list?",
       "choices": [
@@ -853,7 +756,7 @@
     "section": "Dinner Service",
     "classification": "Technical Execution",
     "standard": "A sommelier/wine steward\u2019s assistance is offered or available.",
-    "trainingTip": "Make knowledgeable wine service personnel accessible.",
+    "trainingTip": "Make knowledgeable wine service personnel accessible. If no sommelier is available, service team members should be well-trained in wine service.",
     "quiz": {
       "question": "What wine support should be available to guests?",
       "choices": [
@@ -1044,7 +947,7 @@
   },
   {
     "section": "Food & Beverage Quality",
-    "classification": "Wellness",
+    "classification": "Health & Wellness",
     "standard": "All foods are fresh; they are never frozen unless specifically advised on the menu and never tinned.",
     "trainingTip": "Only use frozen or preserved items when clearly described to guests.",
     "quiz": {
@@ -1253,7 +1156,7 @@
 
   {
     "section": "Food & Beverage Quality",
-    "classification": "Wellness",
+    "classification": "Health & Wellness",
     "standard": "If provided, the beverage menu lists a variety of non-alcoholic options.",
     "trainingTip": "Include thoughtful non-alcoholic choices on beverage menus.",
     "quiz": {
@@ -1349,7 +1252,7 @@
   },
   {
     "section": "Food & Beverage Quality",
-    "classification": "Wellness",
+    "classification": "Health & Wellness",
     "standard": "Menu offers items for guests seeking nutritionally focused dishes.",
     "trainingTip": "Always offer clearly labeled, health-conscious menu items.",
     "quiz": {
@@ -1605,7 +1508,7 @@
   },
   {
     "section": "Presentation of Facilities",
-    "classification": "Guest Comfort",
+    "classification": "Attention to Detail",
     "standard": "The dining room temperature is comfortable and unnoticed by guests.",
     "trainingTip": "Maintain a consistent temperature to enhance guest comfort without distraction.",
     "quiz": {
@@ -1621,7 +1524,7 @@
   },
   {
     "section": "Presentation of Facilities",
-    "classification": "Guest Comfort",
+    "classification": "Attention to Detail",
     "standard": "The restaurant lighting is comfortable, enabling menu reading, but provides privacy and ambiance.",
     "trainingTip": "Use lighting that balances readability and a relaxed dining atmosphere.",
     "quiz": {
@@ -1637,7 +1540,7 @@
   },
   {
     "section": "Presentation of Facilities",
-    "classification": "Guest Comfort",
+    "classification": "Attention to Detail",
     "standard": "If background music is provided, it is in a style appropriate to the restaurant setting and volume and sound quality of music are comfortable. If live entertainment is provided, it is professional/polished in execution.",
     "trainingTip": "Ensure music style and volume suit the venue\u2019s ambiance and are never distracting.",
     "quiz": {
@@ -1653,7 +1556,7 @@
   },
   {
     "section": "Presentation of Facilities",
-    "classification": "Guest Comfort",
+    "classification": "Attention to Detail",
     "standard": "The overall noise level of the restaurant is comfortable.",
     "trainingTip": "Design acoustics to manage sound and allow for relaxed conversation.",
     "quiz": {
@@ -1685,7 +1588,7 @@
   },
   {
     "section": "Presentation of Facilities",
-    "classification": "Guest Comfort",
+    "classification": "Attention to Detail",
     "standard": "The restroom is conveniently located within or near the restaurant.",
     "trainingTip": "Provide clear signage or escort to the restroom when appropriate.",
     "quiz": {
@@ -1701,7 +1604,7 @@
   },
   {
     "section": "Dinner Service",
-    "classification": "Wellness",
+    "classification": "Health & Wellness",
     "standard": "When asked where the restroom is located, a member of the staff at least partially escorts the guest there.",
     "trainingTip": "Provide warm and proactive guidance for restroom inquiries.",
     "quiz": {
