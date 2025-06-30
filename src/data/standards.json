@@ -18,8 +18,8 @@
   {
     "section": "Reservation System",
     "classification": "Guest Courtesy",
-    "standard": "Phone training always includes a proper way to close the conversation, and all staff should specifically thank the guest for the booking and close the interaction with a polite and appropriate remark.",
-    "trainingTip": "Always conclude calls with appreciation and a pleasant phrase. The tone is always professional and inviting.",
+    "standard": "Phone training always includes a proper way to open & close the conversation. All staff should specifically thank the guest for the booking and close the interaction with a polite and appropriate remark.",
+    "trainingTip": "Always begin and conclude calls with appreciation and a pleasant phrase. The tone is always professional and inviting.",
     "quiz": {
       "question": "Which closing phrase reflects the standard best?",
       "choices": [
@@ -50,7 +50,7 @@
   {
     "section": "Reservation System",
     "classification": "Attention to Detail",
-    "standard": "Reservations should be confirmed prior to visit or upon arrival to establishment.",
+    "standard": "Attempts should be made to confirm reservations prior to visit or immediately upon arrival to establishment.",
     "trainingTip": "Set up a confirmation process (email or SMS) to reassure the guest. Prior effort to contact the guest regarding confirmation of the reservation should be made.",
     "quiz": {
       "question": "Why confirm a guest reservation?",
@@ -97,7 +97,7 @@
   },
     {
     "section": "Reservation System",
-    "classification": "Health & Wellness",
+    "classification": "Attention to Detail",
     "standard": "Attention should be paid to those engaging in healthy eating or have any dietary requirments. Staff taking reservations should inquire about dietary restrictions, preferences and/or allergies.",
     "trainingTip": "Always ask if any allergies or restrictions apply to better prepare the kitchen.",
     "quiz": {
@@ -114,8 +114,8 @@
   {
     "section": "Arrival & Departure",
     "classification": "Guest Courtesy",
-    "standard": "Staff should politely acknowledge the guest when appropriate, including an immediate greeting upon arrival.",
-    "trainingTip": "Practice a warm, immediate greeting for each arriving guest.",
+    "standard": "Every staff member should politely acknowledge the guest when appropriate, especially an immediate greeting upon arrival.",
+    "trainingTip": "Everyone entering your establishment should receive a warm, immediate greeting. Every team member should be comfortable and confident in making a guest feel welcome.",
     "quiz": {
       "question": "What is a correct way to acknowledge a guest's arrival?",
       "choices": [
@@ -162,8 +162,8 @@
   {
     "section": "Arrival & Departure",
     "classification": "Guest Courtesy",
-    "standard": "On arrival, assistance with personal belongings should be proactively offered and an impression of security should be conveyed.",
-    "trainingTip": "Offer assistance before being asked, and ensure guests feel secure and cared for.",
+    "standard": "Upon arrival, assistance with personal belongings should be proactively offered and an impression of security should be conveyed.",
+    "trainingTip": "Offer assistance before being asked, and ensure guests feel secure and cared for. Make an extra effort to secure personal belongings of yur patrons.",
     "quiz": {
       "question": "What should staff do when guests arrive with personal items?",
       "choices": [
@@ -173,6 +173,22 @@
         "Direct them to coat check without comment"
       ],
       "answer": "Proactively offer assistance and convey security"
+    }
+  },
+    {
+    "section": "Arrival & Departure",
+    "classification": "Attention to Detail",
+    "standard": "If waiting for a reservation is required, the guest should be made to feel comfortable and welcomed.",
+    "trainingTip": "Offer seating, updates, and amenities when wait times are necessary. Avoid uncomfortable lingering around the host area.",
+    "quiz": {
+      "question": "What should a host do if the guest must wait?",
+      "choices": [
+        "Offer nothing unless asked",
+        "Make the guest feel comfortable with amenities and updates",
+        "Avoid speaking to the guest until called",
+        "Keep them standing near the door"
+      ],
+      "answer": "Make the guest feel comfortable with amenities and updates"
     }
   },
   {
@@ -210,7 +226,7 @@
   {
     "section": "Arrival & Departure",
     "classification": "Efficiency",
-    "standard": "When a guest has a reservation, the table should be ready within five minutes of the appointed time.",
+    "standard": "True efficiency is always being cognizant of your guests time. When a guest has a reservation, the table should be ready within five minutes of the appointed time.",
     "trainingTip": "Ensure timely turnover and coordination with service staff. All staffing levels, from manager to support staff, should be aware and on board with the effort.",
     "quiz": {
       "question": "When should a reserved table be ready?",
@@ -223,26 +239,11 @@
       "answer": "Within 5 minutes of the reserved time"
     }
   },
-  {
-    "section": "Arrival & Departure",
-    "classification": "Attention to Detail",
-    "standard": "If waiting for a reservation is required, the guest should be made to feel comfortable and welcomed.",
-    "trainingTip": "Offer seating, updates, and amenities when wait times are necessary. Avoid uncomfortable lingering around the host area.",
-    "quiz": {
-      "question": "What should a host do if the guest must wait?",
-      "choices": [
-        "Offer nothing unless asked",
-        "Make the guest feel comfortable with amenities and updates",
-        "Avoid speaking to the guest until called",
-        "Keep them standing near the door"
-      ],
-      "answer": "Make the guest feel comfortable with amenities and updates"
-    }
-  },
+
   {
     "section": "Arrival & Departure",
     "classification": "Efficiency",
-    "standard": "If waiting is required, the host should quote an estimated wait time. The guest should never be seated more than 10 minutes past the quoted time.",
+    "standard": "In keeping with being mindful of your geusts time, if waiting is required, the host should quote an estimated wait time. The guest should never be seated more than 10 minutes past the quoted time.",
     "trainingTip": "Give realistic estimates and monitor seating progress closely. Communicate well with your guests at all times.",
     "quiz": {
       "question": "How long past the quoted wait time can a guest reasonably wait?",
@@ -291,7 +292,7 @@
   {
     "section": "Arrival & Departure",
     "classification": "Attention to Detail",
-    "standard": "When appropriate, chair assistance should be offered to each guest.",
+    "standard": "When we escort guests to the table, chair assistance should be offered to each guest.",
     "trainingTip": "Offer help with seating when needed without being intrusive.",
     "quiz": {
       "question": "What is a courteous gesture when guests are being seated?",
@@ -307,7 +308,7 @@
   {
     "section": "Arrival & Departure",
     "classification": "Attention to Detail",
-    "standard": "A reserved table should be preset for the exact number of guests upon seating.",
+    "standard": "When we arrive at the table, a reserved table should be preset for the exact number of guests upon seating.",
     "trainingTip": "Ensure preset tables match the guest count in the reservation. Extra place settings should be removed before seating.",
     "quiz": {
       "question": "What detail should be correct before guest arrival?",
@@ -355,7 +356,7 @@
   {
     "section": "Dinner Service",
     "classification": "Guest Courtesy",
-    "standard": "Staff should always be articulate, avoiding slang and excessive use of phrase-fragments.",
+    "standard": "Truly courteous service: Staff should always be articulate, avoiding slang and excessive use of phrase-fragments. All staff members should maintain an engaging expression and demeanor throughout the dining experience.",
     "trainingTip": "Use complete sentences and avoid casual slang or filler words. Remain professional in all interactions.",
     "quiz": {
       "question": "Which of the following best represents articulate speech?",
@@ -386,40 +387,8 @@
   },
   {
     "section": "Dinner Service",
-    "classification": "Guest Courtesy",
-    "standard": "All staff members should maintain an engaging expression.",
-    "trainingTip": "Smile warmly and maintain a pleasant expression throughout the interaction. Always appear to be calm and collected, and easy to converse with.",
-    "quiz": {
-      "question": "What is an appropriate facial expression for greeting guests?",
-      "choices": [
-        "Neutral and serious",
-        "Focused but frowning",
-        "A warm, engaging smile",
-        "Distracted or distant"
-      ],
-      "answer": "A warm, engaging smile"
-    }
-  },
-  {
-    "section": "Dinner Service",
-    "classification": "Guest Courtesy",
-    "standard": "Staff makes eye contact and keeps focus on the guest.",
-    "trainingTip": "Make direct eye contact and avoid distractions when speaking with guests.",
-    "quiz": {
-      "question": "What shows the guest they have your full attention?",
-      "choices": [
-        "Looking down at the host stand",
-        "Maintaining eye contact and actively listening",
-        "Scanning the room while talking",
-        "Checking your phone discreetly"
-      ],
-      "answer": "Maintaining eye contact and actively listening"
-    }
-  },
-  {
-    "section": "Dinner Service",
     "classification": "Attention to Detail",
-    "standard": "Staff exhibits a genuine sense of interest and concern for the guest\u2019s satisfaction and/or demonstrates anticipatory service when appropriate and helpful.",
+    "standard": "The staff should exhibit a genuine sense of interest and concern for the guest\u2019s satisfaction and/or demonstrates anticipatory service when appropriate and helpful.",
     "trainingTip": "Proactively check on needs and show authentic interest in guest satisfaction.",
     "quiz": {
       "question": "What demonstrates anticipatory service?",
@@ -435,7 +404,7 @@
   {
     "section": "Dinner Service",
     "classification": "Attention to Detail",
-    "standard": "The entire team can confidently exhibit the ability to engage guests with remarks about the food, wine or related topics in a fluent and nonintrusive manner.",
+    "standard": "Comprehesive team training: The entire team can confidently exhibit the ability to engage guests with remarks about the food, wine or related topics in a fluent and nonintrusive manner.",
     "trainingTip": "Train to speak confidently yet respectfully on food and beverage topics. Knowing the intricacies of each dish is important.",
     "quiz": {
       "question": "How should staff discuss food and wine with guests?",
@@ -467,8 +436,8 @@
   {
     "section": "Dinner Service",
     "classification": "Guest Courtesy",
-    "standard": "The guest\u2019s name is used naturally as a signal of recognition.",
-    "trainingTip": "Use the guest\u2019s name when known, in a natural and respectful way.",
+    "standard": "Personal touch: The guest\u2019s name is used naturally as a signal of recognition.",
+    "trainingTip": "Use the guest\u2019s name when known, in a natural and respectful way. This adds a personal touch to the dining experience.",
     "quiz": {
       "question": "When should the guest\u2019s name be used?",
       "choices": [
@@ -483,8 +452,8 @@
   {
     "section": "Dinner Service",
     "classification": "Guest Courtesy",
-    "standard": "Staff should remain discreet and unintrusive throughout the meal, while remaining attentive.",
-    "trainingTip": "Stay present without being obtrusive. Maintain a balance between attentiveness and discretion.",
+    "standard": "The team should remain discreet and unintrusive throughout the meal, while remaining attentive.",
+    "trainingTip": "Stay present without being obtrusive. Maintain a balance between attentiveness and discretion, while always giving the impression that you are of service.",
     "quiz": {
       "question": "What is an example of discreet service?",
       "choices": [
@@ -515,7 +484,7 @@
   {
     "section": "Dinner Service",
     "classification": "Technical Execution",
-    "standard": "All staff should be wearing professional, properly designed, clean and well-fitted uniforms.",
+    "standard": "All staff should be wearing professional, properly designed, clean and well-fitted uniforms. The entire team encountered by guests should be well-dressed and well-groomed.",
     "trainingTip": "Maintain grooming standards and ensure uniform neatness. All persons in view of the guest should be in proper uniform.",
     "quiz": {
       "question": "How should uniforms appear?",
@@ -526,22 +495,6 @@
         "Unbuttoned and relaxed"
       ],
       "answer": "Professional, clean, and well-fitted"
-    }
-  },
- {
-    "section": "Dinner Service",
-    "classification": "Technical Execution",
-    "standard": "The entire team encountered by guests should be well-groomed.",
-    "trainingTip": "All staff should meet grooming standards before service. This includes hair, nails, and personal hygiene.",
-    "quiz": {
-      "question": "How should the grooming of staff appear?",
-      "choices": [
-        "Unshaven or with messy hair",
-        "Extremely well-groomed and neat",
-        "As casual as they like",
-        "Not important unless in front of guests"
-      ],
-      "answer": "Extremely well-groomed and neat"
     }
   },
   {
@@ -579,7 +532,7 @@
   {
     "section": "Dinner Service",
     "classification": "Efficiency",
-    "standard": "Refills or follow-up rounds shoukd be readily offered or provided within 30 seconds of the guest\u2019s beverage being fully empty.",
+    "standard": "Refills or follow-up rounds should be readily offered or provided within 30 seconds of the guest\u2019s beverage being fully empty.",
     "trainingTip": "Monitor glass levels and offer refills promptly without prompting.",
     "quiz": {
       "question": "When should beverage refills be offered?",
@@ -610,7 +563,7 @@
   },
   {
     "section": "Dinner Service",
-    "classification": "Health & Wellness",
+    "classification": "Attention to Detail",
     "standard": "In addition to tap water, filtered water is available, whether this is bottled or filtered in house.",
     "trainingTip": "Ensure filtered or bottled options are offered and available. Know your selection of non-alcoholic beverage well.",
     "quiz": {
@@ -627,8 +580,8 @@
   {
     "section": "Dinner Service",
     "classification": "Guest Courtesy",
-    "standard": "When fresh bottles of water must be opened after the original bottle is depleted, the staff either asks the host\u2019s permission to replace or there is no charge for additional bottles.",
-    "trainingTip": "Do not open a new bottle without guest consent or without communicating policy.",
+    "standard": "A common courtesy: When fresh bottles of water must be opened after the original bottle is depleted, the staff either asks the host\u2019s permission to replace or there is no charge for additional bottles.",
+    "trainingTip": "Do not open a new bottle without guest consent or without communicating policy. Communicate clearly when you are opening something that the guest is paying for.",
     "quiz": {
       "question": "What should happen before opening a second bottle of water?",
       "choices": [
@@ -706,7 +659,7 @@
   },
   {
     "section": "Dinner Service",
-    "classification": "Guest Courtesy",
+    "classification": "Technical Execution",
     "standard": "Wine service includes the offer of a tasting sample.",
     "trainingTip": "Offer a tasting pour before full service to ensure approval. This should be done 100% of the time for by the bottle service.",
     "quiz": {
@@ -738,7 +691,7 @@
   },
   {
     "section": "Dinner Service",
-    "classification": "Attention to Detail",
+    "classification": "Technical Execution",
     "standard": "The wine list should be thoughtfully compiled. Wines listed are all available, or the service team has knowledge of the 86 list.",
     "trainingTip": "Keep the wine list updated and formatted logically. All 86'd items of conveyed to the guest in a clear manner at the time of ordering.",
     "quiz": {
@@ -755,7 +708,7 @@
   {
     "section": "Dinner Service",
     "classification": "Technical Execution",
-    "standard": "A sommelier/wine steward\u2019s assistance is offered or available.",
+    "standard": "For establishments with a large wine collection or beverage menu, a sommelier/wine steward\u2019s assistance is offered or available.",
     "trainingTip": "Make knowledgeable wine service personnel accessible. If no sommelier is available, service team members should be well-trained in wine service.",
     "quiz": {
       "question": "What wine support should be available to guests?",
@@ -836,7 +789,7 @@
   {
     "section": "Food & Beverage Quality",
     "classification": "Food Quality",
-    "standard": "Bread is offered when appropriate to cuisine, is automatically explained and is exceptional in quality and presentation.",
+    "standard": "Finer points of service: Bread is offered when appropriate to cuisine, is automatically explained and is exceptional in quality and presentation. All bread accompaniments should be distinctive, and the butter is tempered.",
     "trainingTip": "Bread service should be automatic, thoughtful, and explained clearly when provided.",
     "quiz": {
       "question": "What is expected when offering bread?",
@@ -849,107 +802,12 @@
       "answer": "Explain and serve exceptional quality automatically when appropriate"
     }
   },
+
   {
     "section": "Food & Beverage Quality",
     "classification": "Food Quality",
-    "standard": "All bread accompaniments are distinctive. Butter is tempered.",
-    "trainingTip": "Butter should be soft and easy to spread; accompaniments should be unique.",
-    "quiz": {
-      "question": "What defines a proper bread accompaniment?",
-      "choices": [
-        "Cold butter and plain bread",
-        "Tempered butter and distinctive accompaniments",
-        "Just olive oil",
-        "Nothing at all"
-      ],
-      "answer": "Tempered butter and distinctive accompaniments"
-    }
-  },
-  {
-    "section": "Food & Beverage Quality",
-    "classification": "Food Quality",
-    "standard": "If ordered, the cheese course is distinctive in presentation and selection.",
-    "trainingTip": "Cheese courses should show thoughtfulness in selection and plating.",
-    "quiz": {
-      "question": "What should be true of a cheese course?",
-      "choices": [
-        "Standard supermarket cheeses",
-        "Random assortment",
-        "Distinctive in both presentation and selection",
-        "Served with soup"
-      ],
-      "answer": "Distinctive in both presentation and selection"
-    }
-  },
-    {
-    "section": "Food & Beverage Quality",
-    "classification": "Beverage Quality",
-    "standard": "A variety of high quality aperitifs and digestifs are available.",
-    "trainingTip": "Provide and know how to describe both pre- and post-meal beverage options.",
-    "quiz": {
-      "question": "What should be available at fine dining service?",
-      "choices": [
-        "Only beer and wine",
-        "Just water",
-        "Aperitifs and digestifs",
-        "Cocktails only"
-      ],
-      "answer": "Aperitifs and digestifs"
-    }
-  },
-    {
-    "section": "Food & Beverage Quality",
-    "classification": "Elements of Luxury",
-    "standard": "A high quality amuse bouche is offered.",
-    "trainingTip": "Amuse bouche should reflect culinary creativity and be consistent with the restaurant\u2019s identity.",
-    "quiz": {
-      "question": "What characterizes a proper amuse bouche?",
-      "choices": [
-        "Hearty and filling dish",
-        "Sweet dessert",
-        "High quality, creative, and small starter",
-        "Pre-packaged snack"
-      ],
-      "answer": "High quality, creative, and small starter"
-    }
-  },
-  {
-    "section": "Food & Beverage Quality",
-    "classification": "Elements of Luxury",
-    "standard": "If offered, a dessert amuse is high quality.",
-    "trainingTip": "Dessert amuse should be as refined as savory amuse and reflect dessert menu.",
-    "quiz": {
-      "question": "What makes a dessert amuse acceptable?",
-      "choices": [
-        "Large portion",
-        "Chocolate only",
-        "High quality, well-executed taste",
-        "None are required"
-      ],
-      "answer": "High quality, well-executed taste"
-    }
-  },
-  {
-    "section": "Food & Beverage Quality",
-    "classification": "Elements of Luxury",
-    "standard": "High quality mignardises, petit fours or the equivalent are offered.",
-    "trainingTip": "End the meal with memorable mini-desserts.",
-    "quiz": {
-      "question": "What are mignardises?",
-      "choices": [
-        "Savory snacks",
-        "Mini desserts served at the end of the meal",
-        "Crackers and cheese",
-        "Main course sauces"
-      ],
-      "answer": "Mini desserts served at the end of the meal"
-    }
-  },
-  {
-    "section": "Food & Beverage Quality",
-    "classification": "Health & Wellness",
-    "standard": "All foods are fresh; they are never frozen unless specifically advised on the menu and never tinned.",
-    "trainingTip": "Only use frozen or preserved items when clearly described to guests.",
+    "standard": "All foods are served fresh; they are never frozen unless specifically advised on the menu and never tinned.",
+    "trainingTip": "Only use frozen or preserved items when clearly described to guests. The quality and freshenss of ingedients should be congruent to the level of establishment and the pricepoints of the menu.",
     "quiz": {
       "question": "When is it acceptable to serve frozen or tinned food?",
       "choices": [
@@ -964,24 +822,8 @@
   {
     "section": "Food & Beverage Quality",
     "classification": "Food Quality",
-    "standard": "Portions are appropriate.",
-    "trainingTip": "Serve portion sizes aligned with the dish\u2019s purpose and course.",
-    "quiz": {
-      "question": "How should portions be judged?",
-      "choices": [
-        "Very large for value",
-        "Appropriate for the course and dish",
-        "Minimal to save food cost",
-        "Guest decides at the table"
-      ],
-      "answer": "Appropriate for the course and dish"
-    }
-  },
-  {
-    "section": "Food & Beverage Quality",
-    "classification": "Food Quality",
-    "standard": "Food presentations are dynamically interesting, possibly including varied heights and color contrasts.",
-    "trainingTip": "Use creative visual elements to make dishes visually appealing.",
+    "standard": "Food presentations are dynamically interesting, possibly including varied heights, color contrasts and elements of texture. Flavors and/or foods are congruent to the presentation of the dish, and are exceptional in a way that is remarkable or memorable.",
+    "trainingTip": "Use creative visual elements to make dishes visually appealing. variuos elements of texture, color and presentation should be utilized in fine dining establishments.",
     "quiz": {
       "question": "What defines dynamic food presentation?",
       "choices": [
@@ -996,23 +838,7 @@
   {
     "section": "Food & Beverage Quality",
     "classification": "Food Quality",
-    "standard": "Food presentations, even within a single dish, include contrasts of texture.",
-    "trainingTip": "Create contrast between soft, crispy, crunchy, and creamy elements.",
-    "quiz": {
-      "question": "What adds interest to a dish?",
-      "choices": [
-        "All soft textures",
-        "Uniform consistency",
-        "Contrasts of texture",
-        "Lots of sauces"
-      ],
-      "answer": "Contrasts of texture"
-    }
-  },
-  {
-    "section": "Food & Beverage Quality",
-    "classification": "Food Quality",
-    "standard": "Food presentations are perfectly executed with evident care given to each individual item on each plate.",
+    "standard": "Food presentations should be executed with evident care given to each individual item on each plate. Dishes are presented on serviceware of varying sizes, shapes, colors or patterns.",
     "trainingTip": "Attention to detail should be apparent in each component of the plate.",
     "quiz": {
       "question": "What is a hallmark of refined plating?",
@@ -1028,23 +854,7 @@
   {
     "section": "Food & Beverage Quality",
     "classification": "Food Quality",
-    "standard": "Dishes are presented on serviceware of varying sizes, shapes, colors or patterns.",
-    "trainingTip": "Use creative plateware that enhances the dish and experience.",
-    "quiz": {
-      "question": "How can plateware elevate a dish?",
-      "choices": [
-        "Always white and round",
-        "Varying sizes and colors to match the dish",
-        "Generic and uniform",
-        "Square plates only"
-      ],
-      "answer": "Varying sizes and colors to match the dish"
-    }
-  },
-  {
-    "section": "Food & Beverage Quality",
-    "classification": "Food Quality",
-    "standard": "Food presentations are approachable and not difficult to eat, including garnishes.",
+    "standard": "Even with dynamic and interesting plating techniques, food presentations are approachable and not difficult to eat, including garnishes.",
     "trainingTip": "Avoid items that are difficult to cut or eat; all elements should be edible or easily removed.",
     "quiz": {
       "question": "What should be true of all garnishes?",
@@ -1057,75 +867,123 @@
       "answer": "Approachable and easy to consume"
     }
   },
+      {
+    "section": "Food & Beverage Quality",
+    "classification": "Food Quality",
+    "standard": "If available and ordered by the guest, the cheese course is distinctive in presentation and selection.",
+    "trainingTip": "Cheese courses should show thoughtfulness in selection and plating. This is a luxurious service offering, however, the quality of this dish is the most important element.",
+    "quiz": {
+      "question": "What should be true of a cheese course?",
+      "choices": [
+        "Standard supermarket cheeses",
+        "Random assortment",
+        "Distinctive in both presentation and selection",
+        "Served with soup"
+      ],
+      "answer": "Distinctive in both presentation and selection"
+    }
+  },
+    {
+    "section": "Food & Beverage Quality",
+    "classification": "Food Quality",
+    "standard": "The mark of great cuisine: the dinner menu should feature items that are clearly appropriate to the season.",
+    "trainingTip": "Use fresh, seasonal ingredients to enhance quality and creativity.",
+    "quiz": {
+      "question": "What defines seasonal menu planning?",
+      "choices": [
+        "Use the same menu all year",
+        "Only serve items from freezer",
+        "Change items with the seasons",
+        "Avoid seasonal vegetables"
+      ],
+      "answer": "Change items with the seasons"
+    }
+  },
+      {
+    "section": "Food & Beverage Quality",
+    "classification": "Beverage Service",
+    "standard": "Great sales & service of beverage starts with diversity of selecitons: A variety of high quality aperitifs and digestifs are available.",
+    "trainingTip": "Provide and know how to describe both pre- and post-meal beverage options.",
+    "quiz": {
+      "question": "What should be available at fine dining service?",
+      "choices": [
+        "Only beer and wine",
+        "Just water",
+        "Aperitifs and digestifs",
+        "Cocktails only"
+      ],
+      "answer": "Aperitifs and digestifs"
+    }
+  },
   {
+    "section": "Food & Beverage Quality",
+    "classification": "Beverage Service",
+    "standard": "The beverage menu lists a variety of both alcoholic and non-alcoholic options, and presents a unique and creative offering for all tastes.",
+    "trainingTip": "Include thoughtful non-alcoholic choices on beverage menus. The mocktail and non-alc selections are important for today's modern hospitaloty operation.",
+    "quiz": {
+      "question": "What should be included on beverage menus for inclusivity?",
+      "choices": [
+        "Only alcoholic beverages",
+        "Bottled water only",
+        "Several creative non-alcoholic options",
+        "Energy drinks"
+      ],
+      "answer": "Several creative non-alcoholic options"
+    }
+  },
+  {
+    "section": "Food & Beverage Quality",
+    "classification": "Beverage Service",
+    "standard": "All iced beverages are served with the appropriate style of ice. All beverages are served at appropriate temperatures or within the parameters of the guest\u2019s request.",
+    "trainingTip": "Hot drinks should be hot, cold drinks cold\u2014always. The presentation matches harmoniously with the flavor and texture of the drink.",
+    "quiz": {
+      "question": "How should beverage temperature be managed?",
+      "choices": [
+        "Room temperature is fine",
+        "Serve cold drinks first",
+        "Always at proper serving temperature or guest request",
+        "Ice melts anyway"
+      ],
+      "answer": "Always at proper serving temperature or guest request"
+    }
+  },
+  {
+    "section": "Food & Beverage Quality",
+    "classification": "Beverage Service",
+    "standard": "Mixed drinks/cocktails are prepared to the specifics of the guest, have a well-balanced flavor and are appropriately garnished. Presentations should be distinctive, yet congruent with the recipe of the beverage.",
+    "trainingTip": "A cocktail menu should be diverse and distictive. There should be something for everyone on that list.",
+    "quiz": {
+      "question": "What defines proper cocktail preparation?",
+      "choices": [
+        "Always use house recipe",
+        "Minimal garnish",
+        "Tailored to the guest and balanced",
+        "Skip ice for speed"
+      ],
+      "answer": "Tailored to the guest and balanced"
+    }
+  },
+    {
+    "section": "Food & Beverage Quality",
+    "classification": "Beverage Service",
+    "standard": "Beverage service should be continued until the final bill is presented. A full range of specialty coffees and teas should be available and offered to all guests.",
+    "trainingTip": "Ensure a wide coffee and tea selection is available, including decaf and herbal. This presents yet another revenue stream for the establishment while giving your guests another oportunity to enjoy.",
+    "quiz": {
+      "question": "What defines a full beverage offering?",
+      "choices": [
+        "Regular coffee only",
+        "Only green tea",
+        "Espresso, decaf, herbal teas and more",
+        "Hot water only"
+      ],
+      "answer": "Espresso, decaf, herbal teas and more"
+    }
+  },
+   {
     "section": "Food & Beverage Quality",
     "classification": "Technical Execution",
-    "standard": "Food temperatures are perfectly balanced at the moment of service.",
-    "trainingTip": "Serve food at optimal temperatures\u2014hot items hot, cold items cold.",
-    "quiz": {
-      "question": "When should food temperature be assessed?",
-      "choices": [
-        "After guest feedback",
-        "When it leaves the kitchen",
-        "At the moment of service",
-        "Once on the guest\u2019s plate"
-      ],
-      "answer": "At the moment of service"
-    }
-  },
-  {
-    "section": "Food & Beverage Quality",
-    "classification": "Food Quality",
-    "standard": "For dishes that have been ordered with a specific temperature, the preference is matched exactly.",
-    "trainingTip": "Review and execute temperature requests precisely as ordered.",
-    "quiz": {
-      "question": "What must be done when a guest orders a steak medium rare?",
-      "choices": [
-        "Serve it medium",
-        "Serve it hot regardless of doneness",
-        "Match the exact temperature requested",
-        "Ask them to confirm again at the table"
-      ],
-      "answer": "Match the exact temperature requested"
-    }
-  },
-  {
-    "section": "Food & Beverage Quality",
-    "classification": "Food Quality",
-    "standard": "For cooked dishes with no requested temperature, the cooking is perfectly executed.",
-    "trainingTip": "Default cooking techniques should be precise and showcase chef\u2019s skill.",
-    "quiz": {
-      "question": "What is expected of default-cooked dishes?",
-      "choices": [
-        "Slightly overcooked for safety",
-        "Raw centers preferred",
-        "Perfectly executed with no guest instructions",
-        "Serve as quickly as possible"
-      ],
-      "answer": "Perfectly executed with no guest instructions"
-    }
-  },
-  {
-    "section": "Food & Beverage Quality",
-    "classification": "Food Quality",
-    "standard": "Flavors and/or foods are exceptional in a way that is remarkable or memorable.",
-    "trainingTip": "Use flavor combinations and techniques that create lasting impressions.",
-    "quiz": {
-      "question": "What defines remarkable food?",
-      "choices": [
-        "Safe and basic",
-        "Heavily salted",
-        "Memorable and exceptional in flavor",
-        "Mild and unseasoned"
-      ],
-      "answer": "Memorable and exceptional in flavor"
-    }
-  },
-  {
-    "section": "Food & Beverage Quality",
-    "classification": "Technical Execution",
-    "standard": "The service enhanced the guest\u2019s enjoyment of the food flavors and/or presentations.",
-    "trainingTip": "Service should complement the dish with explanation, pace, and grace.",
+    "standard": "The overarching goal of elevated dining experiences: the service should always compliment the guest\u2019s enjoyment of the food flavors and/or presentations.",
+    "trainingTip": "Service should complement the experience with quality explanations, calm pace, and grace.",
     "quiz": {
       "question": "How can service improve the food experience?",
       "choices": [
@@ -1140,8 +998,25 @@
   {
     "section": "Food & Beverage Quality",
     "classification": "Technical Execution",
+    "standard": "Brilliant at the basics: food temperatures are perfectly balanced at the moment of service.",
+    "trainingTip": "When taking a temperature for a dish (such as beef), the color and texture must prfectly match the guests desired preference. Serve food at optimal temperatures\u2014hot items hot, cold items cold.",
+    "quiz": {
+      "question": "When should food temperature be assessed?",
+      "choices": [
+        "After guest feedback",
+        "When it leaves the kitchen",
+        "At the moment of service",
+        "Once on the guest\u2019s plate"
+      ],
+      "answer": "At the moment of service"
+    }
+  },
+ 
+  {
+    "section": "Food & Beverage Quality",
+    "classification": "Technical Execution",
     "standard": "All condiments are presented in small ramekins or dishes with appropriate service piece; no portion packets are used except sweeteners.",
-    "trainingTip": "Pre-portion condiments in attractive dishes for refined service.",
+    "trainingTip": "Elevated experiences require refined presentations. Pre-portion condiments in attractive dishes for refined service.",
     "quiz": {
       "question": "How should condiments be served?",
       "choices": [
@@ -1153,139 +1028,26 @@
       "answer": "In ramekins with serviceware"
     }
   },
-
-  {
-    "section": "Food & Beverage Quality",
-    "classification": "Health & Wellness",
-    "standard": "If provided, the beverage menu lists a variety of non-alcoholic options.",
-    "trainingTip": "Include thoughtful non-alcoholic choices on beverage menus.",
-    "quiz": {
-      "question": "What should be included on beverage menus for inclusivity?",
-      "choices": [
-        "Only alcoholic beverages",
-        "Bottled water only",
-        "Several creative non-alcoholic options",
-        "Energy drinks"
-      ],
-      "answer": "Several creative non-alcoholic options"
-    }
-  },
-  {
-    "section": "Food & Beverage Quality",
-    "classification": "Beverage Quality",
-    "standard": "All iced beverages are served with the appropriate style of ice.",
-    "trainingTip": "Match ice to drink: crushed, cubed, sphere, etc., as best suited.",
-    "quiz": {
-      "question": "How should ice be handled for beverages?",
-      "choices": [
-        "Use whatever\u2019s in the machine",
-        "Large cubes for all",
-        "Use ice appropriate to the beverage",
-        "Skip ice to avoid melting"
-      ],
-      "answer": "Use ice appropriate to the beverage"
-    }
-  },
-  {
-    "section": "Food & Beverage Quality",
-    "classification": "Beverage Quality",
-    "standard": "All beverages are served at appropriate temperatures or within the parameters of the guest\u2019s request.",
-    "trainingTip": "Hot drinks should be hot, cold drinks cold\u2014always.",
-    "quiz": {
-      "question": "How should beverage temperature be managed?",
-      "choices": [
-        "Room temperature is fine",
-        "Serve cold drinks first",
-        "Always at proper serving temperature or guest request",
-        "Ice melts anyway"
-      ],
-      "answer": "Always at proper serving temperature or guest request"
-    }
-  },
-  {
-    "section": "Food & Beverage Quality",
-    "classification": "Beverage Quality",
-    "standard": "Mixed drinks/cocktails are prepared to the specifics of the guest, have a well-balanced flavor and are appropriately garnished.",
-    "trainingTip": "Balance flavors and ask clarifying questions when mixing drinks.",
-    "quiz": {
-      "question": "What defines proper cocktail preparation?",
-      "choices": [
-        "Always use house recipe",
-        "Minimal garnish",
-        "Tailored to the guest and balanced",
-        "Skip ice for speed"
-      ],
-      "answer": "Tailored to the guest and balanced"
-    }
-  },
-  {
-    "section": "Food & Beverage Quality",
-    "classification": "Beverage Quality",
-    "standard": "Mixed drinks/cocktails have a distinctive presentation.",
-    "trainingTip": "Presentation should match the creativity and intent of the drink.",
-    "quiz": {
-      "question": "What is expected of drink presentation?",
-      "choices": [
-        "Plain glass, no garnish",
-        "House style always",
-        "Distinctive and intentional presentation",
-        "Avoid decorative elements"
-      ],
-      "answer": "Distinctive and intentional presentation"
-    }
-  },
     {
-    "section": "Food & Beverage Quality",
-    "classification": "Beverage Quality",
-    "standard": "A full range of specialty coffees and teas is available.",
-    "trainingTip": "Ensure a wide coffee and tea selection is available, including decaf and herbal.",
-    "quiz": {
-      "question": "What defines a full beverage offering?",
-      "choices": [
-        "Regular coffee only",
-        "Only green tea",
-        "Espresso, decaf, herbal teas and more",
-        "Hot water only"
-      ],
-      "answer": "Espresso, decaf, herbal teas and more"
-    }
-  },
-  {
-    "section": "Food & Beverage Quality",
-    "classification": "Health & Wellness",
-    "standard": "Menu offers items for guests seeking nutritionally focused dishes.",
-    "trainingTip": "Always offer clearly labeled, health-conscious menu items.",
-    "quiz": {
-      "question": "What helps guests eat healthfully?",
-      "choices": [
-        "Only offering indulgent dishes",
-        "Items labeled for nutrition",
-        "Only serving salads",
-        "Skipping descriptions"
-      ],
-      "answer": "Items labeled for nutrition"
-    }
-  },
-  {
-    "section": "Food & Beverage Quality",
+    "section": "Presentation of Facilities",
     "classification": "Technical Execution",
-    "standard": "Menu features items that are clearly appropriate to the season.",
-    "trainingTip": "Use fresh, seasonal ingredients to enhance quality and creativity.",
+    "standard": "The dining room should always exhibit a well-organized and professional appearance. Tables are always uniformly set; Illuminated table d\u00e9cor is kept lit, even when tables are unoccupied.",
+    "trainingTip": "The dining room should always look intentional and ready for guests. The staff should always prepare the room for a photo shoot.",
     "quiz": {
-      "question": "What defines seasonal menu planning?",
+      "question": "When should illuminated table decor be on?",
       "choices": [
-        "Use the same menu all year",
-        "Only serve items from freezer",
-        "Change items with the seasons",
-        "Avoid seasonal vegetables"
+        "Only during service",
+        "Only when guests are seated",
+        "Always, even at unoccupied tables",
+        "Only on weekends"
       ],
-      "answer": "Change items with the seasons"
+      "answer": "Always, even at unoccupied tables"
     }
   },
   {
     "section": "Presentation of Facilities",
     "classification": "Technical Execution",
-    "standard": "Appropriate cutlery is delivered to the table prior to each course and is taken away when the course is cleared; fresh cutlery is set for each new course.",
+    "standard": "Mis en Place: Appropriate cutlery is readily available, and delivered to the table prior to each course and is taken away when the course is cleared; fresh cutlery is set for each new course.",
     "trainingTip": "Replace cutlery for each course promptly and ensure it's appropriate to the next dish.",
     "quiz": {
       "question": "When should cutlery be replaced?",
@@ -1298,10 +1060,157 @@
       "answer": "Before each course is served"
     }
   },
+    {
+    "section": "Presentation of Facilities",
+    "classification": "Technical Execution",
+    "standard": "Turning tables appropriately: Vacated tables are swiftly cleared and reset with key components for dinner service, regardless of the hour.",
+    "trainingTip": "Ensure every table is ready for seating immediately after turnover. The dining room remains set, even if the restaurant has stopped seating new arrivals.",
+    "quiz": {
+      "question": "What must be done when a guest leaves a table?",
+      "choices": [
+        "Leave it until next guest",
+        "Reset later if it\u2019s late",
+        "Swiftly clear and reset with required items",
+        "Remove all items and leave bare"
+      ],
+      "answer": "Swiftly clear and reset with required items"
+    }
+  },
+    {
+    "section": "Presentation of Facilities",
+    "classification": "Attention to Detail",
+    "standard": "Temperature: The dining room temperature is comfortable and unnoticed by guests.",
+    "trainingTip": "Maintain a consistent temperature to enhance guest comfort without distraction.",
+    "quiz": {
+      "question": "What is ideal dining room temperature?",
+      "choices": [
+        "Cold to keep guests alert",
+        "Warm and cozy",
+        "Comfortable and unnoticeable",
+        "Varies with weather"
+      ],
+      "answer": "Comfortable and unnoticeable"
+    }
+  },
+  {
+    "section": "Presentation of Facilities",
+    "classification": "Attention to Detail",
+    "standard": "Ambiance: The restaurant lighting is comfortable, enabling menu reading, but provides privacy and ambiance.",
+    "trainingTip": "Use lighting that balances readability and a relaxed dining atmosphere.",
+    "quiz": {
+      "question": "What is a lighting priority in fine dining?",
+      "choices": [
+        "Bright overhead lights",
+        "Dimming to near darkness",
+        "Balance of readability and ambiance",
+        "Flashing accent lights"
+      ],
+      "answer": "Balance of readability and ambiance"
+    }
+  },
+  {
+    "section": "Presentation of Facilities",
+    "classification": "Attention to Detail",
+    "standard": "Audio levels: If background music is provided, it is in a style appropriate to the restaurant setting and volume and sound quality of music are comfortable. If live entertainment is provided, it is professional/polished in execution.",
+    "trainingTip": "Ensure music style and volume suit the venue\u2019s ambiance and are never distracting.",
+    "quiz": {
+      "question": "What describes ideal restaurant music?",
+      "choices": [
+        "Loud and energetic",
+        "Popular playlists regardless of brand",
+        "Fitting, comfortable volume, polished if live",
+        "Silence always preferred"
+      ],
+      "answer": "Fitting, comfortable volume, polished if live"
+    }
+  },
+  {
+    "section": "Presentation of Facilities",
+    "classification": "Attention to Detail",
+    "standard": "A higher vantage point: The overall noise level of the restaurant is comfortable.",
+    "trainingTip": "Look at the total noise level; the combination of music, crowd noise and kitched sounds. The design acoustics should manage sound and allow for relaxed conversation.",
+    "quiz": {
+      "question": "What is the goal of restaurant noise control?",
+      "choices": [
+        "Buzzing with activity",
+        "Silent except for kitchen",
+        "Comfortable and conversation-friendly",
+        "Amplify guest voices"
+      ],
+      "answer": "Comfortable and conversation-friendly"
+    }
+  },
+
+  {
+    "section": "Dinner Service",
+    "classification": "Attention to Detail",
+    "standard": "When asked where the restroom is located, a member of the staff at least partially escorts the guest there.",
+    "trainingTip": "Provide warm and proactive guidance for restroom inquiries.",
+    "quiz": {
+      "question": "How should staff respond to restroom inquiries?",
+      "choices": [
+        "Point vaguely",
+        "Say 'over there'",
+        "Walk with or guide the guest courteously",
+        "Hand them a map"
+      ],
+      "answer": "Walk with or guide the guest courteously"
+    }
+  },
+    {
+    "section": "Food & Beverage Quality",
+    "classification": "Elements of Luxury",
+    "standard": "Elements of luxury set your establishment apart from your competitive set. A high quality amuse bouche is offered in most elevated dining experiences.",
+    "trainingTip": "Amuse bouche should reflect culinary creativity and be consistent with the restaurant\u2019s identity.",
+    "quiz": {
+      "question": "What characterizes a proper amuse bouche?",
+      "choices": [
+        "Hearty and filling dish",
+        "Sweet dessert",
+        "High quality, creative, and small starter",
+        "Pre-packaged snack"
+      ],
+      "answer": "High quality, creative, and small starter"
+    }
+  },
+  {
+    "section": "Food & Beverage Quality",
+    "classification": "Elements of Luxury",
+    "standard": "If offered, a dessert amuse is high quality as well. Dessert amuse is usually reserved for the establishments that execute tasting menus or an equal experience level.",
+    "trainingTip": "Dessert amuse should be as refined as savory amuse and reflect dessert menu. This includes high quality mignardises, petit fours or the equivalent.",
+    "quiz": {
+      "question": "What makes a dessert amuse acceptable?",
+      "choices": [
+        "Large portion",
+        "Chocolate only",
+        "High quality, well-executed taste",
+        "None are required"
+      ],
+      "answer": "High quality, well-executed taste"
+    }
+  },
+  {
+    "section": "Food & Beverage Quality",
+    "classification": "Elements of Luxury",
+    "standard": "The menu should offer items for guests seeking nutritionally focused dishes, available as a choice or as an alternative to the main menu.",
+    "trainingTip": "Diversity is offerings is not always an option for many establishments, however, it does set you apart from your peers. Restaurants should offer clearly labeled, health-conscious menu items.",
+    "quiz": {
+      "question": "What helps guests eat healthfully?",
+      "choices": [
+        "Only offering indulgent dishes",
+        "Items labeled for nutrition",
+        "Only serving salads",
+        "Skipping descriptions"
+      ],
+      "answer": "Items labeled for nutrition"
+    }
+  },
+
+
   {
     "section": "Presentation of Facilities",
     "classification": "Cleanliness & Condition",
-    "standard": "Table is in excellent condition, sturdy and completely clean.",
+    "standard": "Table is in excellent condition, sturdy and completely clean. This includes the chairs, the tablecloth and/or all elemtns of the table setting.",
     "trainingTip": "Wipe and inspect tables between each seating to ensure cleanliness and stability.",
     "quiz": {
       "question": "What defines a properly prepared table?",
@@ -1314,27 +1223,12 @@
       "answer": "Clean, sturdy, and in excellent condition"
     }
   },
+
   {
     "section": "Presentation of Facilities",
     "classification": "Cleanliness & Condition",
-    "standard": "Chairs and/or seats are completely clean, in excellent condition and hygienic in appearance.",
-    "trainingTip": "Check seats after every guest for spills, crumbs, and structural issues.",
-    "quiz": {
-      "question": "What is required of dining chairs and seats?",
-      "choices": [
-        "Stylish but dusty",
-        "Clean and free of damage",
-        "Reupholstered monthly",
-        "Clean but mismatched"
-      ],
-      "answer": "Clean and free of damage"
-    }
-  },
-  {
-    "section": "Presentation of Facilities",
-    "classification": "Cleanliness & Condition",
-    "standard": "Within the guest\u2019s specific dining area, floors/carpets are completely clean, free of crumbs, debris or other unsanitary conditions.",
-    "trainingTip": "Spot check floors between services and clean thoroughly each night.",
+    "standard": "Within the guest\u2019s specific dining area, floors/carpets are always completely clean, free of crumbs, debris or other unsanitary conditions.",
+    "trainingTip": "Spot check floors between services and clean thoroughly each night. During the hours of operation, a method of cleaning spills and excess debris should be established.",
     "quiz": {
       "question": "How should dining area floors appear?",
       "choices": [
@@ -1346,38 +1240,7 @@
       "answer": "Clean and debris-free at all times"
     }
   },
-  {
-    "section": "Presentation of Facilities",
-    "classification": "Cleanliness & Condition",
-    "standard": "All table linens are in excellent condition, clean and pressed.",
-    "trainingTip": "Launder linens regularly and replace worn items promptly.",
-    "quiz": {
-      "question": "What defines suitable table linens?",
-      "choices": [
-        "Worn but intact",
-        "Crisp, clean, and pressed",
-        "Ironed weekly",
-        "Only decorative"
-      ],
-      "answer": "Crisp, clean, and pressed"
-    }
-  },
-  {
-    "section": "Presentation of Facilities",
-    "classification": "Elements of Luxury",
-    "standard": "Cloth napkins are used. All table linens are of excellent quality.",
-    "trainingTip": "Elevate guest experience through high-quality napery and cloth service pieces.",
-    "quiz": {
-      "question": "What enhances the luxury feel of table settings?",
-      "choices": [
-        "Paper napkins",
-        "Cloth napkins and quality linens",
-        "Disposable covers",
-        "Plastic doilies"
-      ],
-      "answer": "Cloth napkins and quality linens"
-    }
-  },
+
   {
     "section": "Presentation of Facilities",
     "classification": "Cleanliness & Condition",
@@ -1394,58 +1257,11 @@
       "answer": "Spotless and in excellent condition"
     }
   },
+  
   {
     "section": "Presentation of Facilities",
-    "classification": "Elements of Luxury",
-    "standard": "Glassware, china and cutlery are of excellent quality and fully coordinated.",
-    "trainingTip": "Choose cohesive sets that reflect the restaurant\u2019s aesthetic.",
-    "quiz": {
-      "question": "How should luxury serviceware appear?",
-      "choices": [
-        "High quality and matching",
-        "Plastic and durable",
-        "Eclectic mix",
-        "Basic but functional"
-      ],
-      "answer": "High quality and matching"
-    }
-  },
-  {
-    "section": "Presentation of Facilities",
-    "classification": "Elements of Luxury",
-    "standard": "Coffees and/or teas are elegantly and appropriately presented in high quality serviceware.",
-    "trainingTip": "Use polished teapots, coffee sets, and coordinated china for beverages.",
-    "quiz": {
-      "question": "How should coffee and tea be presented?",
-      "choices": [
-        "In branded paper cups",
-        "Elegantly in high-quality serviceware",
-        "In mugs from the bar",
-        "In metal travel mugs"
-      ],
-      "answer": "Elegantly in high-quality serviceware"
-    }
-  },
-  {
-    "section": "Presentation of Facilities",
-    "classification": "Technical Execution",
-    "standard": "Vacated tables are swiftly cleared and reset with key components for dinner service, regardless of the hour.",
-    "trainingTip": "Ensure every table is ready for seating immediately after turnover.",
-    "quiz": {
-      "question": "What must be done when a guest leaves a table?",
-      "choices": [
-        "Leave it until next guest",
-        "Reset later if it\u2019s late",
-        "Swiftly clear and reset with required items",
-        "Remove all items and leave bare"
-      ],
-      "answer": "Swiftly clear and reset with required items"
-    }
-  },
-  {
-    "section": "Presentation of Facilities",
-    "classification": "Technical Execution",
-    "standard": "Side stations are kept neat and organized; jack stands are not observed on the dining room floor.",
+    "classification": "Cleanliness & Condition",
+    "standard": "Everywhere in guest view should remain presentable. Side stations should be kept neat and organized; jack stands are not observed on the dining room floor.",
     "trainingTip": "Keep operational stations clean and out of view.",
     "quiz": {
       "question": "Where should jack stands be placed?",
@@ -1458,27 +1274,60 @@
       "answer": "Out of guest view at all times"
     }
   },
+    {
+    "section": "Presentation of Facilities",
+    "classification": "Cleanliness & Condition",
+    "standard": "The public areas of the restaurant are thoroughly clean and in excellent condition. This remians true throughout the hours of operation.",
+    "trainingTip": "Conduct routine checks throughout the day to uphold cleanliness standards. this is especially true for the restrooms.",
+    "quiz": {
+      "question": "How often should public areas be checked?",
+      "choices": [
+        "Once per shift",
+        "Only before opening",
+        "Throughout the service day",
+        "Only during close"
+      ],
+      "answer": "Throughout the service day"
+    }
+  },
+  
   {
     "section": "Presentation of Facilities",
-    "classification": "Technical Execution",
-    "standard": "The dining room exhibits a well-organized and professional appearance; tables are uniformly set; Illuminated table d\u00e9cor is kept lit, even when tables are unoccupied.",
-    "trainingTip": "The dining room should always look intentional and ready for guests.",
+    "classification": "Cleanliness & Condition",
+    "standard": "Systems check: The restrooms should always remain extremely clean, in excellent condition and well-stocked.",
+    "trainingTip": "This is an area where there needs to be a system in place by the manageemnt team. Check and clean restrooms hourly or as needed to uphold guest expectations.",
     "quiz": {
-      "question": "When should illuminated table decor be on?",
+      "question": "What defines a 5-star restroom?",
       "choices": [
-        "Only during service",
-        "Only when guests are seated",
-        "Always, even at unoccupied tables",
-        "Only on weekends"
+        "Smells clean",
+        "Modern fixtures",
+        "Clean, stocked, and in excellent condition",
+        "Private and dark"
       ],
-      "answer": "Always, even at unoccupied tables"
+      "answer": "Clean, stocked, and in excellent condition"
+    }
+  },
+  {
+    "section": "Presentation of Facilities",
+    "classification": "Elements of Luxury",
+    "standard": "Quality of Glassware, china and cutlery should be of excellent quality and fully coordinated, congruent with the style of cuisine. Both inventory and quality control should be performed regularly.",
+    "trainingTip": "Choose cohesive sets that reflect the restaurant\u2019s aesthetic.",
+    "quiz": {
+      "question": "How should luxury serviceware appear?",
+      "choices": [
+        "High quality and matching",
+        "Plastic and durable",
+        "Eclectic mix",
+        "Basic but functional"
+      ],
+      "answer": "High quality and matching"
     }
   },
 {
     "section": "Presentation of Facilities",
     "classification": "Elements of Luxury",
-    "standard": "The tabletop setup is noteworthy.",
-    "trainingTip": "Use creative, refined setups that reflect thoughtful design.",
+    "standard": "Taking a step back: The tabletop setup is noteworthy, and presents the guest(s) with an inviting feeling upon arrival.",
+    "trainingTip": "Use creative, refined setups that reflect thoughtful design. Make the setup approachable, distictive and above all, a feeling of cleanliness.",
     "quiz": {
       "question": "What defines a noteworthy tabletop setup?",
       "choices": [
@@ -1506,139 +1355,12 @@
       "answer": "Consistent and theme-driven"
     }
   },
-  {
-    "section": "Presentation of Facilities",
-    "classification": "Attention to Detail",
-    "standard": "The dining room temperature is comfortable and unnoticed by guests.",
-    "trainingTip": "Maintain a consistent temperature to enhance guest comfort without distraction.",
-    "quiz": {
-      "question": "What is ideal dining room temperature?",
-      "choices": [
-        "Cold to keep guests alert",
-        "Warm and cozy",
-        "Comfortable and unnoticeable",
-        "Varies with weather"
-      ],
-      "answer": "Comfortable and unnoticeable"
-    }
-  },
-  {
-    "section": "Presentation of Facilities",
-    "classification": "Attention to Detail",
-    "standard": "The restaurant lighting is comfortable, enabling menu reading, but provides privacy and ambiance.",
-    "trainingTip": "Use lighting that balances readability and a relaxed dining atmosphere.",
-    "quiz": {
-      "question": "What is a lighting priority in fine dining?",
-      "choices": [
-        "Bright overhead lights",
-        "Dimming to near darkness",
-        "Balance of readability and ambiance",
-        "Flashing accent lights"
-      ],
-      "answer": "Balance of readability and ambiance"
-    }
-  },
-  {
-    "section": "Presentation of Facilities",
-    "classification": "Attention to Detail",
-    "standard": "If background music is provided, it is in a style appropriate to the restaurant setting and volume and sound quality of music are comfortable. If live entertainment is provided, it is professional/polished in execution.",
-    "trainingTip": "Ensure music style and volume suit the venue\u2019s ambiance and are never distracting.",
-    "quiz": {
-      "question": "What describes ideal restaurant music?",
-      "choices": [
-        "Loud and energetic",
-        "Popular playlists regardless of brand",
-        "Fitting, comfortable volume, polished if live",
-        "Silence always preferred"
-      ],
-      "answer": "Fitting, comfortable volume, polished if live"
-    }
-  },
-  {
-    "section": "Presentation of Facilities",
-    "classification": "Attention to Detail",
-    "standard": "The overall noise level of the restaurant is comfortable.",
-    "trainingTip": "Design acoustics to manage sound and allow for relaxed conversation.",
-    "quiz": {
-      "question": "What is the goal of restaurant noise control?",
-      "choices": [
-        "Buzzing with activity",
-        "Silent except for kitchen",
-        "Comfortable and conversation-friendly",
-        "Amplify guest voices"
-      ],
-      "answer": "Comfortable and conversation-friendly"
-    }
-  },
-  {
-    "section": "Presentation of Facilities",
-    "classification": "Cleanliness & Condition",
-    "standard": "The public areas of the restaurant are thoroughly clean and in excellent condition.",
-    "trainingTip": "Conduct routine checks throughout the day to uphold cleanliness standards.",
-    "quiz": {
-      "question": "How often should public areas be checked?",
-      "choices": [
-        "Once per shift",
-        "Only before opening",
-        "Throughout the service day",
-        "Only during close"
-      ],
-      "answer": "Throughout the service day"
-    }
-  },
-  {
-    "section": "Presentation of Facilities",
-    "classification": "Attention to Detail",
-    "standard": "The restroom is conveniently located within or near the restaurant.",
-    "trainingTip": "Provide clear signage or escort to the restroom when appropriate.",
-    "quiz": {
-      "question": "What is a key feature of restroom access?",
-      "choices": [
-        "Secluded and hard to find",
-        "Downstairs or off-property",
-        "Conveniently located and easy to find",
-        "Near kitchen for staff ease"
-      ],
-      "answer": "Conveniently located and easy to find"
-    }
-  },
-  {
-    "section": "Dinner Service",
-    "classification": "Health & Wellness",
-    "standard": "When asked where the restroom is located, a member of the staff at least partially escorts the guest there.",
-    "trainingTip": "Provide warm and proactive guidance for restroom inquiries.",
-    "quiz": {
-      "question": "How should staff respond to restroom inquiries?",
-      "choices": [
-        "Point vaguely",
-        "Say 'over there'",
-        "Walk with or guide the guest courteously",
-        "Hand them a map"
-      ],
-      "answer": "Walk with or guide the guest courteously"
-    }
-  },
-  {
-    "section": "Presentation of Facilities",
-    "classification": "Cleanliness & Condition",
-    "standard": "The restrooms are extremely clean, in excellent condition and well-stocked.",
-    "trainingTip": "Check and clean restrooms hourly or as needed to uphold guest expectations.",
-    "quiz": {
-      "question": "What defines a 5-star restroom?",
-      "choices": [
-        "Smells clean",
-        "Modern fixtures",
-        "Clean, stocked, and in excellent condition",
-        "Private and dark"
-      ],
-      "answer": "Clean, stocked, and in excellent condition"
-    }
-  },
+
   {
     "section": "Presentation of Facilities",
     "classification": "Elements of Luxury",
-    "standard": "The restrooms are in keeping with the interior design style of the restaurant or overall property, if applicable. Adequate space and lighting are available for grooming.",
-    "trainingTip": "Make restroom design match the rest of the venue and include proper grooming accommodations.",
+    "standard": "The restrooms are congruent with the interior design style of the restaurant or overall property, if applicable.",
+    "trainingTip": "The restroom design should match the rest of the venue and include proper grooming accommodations.",
     "quiz": {
       "question": "What creates a luxurious restroom experience?",
       "choices": [
