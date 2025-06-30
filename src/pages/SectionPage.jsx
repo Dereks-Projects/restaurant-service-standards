@@ -11,11 +11,11 @@ function SectionPage() {
   const [activeIndex, setActiveIndex] = useState(null);
 
   const sectionDescriptions = {
-    "Reservation System": "This section focuses on the importance of efficient and courteous reservation handling. Below you will find a pertinent video followed by the  industry standards for exemplary guest service.",
-    "Arrival & Departure": "Host service ensures a warm welcome, smooth guest flow, and first impressions that align with luxury standards. Below you will find a pertinent video followed by the  industry standards for exemplary guest service.",
-    "Dinner Service": "Dinner service is the heart of the guest experience, blending technical execution with personal attention. Below you will find a pertinent video followed by the  industry standards for exemplary guest service.",
-    "Food & Beverage Quality": "Maintaining consistent, high-quality food and beverage offerings is essential to guest satisfaction. Below you will find a pertinent video followed by the  industry standards for exemplary guest service.",
-    "Presentation of Facilities": "Cleanliness, ambiance, and upkeep of the space contribute to a sense of luxury. Below you will find a pertinent video followed by the  industry standards for exemplary guest service."
+    "Reservation System": "This section focuses on the importance of efficient and courteous reservation handling. Use the video as a starting point, then view the checklist of actions in the overview tab, followed by each topic of focus to hone in on the finer points of exemplary service.",
+    "Arrival & Departure": "Host service ensures a warm welcome, smooth guest flow, and first impressions that align with luxury standards. Use the video as a starting point, then view the checklist of actions in the overview tab, followed by each topic of focus to hone in on the finer points of exemplary service.",
+    "Dinner Service": "Dinner service is the heart of the guest experience, blending technical execution with personal attention. Use the video as a starting point, then view the checklist of actions in the overview tab, followed by each topic of focus to hone in on the finer points of exemplary service.",
+    "Food & Beverage Quality": "Maintaining consistent, high-quality food and beverage offerings is essential to guest satisfaction. Use the video as a starting point, then view the checklist of actions in the overview tab, followed by each topic of focus to hone in on the finer points of exemplary service.",
+    "Presentation of Facilities": "Cleanliness, ambiance, and upkeep of the space contribute to a sense of luxury. While this section outlines many of the leadership tasks, it is important that all emplyees be well versed at the industry standards. Use the video as a starting point, then view the checklist of actions in the overview tab, followed by each topic of focus to hone in on the finer points of exemplary service."
   };
 
   const sectionVideos = {

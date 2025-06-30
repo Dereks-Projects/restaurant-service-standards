@@ -1,19 +1,20 @@
 [
   {
     "Topic": "Reservation System",
+    "Item": "Handle All Calls Promptly and Without Interruption",
+    "Standard": "Avoid placing guests on hold for long periods or transferring them unnecessarily. A seamless phone interaction is part of the overall luxury impression."
+  },
+  {
+    "Topic": "Reservation System",
     "Item": "Greet the Guest Warmly and Professionally",
     "Standard": "Begin the interaction with a sincere, friendly tone and clear diction. This sets a respectful and welcoming tone that aligns with the restaurant’s brand of hospitality."
   },
   {
     "Topic": "Reservation System",
-    "Item": "Accept the Booking Graciously",
+    "Item": "Accept the Request Graciously",
     "Standard": "Acknowledge the request affirmatively and positively. Use language that reassures the guest that their reservation is valued and appreciated."
   },
-  {
-    "Topic": "Reservation System",
-    "Item": "Thank the Guest at the End of the Interaction",
-    "Standard": "Always close the conversation with a polite and specific thank-you. This final touch helps reinforce professionalism and leaves a lasting impression."
-  },
+
   {
     "Topic": "Reservation System",
     "Item": "Ask About Special Occasions",
@@ -44,10 +45,11 @@
     "Item": "Document Special Requests and Notes Clearly",
     "Standard": "If the guest mentions anything special—like a highchair, window table, or dietary need—it should be documented. This ensures follow-through by the service team."
   },
+
   {
     "Topic": "Reservation System",
-    "Item": "Handle All Calls Promptly and Without Interruption",
-    "Standard": "Avoid placing guests on hold for long periods or transferring them unnecessarily. A seamless phone interaction is part of the overall luxury impression."
+    "Item": "Thank the Guest at the End of the Interaction",
+    "Standard": "Always close the conversation with a polite and specific thank-you. This final touch helps reinforce professionalism and leaves a lasting impression."
   },
   {
     "Topic": "Reservation System",

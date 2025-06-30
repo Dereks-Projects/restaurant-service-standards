@@ -37,7 +37,7 @@ function Home() {
           />
 
           <p className="homepage-subtitle">
-            This application guides your restaurant team through the finer points of guest service in the hospitality environment.
+            Elevate your team with a training app that builds exceptional guest service through clear, consistent hospitality standards.
           </p>
         </div>
 
