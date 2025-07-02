@@ -68,9 +68,28 @@
 .overview-page-title {
   font-size: 1.9rem;
   font-weight: strong;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   color: #000;
   text-align: left;
   border: none;            /* ⛔️ removes yellow bar */
   padding-left: 0;         /* ⛔️ removes left spacing */
+}
+
+/* ✅ Improved thin gray line below the title for all screens */
+.overview-title-divider {
+  border: none;
+  border-top: 1px solid #ccc;
+  width: 100%;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+
+/* ✅ Intro paragraph under the gray line */
+.overview-intro-paragraph {
+  font-size: 1rem;
+  color: #444;
+  font-style: normal;
+  line-height: 1.6;
+  margin-bottom: 2rem;
 }

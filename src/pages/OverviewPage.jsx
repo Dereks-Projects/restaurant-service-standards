@@ -3,6 +3,7 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import sectionData from '../data/sectionOverviews.json';
+import introText from '../data/sectionOverviewsIntro.json'; // ✅ NEW IMPORT
 import '../styles/OverviewPage.css';
 
 function OverviewPage() {
@@ -27,9 +28,15 @@ function OverviewPage() {
 
         {/* ✅ MAIN PAGE TITLE — styled like IntroductionPage */}
         <h2 className="overview-page-title">
-            {fullTopic}
+          {fullTopic}
         </h2>
 
+        <hr className="overview-title-divider" />
+        
+        {/* ✅ NEW: Intro paragraph from sectionOverviewsIntro.json */}
+        <p className="overview-intro-paragraph">
+          {introText[sectionId]}
+        </p>
 
         {/* ✅ Checklist Items */}
         {filteredChecklist.map((entry, index) => (

@@ -2,8 +2,8 @@
   {
     "section": "Reservation System",
     "classification": "Guest Courtesy",
-    "standard": "The reservationist should be polite and graciously accept the booking. Staff taking reservations should demonstrate a genuine interest in the guest, such as asking about special occasions.",
-    "trainingTip": "Practice a consistent greeting and avoid sounding scripted. Let your professional personilty show. Inquire about the guests needs at every step of the way.",
+    "standard": "A great start: The reservationist should be polite and graciously accept the booking. All staff members that take reservations should demonstrate a genuine interest in the guest.",
+    "trainingTip": "Remain engaged and enthusiastic throughout the process. Practice a consistent greeting and avoid sounding scripted. Let your professional personilty show. Inquire about the guests needs at every step of the way.",
     "quiz": {
       "question": "What is the most appropriate way to greet a guest calling to book?",
       "choices": [
@@ -18,7 +18,7 @@
   {
     "section": "Reservation System",
     "classification": "Guest Courtesy",
-    "standard": "Phone training always includes a proper way to open & close the conversation. All staff should specifically thank the guest for the booking and close the interaction with a polite and appropriate remark.",
+    "standard": "Proper phone training always includes the best way to open & close the conversation. All staff should specifically thank the guest for the booking and close the interaction with a polite and appropriate remark at the conclusion of the call.",
     "trainingTip": "Always begin and conclude calls with appreciation and a pleasant phrase. The tone is always professional and inviting.",
     "quiz": {
       "question": "Which closing phrase reflects the standard best?",
@@ -34,7 +34,7 @@
   {
     "section": "Reservation System",
     "classification": "Technical Execution",
-    "standard": "Staff members that take reservations should be able to give accurate information about restaurant location, dress code or general menu.",
+    "standard": "Knowing the business: Staff members that take reservations should be able to give accurate information about restaurant location, dress code or general menu.",
     "trainingTip": "Review basic restaurant FAQs daily to stay current on location, hours, and menu. Additionally, knowing the events taking place in town always helps.",
     "quiz": {
       "question": "What should reservation staff be able to explain?",
@@ -66,7 +66,7 @@
   {
     "section": "Reservation System",
     "classification": "Attention to Detail",
-    "standard": "If applicable, online reservation sites that the business participates in should be easy to navigate and complete a booking.",
+    "standard": "Audit your systems: Online reservation sites that the business participates in should be easy to navigate and complete a booking.",
     "trainingTip": "Test your online system regularly and make adjustments based on guest feedback. Routine checking of website functions, as well as all lines of communication is important.",
     "quiz": {
       "question": "What defines a guest-friendly reservation website?",
@@ -82,8 +82,8 @@
   {
     "section": "Reservation System",
     "classification": "Efficiency",
-    "standard": "All calls should be handled without excessive delays or interruptions, with the reservationist always cognizant of the guests time.",
-    "trainingTip": "Keep calls under 2 minutes unless the guest needs additional info.",
+    "standard": "Always be cognizant of your guests time, including during the phone interactions. All calls should be handled without excessive delays or interruptions, with the reservationist always cognizant of the guests time.",
+    "trainingTip": "Keep calls under 2 minutes unless the guest needs additional information. Avoid putting guests on hold for long periods, if at all.",
     "quiz": {
       "question": "Which reflects efficient reservation handling?",
       "choices": [
@@ -98,7 +98,7 @@
     {
     "section": "Reservation System",
     "classification": "Attention to Detail",
-    "standard": "Attention should be paid to those engaging in healthy eating or have any dietary requirments. Staff taking reservations should inquire about dietary restrictions, preferences and/or allergies.",
+    "standard": "Above and beyond: Attention should be paid to those engaging in healthy eating or have any dietary requirments. Staff taking reservations should inquire about dietary restrictions, preferences and/or allergies.",
     "trainingTip": "Always ask if any allergies or restrictions apply to better prepare the kitchen.",
     "quiz": {
       "question": "Why should dietary restrictions be asked during reservation?",
