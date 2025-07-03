@@ -37,11 +37,6 @@
   },
   {
     "Topic": "Reservation System",
-    "Item": "Promote Online Booking When Available",
-    "Standard": "Mention the ease and availability of your online booking system, if appropriate. This can streamline guest behavior and reduce call volume during peak hours."
-  },
-  {
-    "Topic": "Reservation System",
     "Item": "Document Special Requests and Notes Clearly",
     "Standard": "If the guest mentions anything special—like a highchair, window table, or dietary need—it should be documented. This ensures follow-through by the service team."
   },
@@ -63,14 +58,15 @@
   },
   {
     "Topic": "Arrival & Departure",
-    "Item": "Warm and Timely Greeting at the Door",
-    "Standard": "Guests are welcomed immediately upon arrival with a warm, genuine greeting and an open demeanor. This first touchpoint sets the emotional tone for the entire visit and must never feel delayed or mechanical."
-  },
-  {
-    "Topic": "Arrival & Departure",
     "Item": "Polished Appearance and Composed Demeanor",
     "Standard": "The host and door staff maintain impeccable grooming and a calm, professional presence. Their appearance and poise reflect the establishment\u2019s luxury positioning from the first glance."
   },
+  {
+    "Topic": "Arrival & Departure",
+    "Item": "Warm and Timely Greeting at the Door",
+    "Standard": "Guests are welcomed immediately upon arrival with a warm, genuine greeting and an open demeanor. This first touchpoint sets the emotional tone for the entire visit and must never feel delayed or mechanical."
+  },
+
   {
     "Topic": "Arrival & Departure",
     "Item": "Immediate Eye Contact and Friendly Smile",
@@ -85,6 +81,16 @@
     "Topic": "Arrival & Departure",
     "Item": "Clear, Courteous Language Without Slang or Informality",
     "Standard": "Speech is articulate, grammatically clean, and free from casual phrasing or slang. In luxury service, even small verbal nuances can influence perceived quality."
+  },
+    {
+    "Topic": "Arrival & Departure",
+    "Item": "Attentive Waiting Experience if Table Not Ready",
+    "Standard": "If a table is not immediately available, guests are invited to wait comfortably with a brief but courteous explanation. Updates are offered at reasonable intervals with hospitality gestures such as beverage suggestions."
+  },
+  {
+    "Topic": "Arrival & Departure",
+    "Item": "Quoted Wait Times Are Accurate and Honored",
+    "Standard": "Any estimated wait time is conservative and followed up diligently. If exceeded, the staff offers a sincere apology and a recovery gesture if appropriate."
   },
   {
     "Topic": "Arrival & Departure",
@@ -101,16 +107,7 @@
     "Item": "Chairs Gently Pulled for All Guests Upon Seating",
     "Standard": "When seating begins, staff assist in drawing chairs for all parties with grace. Chair assistance should be smooth, non-intrusive, and clearly focused on guest comfort."
   },
-  {
-    "Topic": "Arrival & Departure",
-    "Item": "Attentive Waiting Experience if Table Not Ready",
-    "Standard": "If a table is not immediately available, guests are invited to wait comfortably with a brief but courteous explanation. Updates are offered at reasonable intervals with hospitality gestures such as beverage suggestions."
-  },
-  {
-    "Topic": "Arrival & Departure",
-    "Item": "Quoted Wait Times Are Accurate and Honored",
-    "Standard": "Any estimated wait time is conservative and followed up diligently. If exceeded, the staff offers a sincere apology and a recovery gesture if appropriate."
-  },
+
   {
     "Topic": "Arrival & Departure",
     "Item": "Beverages Transferred to the Table When Seated",
@@ -143,7 +140,7 @@
   },
   {
     "Topic": "Arrival & Departure",
-    "Item": "Gracious Farewell with Door Escort",
+    "Item": "On the Way Out: Gracious Farewell with Door Escort",
     "Standard": "Guests are thanked sincerely as they exit and offered a full or partial escort to the exit. The farewell is warm, confident, and never rushed."
   },
   {
@@ -161,14 +158,24 @@
     "Item": "Departure Logged and Guest Preferences Updated",
     "Standard": "After departure, staff log the guest\u2019s experience and update preferences in the system if available. This allows for elevated recognition and personalization on future visits."
   },
+    {
+    "Topic": "Dinner Service",
+    "Item": "All staff encountered are groomed, in uniform, and exhibit warmth",
+    "Standard": "Presentation is consistent across team members. First impressions and consistency build brand trust."
+  },
 {
     "Topic": "Dinner Service",
     "Item": "Guests are greeted at the table within one minute of seating",
     "Standard": "Prompt engagement sets the tone and shows attentiveness. Staff should offer water or pre-dinner drinks immediately."
   },
+    {
+    "Topic": "Dinner Service",
+    "Item": "Service team maintains professional posture and alert body language",
+    "Standard": "Visual cues matter\u2014slouched or distracted staff detract from the luxury experience. Graceful movement and eye contact elevate the guest perception."
+  },
   {
     "Topic": "Dinner Service",
-    "Item": "All pre-dinner beverages are served within 7 minutes",
+    "Item": "All pre-dinner beverages are served within 5 minutes",
     "Standard": "Prompt beverage service ensures guest comfort and minimizes idle time. Drinks should be delivered with a smile and brief confirmation."
   },
   {
@@ -213,29 +220,31 @@
   },
   {
     "Topic": "Dinner Service",
-    "Item": "Service team maintains professional posture and alert body language",
-    "Standard": "Visual cues matter\u2014slouched or distracted staff detract from the luxury experience. Graceful movement and eye contact elevate the guest perception."
+    "Item": "Food is served to the correct guest without inquiry",
+    "Standard": "Staff should memorize seat positions and guest orders. Asking 'who had the...' is unacceptable in luxury service."
+  },
+    {
+    "Topic": "Dinner Service",
+    "Item": "Each course is introduced briefly when served",
+    "Standard": "A one-sentence explanation highlights the effort behind the dish. It\u2019s part of storytelling in service."
   },
   {
     "Topic": "Dinner Service",
     "Item": "No plate or item is removed without guest acknowledgment",
     "Standard": "Every interaction, including clearing, should feel intentional and non-intrusive. Rushed or silent clearing breaks the atmosphere of refinement."
   },
+
   {
     "Topic": "Dinner Service",
-    "Item": "Food is served to the correct guest without inquiry",
-    "Standard": "Staff should memorize seat positions and guest orders. Asking 'who had the...' is unacceptable in luxury service."
+    "Item": "Throughout the meal, the table is attended without intrusion",
+    "Standard": "Silent service, intuitive replenishment, and presence without hovering are key. Luxury lies in what guests don\u2019t have to ask for."
   },
   {
     "Topic": "Dinner Service",
     "Item": "Courses are served and cleared simultaneously",
     "Standard": "Synchronization shows coordination and respect for the dining experience. No guest should wait while others are served or cleared."
   },
-  {
-    "Topic": "Dinner Service",
-    "Item": "Each course is introduced briefly when served",
-    "Standard": "A one-sentence explanation highlights the effort behind the dish. It\u2019s part of storytelling in service."
-  },
+
   {
     "Topic": "Dinner Service",
     "Item": "Crumbing or resetting occurs discreetly before dessert",
@@ -258,16 +267,6 @@
   },
   {
     "Topic": "Dinner Service",
-    "Item": "Throughout the meal, the table is attended without intrusion",
-    "Standard": "Silent service, intuitive replenishment, and presence without hovering are key. Luxury lies in what guests don\u2019t have to ask for."
-  },
-  {
-    "Topic": "Dinner Service",
-    "Item": "All staff encountered are groomed, in uniform, and exhibit warmth",
-    "Standard": "Presentation is consistent across team members. First impressions and consistency build brand trust."
-  },
-  {
-    "Topic": "Dinner Service",
     "Item": "Staff communication is fluid and behind-the-scenes",
     "Standard": "Guests should never see confusion, repeated requests, or miscommunication. Proper team relay ensures smooth service."
   },
@@ -278,7 +277,7 @@
   },
   {
     "Topic": "Dinner Service",
-    "Item": "The meal\u2019s pace is smooth and matches the guest\u2019s energy",
+    "Item": "The experience is smoothly paced, and matches the guest\u2019s energy",
     "Standard": "Service should neither rush nor lag. Reading the table is key to flow."
   },
   {
@@ -351,11 +350,7 @@
     "Item": "Signature Cocktails with Presentation Flair",
     "Standard": "Cocktails are garnished with elegance and precision and include house-made ingredients where possible. Presentation is eye-catching but functional, reflecting high-end mixology."
   },
-  {
-    "Topic": "Food & Beverage Quality",
-    "Item": "Cheese & Dessert Courses with Identity",
-    "Standard": "If offered, the cheese course and dessert selections reflect seasonality, chef identity, and regional excellence. These courses conclude the meal with balance and satisfaction, not excess."
-  },
+
   {
     "Topic": "Food & Beverage Quality",
     "Item": "Seasonal and Local Influence",
@@ -370,6 +365,11 @@
     "Topic": "Food & Beverage Quality",
     "Item": "Specialty Beverages & Digestifs",
     "Standard": "The beverage program includes quality coffee, teas, aperitifs, and digestifs. Each is served at the correct temperature, with appropriate glassware, and clear staff knowledge."
+  },
+    {
+    "Topic": "Food & Beverage Quality",
+    "Item": "Cheese & Dessert Courses with Identity",
+    "Standard": "If offered, the cheese course and dessert selections reflect seasonality, chef identity, and regional excellence. These courses conclude the meal with balance and satisfaction, not excess."
   },
   {
     "Topic": "Food & Beverage Quality",
@@ -386,11 +386,7 @@
     "Item": "Consistency Across Service",
     "Standard": "All components—from first bite to final sip—are delivered with the same level of care and refinement. Inconsistency in temperature, seasoning, or plating diminishes guest trust in overall quality."
   },
-  {
-    "Topic": "Presentation of Facilities",
-    "Item": "Cutlery is reset appropriately for each course",
-    "Standard": "Cutlery should be delivered just before each course and removed promptly after. Each new course must be accompanied by clean, high-quality utensils."
-  },
+
   {
     "Topic": "Presentation of Facilities",
     "Item": "Tables are sturdy, spotless, and perfectly aligned",
@@ -430,6 +426,11 @@
     "Topic": "Presentation of Facilities",
     "Item": "Coffee and tea are served with elegant presentation",
     "Standard": "Teapots, creamers, and cups must be uniform and sophisticated. Beverages should arrive on trays or saucers with polished accompaniments."
+  },
+    {
+    "Topic": "Presentation of Facilities",
+    "Item": "Fresh cutlery is reset appropriately for each course",
+    "Standard": "Cutlery should be delivered just before each course and removed promptly after. Each new course must be accompanied by clean, high-quality utensils."
   },
   {
     "Topic": "Presentation of Facilities",
@@ -488,7 +489,7 @@
   },
   {
     "Topic": "Presentation of Facilities",
-    "Item": "Guests are guided to restrooms with courtesy",
+    "Item": "Extra step: Guests are guided to restrooms with courtesy",
     "Standard": "If a guest asks for restroom directions, staff should offer to escort or guide them. This extends hospitality beyond the dining table."
   },
   {

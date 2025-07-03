@@ -37,7 +37,7 @@ function Home() {
           />
 
           <p className="homepage-subtitle">
-            Elevate your team with a training app that builds exceptional guest service through clear, consistent hospitality standards.
+            RSS empowers your team with elite service standards, offering a clear roadmap to industry recognition and lasting guest loyalty.
           </p>
         </div>
 
