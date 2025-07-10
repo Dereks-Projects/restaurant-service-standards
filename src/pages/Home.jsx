@@ -54,7 +54,7 @@ function Home() {
               {section}
             </button>
           ))}
-          <button onClick={() => navigate("/quiz")}>Quiz</button>
+          <button onClick={() => navigate("/resources")}>Resources</button>
         </div>
 
         {/* ✅ Footer */}

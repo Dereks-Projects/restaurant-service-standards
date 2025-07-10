@@ -105,7 +105,7 @@ function SectionPage() {
       </div>
 
       <button className="back-button" onClick={() => navigate("/")}>
-        Back
+        Home
       </button>
 
       {/* ✅ Footer */}
