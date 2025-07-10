@@ -102,9 +102,9 @@
 /* ✅ Mobile adjustments */
 @media (max-width: 500px) {
   .home-container h1 {
-    font-size: 2.2rem;
+    font-size: 2.4rem;
     line-height: 1.2;
-    padding: .5rem 0 .2rem;
+    padding: .2rem 0 .2rem;
   }
 
   .home-container p {
