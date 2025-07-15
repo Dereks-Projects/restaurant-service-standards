@@ -59,6 +59,17 @@ function ResourcesTrainingPage() {
           </a>
         </div>
 
+        {/* Section 5 */}
+        <div className="intro-section">
+          <h3 className="intro-section-title">Introduction to Wine</h3>
+          <p className="intro-section-text">
+            A deep dive into the world of wine for the hospitality professional.
+          </p>
+          <a href="/training/intro-wine.pdf" target="_blank" rel="noopener noreferrer">
+            Download PDF
+          </a>
+        </div>
+
         {/* Back Button */}
         <button className="intro-back-button" onClick={() => window.history.back()}>
           Back
