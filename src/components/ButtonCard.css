@@ -1,0 +1,51 @@
+/* 📄 src/components/ButtonCard.css */
+
+.btn-card {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  padding: var(--space-md);
+  margin-bottom: var(--space-sm);
+  cursor: pointer;
+  position: relative; /* 🔹 Required for absolute positioning of label */
+  transition: transform 0.1s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.12);
+  background-color: #f8f8f8;
+}
+
+.btn-card__icon {
+  font-size: 1.8rem;
+  margin-right: var(--space-md);
+  flex-shrink: 0;
+  z-index: 2; /* 🔹 Ensure icon stays on top */
+}
+
+.btn-card__label {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  width: 100%;
+  pointer-events: none; /* 🔹 Ensure clicks pass through */
+}
+
+.btn-card__title {
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+  font-size: 1rem;
+}
+
+.btn-card__subtitle {
+  font-size: 0.85rem;
+  color: #666;
+  line-height: 1.2;
+}
+
+/* No additional media query needed: works for both mobile and desktop */

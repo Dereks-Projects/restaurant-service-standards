@@ -1,9 +1,12 @@
-// 📄 FILE: src/pages/SectionPage.jsx
+// 📄 src/pages/SectionPage.jsx
 
 import { useParams, useNavigate } from "react-router-dom";
 import standards from "../data/standards.json";
 import "../styles/SectionPage.css";
 import { useState } from "react";
+import Header from "../components/Header";
+import MobileNav from "../components/MobileNav";
+import DesktopFooter from "../components/DesktopFooter";
 
 function SectionPage() {
   const { sectionName } = useParams();
@@ -11,11 +14,11 @@ function SectionPage() {
   const [activeIndex, setActiveIndex] = useState(null);
 
   const sectionDescriptions = {
-    "Reservation System": "This section focuses on the importance of efficient and courteous reservation handling. Use the video as a starting point, then view the checklist of actions in the overview tab, followed by each topic of focus to hone in on the finer points of exemplary service.",
-    "Arrival & Departure": "Host service ensures a warm welcome, smooth guest flow, and first impressions that align with luxury standards. Use the video as a starting point, then view the checklist of actions in the overview tab, followed by each topic of focus to hone in on the finer points of exemplary service.",
-    "Dinner Service": "Dinner service is the heart of the guest experience, blending technical execution with personal attention. Use the video as a starting point, then view the checklist of actions in the overview tab, followed by each topic of focus to hone in on the finer points of exemplary service.",
-    "Food & Beverage Quality": "Maintaining consistent, high-quality food and beverage offerings is essential to guest satisfaction. Use the video as a starting point, then view the checklist of actions in the overview tab, followed by each topic of focus to hone in on the finer points of exemplary service.",
-    "Presentation of Facilities": "Cleanliness, ambiance, and upkeep of the space contribute to a sense of luxury. While this section outlines many of the leadership tasks, it is important that all emplyees be well versed at the industry standards. Use the video as a starting point, then view the checklist of actions in the overview tab, followed by each topic of focus to hone in on the finer points of exemplary service."
+    "Reservation System": "This section focuses on the importance of efficient and courteous reservation handling.",
+    "Arrival & Departure": "Host service ensures a warm welcome, smooth guest flow, and first impressions that align with luxury standards.",
+    "Dinner Service": "Dinner service is the heart of the guest experience, blending technical execution with personal attention.",
+    "Food & Beverage Quality": "Maintaining consistent, high-quality food and beverage offerings is essential to guest satisfaction.",
+    "Presentation of Facilities": "Cleanliness, ambiance, and upkeep of the space contribute to a sense of luxury."
   };
 
   const sectionVideos = {
@@ -43,17 +46,18 @@ function SectionPage() {
   const toggleAccordion = (classification) =>
     setActiveIndex((prev) => (prev === classification ? null : classification));
 
-  // ✅ Convert section name to sectionId slug for URL (e.g. "Reservation System" → "reservation")
   const getSectionId = (name) => name.toLowerCase().split(" ")[0];
 
   return (
     <div className="section-page">
+      {/* 🔹 Corrected: subtitle pulled from sectionDescriptions */}
+      <Header
+        title="RSS"
+        subtitle={sectionDescriptions[sectionName] || ""}
+      />
+
       <div className="section-content-wrapper">
-        <h2>{sectionName}</h2>
-        <p className="section-description">
-          {sectionDescriptions[sectionName] ||
-            `This section outlines the best practices for ${sectionName.toLowerCase()}.`}
-        </p>
+        <h2 className="section-title">{sectionName}</h2>
 
         {/* 🎥 Section-specific video embed */}
         <div className="section-video-wrapper">
@@ -67,7 +71,7 @@ function SectionPage() {
           />
         </div>
 
-        {/* 🆕 Overview Button wrapped to match layout */}
+        {/* 🔹 Button stack */}
         <div className="button-group">
           <div className="accordion-item">
             <button
@@ -78,7 +82,6 @@ function SectionPage() {
             </button>
           </div>
 
-          {/* Classification Buttons */}
           {classifications.map((classification) => (
             <div key={classification} className="accordion-item">
               <button
@@ -104,26 +107,11 @@ function SectionPage() {
         </div>
       </div>
 
-      <button className="back-button" onClick={() => navigate("/")}>
-        Home
-      </button>
+      {/* 🔹 Desktop-only footer */}
+      <DesktopFooter />
 
-      {/* ✅ Footer */}
-      <div className="home-footer">
-        <p>
-          Presented by{" "}
-          <a
-            href="https://www.derekengles.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ textDecoration: "underline", color: "inherit" }}
-          >
-            Derek Engles
-          </a>
-          <br />
-          &copy; {new Date().getFullYear()} All Rights Reserved
-        </p>
-      </div>
+      {/* 🔹 Fixed MobileNav */}
+      <MobileNav />
     </div>
   );
 }

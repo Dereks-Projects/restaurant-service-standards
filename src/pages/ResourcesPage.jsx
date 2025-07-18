@@ -1,4 +1,7 @@
 import { useNavigate } from "react-router-dom";
+import Header from "../components/Header";
+import DesktopFooter from "../components/DesktopFooter";
+import MobileNav from "../components/MobileNav";
 import "../styles/SectionPage.css";
 
 function ResourcesPage() {
@@ -6,54 +9,49 @@ function ResourcesPage() {
 
   return (
     <div className="section-page">
-      <h2>Resources</h2>
+      {/* 🔹 Consistent header */}
+      <Header
+        title="RSS"
+        subtitle="This section provides the training and development collateral to execute these elevated service standards."
+      />
 
-      <p className="section-description">
-        This section provides the training and development collateral to execute these elevated service standards. Visit the training tab to view the training and development topics, or the quiz tab to test your knowledge of these standards.
-      </p>
+      {/* 🔹 Content wrapper ensures padding + alignment */}
+      <div className="section-content-wrapper">
+        <h2 className="section-title">Resources</h2>
 
-      <div className="section-video-wrapper">
-        <iframe
-          src="https://player.vimeo.com/video/1095248867"
-          width="100%"
-          height="360"
-          frameBorder="0"
-          allow="autoplay; fullscreen; picture-in-picture"
-          title="Resources Video"
-        />
+        <div className="section-video-wrapper">
+          <iframe
+            src="https://player.vimeo.com/video/1095248867"
+            width="100%"
+            height="360"
+            frameBorder="0"
+            allow="autoplay; fullscreen; picture-in-picture"
+            title="Resources Video"
+          />
+        </div>
+
+        {/* 🔹 Button group identical to SectionPage */}
+        <div className="button-group">
+          <div className="accordion-item">
+            <button className="accordion-button" onClick={() => navigate("/resources/overview")}>Overview</button>
+          </div>
+          <div className="accordion-item">
+            <button className="accordion-button" onClick={() => navigate("/resources/training")}>Training</button>
+          </div>
+          <div className="accordion-item">
+            <button className="accordion-button" onClick={() => navigate("/resources/quiz")}>Quiz</button>
+          </div>
+          <div className="accordion-item">
+            <button className="accordion-button" onClick={() => navigate("/")}>Home</button>
+          </div>
+        </div>
       </div>
 
-      {/* ✅ Make button stack identical to SectionPage.jsx */}
-      <div className="button-group">
-        <div className="accordion-item">
-          <button className="accordion-button" onClick={() => navigate("/resources/overview")}>Overview</button>
-        </div>
-        <div className="accordion-item">
-          <button className="accordion-button" onClick={() => navigate("/resources/training")}>Training</button>
-        </div>
-        <div className="accordion-item">
-          <button className="accordion-button" onClick={() => navigate("/resources/quiz")}>Quiz</button>
-        </div>
-        <div className="accordion-item">
-          <button className="accordion-button" onClick={() => navigate("/")}>Home</button>
-        </div>
-      </div>
+      {/* 🔹 Footer for desktop */}
+      <DesktopFooter />
 
-      <div className="home-footer">
-        <p>
-          Presented by{" "}
-          <a
-            href="https://www.derekengles.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ textDecoration: "underline", color: "inherit" }}
-          >
-            Derek Engles
-          </a>
-          <br />
-          &copy; {new Date().getFullYear()} All Rights Reserved
-        </p>
-      </div>
+      {/* 🔹 Mobile nav for mobile */}
+      <MobileNav />
     </div>
   );
 }

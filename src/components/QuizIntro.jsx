@@ -1,10 +1,5 @@
 import React from 'react';
 
-// 🧠 Props:
-// - selectedCategory: string (the user's current selection)
-// - setSelectedCategory: function (updates the selected category)
-// - startQuiz: function (starts the quiz when user clicks "Start Quiz")
-
 function QuizIntro({ selectedCategory, setSelectedCategory, startQuiz }) {
   const categories = [
     'Reservation System',
@@ -16,7 +11,7 @@ function QuizIntro({ selectedCategory, setSelectedCategory, startQuiz }) {
 
   return (
     <div className="quiz-intro">
-      <h2>Quiz</h2>
+      <h2 className="section-title">Quiz</h2>
       <p>Hone your skills with these quizzes<br /> on the finer points of guest service.</p>
 
       <label htmlFor="category-select" className="quiz-label">

@@ -1,121 +1,68 @@
 /* 📄 FILE: Home.css */
 
-/* ✅ Homepage Background */
-.homepage-container {
-  background-color: #fafafa; /* ← clean light background */
-  min-height: 100vh;
+/* ✅ Mobile-first base styles */
+
+.home-container {
+  background-color: #fafafa;
 }
 
-/* ✅ Core layout */
-.home-container {
-  height: 100vh;
+/* ✅ Scrollable area between header and footer */
+.home-scrollable-body {
   overflow-y: auto;
   overscroll-behavior: contain;
-  background-color: var(--bg-color);
-  padding: 3rem 1rem;
-  font-family: var(--font);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+  -webkit-overflow-scrolling: touch;
+  padding-top: 10px;
+  padding-bottom: 0; /* Default to 0, scoped below for mobile only */
 }
 
-/* ✅ Tightly stacked header layout */
-.homepage-header-stack {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.25rem; /* Tighter spacing between title, stars, subtitle */
-  margin-bottom: 0.25rem;
-  margin-top: .5rem;
-}
-
-.homepage-header-stack h1 {
-  font-size: 2.8rem;
-  font-weight: 600;
-  margin: 0;
-  padding: 0;
-  line-height: 1.05;
-  color: var(--primary-color);
-}
-
-.homepage-stars {
-  display: block;
-  height: 50px;
-  margin: .5rem 0 0.5rem;
-}
-
-.homepage-subtitle {
-  margin: 0;
-  padding: 0;
-  font-size: 1.125rem;
-  line-height: 1.4;
-  max-width: 580px;
-  color: var(--primary-color);
-  text-align: center;
-  margin-bottom: 1rem;
-}
-
-/* ✅ Buttons */
-.button-stack {
+.home-page__buttons {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 0.1rem;
-  width: 100%;
-  max-width: 400px;
+  padding: 0 1rem;
+  box-sizing: border-box;
 }
 
-.button-stack button {
-  background-color: #1b1b1b;
-  color: #ffffff;
-  font-size: 1rem;
-  padding: 0.5rem;
-  border: none;
-  border-radius: 12px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.2s ease-in-out;
+/* 🔹 Mobile-only adjustments */
+@media (max-width: 767px) {
+  .home-scrollable-body {
+    padding-bottom: 100px; /* ✅ Compensate for fixed MobileNav */
+  }
+
+  .rss-footer {
+    display: none;
+  }
+
+  .mobile-nav {
+    display: flex !important;
+  }
 }
 
-.button-stack button:hover {
-  background-color: #333;
-}
-
-/* ✅ Footer */
-.home-footer p {
-  margin-top: 2rem;
-  font-size: 0.75rem !important;
-  color: var(--primary-color);
-  text-align: center;
-  opacity: 0.7;
-  width: 100%;
-}
-
-/* ✅ Scroll lock for desktop only */
-@media (min-width: 501px) {
+/* 🔹 Desktop-only layout */
+@media (min-width: 768px) {
   .home-container {
-    overflow: hidden;
-  }
-}
-
-/* ✅ Mobile adjustments */
-@media (max-width: 500px) {
-  .home-container h1 {
-    font-size: 2.4rem;
-    line-height: 1.2;
-    padding: .2rem 0 .2rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
   }
 
-  .home-container p {
-    font-size: 1rem;
-    max-width: 100%;
-    text-align: justify;
-    margin: 1.9 auto 1.9rem;
+  .home-scrollable-body {
+    flex-grow: 1;
   }
 
-  .homepage-stars {
-    height: 40px;
-    margin: 0.3rem 0.3rem 0.5rem;
+  .home-page__buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+    padding: var(--space-lg) var(--space-md);
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .mobile-nav {
+    display: none;
   }
 }

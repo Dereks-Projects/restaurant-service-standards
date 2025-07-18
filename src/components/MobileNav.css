@@ -1,0 +1,41 @@
+/* 📄 src/components/MobileNav.css */
+
+.mobile-nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed; /* 🔥 critical: pins to bottom */
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background-color: var(--color-primary);
+  border-top: 1px solid #ccc;
+  z-index: 100;
+}
+
+.mobile-nav__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.85rem;
+  color: white;
+  background: transparent;
+  border: none;
+}
+
+.mobile-nav__item.active {
+  color: white;
+
+}
+
+.mobile-nav__icon {
+  font-size: 1.4rem;
+  margin-bottom: 0.2rem;
+}
+
+.mobile-nav__label {
+  font-size: 0.75rem;
+  line-height: 1;
+  text-align: center;
+}

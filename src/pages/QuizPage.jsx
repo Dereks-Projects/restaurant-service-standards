@@ -1,31 +1,33 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import standards from '../data/standards.json';
 import QuizIntro from '../components/QuizIntro';
 import QuestionCard from '../components/QuestionCard';
 import QuizSummary from '../components/QuizSummary';
+import Header from '../components/Header';
+import DesktopFooter from '../components/DesktopFooter';
+import MobileNav from '../components/MobileNav';
+import '../styles/SectionPage.css';  // 🔔 Use SectionPage.css for consistent styling
 import '../styles/Quiz.css';
 
 
-// Utility to randomly shuffle an array
 const shuffleArray = (array) => {
   return [...array].sort(() => Math.random() - 0.5);
 };
 
 function QuizPage() {
-  // 🌐 State management
-  const [step, setStep] = useState('intro'); // 'intro' | 'quiz' | 'summary'
+  const navigate = useNavigate();
+
+  const [step, setStep] = useState('intro');
   const [selectedCategory, setSelectedCategory] = useState('');
   const [quizQuestions, setQuizQuestions] = useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [score, setScore] = useState(0);
-
-  // ⏱ Timer-related state
   const [timeLeft, setTimeLeft] = useState(20);
   const [showFeedback, setShowFeedback] = useState(false);
   const [selectedAnswer, setSelectedAnswer] = useState('');
   const [isCorrect, setIsCorrect] = useState(false);
 
-  // 🪄 When the quiz starts: filter questions and prepare set
   const startQuiz = () => {
     const questionsInCategory = standards.filter(
       (item) => item.section === selectedCategory && item.quiz
@@ -37,7 +39,6 @@ function QuizPage() {
     setStep('quiz');
   };
 
-  // 🧠 Handle answer selection
   const handleAnswer = (choice) => {
     const currentQ = quizQuestions[currentQuestionIndex].quiz;
     const correct = currentQ.answer === choice;
@@ -49,7 +50,6 @@ function QuizPage() {
     }
   };
 
-  // 🕹 Move to next question
   const nextQuestion = () => {
     setShowFeedback(false);
     setSelectedAnswer('');
@@ -62,7 +62,6 @@ function QuizPage() {
     }
   };
 
-  // ⏳ Timer countdown logic
   useEffect(() => {
     if (step !== 'quiz' || showFeedback) return;
 
@@ -80,7 +79,6 @@ function QuizPage() {
     return () => clearInterval(timer);
   }, [step, showFeedback, currentQuestionIndex]);
 
-  // 🔁 Restart the quiz
   const restartQuiz = () => {
     setStep('intro');
     setSelectedCategory('');
@@ -92,32 +90,54 @@ function QuizPage() {
   };
 
   return (
-    <div className="quiz-page-container">
-      {step === 'intro' && (
-        <QuizIntro
-          selectedCategory={selectedCategory}
-          setSelectedCategory={setSelectedCategory}
-          startQuiz={startQuiz}
-        />
-      )}
+    <div className="section-page">
+      {/* 🔹 Shared header for consistent styling */}
+      <Header
+        title="RSS"
+        subtitle="Test your team's knowledge of elevated hospitality service standards."
+      />
 
-      {step === 'quiz' && (
-        <QuestionCard
-          questionData={quizQuestions[currentQuestionIndex]}
-          questionNumber={currentQuestionIndex + 1}
-          totalQuestions={quizQuestions.length}
-          selectedAnswer={selectedAnswer}
-          isCorrect={isCorrect}
-          showFeedback={showFeedback}
-          handleAnswer={handleAnswer}
-          nextQuestion={nextQuestion}
-          timeLeft={timeLeft}
-        />
-      )}
+      {/* 🔹 Content wrapper ensures padding and alignment */}
+      <div className="section-content-wrapper">
+        
 
-      {step === 'summary' && (
-        <QuizSummary score={score} total={quizQuestions.length} restartQuiz={restartQuiz} />
-      )}
+        {/* 🔹 Quiz workflow retained fully intact */}
+        {step === 'intro' && (
+          <QuizIntro
+            selectedCategory={selectedCategory}
+            setSelectedCategory={setSelectedCategory}
+            startQuiz={startQuiz}
+          />
+        )}
+
+        {step === 'quiz' && (
+          <QuestionCard
+            questionData={quizQuestions[currentQuestionIndex]}
+            questionNumber={currentQuestionIndex + 1}
+            totalQuestions={quizQuestions.length}
+            selectedAnswer={selectedAnswer}
+            isCorrect={isCorrect}
+            showFeedback={showFeedback}
+            handleAnswer={handleAnswer}
+            nextQuestion={nextQuestion}
+            timeLeft={timeLeft}
+          />
+        )}
+
+        {step === 'summary' && (
+          <QuizSummary
+            score={score}
+            total={quizQuestions.length}
+            restartQuiz={restartQuiz}
+          />
+        )}
+      </div>
+
+      {/* 🔹 Desktop footer for desktop view only */}
+      <DesktopFooter />
+
+      {/* 🔹 MobileNav for mobile view only */}
+      <MobileNav />
     </div>
   );
 }

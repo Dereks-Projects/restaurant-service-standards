@@ -1,14 +1,9 @@
 import React from 'react';
 
-// Props:
-// - score: integer number of correct answers
-// - total: total number of questions (e.g. 5)
-// - restartQuiz: function to reset the quiz flow
-
 function QuizSummary({ score, total, restartQuiz }) {
   return (
     <div className="quiz-summary">
-      <h2>Quiz Complete</h2>
+      <h2 className="section-title">Quiz Complete</h2>
       <p className="score-display">
         You scored <strong>{score}</strong> out of <strong>{total}</strong>
       </p>
@@ -30,7 +25,7 @@ function QuizSummary({ score, total, restartQuiz }) {
       <button
         className="quiz-button back-button"
         onClick={() => window.location.href = '/quiz'}
-        >
+      >
         Back to Quiz Section
       </button>
     </div>

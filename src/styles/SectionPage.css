@@ -1,128 +1,95 @@
-/* 📄 FILE: SectionPage.css */
+/* 📄 src/styles/SectionPage.css */
 
-/* 🌐 General Page Layout */
+/* ✅ General layout: mobile-first */
+
 .section-page {
   min-height: 100vh;
-  background-color: var(--bg-color);
-  padding: 1rem;
-  font-family: var(--font);
   display: flex;
   flex-direction: column;
-  align-items: center;
+  background-color: var(--bg-color);
 }
 
-/* 🔄 Layout wrapper */
 .section-content-wrapper {
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
+  padding: 1rem;
 }
 
-/* 🏷️ Title */
-.section-page h2 {
-  font-size: 2.5rem;
-  font-weight: 600;
+/* 🎯 Section title: always centered */
+.section-content-wrapper .section-title {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin: 1rem 0 0.5rem 0;
   text-align: center;
-  color: var(--primary-color);
-  margin-bottom: .25rem;
 }
 
-/* 📝 Subtitle */
-.section-description {
-  font-size: 1rem;
-  line-height: 1.6;
-  text-align: justify;
-  max-width: 600px;
-  padding: 0 1rem;
-  color: var(--primary-color);
-  margin-bottom: 1rem;
-  text-wrap: balance;
-}
-
-@media (max-width: 600px) {
-  .section-description {
-    font-size: 0.95rem;
-    margin-bottom: 0.75rem;
-    line-height: 1.5;
-    padding: 0 1rem;
-    text-align: justify;
-    text-wrap: balance;
-  }
-}
-
-
-/* 🎥 Video */
+/* 🎯 Video wrapper */
 .section-video-wrapper {
   width: 100%;
   max-width: 600px;
   aspect-ratio: 16 / 9;
+  margin-top: 0.5rem; /* 🔔 reduced spacing */
   margin-bottom: 2rem;
 }
 
-/* 📦 Button Stack */
+/* 🎯 Button group */
 .button-group {
   display: flex;
   flex-direction: column;
-  gap: 0.1rem;
+  gap: 1rem;
   width: 100%;
   max-width: 500px;
   margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
-@media (max-width: 600px) {
-  .button-group {
-    margin-top: 0rem;
-  }
-}
-
-
-
-/* 🎛️ Buttons */
-.accordion-button,
-.back-button {
-  background-color: #1b1b1b;
-  color: #fff;
-  padding: 0.5rem;
-  font-size: 1rem;
-  font-weight: 600;
-  border: none;
-  border-radius: 12px;
+/* 🔹 Accordion button */
+.accordion-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  padding: 0.75rem;
   cursor: pointer;
-  width: 500px;
-  transition: background-color 0.2s ease-in-out;
   text-align: center;
+  transition: transform 0.1s ease, box-shadow 0.2s ease, background-color 0.2s ease;
 }
 
-.accordion-button:hover,
-.back-button:hover {
-  background-color: #333;
+.accordion-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.12);
+  background-color: #f8f8f8;
 }
 
-.back-button {
-  margin-top: 1rem;
-  max-width: 500px;
-}
-
-/* 📂 Accordion Content Box */
 .accordion-content {
-  width: 100%;
-  max-width: 440px;
+  width: 95%;
   background-color: #f0f0f0;
   color: #333;
   font-size: 0.95rem;
   border-radius: 0 0 8px 8px;
   border: 1px solid #ccc;
   padding: 1rem;
-  margin-top: -0.5rem;
+  margin-top: 0rem;
 }
 
-@media (max-width: 600px) {
-  .accordion-content {
-    max-width: 80%; /* Or set a specific value like 90% if needed */
-    padding: 0.75rem;
-    font-size: 0.9rem;
-  }
+.accordion-content p {
+  margin-bottom: 0.75rem;
+}
+
+.accordion-content em {
+  display: block;
+  margin-top: 0.75rem;
+  font-style: italic;
 }
 
 .accordion-item {
@@ -131,43 +98,29 @@
   align-items: center;
 }
 
-/* 📱 Responsive Adjustments */
-@media (max-width: 600px) {
-  .section-page h2 {
-    font-size: 2rem;
-    margin-bottom: .25rem;
-    
-  }
+/* 🔹 MobileNav hidden by default (desktop) */
+.mobile-nav {
+  display: none;
+}
 
-  .section-description {
-    margin-top: 0.2rem;
-    margin-bottom: 1.2rem;
-    
+/* ✅ Mobile-specific overrides */
+@media (max-width: 767px) {
+  .section-page {
+    padding-bottom: 100px; /* space for MobileNav */
   }
 
   .section-video-wrapper {
-    position: relative;
-    max-width: 600px;
-    aspect-ratio: 16 / 9;
-    margin-bottom: .2rem;
-    margin-bottom: 1.5rem;
+    margin-top: -4rem; /* adjust spacing above video */
+    margin-bottom: -1rem;
   }
 
-  .section-video-wrapper iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: none;
-}
+  .button-group {
+    gap: 0.5rem;
+    margin-top: -.5rem;
+    margin-bottom: 2rem;
+  }
 
-
-  .section-page button {
-    font-size: 1rem;
-    padding: 0.75rem 1rem;
-    width: 90%;
+  .mobile-nav {
+    display: flex !important;
   }
 }
-
-

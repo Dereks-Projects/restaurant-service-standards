@@ -1,65 +1,93 @@
+/* 📄 Quiz.css — Fully Refactored & Consistent */
+
+/* Main container for QuizPage */
 .quiz-page-container {
-  max-width: 600px;
+  width: 100%;
+  max-width: 500px;
   margin: 0 auto;
-  padding: 2rem 1rem;
+  padding: 1rem;
+  box-sizing: border-box;
   text-align: center;
 }
 
-/* Titles aligned with other subpages */
-.quiz-intro h2,
-.question-card h2,
-.quiz-summary h2 {
-  font-size: 2.5rem;
-  font-weight: 600;
-  margin-bottom: 0.1rem;
-}
-
+/* Layout for intro, question, summary sections */
 .quiz-intro,
 .question-card,
 .quiz-summary {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.75rem; /* reduced from 1rem for tighter spacing */
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 1rem;
+  box-sizing: border-box;
+  gap: 0.75rem;
 }
 
+/* Section titles */
+.quiz-intro h2,
+.question-card h2,
+.quiz-summary h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+  text-align: center;
+}
+
+/* Labels + select dropdown */
 .quiz-label {
   font-size: 1rem;
-  margin: 0.25rem 0;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
 }
 
 .quiz-select {
+  width: 100%;
+  max-width: 400px;
   padding: 0.5rem 1rem;
   font-size: 1rem;
-  width: 100%;
-  max-width: 400px;
-  border-radius: 6px;
+  border-radius: var(--radius-md);
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  margin-bottom: 1rem;
 }
 
-/* Buttons unified: bold font and centered */
+/* Unified button styling */
 .quiz-button {
-  background-color: #111;
-  color: #fff;
-  font-weight: bold;
-  border: none;
-  border-radius: 8px;
-  padding: 0.75rem 1.25rem;
-  font-size: 1rem;
+  display: block;
   width: 100%;
   max-width: 400px;
-  margin: 0.25rem 0;
+  margin: 0.5rem auto;
+  padding: 0.75rem 1rem;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  border-radius: var(--radius-md);
   cursor: pointer;
+  text-align: center;
+  box-shadow: var(--shadow-md);
+  transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
-/* Answer button variants */
+.quiz-button:hover {
+  background-color: #1b1b1b;
+  color: var(--color-white);
+}
+
+/* Correct and wrong state styles */
 .quiz-button.correct {
   background-color: #2d6a4f;
 }
+
 .quiz-button.wrong {
   background-color: #9b2226;
 }
 
-/* Enlarged and emphasized timer */
+/* Timer styling */
 .timer {
   font-size: 1.1rem;
   font-weight: bold;
@@ -67,26 +95,17 @@
   margin-bottom: 0.5rem;
 }
 
-/* Prevent word spillover and center long text */
-.quiz-standard {
-  font-style: italic;
-  font-size: 1rem;
-  color: #333;
-  margin-bottom: 0.5rem;
-  max-width: 450px;     /* ✅ consistent with training tip */
-  text-align: center;
-  line-height: 1.5;
-}
-
+/* Question text */
 .quiz-question {
-  font-size: 1.25rem;
-  font-weight: bold;
+  font-size: 1.2rem;
+  font-weight: 600;
   margin: 1rem 0 0.5rem;
-  max-width: 450px;     /* ✅ same width */
   text-align: center;
-  line-height: 1.5;
+  max-width: 450px;
+  line-height: 1.4;
 }
 
+/* Feedback and tips */
 .quiz-feedback {
   margin-top: 0.75rem;
   text-align: center;
@@ -97,6 +116,7 @@
   color: #2d6a4f;
   font-weight: bold;
 }
+
 .wrong-message {
   color: #9b2226;
   font-weight: bold;
@@ -106,16 +126,31 @@
   font-style: italic;
   margin-top: 0.5rem;
   color: #444;
-  max-width: 450px;     /* ✅ controls width like mobile */
-  text-align: center;   /* ✅ centers it */
-  line-height: 1.5;     /* ✅ improves readability */
+  max-width: 450px;
+  text-align: center;
+  line-height: 1.5;
 }
 
-
+/* Score summary */
 .score-display {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
 }
+
 .score-message {
   font-size: 1rem;
   color: #555;
+}
+
+/* QuizIntro description paragraph */
+.quiz-intro p {
+  margin-bottom: 1rem;
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* Ensure padding space for MobileNav on mobile */
+@media (max-width: 767px) {
+  .quiz-page-container {
+    padding-bottom: 100px;
+  }
 }

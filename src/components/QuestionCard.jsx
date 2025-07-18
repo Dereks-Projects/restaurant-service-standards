@@ -26,7 +26,8 @@ function QuestionCard({
 
   return (
     <div className="question-card">
-      <h2>{section}</h2>
+      <h2 className="section-title">{section}</h2>
+
 
       <div className="timer">
         Time Remaining: <strong>{timeLeft}</strong> seconds

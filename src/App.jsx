@@ -9,6 +9,10 @@ import IntroductionPage from './pages/IntroductionPage';
 import OverviewPage from './pages/OverviewPage';
 import ScrollToTop from './components/ScrollToTop';
 import ResourcesPage from './pages/ResourcesPage';
+import AboutPage from './pages/AboutPage';
+import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
+import TermsPage from './pages/TermsPage';
+
 
 // ✅ NEW: Imports for resources subpages
 import ResourcesOverviewPage from './pages/ResourcesOverviewPage';
@@ -24,6 +28,10 @@ function App() {
         <Route path="/overview/:sectionId" element={<OverviewPage />} />
         <Route path="/section/:sectionName" element={<SectionPage />} />
         <Route path="/classification/:classificationName" element={<ClassificationPage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/privacy" element={<PrivacyPolicyPage />} />
+        <Route path="/terms" element={<TermsPage />} />
+
 
         {/* ✅ Resources section and subpages */}
         <Route path="/resources" element={<ResourcesPage />} />
