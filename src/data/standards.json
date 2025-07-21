@@ -436,7 +436,7 @@
   {
     "section": "Dinner Service",
     "classification": "Guest Courtesy",
-    "standard": "Personal touch: The guest\u2019s name is used naturally as a signal of recognition.",
+    "standard": "Personal touch: The guest\u2019s name should be used naturally as a signal of recognition.",
     "trainingTip": "Use the guest\u2019s name when known, in a natural and respectful way. This adds a personal touch to the dining experience.",
     "quiz": {
       "question": "When should the guest\u2019s name be used?",
@@ -468,7 +468,7 @@
   {
     "section": "Dinner Service",
     "classification": "Guest Courtesy",
-    "standard": "Members of the team should not decline any request without offering appropriate alternatives.",
+    "standard": "Always be solution oriented: Members of the team should not decline any request without offering appropriate alternatives.",
     "trainingTip": "Always offer a viable alternative when a guest request can\u2019t be fulfilled. Smooth suggestive selling is a great skill to have.",
     "quiz": {
       "question": "What should staff do when they can't fulfill a guest request?",
@@ -516,7 +516,7 @@
   {
     "section": "Dinner Service",
     "classification": "Efficiency",
-    "standard": "All pre-dinner beverages requested for the table, bar counter or lounge are served within seven minutes of being ordered.",
+    "standard": "All pre-dinner beverages requested for the table, bar counter or lounge are served within five minutes of being ordered.",
     "trainingTip": "Monitor drink ticket times to ensure timely service. Communicate with your leadership team and your guests regarding any delays.",
     "quiz": {
       "question": "When should pre-dinner beverages be served?",
@@ -548,7 +548,7 @@
   {
     "section": "Dinner Service",
     "classification": "Technical Execution",
-    "standard": "A choice of waters should be offered prior to pouring. Bottles water should not be immediately poured.",
+    "standard": "Be clear and transparent: A choice of waters should be offered prior to pouring. Bottles water should not be immediately poured.",
     "trainingTip": "Offer options such as still, sparkling, or tap before pouring. There are many places to upsell, always give the guest a choice.",
     "quiz": {
       "question": "What is best practice before pouring water?",
@@ -565,7 +565,7 @@
     "section": "Dinner Service",
     "classification": "Attention to Detail",
     "standard": "In addition to tap water, filtered water is available, whether this is bottled or filtered in house.",
-    "trainingTip": "Ensure filtered or bottled options are offered and available. Know your selection of non-alcoholic beverage well.",
+    "trainingTip": "Ensure filtered or bottled options are offered and available. Know your selection of non-alcoholic beverages well.",
     "quiz": {
       "question": "Which type of water should always be available?",
       "choices": [
@@ -596,7 +596,7 @@
   {
     "section": "Dinner Service",
     "classification": "Technical Execution",
-    "standard": "No bottles are left directly on the table; if a bottle is left on the table, a bucket or coaster is used.",
+    "standard": "No bottles should be left directly on the table; if a bottle is left on the table, a bucket or coaster is used.",
     "trainingTip": "Always use a presentation tool (like a coaster or bucket) when bottles are present at the table.",
     "quiz": {
       "question": "What should accompany any bottle left on the table?",
@@ -612,7 +612,7 @@
   {
     "section": "Dinner Service",
     "classification": "Technical Execution",
-    "standard": "All food and beverage menus should be elegant and distinctive, reflecting the establishments decor.",
+    "standard": "Congruent styling: All food and beverage menus should be elegant and distinctive, reflecting the establishments decor.",
     "trainingTip": "Ensure menus reflect the restaurant\u2019s brand and elevate the guest impression.",
     "quiz": {
       "question": "How should food and beverage menus appear?",
@@ -628,7 +628,7 @@
 {
     "section": "Dinner Service",
     "classification": "Technical Execution",
-    "standard": "At least five well-chosen and diverse red wines, five white wines and three Champagne/sparkling wines by the glass are available.",
+    "standard": "Beverage program execution: At least five well-chosen and diverse red wines, five white wines and three Champagne/sparkling wines by the glass should be available.",
     "trainingTip": "Maintain as diverse and balanced of a wine list by the glass as permitted by the establishment.",
     "quiz": {
       "question": "What is expected for wines by the glass?",
@@ -660,7 +660,7 @@
   {
     "section": "Dinner Service",
     "classification": "Technical Execution",
-    "standard": "Wine service includes the offer of a tasting sample.",
+    "standard": "Steps of service: Wine service includes the offer of a tasting sample.",
     "trainingTip": "Offer a tasting pour before full service to ensure approval. This should be done 100% of the time for by the bottle service.",
     "quiz": {
       "question": "What is part of proper wine service?",
@@ -676,7 +676,7 @@
   {
     "section": "Dinner Service",
     "classification": "Technical Execution",
-    "standard": "Wines are served in varietal-appropriate stemware; one style glass is not used for all wine styles/varietals.",
+    "standard": "The extra step: Wines are served in varietal-appropriate stemware; one style glass is not used for all wine styles/varietals.",
     "trainingTip": "Use correct glassware for the wine being served.",
     "quiz": {
       "question": "What is the correct wine service glassware policy?",
@@ -692,7 +692,7 @@
   {
     "section": "Dinner Service",
     "classification": "Technical Execution",
-    "standard": "The wine list should be thoughtfully compiled. Wines listed are all available, or the service team has knowledge of the 86 list.",
+    "standard": "Out of stock awareness: Wines listed are all available, or the service team has knowledge of the 86 list.",
     "trainingTip": "Keep the wine list updated and formatted logically. All 86'd items of conveyed to the guest in a clear manner at the time of ordering.",
     "quiz": {
       "question": "What defines a thoughtfully compiled wine list?",
@@ -708,7 +708,7 @@
   {
     "section": "Dinner Service",
     "classification": "Technical Execution",
-    "standard": "For establishments with a large wine collection or beverage menu, a sommelier/wine steward\u2019s assistance is offered or available.",
+    "standard": "For establishments with a large wine collection or beverage menu, sommelier (or service team member with outstanding knowledge) assistance should be offered.",
     "trainingTip": "Make knowledgeable wine service personnel accessible. If no sommelier is available, service team members should be well-trained in wine service.",
     "quiz": {
       "question": "What wine support should be available to guests?",
@@ -724,7 +724,7 @@
   {
     "section": "Dinner Service",
     "classification": "Technical Execution",
-    "standard": "In the case of a wine pairing, wine is poured prior to food being served.",
+    "standard": "In the case of a wine pairing, wine should be poured prior to food being served.",
     "trainingTip": "Coordinate food and wine service to preserve intended pairing.",
     "quiz": {
       "question": "When should wine be poured for a pairing?",
@@ -740,8 +740,8 @@
   {
     "section": "Dinner Service",
     "classification": "Technical Execution",
-    "standard": "All dishes are served as ordered and to the guest who ordered them; staff does not have to ask who receives which item.",
-    "trainingTip": "Use seat numbers or identifiers to serve correctly without asking.",
+    "standard": "All dishes are served as ordered and to the guest who ordered them; staff should never ask who receives which item.",
+    "trainingTip": "Use seat numbers or identifiers to serve correctly without asking. No auctioning of items to the table.",
     "quiz": {
       "question": "How should dishes be served?",
       "choices": [
@@ -756,8 +756,8 @@
   {
     "section": "Dinner Service",
     "classification": "Efficiency",
-    "standard": "All guests are served simultaneously, course by course, and cleared simultaneously, course by course.",
-    "trainingTip": "Coordinate service to maintain synchronized timing for the entire table.",
+    "standard": "All guests should be served simultaneously, course by course, and cleared simultaneously, course by course.",
+    "trainingTip": "Coordinate service to maintain synchronized timing for the entire table. While synchronized service is the goal, it is not always necessary to be in unison.",
     "quiz": {
       "question": "How should dishes be served and cleared?",
       "choices": [
@@ -772,7 +772,7 @@
   {
     "section": "Dinner Service",
     "classification": "Technical Execution",
-    "standard": "Pre- and post-dinner drinks, including coffee and tea, are all served at the appropriate time, unless advised otherwise by the guest.",
+    "standard": "Pre- and post-dinner drinks, including coffee and tea, should be served at the appropriate time, unless advised otherwise by the guest.",
     "trainingTip": "Time beverage service with the dining experience unless otherwise requested.",
     "quiz": {
       "question": "When should pre- and post-dinner drinks be served?",
