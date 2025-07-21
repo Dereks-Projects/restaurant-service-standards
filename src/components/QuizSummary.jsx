@@ -24,7 +24,7 @@ function QuizSummary({ score, total, restartQuiz }) {
 
       <button
         className="quiz-button back-button"
-        onClick={() => window.location.href = '/quiz'}
+        onClick={() => window.location.href = '/resources/quiz'}
       >
         Back to Quiz Section
       </button>

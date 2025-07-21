@@ -9,7 +9,7 @@ function ResourcesOverviewPage() {
         <h2 className="overview-page-title">Resources</h2>
         <hr className="overview-title-divider" />
         <p className="overview-intro-paragraph">
-          The Resources section provides a roadmap for building a culture of excellence within your team. By leveraging the materials here, your restaurant can develop a structured training and development program that improves execution, consistency, and guest satisfaction while preparing for awards, accolades, and long-term success.
+          The Resources section provides a roadmap for building a culture of excellence within your team. By leveraging the materials here, your restaurant can develop a structured training and development program that improves execution, consistency, and guest satisfaction while preparing for awards, accolades, and long-term success. Be sure to visit the Training tab, as it contains essential materials that complement the resources provided here.
         </p>
 
         {/* Section 1 */}
