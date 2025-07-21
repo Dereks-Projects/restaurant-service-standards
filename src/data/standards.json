@@ -2,7 +2,7 @@
   {
     "section": "Reservation System",
     "classification": "Guest Courtesy",
-    "standard": "A great start: The reservationist should be polite and graciously accept the booking. All staff members that take reservations should demonstrate a genuine interest in the guest.",
+    "standard": "A great start: The reservationist should always be polite and gracious. All staff members that take reservations should demonstrate both interest and proficiency.",
     "trainingTip": "Remain engaged and enthusiastic throughout the process. Practice a consistent greeting and avoid sounding scripted. Let your professional personilty show. Inquire about the guests needs at every step of the way.",
     "quiz": {
       "question": "What is the most appropriate way to greet a guest calling to book?",
@@ -18,7 +18,7 @@
   {
     "section": "Reservation System",
     "classification": "Guest Courtesy",
-    "standard": "Proper phone training always includes the best way to open & close the conversation. All staff should specifically thank the guest for the booking and close the interaction with a polite and appropriate remark at the conclusion of the call.",
+    "standard": "Proper phone training always includes the best way to open & close the conversation. All staff should feel comfortable opening and closing interactions over the phone.",
     "trainingTip": "Always begin and conclude calls with appreciation and a pleasant phrase. The tone is always professional and inviting.",
     "quiz": {
       "question": "Which closing phrase reflects the standard best?",
@@ -67,7 +67,7 @@
     "section": "Reservation System",
     "classification": "Attention to Detail",
     "standard": "Audit your systems: Online reservation sites that the business participates in should be easy to navigate and complete a booking.",
-    "trainingTip": "Test your online system regularly and make adjustments based on guest feedback. Routine checking of website functions, as well as all lines of communication is important.",
+    "trainingTip": "Test your phone and online system regularly and make adjustments based on guest feedback. Routine checking of website functions, as well as all lines of communication is important.",
     "quiz": {
       "question": "What defines a guest-friendly reservation website?",
       "choices": [
@@ -561,22 +561,7 @@
       "answer": "Ask for water preference first"
     }
   },
-  {
-    "section": "Dinner Service",
-    "classification": "Attention to Detail",
-    "standard": "In addition to tap water, filtered water is available, whether this is bottled or filtered in house.",
-    "trainingTip": "Ensure filtered or bottled options are offered and available. Know your selection of non-alcoholic beverages well.",
-    "quiz": {
-      "question": "Which type of water should always be available?",
-      "choices": [
-        "Unfiltered tap only",
-        "Filtered or bottled",
-        "Sparkling only",
-        "Ice water only"
-      ],
-      "answer": "Filtered or bottled"
-    }
-  },
+
   {
     "section": "Dinner Service",
     "classification": "Guest Courtesy",
@@ -822,8 +807,8 @@
   {
     "section": "Food & Beverage Quality",
     "classification": "Food Quality",
-    "standard": "Food presentations are dynamically interesting, possibly including varied heights, color contrasts and elements of texture. Flavors and/or foods are congruent to the presentation of the dish, and are exceptional in a way that is remarkable or memorable.",
-    "trainingTip": "Use creative visual elements to make dishes visually appealing. variuos elements of texture, color and presentation should be utilized in fine dining establishments.",
+    "standard": "Food presentations should be dynamically interesting, possibly including varied heights, color contrasts and elements of texture. Flavors and/or foods are congruent to the presentation of the dish, and are exceptional in a way that is remarkable or memorable.",
+    "trainingTip": "Use creative visual elements to make dishes visually appealing. Various elements of texture, color and presentation should be utilized in fine dining establishments.",
     "quiz": {
       "question": "What defines dynamic food presentation?",
       "choices": [
@@ -867,22 +852,7 @@
       "answer": "Approachable and easy to consume"
     }
   },
-      {
-    "section": "Food & Beverage Quality",
-    "classification": "Food Quality",
-    "standard": "If available and ordered by the guest, the cheese course is distinctive in presentation and selection.",
-    "trainingTip": "Cheese courses should show thoughtfulness in selection and plating. This is a luxurious service offering, however, the quality of this dish is the most important element.",
-    "quiz": {
-      "question": "What should be true of a cheese course?",
-      "choices": [
-        "Standard supermarket cheeses",
-        "Random assortment",
-        "Distinctive in both presentation and selection",
-        "Served with soup"
-      ],
-      "answer": "Distinctive in both presentation and selection"
-    }
-  },
+
     {
     "section": "Food & Beverage Quality",
     "classification": "Food Quality",
@@ -919,7 +889,7 @@
     "section": "Food & Beverage Quality",
     "classification": "Beverage Service",
     "standard": "The beverage menu lists a variety of both alcoholic and non-alcoholic options, and presents a unique and creative offering for all tastes.",
-    "trainingTip": "Include thoughtful non-alcoholic choices on beverage menus. The mocktail and non-alc selections are important for today's modern hospitaloty operation.",
+    "trainingTip": "Include 2 thoughtful non-alcoholic choices on beverage menus. The mocktail and non-alc selections are important for today's modern hospitaloty operation.",
     "quiz": {
       "question": "What should be included on beverage menus for inclusivity?",
       "choices": [
@@ -1160,7 +1130,7 @@
     {
     "section": "Food & Beverage Quality",
     "classification": "Elements of Luxury",
-    "standard": "Elements of luxury set your establishment apart from your competitive set. A high quality amuse bouche is offered in most elevated dining experiences.",
+    "standard": "Elements of luxury set your establishment apart from your competitive set. An amuse bouche is offered in most elevated dining experiences.",
     "trainingTip": "Amuse bouche should reflect culinary creativity and be consistent with the restaurant\u2019s identity.",
     "quiz": {
       "question": "What characterizes a proper amuse bouche?",
@@ -1176,7 +1146,7 @@
   {
     "section": "Food & Beverage Quality",
     "classification": "Elements of Luxury",
-    "standard": "If offered, a dessert amuse is high quality as well. Dessert amuse is usually reserved for the establishments that execute tasting menus or an equal experience level.",
+    "standard": "Dessert amuse should be executed at the same level as all other dishes. Dessert amuse is usually reserved for the establishments that execute tasting menus or an equal experience level.",
     "trainingTip": "Dessert amuse should be as refined as savory amuse and reflect dessert menu. This includes high quality mignardises, petit fours or the equivalent.",
     "quiz": {
       "question": "What makes a dessert amuse acceptable?",
@@ -1210,7 +1180,7 @@
   {
     "section": "Presentation of Facilities",
     "classification": "Cleanliness & Condition",
-    "standard": "Table is in excellent condition, sturdy and completely clean. This includes the chairs, the tablecloth and/or all elemtns of the table setting.",
+    "standard": "Table should be in excellent condition, sturdy and completely clean. This includes the chairs, the tablecloth and/or all elemtns of the table setting.",
     "trainingTip": "Wipe and inspect tables between each seating to ensure cleanliness and stability.",
     "quiz": {
       "question": "What defines a properly prepared table?",
@@ -1227,7 +1197,7 @@
   {
     "section": "Presentation of Facilities",
     "classification": "Cleanliness & Condition",
-    "standard": "Within the guest\u2019s specific dining area, floors/carpets are always completely clean, free of crumbs, debris or other unsanitary conditions.",
+    "standard": "Within the guest\u2019s specific dining area, floors/carpets should always be completely clean, free of crumbs, debris or other unsanitary conditions.",
     "trainingTip": "Spot check floors between services and clean thoroughly each night. During the hours of operation, a method of cleaning spills and excess debris should be established.",
     "quiz": {
       "question": "How should dining area floors appear?",
@@ -1244,7 +1214,7 @@
   {
     "section": "Presentation of Facilities",
     "classification": "Cleanliness & Condition",
-    "standard": "All glassware, china, cutlery and serving pieces are in excellent condition and completely clean and hygienic in appearance.",
+    "standard": "All glassware, china, cutlery and serving pieces should be in excellent condition and completely clean and hygienic in appearance.",
     "trainingTip": "Inspect all items before service for spots, chips, or damage.",
     "quiz": {
       "question": "What should be true of serviceware?",
@@ -1257,28 +1227,12 @@
       "answer": "Spotless and in excellent condition"
     }
   },
-  
-  {
-    "section": "Presentation of Facilities",
-    "classification": "Cleanliness & Condition",
-    "standard": "Everywhere in guest view should remain presentable. Side stations should be kept neat and organized; jack stands are not observed on the dining room floor.",
-    "trainingTip": "Keep operational stations clean and out of view.",
-    "quiz": {
-      "question": "Where should jack stands be placed?",
-      "choices": [
-        "In the dining room for speed",
-        "Behind a curtain",
-        "Out of guest view at all times",
-        "At host stand"
-      ],
-      "answer": "Out of guest view at all times"
-    }
-  },
+
     {
     "section": "Presentation of Facilities",
     "classification": "Cleanliness & Condition",
-    "standard": "The public areas of the restaurant are thoroughly clean and in excellent condition. This remians true throughout the hours of operation.",
-    "trainingTip": "Conduct routine checks throughout the day to uphold cleanliness standards. this is especially true for the restrooms.",
+    "standard": "The public areas of the restaurant should be thoroughly clean and in excellent condition. Every area of the establishment should be staged as though guests will see it.",
+    "trainingTip": "Conduct routine checks throughout the day to uphold cleanliness standards. Utilize checklists and assigned responsibilities to execute this more efficiently.",
     "quiz": {
       "question": "How often should public areas be checked?",
       "choices": [
@@ -1326,7 +1280,7 @@
 {
     "section": "Presentation of Facilities",
     "classification": "Elements of Luxury",
-    "standard": "Taking a step back: The tabletop setup is noteworthy, and presents the guest(s) with an inviting feeling upon arrival.",
+    "standard": "Taking a step back: The tabletop setup should be clean, noteworthy and photo-shoot ready at all times.",
     "trainingTip": "Use creative, refined setups that reflect thoughtful design. Make the setup approachable, distictive and above all, a feeling of cleanliness.",
     "quiz": {
       "question": "What defines a noteworthy tabletop setup?",

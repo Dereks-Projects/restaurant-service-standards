@@ -21,7 +21,7 @@ function ResourcesTrainingPage() {
           <p className="intro-section-text">
             This guide covers the core principles of greeting guests, anticipating needs, and maintaining a gracious demeanor at all times.
           </p>
-          <a href="/training/guest-interaction.pdf" target="_blank" rel="noopener noreferrer">
+          <a href="/training/guest-interactions.pdf" target="_blank" rel="noopener noreferrer">
             Download Study Guide
           </a>
         </div>
@@ -76,10 +76,10 @@ function ResourcesTrainingPage() {
           <p className="intro-section-text">
             Here is a collection of articles and educational pieces pertinent to guest service excellence.
           </p>
-          <a href="/training/intro-wine.pdf" target="_blank" rel="noopener noreferrer">
+          <a href="/training/michelin-guide.pdf" target="_blank" rel="noopener noreferrer">
             The Michelin Guide
           </a><br/>
-          <a href="/training/intro-wine.pdf" target="_blank" rel="noopener noreferrer">
+          <a href="/training/forbes-guide.pdf" target="_blank" rel="noopener noreferrer">
             Forbes Restaurant Ratings
           </a>
         </div>

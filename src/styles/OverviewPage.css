@@ -93,3 +93,11 @@
   line-height: 1.6;
   margin-bottom: 2rem;
 }
+
+/* 📄 FILE: src/styles/OverviewPage.css */
+
+/* Ensure links look like traditional web links on ResourcesTrainingPage */
+.intro-article a {
+  color: blue;
+  text-decoration: underline;
+}
