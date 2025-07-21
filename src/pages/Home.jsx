@@ -18,7 +18,7 @@ function Home() {
       {/* ✅ Fixed header at top */}
       <Header
         title="RSS"
-        subtitle="Empower your service team with the highest standards in the industry."
+        subtitle="Empower your restaurant team with the highest standards in the industry."
       />
 
       {/* ✅ Scrollable content */}
