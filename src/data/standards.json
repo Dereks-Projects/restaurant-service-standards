@@ -18,7 +18,7 @@
   {
     "section": "Reservation System",
     "classification": "Guest Courtesy",
-    "standard": "Proper phone training always includes the best way to open & close the conversation. leave the guest with a sense that their requests have been met and expectations exceeded.",
+    "standard": "Proper phone training always includes the best way to open & close the conversation. Leave the guest with a sense that their requests have been met and expectations exceeded.",
     "trainingTip": "Always begin and conclude calls with appreciation and a pleasant phrase. The tone is always professional and inviting.",
     "quiz": {
       "question": "Which closing phrase reflects the standard best?",
@@ -771,28 +771,10 @@
       "answer": "At the appropriate time unless instructed otherwise"
     }
   },
-
   {
     "section": "Food & Beverage Quality",
     "classification": "Food Quality",
-    "standard": "Finer points of service: Bread should be offered when appropriate to cuisine, is automatically explained and is exceptional in quality and presentation.",
-    "trainingTip": "Bread service should be automatic (or as dictated by outlet policy), thoughtful, and explained clearly when provided. The condiment served alongside (butter, olive oil) should be tempered and appealing.",
-    "quiz": {
-      "question": "What is expected when offering bread?",
-      "choices": [
-        "Only offer if requested",
-        "Serve with butter only",
-        "Explain and serve exceptional quality automatically when appropriate",
-        "Offer after dessert"
-      ],
-      "answer": "Explain and serve exceptional quality automatically when appropriate"
-    }
-  },
-
-  {
-    "section": "Food & Beverage Quality",
-    "classification": "Food Quality",
-    "standard": "All foods are served fresh; they should never be frozen unless specifically advised on the menu and never tinned.",
+    "standard": "Finer points of food service: All foods are served fresh; they should never be frozen unless specifically advised on the menu and never tinned.",
     "trainingTip": "Only use frozen or preserved items when clearly described to guests. The quality and freshenss of ingedients should be congruent to the level of establishment and the pricepoints of the menu.",
     "quiz": {
       "question": "When is it acceptable to serve frozen or tinned food?",
@@ -803,6 +785,22 @@
         "For staff meals only"
       ],
       "answer": "Only if clearly noted on the menu"
+    }
+  },
+    {
+    "section": "Food & Beverage Quality",
+    "classification": "Food Quality",
+    "standard": "Bread should be offered when appropriate to cuisine, is automatically explained and is exceptional in quality and presentation.",
+    "trainingTip": "Bread service should be automatic (or as dictated by outlet policy), thoughtful, and explained clearly when provided. The condiment served alongside (butter, olive oil) should be tempered and appealing.",
+    "quiz": {
+      "question": "What is expected when offering bread?",
+      "choices": [
+        "Only offer if requested",
+        "Serve with butter only",
+        "Explain and serve exceptional quality automatically when appropriate",
+        "Offer after dessert"
+      ],
+      "answer": "Explain and serve exceptional quality automatically when appropriate"
     }
   },
   {
@@ -1035,7 +1033,7 @@
     {
     "section": "Presentation of Facilities",
     "classification": "Attention to Detail",
-    "standard": "Overall ambience: The dining room temperature and music level is comfortable and appropriate.",
+    "standard": "Overall ambience: The dining room temperature and music level should be comfortable and appropriate to the establishments theme.",
     "trainingTip": "Maintain a consistent temperature to enhance guest comfort without distraction. Always make sure the audio and visual elements are appropriate.",
     "quiz": {
       "question": "What is ideal dining room temperature?",
@@ -1067,7 +1065,7 @@
   {
     "section": "Presentation of Facilities",
     "classification": "Attention to Detail",
-    "standard": "A higher vantage point: The overall noise level of the restaurant is comfortable.",
+    "standard": "A higher vantage point: The overall noise level of the restaurant is comfortable in all areas, including the restrooms and hallways.",
     "trainingTip": "Look at the total noise level; the combination of music, crowd noise and kitched sounds. The design acoustics should manage sound and allow for relaxed conversation.",
     "quiz": {
       "question": "What is the goal of restaurant noise control?",
@@ -1151,7 +1149,7 @@
     "section": "Presentation of Facilities",
     "classification": "Cleanliness & Condition",
     "standard": "Tables should be in excellent condition, sturdy and completely clean. This includes the chairs, the tablecloth and/or all elemetns of the table setting.",
-    "trainingTip": "Wipe and inspect tables between each seating to ensure cleanliness and stability.",
+    "trainingTip": "Wipe and inspect tables between each seating to ensure cleanliness and stability. Staff should comunicate any and all issues with any of the establishments assets.",
     "quiz": {
       "question": "What defines a properly prepared table?",
       "choices": [
@@ -1219,7 +1217,7 @@
     "section": "Presentation of Facilities",
     "classification": "Cleanliness & Condition",
     "standard": "Systems check: The restrooms should always remain extremely clean, in excellent condition and well-stocked.",
-    "trainingTip": "This is an area where there needs to be a system in place by the manageemnt team to routinely check each restroom. perform this task hourly or as needed to uphold guest expectations.",
+    "trainingTip": "This is an area where there needs to be a system in place by the management team to routinely check each restroom. perform this task hourly or as needed to uphold guest expectations.",
     "quiz": {
       "question": "What defines a 5-star restroom?",
       "choices": [
@@ -1250,7 +1248,7 @@
   {
     "section": "Presentation of Facilities",
     "classification": "Elements of Luxury",
-    "standard": "Always striving for more: Is the restaurant notable in terms of its interior design and the decor combines to create a sense of place while remaining consistent with the theme?",
+    "standard": "Always striving for more: Is the restaurant notable in terms of its interior design while remaining consistent with the theme?",
     "trainingTip": "Design choices should feel cohesive and elevate the overall experience. Interior desing should be revisited on a regular basis.",
     "quiz": {
       "question": "How should a restaurant's decor feel?",
