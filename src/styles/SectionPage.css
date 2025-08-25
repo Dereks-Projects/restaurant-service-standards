@@ -27,24 +27,28 @@
   text-align: center;
 }
 
-/* 🎯 Video wrapper */
+/* Container for desktop two-column layout */
+.section-main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* 🎯 Video wrapper - BASE STYLES ONLY */
 .section-video-wrapper {
   width: 100%;
   max-width: 600px;
   aspect-ratio: 16 / 9;
-  margin-top: 0.5rem; /* 🔔 reduced spacing */
-  margin-bottom: 2rem;
 }
 
-/* 🎯 Button group */
+/* 🎯 Button group - BASE STYLES ONLY */
 .button-group {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   width: 100%;
   max-width: 500px;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
 }
 
 /* 🔹 Accordion button */
@@ -103,15 +107,17 @@
   display: none;
 }
 
-/* ✅ Mobile-specific overrides */
+/* ✅ Mobile-specific margins */
 @media (max-width: 767px) {
   .section-page {
-    padding-bottom: 100px; /* space for MobileNav */
+    padding-bottom: 100px;
   }
 
+  /* Mobile-specific margins */
   .section-video-wrapper {
-    margin-top: -4rem; /* adjust spacing above video */
+    margin-top: -4rem;
     margin-bottom: -1rem;
+    
   }
 
   .button-group {
@@ -122,5 +128,44 @@
 
   .mobile-nav {
     display: flex !important;
+  }
+}
+
+/* ✅ Desktop two-column layout - MUST OVERRIDE MOBILE */
+@media (min-width: 768px) {
+  .section-content-wrapper {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-main-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+    width: 100%;
+    margin-top: 2rem;
+  }
+
+  /* FORCE OVERRIDE with higher specificity and !important */
+  .section-page .section-video-wrapper {
+    width: 100%;
+    max-width: none;
+    margin-top: -1.5rem !important;
+    margin-bottom: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .section-page .button-group {
+    width: 100%;
+    max-width: none;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  .accordion-button {
+    max-width: none;
   }
 }

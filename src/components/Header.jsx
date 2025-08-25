@@ -1,16 +1,24 @@
 // 📄 FILE: src/components/Header.jsx
 
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Header.css';
 
-export default function Header({ title, subtitle }) {
+export default function Header({ subtitle }) {
+  const navigate = useNavigate();
+  
+  const handleLogoClick = () => {
+    navigate('/');
+  };
+
   return (
     <div className="rss-header">
-      <h1 className="rss-header__title">{title}</h1>
       <img
-        src="/rss-icon-2-stars.svg"
-        alt="5 stars"
-        className="rss-header__stars"
+        src="/rss-logo-new.svg"
+        alt="Restaurant Standards Logo"
+        className="rss-header__logo"
+        onClick={handleLogoClick}
+        style={{ cursor: 'pointer' }}
       />
       <p className="rss-header__subtitle">{subtitle}</p>
     </div>

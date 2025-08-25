@@ -17,7 +17,7 @@ function Home() {
     <div className="home-container">
       {/* ✅ Fixed header at top */}
       <Header
-        title="RSS"
+        
         subtitle="Empower your restaurant team with the highest standards in the industry."
       />
 
@@ -65,6 +65,12 @@ function Home() {
             title="Resources"
             subtitle="Tools to support your team."
             onClick={() => navigate("/resources")}
+          />
+          <ButtonCard
+            icon="📖"
+            title="Get the Book"
+            subtitle="The ultimate service manual."
+            onClick={() => window.open('https://www.amazon.com/dp/B0FNDMTK5F', '_blank')}
           />
         </div>
       </div>

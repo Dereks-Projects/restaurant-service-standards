@@ -19,30 +19,33 @@ function ResourcesPage() {
       <div className="section-content-wrapper">
         <h2 className="section-title">Resources</h2>
 
-        <div className="section-video-wrapper">
-          <iframe
-            src="https://player.vimeo.com/video/1095248867"
-            width="100%"
-            height="360"
-            frameBorder="0"
-            allow="autoplay; fullscreen; picture-in-picture"
-            title="Resources Video"
-          />
-        </div>
+        {/* Wrap video and buttons in a container for desktop layout */}
+        <div className="section-main-content">
+          <div className="section-video-wrapper">
+            <iframe
+              src="https://player.vimeo.com/video/1095248867"
+              width="100%"
+              height="360"
+              frameBorder="0"
+              allow="autoplay; fullscreen; picture-in-picture"
+              title="Resources Video"
+            />
+          </div>
 
-        {/* 🔹 Button group identical to SectionPage */}
-        <div className="button-group">
-          <div className="accordion-item">
-            <button className="accordion-button" onClick={() => navigate("/resources/overview")}>Overview</button>
-          </div>
-          <div className="accordion-item">
-            <button className="accordion-button" onClick={() => navigate("/resources/training")}>Training</button>
-          </div>
-          <div className="accordion-item">
-            <button className="accordion-button" onClick={() => navigate("/resources/quiz")}>Quiz</button>
-          </div>
-          <div className="accordion-item">
-            <button className="accordion-button" onClick={() => navigate("/")}>Home</button>
+          {/* 🔹 Button group identical to SectionPage */}
+          <div className="button-group">
+            <div className="accordion-item">
+              <button className="accordion-button" onClick={() => navigate("/resources/overview")}>Overview</button>
+            </div>
+            <div className="accordion-item">
+              <button className="accordion-button" onClick={() => navigate("/resources/training")}>Training</button>
+            </div>
+            <div className="accordion-item">
+              <button className="accordion-button" onClick={() => navigate("/resources/quiz")}>Quiz</button>
+            </div>
+            <div className="accordion-item">
+              <button className="accordion-button" onClick={() => navigate("/")}>Home</button>
+            </div>
           </div>
         </div>
       </div>

@@ -59,51 +59,54 @@ function SectionPage() {
       <div className="section-content-wrapper">
         <h2 className="section-title">{sectionName}</h2>
 
-        {/* 🎥 Section-specific video embed */}
-        <div className="section-video-wrapper">
-          <iframe
-            src={sectionVideos[sectionName] || "https://player.vimeo.com/video/1095248867"}
-            width="100%"
-            height="360"
-            frameBorder="0"
-            allow="autoplay; fullscreen; picture-in-picture"
-            title={`Video for ${sectionName}`}
-          />
-        </div>
-
-        {/* 🔹 Button stack */}
-        <div className="button-group">
-          <div className="accordion-item">
-            <button
-              className="accordion-button"
-              onClick={() => navigate(`/overview/${getSectionId(sectionName)}`)}
-            >
-              Overview
-            </button>
+        {/* Wrap video and buttons in a container for desktop layout */}
+        <div className="section-main-content">
+          {/* 🎥 Section-specific video embed */}
+          <div className="section-video-wrapper">
+            <iframe
+              src={sectionVideos[sectionName] || "https://player.vimeo.com/video/1095248867"}
+              width="100%"
+              height="360"
+              frameBorder="0"
+              allow="autoplay; fullscreen; picture-in-picture"
+              title={`Video for ${sectionName}`}
+            />
           </div>
 
-          {classifications.map((classification) => (
-            <div key={classification} className="accordion-item">
+          {/* 🔹 Button stack */}
+          <div className="button-group">
+            <div className="accordion-item">
               <button
-                className={`accordion-button ${activeIndex === classification ? "active" : ""}`}
-                onClick={() => toggleAccordion(classification)}
+                className="accordion-button"
+                onClick={() => navigate(`/overview/${getSectionId(sectionName)}`)}
               >
-                {classification}
+                Overview
               </button>
-              {activeIndex === classification && (
-                <div className="accordion-content">
-                  {groupedStandards[classification].map((item, index) => (
-                    <div key={index} style={{ marginBottom: "1rem", textAlign: "left" }}>
-                      <p><strong>{item.standard}</strong></p>
-                      <p style={{ fontStyle: "italic", marginTop: "-0.5rem" }}>
-                        Training Tip: {item.trainingTip}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              )}
             </div>
-          ))}
+
+            {classifications.map((classification) => (
+              <div key={classification} className="accordion-item">
+                <button
+                  className={`accordion-button ${activeIndex === classification ? "active" : ""}`}
+                  onClick={() => toggleAccordion(classification)}
+                >
+                  {classification}
+                </button>
+                {activeIndex === classification && (
+                  <div className="accordion-content">
+                    {groupedStandards[classification].map((item, index) => (
+                      <div key={index} style={{ marginBottom: "1rem", textAlign: "left" }}>
+                        <p><strong>{item.standard}</strong></p>
+                        <p style={{ fontStyle: "italic", marginTop: "-0.5rem" }}>
+                          Training Tip: {item.trainingTip}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
