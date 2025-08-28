@@ -1,7 +1,8 @@
 // 📄 FILE: src/App.jsx
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
+import LandingPage from "./pages/LandingPage";
+import TrainingDashboard from "./pages/TrainingDashboard";
 import SectionPage from "./pages/SectionPage";
 import ClassificationPage from "./pages/ClassificationPage";
 import QuizPage from "./pages/QuizPage";
@@ -23,7 +24,8 @@ function App() {
     <Router>
       <ScrollToTop />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/training" element={<TrainingDashboard />} />
         <Route path="/introduction" element={<IntroductionPage />} />
         <Route path="/overview/:sectionId" element={<OverviewPage />} />
         <Route path="/section/:sectionName" element={<SectionPage />} />

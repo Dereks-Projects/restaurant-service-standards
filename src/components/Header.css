@@ -6,7 +6,7 @@
   text-align: center;
   width: 100%;
   margin: 0;
-  padding: 2rem 1rem;
+  padding: 1rem 1rem;
   box-sizing: border-box;
   display: grid;
   grid-auto-rows: auto;
@@ -16,11 +16,11 @@
 
 .rss-header__logo {
   display: block;
-  height: 100px;
+  height: 90px;
   width: auto;
   margin: 0;
   margin-top: .5rem;
-  margin-bottom: 1rem;
+  margin-bottom: .2rem;
 }
 
 .rss-header__subtitle {

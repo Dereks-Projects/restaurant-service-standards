@@ -38,13 +38,13 @@ function ResourcesPage() {
               <button className="accordion-button" onClick={() => navigate("/resources/overview")}>Overview</button>
             </div>
             <div className="accordion-item">
-              <button className="accordion-button" onClick={() => navigate("/resources/training")}>Training</button>
+              <button className="accordion-button" onClick={() => navigate("/resources/training")}>More Training</button>
             </div>
             <div className="accordion-item">
               <button className="accordion-button" onClick={() => navigate("/resources/quiz")}>Quiz</button>
             </div>
             <div className="accordion-item">
-              <button className="accordion-button" onClick={() => navigate("/")}>Home</button>
+              <button className="accordion-button" onClick={() => navigate("/training")}>Back</button>
             </div>
           </div>
         </div>

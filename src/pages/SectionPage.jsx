@@ -108,6 +108,14 @@ function SectionPage() {
             ))}
           </div>
         </div>
+        
+        {/* Back button */}
+        <button 
+          className="section-back-button" 
+          onClick={() => navigate('/training')}
+        >
+          ← Back to Training
+        </button>
       </div>
 
       {/* 🔹 Desktop-only footer */}

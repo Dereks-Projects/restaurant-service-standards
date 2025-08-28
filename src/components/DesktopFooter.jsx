@@ -9,7 +9,7 @@ export default function DesktopFooter() {
 
   const links = [
     { label: 'Home', path: '/' },
-    { label: 'Resources', path: '/resources' },
+    { label: 'Training', path: '/training' },
     { label: 'About', path: '/about' },
     { label: 'Contact', path: 'mailto:derekengles@gmail.com' }
   ];

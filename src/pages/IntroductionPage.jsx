@@ -39,7 +39,7 @@ function IntroductionPage() {
         ))}
 
         {/* 🔙 Back button to return to homepage */}
-        <button className="intro-back-button" onClick={() => navigate('/')}>
+        <button className="intro-back-button" onClick={() => navigate('/training')}>
           Back
         </button>
       </div>

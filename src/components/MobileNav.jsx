@@ -10,7 +10,7 @@ export default function MobileNav() {
 
   const navItems = [
     { label: "Home", path: "/", icon: "🏠" },
-    { label: "Resources", path: "/resources", icon: "📚" },
+    { label: "Training", path: "/Training", icon: "📚" },
     { label: "Book", path: "https://www.amazon.com/dp/B0FNDMTK5F", icon: "📖", external: true },
     { label: "About", path: "/about", icon: "ℹ️" }
   ];
