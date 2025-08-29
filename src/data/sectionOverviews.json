@@ -158,17 +158,13 @@
     "Item": "Departure Logged and Guest Preferences Updated",
     "Standard": "After departure, staff log the guest\u2019s experience and update preferences in the system if available. This allows for elevated recognition and personalization on future visits."
   },
-    {
-    "Topic": "Dinner Service",
-    "Item": "All staff encountered are groomed, in uniform, and exhibit warmth",
-    "Standard": "Presentation is consistent across team members. First impressions and consistency build brand trust."
-  },
-{
+
+  {
     "Topic": "Dinner Service",
     "Item": "Guests are greeted at the table within one minute of seating",
     "Standard": "Prompt engagement sets the tone and shows attentiveness. Staff should offer water or pre-dinner drinks immediately."
   },
-    {
+  {
     "Topic": "Dinner Service",
     "Item": "Service team maintains professional posture and alert body language",
     "Standard": "Visual cues matter\u2014slouched or distracted staff detract from the luxury experience. Graceful movement and eye contact elevate the guest perception."
@@ -205,11 +201,6 @@
   },
   {
     "Topic": "Dinner Service",
-    "Item": "Wine service includes presenting the list and offering pairing suggestions",
-    "Standard": "The wine list should be introduced with confidence and thoughtful recommendations. A brief explanation of pairings enhances the dining experience."
-  },
-  {
-    "Topic": "Dinner Service",
     "Item": "Wine is presented, opened, and poured with elegance and precision",
     "Standard": "Label facing the guest, a clean cut, and minimal disruption are required. A tasting sample is offered before serving."
   },
@@ -241,12 +232,6 @@
   },
   {
     "Topic": "Dinner Service",
-    "Item": "Courses are served and cleared simultaneously",
-    "Standard": "Synchronization shows coordination and respect for the dining experience. No guest should wait while others are served or cleared."
-  },
-
-  {
-    "Topic": "Dinner Service",
     "Item": "Crumbing or resetting occurs discreetly before dessert",
     "Standard": "This ensures a clean, polished setting and transitions the meal smoothly. It\u2019s a visual signal of professionalism."
   },
@@ -264,11 +249,6 @@
     "Topic": "Dinner Service",
     "Item": "The check is error-free and presented with polish",
     "Standard": "No mischarges or missing items. A neatly folded check presenter adds a professional final touch."
-  },
-  {
-    "Topic": "Dinner Service",
-    "Item": "Staff communication is fluid and behind-the-scenes",
-    "Standard": "Guests should never see confusion, repeated requests, or miscommunication. Proper team relay ensures smooth service."
   },
   {
     "Topic": "Dinner Service",
