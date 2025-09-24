@@ -13,7 +13,7 @@ function LandingPage() {
           <h1 className="hero-title-emphasis">Restaurant Standards</h1>
           
           <div className="cta-buttons">
-            <Link to="/training" className="btn btn-primary">Try the App</Link>
+            <Link to="/training" className="btn btn-primary">Enter the Site</Link>
             <a href="mailto:derekengles@gmail.com" className="btn btn-secondary">Contact Us</a>
           </div>
           
