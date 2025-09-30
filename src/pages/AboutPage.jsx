@@ -115,7 +115,7 @@ function AboutPage() {
           </div>
           <div className="footer-meta">
             <p>Version 1.0.0 • Language: English</p>
-            <p>© 2025 Derek Engles. All rights reserved.</p>
+            
           </div>
         </footer>
       </div>

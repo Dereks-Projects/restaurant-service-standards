@@ -14,7 +14,7 @@ function LandingPage() {
           
           <div className="cta-buttons">
             <Link to="/training" className="btn btn-primary">Enter the Site</Link>
-            <a href="mailto:derekengles@gmail.com" className="btn btn-secondary">Contact Us</a>
+            <Link to="/about" className="btn btn-secondary">More About Us</Link>
           </div>
           
           <p className="tagline">Training that helps your team outshine your competitive set.</p>
