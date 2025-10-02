@@ -1,208 +1,612 @@
+/* 📄 src/styles/LandingPage.css */
+/* Restaurant Standards Landing Page - Mobile First */
+/* Clean rewrite without conflicts or duplicates */
+
+/* Import Playfair Display for title */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
 
-.landing-container {
+/* ============================================ */
+/* BASE STYLES                                 */
+/* ============================================ */
+.landing {
+  background-color: #fafafa;
   min-height: 100vh;
-  background-image: url('/landing-hero-bg.jpg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  position: relative;
-  overflow: hidden;
-}
-
-.landing-container::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.5));
-  z-index: 1;
-}
-
-.hero-section {
-  position: relative;
-  z-index: 2;
-  height: 85vh;  /* Changed from min-height to fixed height */
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  padding: 3rem 5% 1rem 5%;  /* Reduced padding */
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
-.hero-content {
-  flex: 1;
-  max-width: 600px;
-  color: white;
-}
-
-.logo {
-  width: 80px;
-  height: 80px;
-  margin-bottom: 6rem;
-  display: block;
-}
-
-.logo img {
   width: 100%;
-  height: 100%;
-  object-fit: contain;
+  overflow-x: hidden;
 }
 
-.hero-content h1 {
-  font-size: 1.5rem;
-  font-weight: 300;
-  line-height: 1.2;
-  margin-bottom: 0.5rem;
-  width: 110%;
-}
-
-.hero-title-emphasis {
-  font-family: 'Playfair Display', serif;
-  font-size: 3.5rem !important;
-  font-weight: 400 !important;
-}
-
-.cta-buttons {
-  display: flex;
-  gap: 2rem;
-  margin: 2rem 0;
-}
-
-.btn {
-  padding: 1rem 2.5rem;
-  border-radius: 50px;
-  text-decoration: none;
-  font-size: 1.1rem;
-  transition: all 0.3s ease;
+/* ============================================ */
+/* BUTTON STYLES - GLOBAL                      */
+/* ============================================ */
+.landing-button {
   display: inline-block;
+  padding: 0.875rem 2rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
   border: 2px solid transparent;
+  /* Default width for buttons outside hero */
+  width: 100%;
+  max-width: 280px;
 }
 
-.btn-primary {
+/* Outline button variant */
+.landing-button--outline {
   background: transparent;
   color: white;
   border: 2px solid white;
 }
 
-.btn-primary:hover {
+.landing-button--outline:hover {
   background: white;
-  color: black;
+  color: #030901;
 }
 
-.btn-secondary {
+/* Solid button variant */
+.landing-button--solid {
   background: #f1e0a7;
-  color: black;
+  color: #030901;
   border: 2px solid #d4af36;
 }
 
-.btn-secondary:hover {
-  background: transparent;
-  color: #d4af36;
+.landing-button--solid:hover {
+  background: #d4af36;
 }
 
-.tagline {
-  font-size: 1.2rem;
+/* CTA section button variants */
+.landing-button--outline-light {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.landing-button--outline-light:hover {
+  background: white;
+  color: #2a2a2a;
+}
+
+.landing-button--solid-light {
+  background: #f1e0a7;
+  color: #030901;
+  border: 2px solid #d4af36;
+}
+
+.landing-button--solid-light:hover {
+  background: #d4af36;
+}
+
+/* ============================================ */
+/* HERO SECTION - MOBILE FIRST                 */
+/* ============================================ */
+.landing-hero {
+  min-height: 100vh;
+  background-image: url('/landing-hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.landing-hero__overlay {
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.5));
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0rem 1rem 2rem 1rem;  /* Less top padding */
+}
+
+.landing-hero__container {
+  width: 100%;
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+.landing-hero__content {
+  text-align: center;
+  color: white;
+}
+
+/* Logo - smaller as per mockup */
+.landing-hero__logo {
+  width: 90px;  /* Smaller logo */
+  height: 90px;
+  margin: 0 auto 2rem;
+  display: block;
+}
+
+/* Title - smaller, using div to avoid h1 conflicts */
+.landing-hero__title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;  /* Smaller than before */
+  font-weight: 400;
+  color: white;
+  margin: 0 0 1rem 0;
+  line-height: 1.1;
+}
+
+/* Subtitle - larger as per mockup */
+.landing-hero__subtitle {
+  font-size: 1.9rem;  /* Larger subtitle */
+  font-weight: 400;
+  line-height: 1.4;
+  color: rgba(255,255,255,0.95);
+  margin: 2.75rem auto 2.5rem;  /* Adds 1.5rem top margin */
+  max-width: 350px;  /* Control line breaks */
+}
+
+/* Button container */
+.landing-hero__buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  margin: 0 0 2rem 0;
+}
+
+/* Hero buttons - wider at 300px */
+.landing-hero__buttons .landing-button {
+  width: 300px;  /* Exactly 300px wide as per mockup */
+  max-width: 100%;  /* Override global max-width */
+}
+
+/* Tagline - positioned after buttons */
+.landing-hero__tagline {
   font-style: italic;
-  margin-top: 2rem;
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.85);
+  margin: 0 0 2rem 0;
+}
+
+/* Awards section with dots */
+.landing-hero__awards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.landing-hero__award {
+  color: rgba(196, 196, 196, 0.8);
+  font-weight: 300;
+}
+
+.landing-hero__award-divider {
+  color: rgba(129, 129, 129, 0.5);
+  font-size: 0.5rem;  /* Smaller dots */
+}
+
+/* Hide device mockup on mobile */
+.landing-hero__mockup {
+  display: none;
+}
+
+/* ============================================ */
+/* SECTION 2: HIDDEN COSTS                     */
+/* ============================================ */
+.landing-costs {
+  background-color: #2a2a2a;
+  color: white;
+  padding: 3rem 1.5rem;
+}
+
+.landing-costs__container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.landing-costs__title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  line-height: 1.3;
+}
+
+.landing-costs__grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.landing-costs__item {
+  text-align: center;
+}
+
+.landing-costs__icon {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 1rem;
+  background: #d32f2f;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.landing-costs__icon img {
+  width: 35px;
+  height: 35px;
+  filter: brightness(0) invert(1);
+}
+
+.landing-costs__stat {
+  margin-bottom: 0.5rem;
+}
+
+.landing-costs__number {
+  color: #f1e0a7;
+  font-size: 1.75rem;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.landing-costs__label {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: rgba(255,255,255,0.9);
+  padding: 0 1rem;
+}
+
+.landing-costs__source {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.6);
+  font-style: italic;
+  margin-top: 0.5rem;
+}
+
+.landing-costs__tagline {
+  text-align: center;
+  font-style: italic;
+  font-size: 1rem;
+  margin-top: 2.5rem;
+  color: rgba(255,255,255,0.9);
+  line-height: 1.5;
+  padding: 0 1rem;
+}
+
+/* ============================================ */
+/* SECTION 3: ELITE TRAINING                   */
+/* ============================================ */
+.landing-training {
+  background-color: #f5f5f5;
+  padding: 3rem 1.5rem;
+}
+
+.landing-training__container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.landing-training__title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #030901;
+}
+
+.landing-training__subtitle {
+  text-align: center;
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 2.5rem;
+  line-height: 1.5;
+  padding: 0 1rem;
+}
+
+.landing-training__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+.landing-training__box {
+  background-color: #3a3a3a;
+  padding: 1.75rem 1.5rem;
+  border-radius: 15px;
+  color: white;
+}
+
+.landing-training__box-title {
+  color: #f1e0a7;
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.landing-training__box-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
   color: rgba(255,255,255,0.9);
 }
 
-.device-mockup {
-  position: absolute;
-  right: 2%;
-  top: 50%;
-  transform: translateY(-50%);
-  max-width: 700px;
-  width: 50%;
-  margin-top: 2rem;
+/* ============================================ */
+/* SECTION 4: FOUNDER                          */
+/* ============================================ */
+.landing-founder {
+  background-color: #f8f8f8;
+  padding: 3rem 1.5rem;
 }
 
-.device-mockup img {
-  width: 100%;
-  height: auto;
-  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.3));
+.landing-founder__container {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.awards-section {
-  position: absolute;  /* Changed from relative to absolute */
-  bottom: 0;  /* Stick to bottom */
-  left: 0;
-  right: 0;
-  z-index: 2;
+.landing-founder__title {
+  font-size: 1.75rem;
+  font-weight: 600;
   text-align: center;
-  padding: 1rem;  /* Reduced padding */
+  margin-bottom: 2.5rem;
+  color: #030901;
+}
+
+.landing-founder__content {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
 }
-.awards-section img {
+
+.landing-founder__image {
+  text-align: center;
+}
+
+.landing-founder__photo {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.landing-founder__name {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #030901;
+}
+
+.landing-founder__bio {
   max-width: 600px;
-  width: 100%;
-  height: auto;
-  opacity: 0.8;
+  padding: 0 0.5rem;
 }
-/* Mobile Responsive */
-/* Mobile Responsive */
-@media (max-width: 768px) {
-  .landing-container {
-    height: auto;  /* Allow scrolling on mobile */
-    min-height: 100vh;
+
+.landing-founder__text {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #333;
+  margin-bottom: 1.25rem;
+}
+
+/* ============================================ */
+/* SECTION 5: CTA                              */
+/* ============================================ */
+.landing-cta {
+  background-color: #2a2a2a;
+  color: white;
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+.landing-cta__container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.landing-cta__text {
+  font-size: 1.125rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  
+}
+
+.landing-cta__buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+  align-items: center;
+}
+
+/* ============================================ */
+/* TABLET STYLES - 768px and up                */
+/* ============================================ */
+@media (min-width: 768px) {
+  /* Global button adjustments for tablet */
+  .landing-button {
+    width: auto;
+    min-width: 160px;
   }
   
-  .hero-section {
-    flex-direction: column;
-    padding: 1rem 1rem;
-    height: auto;  /* Remove fixed height */
-    min-height: auto;
+  /* Hero adjustments */
+  .landing-hero__overlay {
+    padding: 3rem 2rem;
   }
   
-  .logo {
-    width: 95px;
-    height: 95px;
-    margin-bottom: 2.5rem;
+  .landing-hero__logo {
+    width: 90px;
+    height: 90px;
   }
   
-  .hero-content h1 {
-    font-size: 1.2rem;
-    width: 90%;
+  .landing-hero__title {
+    font-size: 3.5rem;
   }
   
-  .hero-title-emphasis {
-    font-size: 2rem !important;
+  .landing-hero__subtitle {
+    font-size: 1.375rem;
+    max-width: 450px;
   }
   
-  .cta-buttons {
-    flex-direction: column;
-    gap: 1rem;
-    align-items: stretch;
+  .landing-hero__buttons {
+    flex-direction: row;
+    gap: 1.5rem;
+    justify-content: center;
   }
   
-  .tagline {
-    font-size: 1rem;
-    margin-top: 1rem;
-    width: 90%;
+  .landing-hero__buttons .landing-button {
+    width: 180px;  /* Narrower on tablet */
   }
   
-  .device-mockup {
-    position: relative;
-    width: 95%;
-    max-width: 380px;
-    margin: 1rem auto;
-    right: auto;
-    top: auto;
-    transform: none;
+  /* Costs grid - 3 columns */
+  .landing-costs__grid {
+    flex-direction: row;
+    gap: 2rem;
   }
   
-  .awards-section {
-    position: relative;  /* Change from absolute */
-    padding: 1rem 0.5rem 2rem;
-    margin-top: 1rem;
+  .landing-costs__item {
+    flex: 1;
   }
   
-  .awards-section img {
-    max-width: 370px;
+  /* Training grid - 2 columns */
+  .landing-training__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  /* CTA buttons side by side */
+  .landing-cta__buttons {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+/* ============================================ */
+/* DESKTOP STYLES - 1024px and up              */
+/* ============================================ */
+@media (min-width: 1024px) {
+  /* Hero section desktop layout */
+  .landing-hero__overlay {
+    padding: 4rem 3rem;
+  }
+  
+  .landing-hero__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+    max-width: 1200px;
+  }
+  
+  .landing-hero__content {
+    flex: 1;
+    max-width: 700px;
+    text-align: left;
+  }
+  
+  /* Left align elements on desktop */
+  .landing-hero__logo {
+    margin: 0 0 2rem 0;
+    width: 100px;
+    height: 100px;
+  }
+  
+@media (min-width: 1024px) {
+  /* ... other styles ... */
+  
+  .landing-hero__title {
+    font-size: 3.2rem;
+    text-align: left;
+    margin: 0 0 1rem 0;  /* Tighter bottom margin on desktop */
+    
+  }
+  
+  .landing-hero__subtitle {
+    font-size: 1.5rem;
+    text-align: left;
+    max-width: none;
+    margin: 0 0 2rem 0;  /* Override the huge 3.5rem top margin for desktop */
+    width: 90%;  /* Limit width on large screens */
+  }
+}
+  
+  .landing-hero__tagline {
+    font-size: 1.25rem;
+    text-align: left;
+    margin-top: .5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .landing-hero__buttons {
+    justify-content: flex-start;
+    margin: 2rem 0 2rem 0;
+  }
+  
+  .landing-hero__buttons .landing-button {
+    width: 220px;
+  }
+  
+  .landing-hero__awards {
+    justify-content: flex-start;
+    margin-top: -1rem;
+    
+  }
+  
+  /* Show device mockup */
+  .landing-hero__mockup {
+    display: block;
+    flex: 1;
+    max-width: 650px;
+  }
+  
+  .landing-hero__mockup img {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 25px 50px rgba(0,0,0,0.3));
+  }
+  
+  /* Other sections desktop adjustments */
+  .landing-costs {
+    padding: 5rem 3rem;
+  }
+  
+  .landing-costs__title {
+    font-size: 2.5rem;
+    margin-bottom: 4rem;
+  }
+  
+  .landing-training {
+    padding: 5rem 3rem;
+  }
+  
+  .landing-training__title {
+    font-size: 2.5rem;
+  }
+  
+  .landing-founder {
+    padding: 5rem 3rem;
+  }
+  
+ @media (min-width: 1024px) {
+  .landing-founder__content {
+    flex-direction: row;
+    gap: 5rem;
+    justify-content: center;  /* ADD THIS - centers the content */
+    align-items: center;  /* ADD THIS - vertically aligns items */
+    max-width: 1000px;  /* ADD THIS - constrains width */
+    margin: 0 auto;  /* ADD THIS - centers the container */
+  }
+  
+  .landing-founder__bio {
+    padding: 0 2rem;  /* More padding on desktop */
+  }
+}
+  
+  .landing-cta {
+    padding: 5rem 3rem;
+  }
+  
+  .landing-cta__text {
+    font-size: 1.375rem;
   }
 }

@@ -1,0 +1,80 @@
+/* 📄 src/components/LandingFooter.css */
+/* Purpose: Styles for the landing page footer only */
+
+/* Main footer container - dark background as specified */
+.landing-footer {
+  background-color: #030901; /* Very dark gray/black as requested */
+  color: white;
+  padding: 1.5rem 1rem; /* Smaller padding on mobile */
+  margin-top: 0; /* No gap between last section and footer */
+}
+
+/* Container to control max width on large screens */
+.landing-footer__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center; /* Center everything on mobile */
+}
+
+/* Navigation container */
+.landing-footer__nav {
+  margin-bottom: 1rem;
+  font-size: 0.9rem; /* Slightly smaller text on mobile */
+}
+
+/* Individual link styling */
+.landing-footer__link {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem; /* Add padding for easier tapping on mobile */
+  display: inline-block;
+  transition: opacity 0.3s ease;
+}
+
+.landing-footer__link:hover {
+  opacity: 0.7; /* Subtle hover effect */
+}
+
+/* Separator between links - hidden on mobile */
+.landing-footer__separator {
+  display: none; /* Hide separators on mobile */
+  color: rgba(255, 255, 255, 0.3);
+  margin: 0 0.5rem;
+}
+
+/* Copyright text */
+.landing-footer__copyright {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.6); /* Slightly dimmed */
+  margin: 0;
+  padding-top: 0rem;
+}
+
+/* ============================================ */
+/* DESKTOP STYLES - Applied at 768px and above */
+/* ============================================ */
+@media (min-width: 768px) {
+  .landing-footer {
+    padding: 2rem; /* More padding on desktop */
+  }
+  
+  /* Show separators between links on desktop */
+  .landing-footer__separator {
+    display: inline; /* Show separators on desktop */
+  }
+  
+  /* Larger font size on desktop */
+  .landing-footer__nav {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Less padding on links since we have separators */
+  .landing-footer__link {
+    padding: 0 0.25rem;
+  }
+  
+  .landing-footer__copyright {
+    font-size: 0.85rem;
+  }
+}

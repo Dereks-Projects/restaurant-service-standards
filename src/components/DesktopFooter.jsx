@@ -57,10 +57,7 @@ export default function DesktopFooter() {
   return (
     <footer className="desktop-footer">
       <div className="desktop-footer__container">
-        {/* Main Title */}
-        <h2 className="desktop-footer__main-title">Restaurant Standards</h2>
-        
-        {/* Three Column Grid */}
+        {/* Three Column Grid - NO TITLE HERE ANYMORE */}
         <div className="desktop-footer__grid">
           {/* Pages Column */}
           <div className="desktop-footer__column desktop-footer__column--left">
@@ -127,6 +124,9 @@ export default function DesktopFooter() {
 
         {/* Separator Line */}
         <div className="desktop-footer__separator"></div>
+
+        {/* Main Title - MOVED HERE BELOW THE LINE */}
+        <h2 className="desktop-footer__main-title">Restaurant Standards</h2>
 
         {/* Social Icons */}
         <div className="desktop-footer__social">

@@ -1,12 +1,21 @@
 /* 📄 src/components/DesktopFooter.css */
 
+/* ================================
+   BASE STYLES - MOBILE FIRST
+   ================================ */
+
 /* Default: hidden on mobile */
 .desktop-footer {
   display: none;
 }
 
-/* Desktop-only styles */
+/* ================================
+   DESKTOP STYLES
+   ================================ */
+
 @media (min-width: 768px) {
+  
+  /* --- Footer Container --- */
   .desktop-footer {
     display: block;
     background-color: rgb(26, 26, 26);
@@ -16,38 +25,32 @@
     margin-top: auto;
   }
 
-  /* Container */
+  /* --- Inner Container (max-width wrapper) --- */
   .desktop-footer__container {
     max-width: 1200px;
     margin: 0 auto;
   }
 
-  /* Main Title */
-  .desktop-footer__main-title {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.5rem;
-    font-weight: 700;
-    text-align: center;
-    margin: 0 0 2rem 0;
-    color: white;
-  }
+  /* ================================
+     TOP SECTION - THREE COLUMNS
+     ================================ */
 
-  /* Three Column Grid */
+  /* --- Three Column Grid Layout --- */
   .desktop-footer__grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 1.6rem; /* Reduced by 20% from 2rem */
+    gap: 1.6rem; /* Reduced by 20% from original 2rem */
     margin-bottom: 2rem;
-    padding: 0 10%; /* Move columns inward by 20% total (10% each side) */
+    padding: 0 10%; /* Moves columns inward by 20% total (10% each side) */
   }
 
-  /* Column Base Styles */
+  /* --- Column Base Styles --- */
   .desktop-footer__column {
     display: flex;
     flex-direction: column;
   }
 
-  /* Column Alignment Modifiers */
+  /* --- Column Alignment Modifiers --- */
   .desktop-footer__column--left {
     align-items: flex-start;
   }
@@ -60,7 +63,7 @@
     align-items: flex-end;
   }
 
-  /* Column Titles */
+  /* --- Column Headers (PAGES, TOPICS, OUTSIDE LINKS) --- */
   .desktop-footer__column-title {
     font-family: 'Poppins', sans-serif;
     font-size: 0.875rem;
@@ -70,14 +73,14 @@
     color: white;
   }
 
-  /* Navigation Container */
+  /* --- Navigation Link Containers --- */
   .desktop-footer__nav {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
   }
 
-  /* Alignment fix for nav containers */
+  /* --- Navigation Container Alignment (matches column alignment) --- */
   .desktop-footer__column--left .desktop-footer__nav {
     align-items: flex-start;
   }
@@ -90,7 +93,7 @@
     align-items: flex-end;
   }
 
-  /* Links */
+  /* --- All Footer Links (columns and bottom) --- */
   .desktop-footer__link {
     font-family: 'Poppins', sans-serif;
     color: white;
@@ -106,7 +109,11 @@
     text-underline-offset: 2px;
   }
 
-  /* Separator Line */
+  /* ================================
+     MIDDLE SECTION - SEPARATOR & TITLE
+     ================================ */
+
+  /* --- Horizontal Separator Line --- */
   .desktop-footer__separator {
     height: 1px;
     background-color: rgba(255, 255, 255, 0.2);
@@ -114,7 +121,21 @@
     margin: 2rem 0;
   }
 
-  /* Social Icons Section */
+  /* --- Main Title (Restaurant Standards) --- */
+  .desktop-footer__main-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin: 1rem 0 1.5rem 0; /* Adjusted for position below separator */
+    color: white;
+  }
+
+  /* ================================
+     BOTTOM SECTION - SOCIAL & LEGAL
+     ================================ */
+
+  /* --- Social Icons Container --- */
   .desktop-footer__social {
     display: flex;
     justify-content: center;
@@ -122,6 +143,7 @@
     margin-bottom: 1.5rem;
   }
 
+  /* --- Social Icon Links --- */
   .desktop-footer__social-link {
     display: inline-flex;
     align-items: center;
@@ -132,13 +154,14 @@
     opacity: 0.7;
   }
 
+  /* --- Social Icon Images --- */
   .desktop-footer__social-icon {
     width: 29px; /* Increased by 20% from 24px */
     height: 29px; /* Increased by 20% from 24px */
-    filter: brightness(0) invert(1);
+    filter: brightness(0) invert(1); /* Makes SVGs white */
   }
 
-  /* Bottom Links Row */
+  /* --- Bottom Links Row (Privacy | Terms | Contact) --- */
   .desktop-footer__bottom-links {
     display: flex;
     justify-content: center;
@@ -147,13 +170,14 @@
     font-family: 'Poppins', sans-serif;
   }
 
+  /* --- Pipe Divider ( | ) Between Bottom Links --- */
   .desktop-footer__divider {
     color: rgba(255, 255, 255, 0.5);
     font-size: 0.875rem;
     padding: 0 0.75rem;
   }
 
-  /* Copyright */
+  /* --- Copyright Text --- */
   .desktop-footer__copyright {
     font-family: 'Poppins', sans-serif;
     text-align: center;

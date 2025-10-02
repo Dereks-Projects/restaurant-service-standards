@@ -16,7 +16,7 @@
 
 .rss-header__logo {
   display: block;
-  height: 90px;
+  height: 80px;
   width: auto;
   margin: 0;
   margin-top: .5rem;
@@ -38,6 +38,12 @@
     top: 0;
     z-index: 100;
     padding: 1rem 1rem;
+  }
+
+  .rss-header__logo {
+  
+  height: 60px;
+
   }
 
   .rss-header__subtitle {
