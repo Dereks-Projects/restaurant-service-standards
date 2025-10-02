@@ -14,7 +14,7 @@ function IntroductionPage() {
       <div className="intro-article">
 
         {/* 🏷️ Page Title */}
-        <h1 className="intro-page-title">Welcome to RSS</h1>
+        <h1 className="intro-page-title">Welcome to Restaurant Standards</h1>
 
         {/* 🎥 Embedded Vimeo Video */}
         <div className="intro-video-wrapper">
