@@ -44,21 +44,11 @@ function LandingPage() {
               
               {/* Tagline - below buttons */}
               <p className="landing-hero__tagline">
-                Unlock your team's potential today!
+                We cover the service standards utilized by Michelin, Forbes, AAA and other popular ratings guides.
               </p>
               
-              {/* Awards with dots between */}
-              <div className="landing-hero__awards">
-                <span className="landing-hero__award">Forbes</span>
-                <span className="landing-hero__award-divider">•</span>
-                <span className="landing-hero__award">Michelin</span>
-                <span className="landing-hero__award-divider">•</span>
-                <span className="landing-hero__award">50 Best</span>
-                <span className="landing-hero__award-divider">•</span>
-                <span className="landing-hero__award">La Liste</span>
-                <span className="landing-hero__award-divider">•</span>
-                <span className="landing-hero__award">AAA</span>
-              </div>
+              
+              
             </div>
             
             {/* Device mockup for desktop only */}
