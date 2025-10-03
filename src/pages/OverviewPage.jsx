@@ -1,55 +1,108 @@
 // 📄 FILE: src/pages/OverviewPage.jsx
+// PURPOSE: Overview pages for each training section with integrated navigation
+// Mobile-first design with responsive navigation components
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import Header from '../components/Header';
+import MobileNav from '../components/MobileNav';
+import DesktopFooter from '../components/DesktopFooter';
 import sectionData from '../data/sectionOverviews.json';
-import introText from '../data/sectionOverviewsIntro.json'; // ✅ NEW IMPORT
+import introText from '../data/sectionOverviewsIntro.json';
 import '../styles/OverviewPage.css';
 
 function OverviewPage() {
   const { sectionId } = useParams();
   const navigate = useNavigate();
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 767);
 
-  // ✅ Map sectionId from URL to the proper Topic name in JSON
+  // Listen for window resize to toggle between mobile/desktop footer
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 767);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // Map sectionId from URL to the proper Topic name in JSON
   const sectionMap = {
-    reservation: "Reservation System",
-    arrival: "Arrival & Departure",
-    dinner: "Dinner Service",
-    food: "Food & Beverage Quality",
-    presentation: "Presentation of Facilities"
+    'reservation-system': "Reservation System",
+    'arrival-departure': "Arrival & Departure", 
+    'dinner-service': "Dinner Service",
+    'fb-quality': "Food & Beverage Quality",
+    'facilities': "Presentation of Facilities",
+    // Legacy mappings if needed
+    'reservation': "Reservation System",
+    'arrival': "Arrival & Departure",
+    'dinner': "Dinner Service",
+    'food': "Food & Beverage Quality",
+    'presentation': "Presentation of Facilities"
   };
 
   const fullTopic = sectionMap[sectionId];
   const filteredChecklist = sectionData.filter(item => item.Topic === fullTopic);
 
+  // Get the intro text using the simplified key
+  const simpleKey = sectionId.replace('-system', '')
+                              .replace('-departure', '')
+                              .replace('-service', '')
+                              .replace('-quality', '')
+                              .replace('fb', 'food');
+  
+  const introContent = introText[simpleKey] || introText[sectionId] || '';
+
   return (
-    <div className="intro-page-container">
-      <div className="intro-article">
+    <div className="overview-page">
+      {/* Header - appears on both mobile and desktop */}
+      <Header subtitle={fullTopic || 'Overview'} />
 
-        {/* ✅ MAIN PAGE TITLE — styled like IntroductionPage */}
-        <h2 className="overview-page-title">
+      {/* Main content area */}
+      <main className="overview-page__content">
+        {/* Page Title - using div instead of h2 */}
+        <div className="overview-page__title">
           {fullTopic}
-        </h2>
+        </div>
 
-        <hr className="overview-title-divider" />
+        {/* Divider line */}
+        <div className="overview-page__divider"></div>
         
-        {/* ✅ NEW: Intro paragraph from sectionOverviewsIntro.json */}
-        <p className="overview-intro-paragraph">
-          {introText[sectionId]}
-        </p>
+        {/* Intro paragraph from sectionOverviewsIntro.json */}
+        {introContent && (
+          <p className="overview-page__intro">
+            {introContent}
+          </p>
+        )}
 
-        {/* ✅ Checklist Items */}
+        {/* Checklist Items */}
         {filteredChecklist.map((entry, index) => (
-          <div key={index} className="intro-section">
-            <h3 className="intro-section-title">{entry.Item}</h3>
-            <p className="intro-section-text">{entry.Standard}</p>
+          <div key={index} className="overview-page__section">
+            {/* Using div instead of h3 */}
+            <div className="overview-page__section-title">
+              {entry.Item}
+            </div>
+            <p className="overview-page__section-text">
+              {entry.Standard}
+            </p>
           </div>
         ))}
 
-        <button className="intro-back-button" onClick={() => navigate(-1)}>
-          Back
+        {/* Back Button */}
+        <button 
+          className="overview-page__back-button" 
+          onClick={() => navigate('/training')}
+        >
+          Back to Training
         </button>
-      </div>
+      </main>
+
+      {/* Footer - conditional rendering based on screen size */}
+      {isMobile ? (
+        <MobileNav />
+      ) : (
+        <DesktopFooter />
+      )}
     </div>
   );
 }
