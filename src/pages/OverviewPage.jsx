@@ -91,9 +91,9 @@ function OverviewPage() {
         {/* Back Button */}
         <button 
           className="overview-page__back-button" 
-          onClick={() => navigate('/training')}
-        >
-          Back to Training
+           onClick={() => navigate(-1)}
+          >
+          Back
         </button>
       </main>
 

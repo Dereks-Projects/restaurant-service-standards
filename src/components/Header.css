@@ -1,59 +1,67 @@
 /* 📄 src/components/Header.css */
+/* Header component styles - Mobile-first approach */
 
+/* ============================================ */
+/* BASE STYLES (Mobile-first)                  */
+/* ============================================ */
 .rss-header {
-  background: rgb(26, 26, 26);
-  color: var(--color-white);
-  text-align: center;
-  width: 100%;
-  margin: 0;
-  padding: 1rem 1rem;
-  box-sizing: border-box;
+  /* Layout */
   display: grid;
   grid-auto-rows: auto;
   justify-items: center;
   row-gap: 0.5rem;
+  width: 100%;
+  
+  /* Positioning - Sticky on mobile */
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  
+  /* Styling */
+  background: rgb(26, 26, 26);
+  color: var(--color-white);
+  text-align: center;
+  
+  /* Spacing */
+  padding: 1rem;
+  margin: 0;
+  box-sizing: border-box;
 }
 
+/* Logo - Base mobile styles */
 .rss-header__logo {
   display: block;
-  height: 80px;
+  height: 50px;
   width: auto;
-  margin: 0;
-  margin-top: .5rem;
-  margin-bottom: .2rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.2rem;
 }
 
+/* Subtitle - Base mobile styles */
 .rss-header__subtitle {
-  font-size: 1.2rem;
+  font-size: .9rem;
+  line-height: 1.3;
   padding: 0 0.5rem;
   margin: 0;
   max-width: 90%;
-  line-height: 1.4;
 }
 
-/* Mobile styles */
-@media (max-width: 767px) {
-  .rss-header {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    padding: 1rem 1rem;
-  }
-
-  .rss-header__logo {
-  
-  height: 60px;
-
-  }
-
-  .rss-header__subtitle {
-    font-size: 1rem;
-  }
-}
-
-/* Desktop styles */
+/* ============================================ */
+/* DESKTOP STYLES (768px and up)               */
+/* ============================================ */
 @media (min-width: 768px) {
+  /* Header becomes static on desktop */
+  .rss-header {
+    position: static; /* Not sticky on desktop */
+  }
+  
+  /* Logo slightly larger on desktop */
+  .rss-header__logo {
+    height: 60px;
+  }
+  
+  /* Subtitle slightly larger on desktop */
   .rss-header__subtitle {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 }

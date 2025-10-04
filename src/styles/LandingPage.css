@@ -113,8 +113,8 @@
 
 /* Logo - smaller as per mockup */
 .landing-hero__logo {
-  width: 100px;  /* Smaller logo */
-  height: 100px;
+  width: 90px;  /* Smaller logo */
+  height: 90px;
   margin: 0 auto 2rem;
   display: block;
 }
@@ -122,7 +122,7 @@
 /* Title - smaller, using div to avoid h1 conflicts */
 .landing-hero__title {
   font-family: 'Playfair Display', serif;
-  font-size: 2rem;  /* Smaller than before */
+  font-size: 1.8rem;  /* Smaller than before */
   font-weight: 300;
   color: white;
   margin-top: -1rem;
@@ -131,12 +131,12 @@
 
 /* Subtitle - larger as per mockup */
 .landing-hero__subtitle {
-  font-size: 1.9rem;  /* Larger subtitle */
-  font-weight: 400;
+  font-size: 1.8rem;  /* Larger subtitle */
+  font-weight: 600;
   line-height: 1.4;
   color: rgba(255,255,255,0.95);
   margin: 2.75rem auto 2.5rem;  /* Adds 1.5rem top margin */
-  max-width: 350px;  /* Control line breaks */
+  max-width: 320px;  /* Control line breaks */
 }
 
 /* Button container */
@@ -161,7 +161,7 @@
   font-size: 1.05rem;
   color: rgba(255,255,255,0.85);
   margin: 0 auto 2rem; /* Centers it */
-  max-width: 380px; /* Controls width on mobile */
+  max-width: 300px; /* Controls width on mobile */
   text-align: center; /* Centers text */
   line-height: 1.4;
 }
@@ -510,7 +510,7 @@
   
   /* Left align elements on desktop */
   .landing-hero__logo {
-    margin: 0 0 2rem 0;
+    margin: 0 0 1rem 0;
     width: 100px;
     height: 100px;
   }
@@ -519,7 +519,7 @@
   /* ... other styles ... */
   
   .landing-hero__title {
-    font-size: 3.2rem;
+    font-size: 3.3rem;
     text-align: left;
     margin: 0 0 1rem 0;  /* Tighter bottom margin on desktop */
     
@@ -575,7 +575,7 @@
   }
   
   .landing-costs__title {
-    font-size: 2.5rem;
+    font-size: 2.3rem;
     margin-bottom: 4rem;
   }
   
@@ -584,7 +584,7 @@
   }
   
   .landing-training__title {
-    font-size: 2.5rem;
+    font-size: 2.3rem;
   }
   
   .landing-founder {

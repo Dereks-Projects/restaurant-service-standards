@@ -14,14 +14,14 @@ export default function DesktopFooter() {
     { label: 'Contact us', path: 'mailto:derekengles@gmail.com', type: 'email' }
   ];
 
-  const topicsLinks = [
-    { label: 'Introduction', path: '/introduction', type: 'internal' },
-    { label: 'Reservation System', path: '/overview/reservation-system', type: 'internal' },
-    { label: 'Arrival & Departure', path: '/overview/arrival-departure', type: 'internal' },
-    { label: 'Dinner Service', path: '/overview/dinner-service', type: 'internal' },
-    { label: 'F & B Quality', path: '/overview/fb-quality', type: 'internal' },
-    { label: 'Facilities', path: '/overview/facilities', type: 'internal' }
-  ];
+const topicsLinks = [
+  { label: 'Introduction', path: '/introduction', type: 'internal' },
+  { label: 'Reservation System', path: '/section/Reservation System', type: 'internal' },
+  { label: 'Arrival & Departure', path: '/section/Arrival & Departure', type: 'internal' },
+  { label: 'Dinner Service', path: '/section/Dinner Service', type: 'internal' },
+  { label: 'F & B Quality', path: '/section/Food & Beverage Quality', type: 'internal' },
+  { label: 'Facilities', path: '/section/Presentation of Facilities', type: 'internal' }
+];
 
   const outsideLinks = [
     { label: 'Buy the Book', url: 'https://www.amazon.com/dp/B0FNDMTK5F', type: 'external' },
