@@ -84,6 +84,7 @@
 /* ============================================ */
 .landing-hero {
   min-height: 100vh;
+  min-height: 100dvh; /* Full viewport height */
   background-image: url('/landing-hero-bg.jpg');
   background-size: cover;
   background-position: center;
@@ -94,6 +95,7 @@
 .landing-hero__overlay {
   background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.5));
   min-height: 100vh;
+  min-height: 100dvh; /* Full viewport height */
   display: flex;
   align-items: center;
   justify-content: center;
