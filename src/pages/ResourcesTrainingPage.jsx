@@ -1,24 +1,41 @@
 // 📄 FILE: src/pages/ResourcesTrainingPage.jsx
 
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import Header from '../components/Header';
+import MobileNav from '../components/MobileNav';
+import DesktopFooter from '../components/DesktopFooter';
 import "../styles/OverviewPage.css";
 
 function ResourcesTrainingPage() {
-  return (
-    <div className="intro-page-container">
-      <div className="intro-article">
-        {/* Page Title */}
-        <h2 className="overview-page-title">Training</h2>
-        <hr className="overview-title-divider" />
+  const navigate = useNavigate();
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 767);
 
-        {/* Intro Paragraph */}
-        <p className="overview-intro-paragraph">
-          These training and development topics are designed to elevate your team’s skills and professionalism, preparing them to deliver exceptional guest service and support your operational goals.
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 767);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  return (
+    <div className="overview-page">
+      <Header subtitle="Training Resources" />
+      
+      <main className="overview-page__content">
+        <div className="overview-page__title">Training</div>
+        <div className="overview-page__divider"></div>
+
+        <p className="overview-page__intro">
+          These training and development topics are designed to elevate your team's skills and professionalism, preparing them to deliver exceptional guest service and support your operational goals.
         </p>
 
         {/* Section 1 */}
-        <div className="intro-section">
-          <h3 className="intro-section-title">Guest Interaction Standards</h3>
-          <p className="intro-section-text">
+        <div className="overview-page__section">
+          <div className="overview-page__section-title">Guest Interaction Standards</div>
+          <p className="overview-page__section-text">
             This guide covers the core principles of greeting guests, anticipating needs, and maintaining a gracious demeanor at all times.
           </p>
           <a href="/training/guest-interactions.pdf" target="_blank" rel="noopener noreferrer">
@@ -27,9 +44,9 @@ function ResourcesTrainingPage() {
         </div>
 
         {/* Section 2 */}
-        <div className="intro-section">
-          <h3 className="intro-section-title">Table Service Procedures</h3>
-          <p className="intro-section-text">
+        <div className="overview-page__section">
+          <div className="overview-page__section-title">Table Service Procedures</div>
+          <p className="overview-page__section-text">
             A comprehensive reference for table service sequence, clearing, resetting, and key etiquette.
           </p>
           <a href="/training/table-service.pdf" target="_blank" rel="noopener noreferrer">
@@ -38,9 +55,9 @@ function ResourcesTrainingPage() {
         </div>
 
         {/* Section 3 */}
-        <div className="intro-section">
-          <h3 className="intro-section-title">Beverage Service Essentials</h3>
-          <p className="intro-section-text">
+        <div className="overview-page__section">
+          <div className="overview-page__section-title">Beverage Service Essentials</div>
+          <p className="overview-page__section-text">
             Guidelines for properly serving wine, cocktails, and non-alcoholic beverages to the highest standards.
           </p>
           <a href="/training/beverage-service.pdf" target="_blank" rel="noopener noreferrer">
@@ -49,9 +66,9 @@ function ResourcesTrainingPage() {
         </div>
 
         {/* Section 4 */}
-        <div className="intro-section">
-          <h3 className="intro-section-title">Manager Pre-Shift Checklist</h3>
-          <p className="intro-section-text">
+        <div className="overview-page__section">
+          <div className="overview-page__section-title">Manager Pre-Shift Checklist</div>
+          <p className="overview-page__section-text">
             A practical checklist for managers to prepare staff and operations before service begins.
           </p>
           <a href="/training/manager-checklist.pdf" target="_blank" rel="noopener noreferrer">
@@ -60,9 +77,9 @@ function ResourcesTrainingPage() {
         </div>
 
         {/* Section 5 */}
-        <div className="intro-section">
-          <h3 className="intro-section-title">Introduction to Wine</h3>
-          <p className="intro-section-text">
+        <div className="overview-page__section">
+          <div className="overview-page__section-title">Introduction to Wine</div>
+          <p className="overview-page__section-text">
             A deep dive into the world of wine for the hospitality professional.
           </p>
           <a href="/training/intro-wine.pdf" target="_blank" rel="noopener noreferrer">
@@ -70,10 +87,10 @@ function ResourcesTrainingPage() {
           </a>
         </div>
 
-        {/* Section 5 */}
-        <div className="intro-section">
-          <h3 className="intro-section-title">More Educational Material</h3>
-          <p className="intro-section-text">
+        {/* Section 6 */}
+        <div className="overview-page__section">
+          <div className="overview-page__section-title">More Educational Material</div>
+          <p className="overview-page__section-text">
             Here is a collection of articles and educational pieces pertinent to guest service excellence.
           </p>
           <a href="/training/michelin-guide.pdf" target="_blank" rel="noopener noreferrer">
@@ -84,11 +101,12 @@ function ResourcesTrainingPage() {
           </a>
         </div>
 
-        {/* Back Button */}
-        <button className="intro-back-button" onClick={() => window.history.back()}>
+        <button className="overview-page__back-button" onClick={() => navigate(-1)}>
           Back
         </button>
-      </div>
+      </main>
+
+      {isMobile ? <MobileNav /> : <DesktopFooter />}
     </div>
   );
 }
