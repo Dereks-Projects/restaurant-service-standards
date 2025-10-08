@@ -1,6 +1,6 @@
 // 📄 src/pages/LandingPage.jsx
 // Restaurant Standards Landing Page - Mobile First Design
-// Focus: Clean hero section matching mockup specifications
+// Updated: Mobile hero section with reordered elements
 
 import React from 'react';
 import { Link } from 'react-router-dom';
@@ -17,22 +17,27 @@ function LandingPage() {
         <div className="landing-hero__overlay">
           <div className="landing-hero__container">
             <div className="landing-hero__content">
-              {/* Logo - smaller as requested */}
+              {/* Logo - hidden on mobile via CSS */}
               <img 
                 src="/rss-logo-new.svg" 
                 alt="Restaurant Standards Logo" 
                 className="landing-hero__logo" 
               />
               
-              {/* Title - smaller font size */}
+              {/* Title */}
               <div className="landing-hero__title">Restaurant Standards</div>
               
               {/* Subtitle - larger, with updated text */}
               <p className="landing-hero__subtitle">
-                The Best Restaurant Training Platform Built from the Highest Industry Standards.
+                The Best Restaurant Training Platform Built with Award Winning Standards.
               </p>
               
-              {/* Buttons - wider at 300px */}
+              {/* Tagline - MOVED BEFORE BUTTONS for mobile layout */}
+              <p className="landing-hero__tagline">
+                We cover the service standards utilized by Michelin, Forbes, AAA and other popular ratings guides.
+              </p>
+              
+              {/* Buttons - wider at 300px on mobile, 330px per new spec */}
               <div className="landing-hero__buttons">
                 <a href="#hidden-costs" className="landing-button landing-button--outline">
                   Learn More
@@ -42,13 +47,13 @@ function LandingPage() {
                 </Link>
               </div>
               
-              {/* Tagline - below buttons */}
-              <p className="landing-hero__tagline">
-                We cover the service standards utilized by Michelin, Forbes, AAA and other popular ratings guides.
-              </p>
-              
-              
-              
+              {/* Device mockup - visible on mobile, positioned after buttons */}
+              <div className="landing-hero__mockup-mobile">
+                <img 
+                  src="/app-devices-mockup.png" 
+                  alt="Restaurant Standards App on devices" 
+                />
+              </div>
             </div>
             
             {/* Device mockup for desktop only */}

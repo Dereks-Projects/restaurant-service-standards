@@ -2,8 +2,8 @@
 /* Restaurant Standards Landing Page - PROPERLY SEPARATED */
 /* NO SHARED STYLES FOR HERO - Complete separation */
 
-/* Import Playfair Display for title */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+/* Import Playfair Display for title and Poppins for menu */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500&display=swap');
 
 /* ============================================ */
 /* GLOBAL PAGE CONTAINER ONLY                  */
@@ -16,10 +16,116 @@
 }
 
 /* ============================================ */
+/* HIDE MOBILE MENU ELEMENTS ON LARGER SCREENS */
+/* ============================================ */
+.mobile-menu-overlay,
+.mobile-header,
+.mobile-hamburger {
+  display: none;
+}
+
+/* ============================================ */
 /* MOBILE STYLES - 320px to 767px              */
 /* COMPLETE, STANDALONE DEFINITIONS            */
 /* ============================================ */
 @media (max-width: 767px) {
+  /* MOBILE MENU STYLES - ONLY ON MOBILE */
+  .mobile-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .mobile-menu-close {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 3rem;
+    font-weight: 300;
+    cursor: pointer;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+  }
+  
+  .mobile-menu-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  .mobile-menu-nav a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 300;
+  }
+  
+  .mobile-menu-social {
+    position: absolute;
+    bottom: 3rem;
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .mobile-menu-social img {
+    width: 32px;
+    height: 32px;
+  }
+  
+  /* MOBILE HEADER WITH HAMBURGER */
+  .mobile-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.7rem;
+  }
+  
+  .mobile-hamburger {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 24px;
+  }
+  
+  .mobile-hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: white;
+  }
+  
+  .mobile-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 300;
+    color: white;
+    font-size: 1.5rem;
+    line-height: 1.1;
+    
+  }
+  
+  /* Hide desktop title on mobile */
+  .landing-hero__title {
+    display: none;
+  }
+  
   /* HERO SECTION - MOBILE COMPLETE */
   .landing-hero {
     background-image: url('/landing-hero-bg-mobile.jpg');
@@ -32,7 +138,7 @@
   }
   
   .landing-hero__overlay {
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.2));
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.5));
     min-height: 100vh;
     min-height: 100dvh;
     display: flex;
@@ -61,30 +167,29 @@
     font-weight: 300;
     color: white;
     line-height: 1.1;
-    font-size: 1.5rem;
+    font-size: 2rem;
     text-align: left;
-    margin: 0 0 1.7rem 0;
-   
+    margin: 0 0 1.5rem 0;
   }
   
   .landing-hero__subtitle {
-    font-weight: 600;
-    line-height: 1.3;
-    width: 300px;
+    font-weight: 500;
+    line-height: 1.4;
     color: rgba(255,255,255,0.95);
-    font-size: 1.75rem;
+    font-size: 1.8rem;
     text-align: left;
-    margin: 0 0 1rem 0;
+    width: 320px;
+    margin: 0 0 1.5rem 0;
   }
   
   .landing-hero__tagline {
     font-style: italic;
     color: rgba(255,255,255,0.85);
     line-height: 1.4;
-    width: 320px;
     font-size: 1.15rem;
     text-align: left;
-    margin: 0 0 1.5rem 0;
+    width: 320px;
+    margin: 0 0 2rem 0;
   }
   
   .landing-hero__buttons {
@@ -102,7 +207,7 @@
   
   .landing-hero__mockup-mobile img {
     width: 100%;
-    max-width: 370px;
+    max-width: 350px;
     height: auto;
     filter: drop-shadow(0 10px 25px rgba(0,0,0,0.3));
   }
@@ -114,7 +219,7 @@
   /* BUTTON STYLES - MOBILE */
   .landing-button {
     display: inline-block;
-    border-radius: 15px;
+    border-radius: 50px;
     font-size: 1rem;
     font-weight: 500;
     text-decoration: none;
@@ -123,11 +228,11 @@
     cursor: pointer;
     padding: 0.875rem 2rem;
     width: 100%;
-    max-width: 340px;
+    max-width: 280px;
   }
   
   .landing-hero__buttons .landing-button {
-    width: 340px;
+    width: 330px;
     max-width: calc(100vw - 3rem);
     padding: 0.875rem 2rem;
   }
@@ -432,8 +537,8 @@
   }
   
   .landing-hero__logo {
-    width: 70px;
-    height: 70px;
+    width: 90px;
+    height: 90px;
     margin: 0 auto 2rem;
     display: block;
   }
@@ -449,13 +554,13 @@
   }
   
   .landing-hero__subtitle {
-    font-weight: 400;
+    font-weight: 600;
     line-height: 1.4;
     color: rgba(255,255,255,0.95);
     font-size: 1.375rem;
     text-align: center;
     margin: 2.75rem auto 2.5rem;
-    max-width: 550px;
+    max-width: 450px;
   }
   
   .landing-hero__tagline {
@@ -782,7 +887,7 @@
   }
   
   .landing-hero__overlay {
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4));
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.5));
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -807,18 +912,19 @@
   }
   
   .landing-hero__logo {
-    width: 90px;
-    height: 90px;
+    width: 80px;
+    height: 80px;
     margin: 0 0 1rem 0;
     display: block;
   }
   
   .landing-hero__title {
+    display: block;
     font-family: 'Playfair Display', serif;
-    font-weight: 500;
+    font-weight: 300;
     color: white;
     line-height: 1.1;
-    font-size: 3.5rem;
+    font-size: 3.4rem;
     text-align: left;
     margin: 0 0 1rem 0;
   }
@@ -829,7 +935,7 @@
     color: rgba(255,255,255,0.95);
     font-size: 1.6rem;
     text-align: left;
-    margin: 0 0 1.4rem 0;
+    margin: 0 0 1rem 0;
     width: 90%;
   }
   
@@ -837,7 +943,7 @@
     font-style: italic;
     color: rgba(255,255,255,0.85);
     line-height: 1.4;
-    font-size: 1.25rem;
+    font-size: 1.35rem;
     text-align: left;
     margin: 0.5rem 0 1.5rem 0;
     max-width: 600px;
@@ -855,7 +961,6 @@
     display: block;
     flex: 1;
     max-width: 650px;
-    
   }
   
   .landing-hero__mockup img {
@@ -906,7 +1011,7 @@
   }
   
   .landing-button--solid:hover {
-    background: #ffd341;
+    background: #d4af36;
     border-color: #d4af36;
   }
   

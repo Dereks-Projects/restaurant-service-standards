@@ -1,15 +1,58 @@
 // 📄 src/pages/LandingPage.jsx
 // Restaurant Standards Landing Page - Mobile First Design
-// Updated: Mobile hero section with reordered elements
+// Updated: Added mobile-only hamburger menu
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import LandingFooter from '../components/LandingFooter';
 import '../styles/LandingPage.css';
 
 function LandingPage() {
+  // State for mobile menu
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  
+  // Lock body scroll when menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMobileMenuOpen]);
+  
   return (
     <div className="landing">
+      {/* Mobile Menu Overlay */}
+      {isMobileMenuOpen && (
+        <div className="mobile-menu-overlay">
+          <button 
+            className="mobile-menu-close"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            ×
+          </button>
+          
+          <nav className="mobile-menu-nav">
+            <Link to="/" onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
+            <Link to="/training" onClick={() => setIsMobileMenuOpen(false)}>Training</Link>
+            <Link to="/introduction" onClick={() => setIsMobileMenuOpen(false)}>Introduction</Link>
+            <Link to="/about" onClick={() => setIsMobileMenuOpen(false)}>About</Link>
+          </nav>
+          
+          <div className="mobile-menu-social">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+              <img src="/social-icon-1-ig.svg" alt="Instagram" />
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+              <img src="/social-icon-2-li.svg" alt="LinkedIn" />
+            </a>
+          </div>
+        </div>
+      )}
+      
       {/* ============================== */}
       {/* SECTION 1: HERO                */}
       {/* ============================== */}
@@ -24,12 +67,25 @@ function LandingPage() {
                 className="landing-hero__logo" 
               />
               
-              {/* Title */}
+              {/* Mobile Header with Hamburger */}
+              <div className="mobile-header">
+                <button 
+                  className="mobile-hamburger"
+                  onClick={() => setIsMobileMenuOpen(true)}
+                >
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </button>
+                <div className="mobile-title">Restaurant Standards</div>
+              </div>
+              
+              {/* Desktop Title */}
               <div className="landing-hero__title">Restaurant Standards</div>
               
               {/* Subtitle - larger, with updated text */}
               <p className="landing-hero__subtitle">
-                The Best Restaurant Training Platform Built with Award Winning Standards.
+                Restaurant Training Platform Built with Award Winning Standards.
               </p>
               
               {/* Tagline - MOVED BEFORE BUTTONS for mobile layout */}
