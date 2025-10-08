@@ -36,12 +36,13 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.85);
+    background: rgba(0, 0, 0, 0.90);
     z-index: 9999;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding-bottom: 6rem;
   }
   
   .mobile-menu-close {
@@ -71,7 +72,7 @@
     text-decoration: none;
     font-family: 'Poppins', sans-serif;
     font-size: 1.5rem;
-    font-weight: 300;
+    font-weight: 400;
   }
   
   .mobile-menu-social {
@@ -79,11 +80,12 @@
     bottom: 3rem;
     display: flex;
     gap: 2rem;
+    padding-bottom: 5rem;
   }
   
   .mobile-menu-social img {
-    width: 32px;
-    height: 32px;
+    width: 36px;
+    height: 36px;
   }
   
   /* MOBILE HEADER WITH HAMBURGER */
@@ -228,11 +230,11 @@
     cursor: pointer;
     padding: 0.875rem 2rem;
     width: 100%;
-    max-width: 280px;
+    max-width: 320px;
   }
   
   .landing-hero__buttons .landing-button {
-    width: 330px;
+    width: 340px;
     max-width: calc(100vw - 3rem);
     padding: 0.875rem 2rem;
   }
@@ -240,7 +242,7 @@
   .landing-button--outline {
     background: transparent;
     color: white;
-    border: 2px solid white;
+    border: 2px solid #f1e0a7;
   }
   
   .landing-button--outline:hover {
