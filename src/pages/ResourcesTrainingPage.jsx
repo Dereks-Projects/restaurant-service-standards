@@ -25,7 +25,7 @@ function ResourcesTrainingPage() {
       <Header subtitle="Training Resources" />
       
       <main className="overview-page__content">
-        <div className="overview-page__title">Training</div>
+        <div className="overview-page__title">Staff Development</div>
         <div className="overview-page__divider"></div>
 
         <p className="overview-page__intro">
@@ -80,7 +80,7 @@ function ResourcesTrainingPage() {
         <div className="overview-page__section">
           <div className="overview-page__section-title">Introduction to Wine</div>
           <p className="overview-page__section-text">
-            A deep dive into the world of wine for the hospitality professional.
+            A deep dive into the world of wine for the hospitality professional. This is a comprehensive look at wine regions, varietals, key producers, and service standards.
           </p>
           <a href="/training/intro-wine.pdf" target="_blank" rel="noopener noreferrer">
             Download Booklet
@@ -91,7 +91,7 @@ function ResourcesTrainingPage() {
         <div className="overview-page__section">
           <div className="overview-page__section-title">More Educational Material</div>
           <p className="overview-page__section-text">
-            Here is a collection of articles and educational pieces pertinent to guest service excellence.
+            Here is a collection of articles and educational pieces pertaining to the restaurant and hotel awards systems that are popular in today's hospitality industry.
           </p>
           <a href="/training/michelin-guide.pdf" target="_blank" rel="noopener noreferrer">
             The Michelin Guide

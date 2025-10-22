@@ -253,18 +253,23 @@ function LandingPage() {
       {/* ============================== */}
       <section className="landing-cta">
         <div className="landing-cta__container">
+          <h2 className="landing-cta__title">
+            Elevate Your Team. Elevate Your Standards.
+          </h2>
           <p className="landing-cta__text">
-            I can help you drive revenue and improve guest service.
+            Give your staff the tools to deliver world-class hospitality—consistently, 
+            confidently, and at the level required for Michelin stars and Forbes Five-Star ratings.
           </p>
           <p className="landing-cta__text">
-            Browse the site and contact me for additional information.
+            Explore the platform or reach out to discuss how Restaurant Standards can 
+            transform your training program and elevate your guest experience.
           </p>
           
           <div className="landing-cta__buttons">
             <Link to="/training" className="landing-button landing-button--outline-light">
               Enter the Site
             </Link>
-            <a href="mailto:contact@restaurantstandards.com" className="landing-button landing-button--solid-light">
+            <a href="mailto:derekengles@gmail.com" className="landing-button landing-button--solid-light">
               Contact Me
             </a>
           </div>

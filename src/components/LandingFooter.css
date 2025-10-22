@@ -65,8 +65,8 @@
   
   /* Larger font size on desktop */
   .landing-footer__nav {
-    font-size: 1rem;
-    margin-bottom: 1.5rem;
+    font-size: .8rem;
+    margin-bottom: 1.1rem;
   }
   
   /* Less padding on links since we have separators */
@@ -75,6 +75,6 @@
   }
   
   .landing-footer__copyright {
-    font-size: 0.85rem;
+    font-size: 0.65rem;
   }
 }
