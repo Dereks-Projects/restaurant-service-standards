@@ -1,4 +1,5 @@
-// 📄 src/components/MobileNav.jsx
+// 📄 FILE: src/components/MobileNav.jsx
+// Mobile navigation bar with 5 buttons using emoji icons
 
 import React from 'react';
 import './MobileNav.css';
@@ -10,8 +11,9 @@ export default function MobileNav() {
 
   const navItems = [
     { label: "Home", path: "/", icon: "🏠" },
-    { label: "Training", path: "/Training", icon: "📚" },
-    { label: "Book", path: "https://www.amazon.com/dp/B0FNDMTK5F", icon: "📖", external: true },
+    { label: "Training", path: "/training", icon: "📚" },
+    { label: "Resources", path: "/resources/training", icon: "📑" },
+    { label: "Quiz", path: "/resources/quiz", icon: "✅" },
     { label: "About", path: "/about", icon: "ℹ️" }
   ];
 
@@ -19,17 +21,10 @@ export default function MobileNav() {
     <nav className="mobile-nav">
       {navItems.map((item, i) => (
         <button
-        key={i}
-        className={`mobile-nav__item ${location.pathname === item.path ? 'active' : ''}`}
-        onClick={() => {
-          if (item.external) {
-            window.open(item.path, '_blank');
-          } else {
-            navigate(item.path);
-          }
-        }}
-      >
-        
+          key={i}
+          className={`mobile-nav__item ${location.pathname === item.path ? 'active' : ''}`}
+          onClick={() => navigate(item.path)}
+        >
           <div className="mobile-nav__icon">{item.icon}</div>
           <div className="mobile-nav__label">{item.label}</div>
         </button>

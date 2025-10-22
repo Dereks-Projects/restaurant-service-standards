@@ -1,0 +1,112 @@
+/* Enhanced training card with red arrow link */
+
+/* Mobile-first base styles */
+.training-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  padding: 1rem;  
+  padding-bottom: 1.2rem;  
+  margin-bottom: var(--space-md);
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  border: none;
+  text-align: center;
+}
+
+/* Hover state */
+.training-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  background-color: #f9f9f9;
+}
+
+/* Arrow hover animation */
+.training-card:hover .training-card__arrow {
+  transform: translateX(4px);
+}
+
+/* Active press state */
+.training-card:active {
+  transform: translateY(-2px);
+}
+
+/* Icon container */
+.training-card__icon {
+  margin-bottom: var(--space-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Text content container - mobile default */
+.training-card__content {
+  width: 90%;
+  margin-bottom: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Card title */
+.training-card__title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--color-text);
+  margin-bottom: var(--space-sm);
+  line-height: 1.3;
+}
+
+/* Card description */
+.training-card__description {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Red arrow link at bottom */
+.training-card__arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: auto;
+  transition: transform 0.2s ease;
+}
+
+/* Desktop adjustments */
+@media (min-width: 768px) {
+  .training-card {
+    padding: 1rem 1rem;
+    padding-bottom: 2rem; 
+    margin-bottom: 0;
+    min-height: 210px;
+    height: 90%;
+  }
+
+  /* Narrower text on desktop */
+  .training-card__content {
+    width: 85%;
+    max-width: 300px;
+  }
+
+  .training-card__icon {
+    margin-bottom: 1.25rem;
+  }
+
+  .training-card__title {
+    font-size: 1.3rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .training-card__description {
+    font-size: 0.85rem;
+  }
+}

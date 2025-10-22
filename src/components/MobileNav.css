@@ -1,10 +1,10 @@
-/* 📄 src/components/MobileNav.css */
+/* Mobile navigation bar styles - 5 button layout with emoji icons */
 
 .mobile-nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  position: fixed; /* 🔥 critical: pins to bottom */
+  position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
@@ -14,28 +14,34 @@
   z-index: 100;
 }
 
+/* Individual nav button */
 .mobile-nav__item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 0.85rem;
+  font-size: 0.765rem;
   color: white;
   background: transparent;
   border: none;
+  cursor: pointer;
+  padding: 0.5rem 0.25rem;
+  flex: 1;
 }
 
+/* Active state styling */
 .mobile-nav__item.active {
   color: white;
-
 }
 
+/* Icon container - emoji size reduced 10% */
 .mobile-nav__icon {
-  font-size: 1rem;
+  font-size: 0.9rem;
   margin-bottom: 0.2rem;
 }
 
+/* Label text - reduced 10% */
 .mobile-nav__label {
-  font-size: .7rem;
+  font-size: 0.63rem;
   line-height: 1;
   text-align: center;
 }

@@ -1,87 +1,132 @@
-// 📄 FILE: src/pages/Home.jsx
+// 📄 FILE: src/pages/TrainingDashboard.jsx
+// ✅ Updated with colorful Phosphor icons and concise descriptions
 
-import React, { useEffect } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import Header from "../components/Header";
-import ButtonCard from "../components/ButtonCard";
+import TrainingCard from "../components/TrainingCard";
 import "../styles/Home.css";
 import MobileNav from "../components/MobileNav";
 import DesktopFooter from "../components/DesktopFooter";
 
-function Home() {
+// ✅ Import Phosphor React icons (duotone weight for color impact)
+import { 
+  BookOpen,           // Introduction
+  CalendarCheck,      // Reservation System
+  Door,               // Arrival & Departure
+  ForkKnife,          // Dinner Service
+  Wine,               // Food & Beverage Quality
+  Buildings,          // Presentation of Facilities
+  GraduationCap,      // Training Resources
+  ClipboardText,      // Quiz
+  ShoppingBag         // Get the Book
+} from 'phosphor-react';
+
+function TrainingDashboard() {
   const navigate = useNavigate();
-
-
 
   return (
     <div className="home-container">
       {/* ✅ Fixed header at top */}
       <Header
-        
         subtitle="Empower your restaurant team with the highest standards in the industry."
       />
 
-      {/* ✅ Scrollable content */}
+      {/* ✅ Scrollable content area */}
       <div className="home-scrollable-body">
         <div className="home-page__buttons">
-          <ButtonCard
-            icon="👋"
+          
+          {/* 🔹 CARD 1: Introduction */}
+          <TrainingCard
+            icon={BookOpen}
+            iconColor="#2563eb" /* Blue */
             title="Introduction"
-            subtitle="Begin your journey here."
+            description="Begin your journey into professional hospitality with foundational principles that drive exceptional service."
             onClick={() => navigate("/introduction")}
           />
-          <ButtonCard
-            icon="📅"
+
+          {/* 🔹 CARD 2: Reservation System */}
+          <TrainingCard
+            icon={CalendarCheck}
+            iconColor="#7c3aed" /* Purple */
             title="Reservation System"
-            subtitle="Where all experiences begin."
+            description="Master booking protocols and guest communication to set the perfect tone before arrival."
             onClick={() => navigate("/section/Reservation System")}
           />
-          <ButtonCard
-            icon="🚪"
+
+          {/* 🔹 CARD 3: Arrival & Departure */}
+          <TrainingCard
+            icon={Door}
+            iconColor="#059669" /* Green */
             title="Arrival & Departure"
-            subtitle="Warm greetings & intuitive hospitality."
+            description="Create memorable first impressions with warm greetings and gracious farewells that resonate."
             onClick={() => navigate("/section/Arrival & Departure")}
           />
-          <ButtonCard
-            icon="🍽️"
+
+          {/* 🔹 CARD 4: Dinner Service */}
+          <TrainingCard
+            icon={ForkKnife}
+            iconColor="#dc2626" /* Red */
             title="Dinner Service"
-            subtitle="The center of the experience."
+            description="Perfect seamless table service, timing coordination, and guest interaction techniques."
             onClick={() => navigate("/section/Dinner Service")}
           />
-          <ButtonCard
-            icon="🍷"
+
+          {/* 🔹 CARD 5: Food & Beverage Quality */}
+          <TrainingCard
+            icon={Wine}
+            iconColor="#9333ea" /* Purple-pink */
             title="Food & Beverage Quality"
-            subtitle="Execution of the product."
+            description="Ensure flawless execution and presentation from kitchen to table with quality standards."
             onClick={() => navigate("/section/Food & Beverage Quality")}
           />
-          <ButtonCard
-            icon="🏛️"
+
+          {/* 🔹 CARD 6: Presentation of Facilities */}
+          <TrainingCard
+            icon={Buildings}
+            iconColor="#0891b2" /* Cyan */
             title="Presentation of Facilities"
-            subtitle="Showcasing your space."
+            description="Showcase your space with cleanliness, ambiance, and attention to detail standards."
             onClick={() => navigate("/section/Presentation of Facilities")}
           />
-          <ButtonCard
-            icon="📚"
-            title="Resources"
-            subtitle="Tools to support your team."
-            onClick={() => navigate("/resources")}
+
+          {/* 🔹 CARD 7: Training Resources */}
+          <TrainingCard
+            icon={GraduationCap}
+            iconColor="#ea580c" /* Orange */
+            title="Training Resources"
+            description="Access comprehensive training materials and professional development tools for your team."
+            onClick={() => navigate("/resources/training")}
           />
-          <ButtonCard
-            icon="📖"
+
+          {/* 🔹 CARD 8: Quiz */}
+          <TrainingCard
+            icon={ClipboardText}
+            iconColor="#16a34a" /* Green */
+            title="Quiz"
+            description="Test knowledge with scenario-based questions covering elevated hospitality service standards."
+            onClick={() => navigate("/resources/quiz")}
+          />
+
+          {/* 🔹 CARD 9: Get the Book */}
+          <TrainingCard
+            icon={ShoppingBag}
+            iconColor="#001f3f" /* Navy - brand color */
             title="Get the Book"
-            subtitle="The ultimate service manual."
+            description="The complete Restaurant Standards service manual with in-depth guides and applications."
             onClick={() => window.open('https://www.amazon.com/dp/B0FNDMTK5F', '_blank')}
           />
+
         </div>
       </div>
 
-      {/* 🔹 Desktop-only footer */}
+      {/* 📍 Desktop-only footer */}
       <DesktopFooter />
 
-      {/* 🔹 MobileNav (mobile only) */}
+      {/* 📍 MobileNav (mobile only) */}
       <MobileNav />
     </div>
   );
 }
 
-export default Home;
+export default TrainingDashboard;

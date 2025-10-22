@@ -5,24 +5,14 @@
 /* BASE STYLES (Mobile-first)                  */
 /* ============================================ */
 .rss-header {
-  /* Layout */
   display: grid;
   grid-auto-rows: auto;
   justify-items: center;
   row-gap: 0.5rem;
   width: 100%;
-  
-  /* Positioning - Sticky on mobile */
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  
-  /* Styling */
   background: rgb(26, 26, 26);
   color: var(--color-white);
   text-align: center;
-  
-  /* Spacing */
   padding: 1rem;
   margin: 0;
   box-sizing: border-box;
