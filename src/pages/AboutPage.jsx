@@ -5,11 +5,20 @@ import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import MobileNav from '../components/MobileNav';
 import DesktopFooter from '../components/DesktopFooter';
+import SEO from '../components/SEO';
 import '../styles/AboutPage.css';
 
 function AboutPage() {
   return (
-    <div className="about-page">
+    <>
+      <SEO 
+        title="About Us - Luxury Hospitality Training Platform"
+        description="Restaurant Standards training platform for Michelin, AAA and Forbes-level service excellence."
+        keywords="hospitality training expert, luxury restaurant consultant, Michelin service training, Forbes standards expert, Derek Engles"
+        canonicalUrl="https://www.restaurantstandards.com/about"
+      />
+      
+      <div className="about-page">
       <Header
         title="RSS"
         subtitle="Elevating hospitality training, anywhere."
@@ -123,6 +132,7 @@ function AboutPage() {
       <DesktopFooter />
       <MobileNav />
     </div>
+    </>
   );
 }
 

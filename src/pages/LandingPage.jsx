@@ -5,6 +5,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import LandingFooter from '../components/LandingFooter';
+import SEO from '../components/SEO'; 
 import '../styles/LandingPage.css';
 
 function LandingPage() {
@@ -24,7 +25,15 @@ function LandingPage() {
   }, [isMobileMenuOpen]);
   
   return (
-    <div className="landing">
+    <>
+      <SEO 
+        title="Restaurant Standards - Luxury Hospitality Training Platform"
+        description="Master fine dining service standards with professional training for luxury hotels and restaurants. Reverse-engineered from Michelin, Forbes, and James Beard award programs."
+        keywords="luxury hospitality training, fine dining service standards, restaurant staff training, Michelin training, Forbes service standards, restaurant awards training"
+        canonicalUrl="https://www.restaurantstandards.com/"
+      />
+      
+      <div className="landing">
       {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
         <div className="mobile-menu-overlay">
@@ -281,6 +290,7 @@ function LandingPage() {
       {/* ============================== */}
       <LandingFooter />
     </div>
+    </>
   );
 }
 

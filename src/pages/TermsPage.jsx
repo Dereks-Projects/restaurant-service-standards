@@ -3,12 +3,21 @@ import React from 'react';
 import Header from '../components/Header';
 import MobileNav from '../components/MobileNav';
 import DesktopFooter from '../components/DesktopFooter';
+import SEO from '../components/SEO'; 
 import '../styles/SectionPage.css';
 import '../styles/AboutPage.css';
 
 function TermsPage() {
   return (
-    <div className="section-page">
+    <>
+      <SEO 
+        title="Terms of Use - Restaurant Standards"
+        description="Terms and conditions for Restaurant Standards training platform. Review usage policies and legal terms for accessing hospitality training materials."
+        keywords="terms of use, terms and conditions, restaurant standards terms, legal terms"
+        canonicalUrl="https://www.restaurantstandards.com/terms"
+      />
+      
+      <div className="section-page">
       <Header
         title="RSS"
         subtitle="Terms of use and conditions."
@@ -27,6 +36,7 @@ function TermsPage() {
       <DesktopFooter />
       <MobileNav />
     </div>
+    </>
   );
 }
 

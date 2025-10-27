@@ -7,7 +7,8 @@ import QuizSummary from '../components/QuizSummary';
 import Header from '../components/Header';
 import DesktopFooter from '../components/DesktopFooter';
 import MobileNav from '../components/MobileNav';
-import '../styles/SectionPage.css';  // 🔔 Use SectionPage.css for consistent styling
+import SEO from '../components/SEO'; 
+import '../styles/SectionPage.css';  
 import '../styles/Quiz.css';
 
 
@@ -90,7 +91,15 @@ function QuizPage() {
   };
 
   return (
-    <div className="section-page">
+    <>
+      <SEO 
+        title="Service Standards Quiz - Restaurant Training Assessment"
+        description="Test your hospitality knowledge with professional service standards quizzes. Assess training for reservation handling, dinner service, and luxury restaurant operations."
+        keywords="restaurant training quiz, hospitality assessment, service standards test, restaurant knowledge quiz"
+        canonicalUrl="https://www.restaurantstandards.com/resources/quiz"
+      />
+      
+      <div className="section-page">
       {/* 🔹 Shared header for consistent styling */}
       <Header
         title="RSS"
@@ -139,6 +148,7 @@ function QuizPage() {
       {/* 🔹 MobileNav for mobile view only */}
       <MobileNav />
     </div>
+    </>
   );
 }
 

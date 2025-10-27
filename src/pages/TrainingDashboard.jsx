@@ -5,6 +5,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import Header from "../components/Header";
 import TrainingCard from "../components/TrainingCard";
+import SEO from "../components/SEO";
 import "../styles/Home.css";
 import MobileNav from "../components/MobileNav";
 import DesktopFooter from "../components/DesktopFooter";
@@ -26,7 +27,15 @@ function TrainingDashboard() {
   const navigate = useNavigate();
 
   return (
-    <div className="home-container">
+    <>
+      <SEO 
+        title="Training Dashboard - Restaurant Standards Platform"
+        description="Comprehensive restaurant training modules covering reservation systems, dinner service, food quality, and facility presentation. Professional hospitality education for luxury service standards."
+        keywords="restaurant training dashboard, hospitality training modules, service standards training, restaurant staff education"
+        canonicalUrl="https://www.restaurantstandards.com/training"
+      />
+      
+      <div className="home-container">
       {/* ✅ Fixed header at top */}
       <Header
         subtitle="Empower your restaurant team with the highest standards in the industry."
@@ -126,6 +135,7 @@ function TrainingDashboard() {
       {/* 📍 MobileNav (mobile only) */}
       <MobileNav />
     </div>
+    </>
   );
 }
 

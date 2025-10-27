@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
 import MobileNav from '../components/MobileNav';
 import DesktopFooter from '../components/DesktopFooter';
+import SEO from '../components/SEO';
 import introductionContent from '../data/introductionContent.json';
 import '../styles/IntroductionPage.css';
 
@@ -25,7 +26,15 @@ function IntroductionPage() {
   }, []);
 
   return (
-    <div className="intro-page">
+    <>
+      <SEO 
+        title="Getting Started - Restaurant Standards Training Platform"
+        description="Learn how to use Restaurant Standards training platform. Comprehensive introduction to luxury hospitality service standards and professional training modules."
+        keywords="restaurant training guide, hospitality training introduction, service standards tutorial, getting started"
+        canonicalUrl="https://www.restaurantstandards.com/introduction"
+      />
+      
+      <div className="intro-page">
       {/* Header - appears on both mobile and desktop */}
       <Header subtitle="Introduction to Restaurant Standards" />
 
@@ -73,6 +82,7 @@ function IntroductionPage() {
         <DesktopFooter />
       )}
     </div>
+    </>
   );
 }
 

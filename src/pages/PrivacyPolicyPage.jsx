@@ -3,12 +3,21 @@ import React from 'react';
 import Header from '../components/Header';
 import MobileNav from '../components/MobileNav';
 import DesktopFooter from '../components/DesktopFooter';
+import SEO from '../components/SEO';
 import '../styles/SectionPage.css';
 import '../styles/AboutPage.css';
 
 function PrivacyPolicyPage() {
   return (
-    <div className="section-page">
+    <>
+      <SEO 
+        title="Privacy Policy - Restaurant Standards"
+        description="Privacy policy for Restaurant Standards training platform. Learn how we protect your data and respect your privacy."
+        keywords="privacy policy, data protection, restaurant standards privacy"
+        canonicalUrl="https://www.restaurantstandards.com/privacy"
+      />
+      
+      <div className="section-page">
       <Header
         title="RSS"
         subtitle="Protecting your privacy and data."
@@ -26,6 +35,7 @@ function PrivacyPolicyPage() {
       <DesktopFooter />
       <MobileNav />
     </div>
+    </>
   );
 }
 

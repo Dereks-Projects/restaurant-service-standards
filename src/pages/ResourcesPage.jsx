@@ -2,13 +2,22 @@ import { useNavigate } from "react-router-dom";
 import Header from "../components/Header";
 import DesktopFooter from "../components/DesktopFooter";
 import MobileNav from "../components/MobileNav";
+import SEO from "../components/SEO";
 import "../styles/SectionPage.css";
 
 function ResourcesPage() {
   const navigate = useNavigate();
 
   return (
-    <div className="section-page">
+    <>
+      <SEO 
+        title="Resources Hub - Restaurant Standards Training Materials"
+        description="Access comprehensive training and development materials for restaurant service excellence. Videos, guides, and resources for luxury hospitality operations."
+        keywords="restaurant resources, training materials, hospitality guides, service excellence resources"
+        canonicalUrl="https://www.restaurantstandards.com/resources"
+      />
+      
+      <div className="section-page">
       {/* 🔹 Consistent header */}
       <Header
         title="RSS"
@@ -56,6 +65,7 @@ function ResourcesPage() {
       {/* 🔹 Mobile nav for mobile */}
       <MobileNav />
     </div>
+    </>
   );
 }
 

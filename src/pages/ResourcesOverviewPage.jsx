@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
 import MobileNav from '../components/MobileNav';
 import DesktopFooter from '../components/DesktopFooter';
+import SEO from '../components/SEO';
 import "../styles/OverviewPage.css";
 
 function ResourcesOverviewPage() {
@@ -21,7 +22,15 @@ function ResourcesOverviewPage() {
   }, []);
 
   return (
-    <div className="overview-page">
+    <>
+      <SEO 
+        title="Training Resources - Restaurant Standards Platform"
+        description="Comprehensive training resources for restaurant excellence. Build a culture of service quality, boost revenue through education, and prepare for Michelin and Forbes recognition."
+        keywords="restaurant training resources, hospitality development, service training materials, restaurant education program"
+        canonicalUrl="https://www.restaurantstandards.com/resources/overview"
+      />
+      
+      <div className="overview-page">
       <Header subtitle="Resources" />
       
       <main className="overview-page__content">
@@ -70,6 +79,7 @@ function ResourcesOverviewPage() {
 
       {isMobile ? <MobileNav /> : <DesktopFooter />}
     </div>
+    </>
   );
 }
 

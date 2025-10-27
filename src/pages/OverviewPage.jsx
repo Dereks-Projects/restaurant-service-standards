@@ -7,6 +7,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
 import MobileNav from '../components/MobileNav';
 import DesktopFooter from '../components/DesktopFooter';
+import SEO from '../components/SEO';
 import sectionData from '../data/sectionOverviews.json';
 import introText from '../data/sectionOverviewsIntro.json';
 import '../styles/OverviewPage.css';
@@ -54,7 +55,15 @@ function OverviewPage() {
   const introContent = introText[simpleKey] || introText[sectionId] || '';
 
   return (
-    <div className="overview-page">
+    <>
+      <SEO 
+        title={`${fullTopic} Overview - Restaurant Standards Training`}
+        description={`Comprehensive ${fullTopic} training standards for luxury restaurants. Master professional service excellence and hospitality best practices.`}
+        keywords={`${fullTopic} training, restaurant service standards, ${sectionId} hospitality training`}
+        canonicalUrl={`https://www.restaurantstandards.com/overview/${sectionId}`}
+      />
+      
+      <div className="overview-page">
       {/* Header - appears on both mobile and desktop */}
       <Header subtitle={fullTopic || 'Overview'} />
 
@@ -104,6 +113,7 @@ function OverviewPage() {
         <DesktopFooter />
       )}
     </div>
+    </>
   );
 }
 

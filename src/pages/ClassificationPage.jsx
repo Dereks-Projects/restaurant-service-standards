@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import data from '../data/standards.json';
 import Accordion from '../components/Accordion';
 import SectionButton from '../components/SectionButton';
+import SEO from '../components/SEO';
 
 function ClassificationPage() {
   const { sectionName, classificationName } = useParams();
@@ -32,7 +33,15 @@ function ClassificationPage() {
   };
 
   return (
-    <div style={{ padding: '2rem', textAlign: 'center' }}>
+    <>
+      <SEO 
+        title={`${decodedClassification} Standards - ${decodedSection} Training`}
+        description={`Master ${decodedClassification} service standards for luxury hospitality. Professional training for ${decodedSection} excellence in fine dining restaurants.`}
+        keywords={`${decodedClassification} training, ${decodedSection} standards, fine dining service, restaurant training`}
+        canonicalUrl={`https://www.restaurantstandards.com/classification/${encodeURIComponent(classificationName)}`}
+      />
+      
+      <div style={{ padding: '2rem', textAlign: 'center' }}>
       <h1>{decodedClassification}</h1>
 
       {/* ✅ Final: clean string rendering only */}
@@ -58,6 +67,7 @@ function ClassificationPage() {
         <SectionButton label="Back to Section" onClick={handleBack} />
       </div>
     </div>
+    </>
   );
 }
 

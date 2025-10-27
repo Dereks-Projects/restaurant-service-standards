@@ -7,6 +7,7 @@ import { useState } from "react";
 import Header from "../components/Header";
 import MobileNav from "../components/MobileNav";
 import DesktopFooter from "../components/DesktopFooter";
+import SEO from "../components/SEO"; 
 
 function SectionPage() {
   const { sectionName } = useParams();
@@ -49,7 +50,15 @@ function SectionPage() {
   const getSectionId = (name) => name.toLowerCase().split(" ")[0];
 
   return (
-    <div className="section-page">
+    <>
+      <SEO 
+        title={`${sectionName} Training - Restaurant Standards`}
+        description={`${sectionDescriptions[sectionName] || `Professional training for ${sectionName}`} Master luxury hospitality service standards.`}
+        keywords={`${sectionName} training, restaurant service standards, hospitality training, fine dining ${sectionName.toLowerCase()}`}
+        canonicalUrl={`https://www.restaurantstandards.com/section/${encodeURIComponent(sectionName)}`}
+      />
+      
+      <div className="section-page">
       {/* 🔹 Corrected: subtitle pulled from sectionDescriptions */}
       <Header
         title="RSS"
@@ -124,6 +133,7 @@ function SectionPage() {
       {/* 🔹 Fixed MobileNav */}
       <MobileNav />
     </div>
+    </>
   );
 }
 
