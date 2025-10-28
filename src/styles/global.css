@@ -43,6 +43,8 @@ html {
 /* Add padding to page containers (not body) */
 .section-page,
 .home-container,
-.overview-page {
+.overview-page,
+.about-page,        /* Add this */
+.intro-page {       /* Add this */
   padding-top: 60px;
 }
