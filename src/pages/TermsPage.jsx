@@ -1,6 +1,6 @@
 // 📄 src/pages/TermsPage.jsx
 import React from 'react';
-import Header from '../components/Header';
+import UnifiedHeader from "../components/UnifiedHeader";
 import MobileNav from '../components/MobileNav';
 import DesktopFooter from '../components/DesktopFooter';
 import SEO from '../components/SEO'; 
@@ -18,9 +18,9 @@ function TermsPage() {
       />
       
       <div className="section-page">
-      <Header
-        title="RSS"
-        subtitle="Terms of use and conditions."
+      <UnifiedHeader 
+        variant="internal"
+        hideOnDesktop={false}  // ← Or omit entirely (defaults to false)
       />
       <div className="section-content-wrapper about-content-wrapper">
         <h2 className="section-title">Terms of Use</h2>

@@ -4,7 +4,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import Header from '../components/Header';
+import UnifiedHeader from "../components/UnifiedHeader";
 import MobileNav from '../components/MobileNav';
 import DesktopFooter from '../components/DesktopFooter';
 import SEO from '../components/SEO';
@@ -64,8 +64,10 @@ function OverviewPage() {
       />
       
       <div className="overview-page">
-      {/* Header - appears on both mobile and desktop */}
-      <Header subtitle={fullTopic || 'Overview'} />
+     <UnifiedHeader 
+        variant="internal"
+        hideOnDesktop={false}  // ← Or omit entirely (defaults to false)
+      />
 
       {/* Main content area */}
       <main className="overview-page__content">

@@ -4,7 +4,7 @@ import standards from '../data/standards.json';
 import QuizIntro from '../components/QuizIntro';
 import QuestionCard from '../components/QuestionCard';
 import QuizSummary from '../components/QuizSummary';
-import Header from '../components/Header';
+import UnifiedHeader from "../components/UnifiedHeader";
 import DesktopFooter from '../components/DesktopFooter';
 import MobileNav from '../components/MobileNav';
 import SEO from '../components/SEO'; 
@@ -101,9 +101,9 @@ function QuizPage() {
       
       <div className="section-page">
       {/* 🔹 Shared header for consistent styling */}
-      <Header
-        title="RSS"
-        subtitle="Test your team's knowledge of elevated hospitality service standards."
+      <UnifiedHeader 
+        variant="internal"
+        hideOnDesktop={false}  // ← Or omit entirely (defaults to false)
       />
 
       {/* 🔹 Content wrapper ensures padding and alignment */}

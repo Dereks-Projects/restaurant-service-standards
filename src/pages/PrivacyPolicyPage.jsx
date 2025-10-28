@@ -1,6 +1,6 @@
 // 📄 src/pages/PrivacyPolicyPage.jsx
 import React from 'react';
-import Header from '../components/Header';
+import UnifiedHeader from "../components/UnifiedHeader";
 import MobileNav from '../components/MobileNav';
 import DesktopFooter from '../components/DesktopFooter';
 import SEO from '../components/SEO';
@@ -18,9 +18,9 @@ function PrivacyPolicyPage() {
       />
       
       <div className="section-page">
-      <Header
-        title="RSS"
-        subtitle="Protecting your privacy and data."
+      <UnifiedHeader 
+        variant="internal"
+        hideOnDesktop={false}  // ← Or omit entirely (defaults to false)
       />
       <div className="section-content-wrapper about-content-wrapper">
         <h2 className="section-title">Privacy Policy</h2>

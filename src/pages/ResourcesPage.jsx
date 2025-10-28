@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import Header from "../components/Header";
+import UnifiedHeader from "../components/UnifiedHeader";
 import DesktopFooter from "../components/DesktopFooter";
 import MobileNav from "../components/MobileNav";
 import SEO from "../components/SEO";
@@ -19,9 +19,9 @@ function ResourcesPage() {
       
       <div className="section-page">
       {/* 🔹 Consistent header */}
-      <Header
-        title="RSS"
-        subtitle="This section provides the training and development collateral to execute these elevated service standards."
+      <UnifiedHeader 
+        variant="internal"
+        hideOnDesktop={false}  // ← Or omit entirely (defaults to false)
       />
 
       {/* 🔹 Content wrapper ensures padding + alignment */}

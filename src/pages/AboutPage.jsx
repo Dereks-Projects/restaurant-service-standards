@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Header from '../components/Header';
+import UnifiedHeader from "../components/UnifiedHeader";
 import MobileNav from '../components/MobileNav';
 import DesktopFooter from '../components/DesktopFooter';
 import SEO from '../components/SEO';
@@ -19,10 +19,10 @@ function AboutPage() {
       />
       
       <div className="about-page">
-      <Header
-        title="RSS"
-        subtitle="Elevating hospitality training, anywhere."
-      />
+      <UnifiedHeader 
+      variant="internal"
+      hideOnDesktop={false}  // ← Or omit entirely (defaults to false)
+    />
 
       <div className="about-hero">
         <h1>About Restaurant Standards</h1>

@@ -4,7 +4,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import standards from "../data/standards.json";
 import "../styles/SectionPage.css";
 import { useState } from "react";
-import Header from "../components/Header";
+import UnifiedHeader from "../components/UnifiedHeader";
 import MobileNav from "../components/MobileNav";
 import DesktopFooter from "../components/DesktopFooter";
 import SEO from "../components/SEO"; 
@@ -60,9 +60,9 @@ function SectionPage() {
       
       <div className="section-page">
       {/* 🔹 Corrected: subtitle pulled from sectionDescriptions */}
-      <Header
-        title="RSS"
-        subtitle={sectionDescriptions[sectionName] || ""}
+      <UnifiedHeader 
+        variant="internal"
+        hideOnDesktop={false}  // ← Or omit entirely (defaults to false)
       />
 
       <div className="section-content-wrapper">

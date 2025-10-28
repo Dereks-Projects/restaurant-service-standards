@@ -3,7 +3,7 @@
 
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import Header from "../components/Header";
+import UnifiedHeader from "../components/UnifiedHeader";
 import TrainingCard from "../components/TrainingCard";
 import SEO from "../components/SEO";
 import "../styles/Home.css";
@@ -37,8 +37,9 @@ function TrainingDashboard() {
       
       <div className="home-container">
       {/* ✅ Fixed header at top */}
-      <Header
-        subtitle="Empower your restaurant team with the highest standards in the industry."
+      <UnifiedHeader 
+        variant="internal"
+        hideOnDesktop={false}  // ← Or omit entirely (defaults to false)
       />
 
       {/* ✅ Scrollable content area */}

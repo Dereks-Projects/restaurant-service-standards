@@ -1,0 +1,210 @@
+/* 📄 FILE: src/components/HamburgerMenu.css */
+/* Hamburger menu styles - Mobile-first with desktop dropdown */
+
+/* ============================================ */
+/* BASE STYLES (Mobile Full-Screen Overlay)    */
+/* ============================================ */
+
+.hamburger-menu {
+  position: fixed;
+  top: 60px; /* Below header */
+  left: 0;
+  width: 100vw;
+  height: calc(100vh - 60px);
+  background: rgba(0, 0, 0, 0.95); /* Semi-transparent black */
+  z-index: 998;
+  
+  /* Flexbox layout for vertical stacking */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  
+  /* Padding and spacing */
+  padding: 3rem 2rem 2rem 2.5rem; /* Extra left padding for indent */
+  
+  /* Animation */
+  animation: slideInFromRight 0.3s ease-out;
+}
+
+/* Slide in animation */
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* ============================================ */
+/* NAVIGATION LINKS                            */
+/* ============================================ */
+
+.hamburger-menu__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.hamburger-menu__nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.25rem;
+  font-weight: 400;
+  transition: opacity 0.2s ease;
+  width: fit-content;
+}
+
+.hamburger-menu__nav a:hover {
+  opacity: 0.7;
+}
+
+/* ============================================ */
+/* SOCIAL ICONS                                */
+/* ============================================ */
+
+.hamburger-menu__social {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.hamburger-menu__social a {
+  display: block;
+  width: 32px;
+  height: 32px;
+  transition: opacity 0.2s ease;
+}
+
+.hamburger-menu__social a:hover {
+  opacity: 0.7;
+}
+
+.hamburger-menu__social img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* ============================================ */
+/* LEGAL LINKS                                 */
+/* ============================================ */
+
+.hamburger-menu__legal {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: auto; /* Push to bottom on mobile */
+}
+
+.hamburger-menu__legal a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 300;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+  width: fit-content;
+}
+
+.hamburger-menu__legal a:hover {
+  opacity: 1;
+}
+
+/* ============================================ */
+/* DESKTOP STYLES (Dropdown Panel)             */
+/* ============================================ */
+
+@media (min-width: 768px) {
+  .hamburger-menu {
+    /* Transform to dropdown panel */
+    top: 60px;
+    left: auto;
+    right: 0;
+    width: 280px;
+    height: auto;
+    max-height: calc(100vh - 80px);
+    
+    /* Solid black background on desktop */
+    background: #000000;
+    
+    /* Box shadow for depth */
+    box-shadow: -2px 4px 12px rgba(0, 0, 0, 0.3);
+    
+    /* Adjusted padding for desktop */
+    padding: 2rem 1.5rem;
+    
+    /* Right-align content */
+    align-items: flex-end;
+    
+    /* Rounded bottom left corner */
+    border-radius: 0 0 0 8px;
+  }
+  
+  /* Desktop navigation - right-aligned */
+  .hamburger-menu__nav {
+    width: 100%;
+    align-items: flex-end;
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+  }
+  
+  .hamburger-menu__nav a {
+    font-size: 1.1rem;
+    position: relative;
+    text-align: right;
+  }
+  
+  /* Underline rollover effect on desktop */
+  .hamburger-menu__nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    right: 0;
+    width: 0;
+    height: 1px;
+    background: #ffffff;
+    transition: width 0.3s ease;
+  }
+  
+  .hamburger-menu__nav a:hover::after {
+    width: 100%;
+  }
+  
+  /* Desktop social icons */
+  .hamburger-menu__social {
+    justify-content: flex-end;
+    margin-bottom: 2rem;
+  }
+  
+  /* Desktop legal links - right-aligned */
+  .hamburger-menu__legal {
+    width: 100%;
+    align-items: flex-end;
+    gap: 0.5rem;
+  }
+  
+  .hamburger-menu__legal a {
+    font-size: 0.85rem;
+    text-align: right;
+  }
+}
+
+/* ============================================ */
+/* LARGE DESKTOP (Extra spacing)               */
+/* ============================================ */
+
+@media (min-width: 1200px) {
+  .hamburger-menu {
+    width: 320px;
+    padding: 2.5rem 2rem;
+  }
+  
+  .hamburger-menu__nav a {
+    font-size: 1.2rem;
+  }
+}

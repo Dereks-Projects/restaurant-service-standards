@@ -1,11 +1,12 @@
 // 📄 src/pages/LandingPage.jsx
 // Restaurant Standards Landing Page - Mobile First Design
-// Updated: Added mobile-only hamburger menu
+// Updated: Added UnifiedHeader component
 
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import LandingFooter from '../components/LandingFooter';
-import SEO from '../components/SEO'; 
+import SEO from '../components/SEO';
+import UnifiedHeader from '../components/UnifiedHeader';
 import '../styles/LandingPage.css';
 
 function LandingPage() {
@@ -33,7 +34,14 @@ function LandingPage() {
         canonicalUrl="https://www.restaurantstandards.com/"
       />
       
-      <div className="landing">
+      <div className="landing landing-page">
+      
+      {/* NEW: Unified Header - Mobile only, hidden on desktop */}
+      <UnifiedHeader 
+        variant="landing"
+        hideOnDesktop={true}
+      />
+      
       {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
         <div className="mobile-menu-overlay">
@@ -75,19 +83,6 @@ function LandingPage() {
                 alt="Restaurant Standards Logo" 
                 className="landing-hero__logo" 
               />
-              
-              {/* Mobile Header with Hamburger */}
-              <div className="mobile-header">
-                <button 
-                  className="mobile-hamburger"
-                  onClick={() => setIsMobileMenuOpen(true)}
-                >
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </button>
-                <div className="mobile-title">Restaurant Standards</div>
-              </div>
               
               {/* Desktop Title */}
               <div className="landing-hero__title">Restaurant Standards</div>

@@ -4,7 +4,7 @@
 
 body {
   margin: 0;
-  padding: 0;
+  padding: 0;  /* Keep at 0 */
   font-family: 'Poppins', sans-serif;
   background-color: #fafafa;
   color: #1b1b1b;
@@ -40,3 +40,9 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Add padding to page containers (not body) */
+.section-page,
+.home-container,
+.overview-page {
+  padding-top: 60px;
+}

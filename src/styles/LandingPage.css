@@ -1,12 +1,12 @@
 /* 📄 src/styles/LandingPage.css */
-/* Restaurant Standards Landing Page - PROPERLY SEPARATED */
-/* NO SHARED STYLES FOR HERO - Complete separation */
+/* Restaurant Standards Landing Page - Mobile First Design */
+/* Updated: Removed old mobile menu code (now using UnifiedHeader + HamburgerMenu) */
 
 /* Import Playfair Display for title and Poppins for menu */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500&display=swap');
 
 /* ============================================ */
-/* GLOBAL PAGE CONTAINER ONLY                  */
+/* GLOBAL PAGE CONTAINER                       */
 /* ============================================ */
 .landing {
   background-color: #fafafa;
@@ -16,119 +16,11 @@
 }
 
 /* ============================================ */
-/* HIDE MOBILE MENU ELEMENTS ON LARGER SCREENS */
-/* ============================================ */
-.mobile-menu-overlay,
-.mobile-header,
-.mobile-hamburger {
-  display: none;
-}
-
-/* ============================================ */
 /* MOBILE STYLES - 320px to 767px              */
-/* COMPLETE, STANDALONE DEFINITIONS            */
 /* ============================================ */
 @media (max-width: 767px) {
-  /* MOBILE MENU STYLES - ONLY ON MOBILE */
-  .mobile-menu-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.90);
-    z-index: 9999;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding-bottom: 6rem;
-  }
   
-  .mobile-menu-close {
-    position: absolute;
-    top: 2rem;
-    right: 2rem;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 3rem;
-    font-weight: 300;
-    cursor: pointer;
-    padding: 0;
-    width: 40px;
-    height: 40px;
-  }
-  
-  .mobile-menu-nav {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.8rem;
-  }
-  
-  .mobile-menu-nav a {
-    color: white;
-    text-decoration: none;
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.7rem;
-    font-weight: 400;
-  }
-  
-  .mobile-menu-social {
-    position: absolute;
-    bottom: 3rem;
-    display: flex;
-    gap: 2rem;
-    padding-bottom: 7rem;
-  }
-  
-  .mobile-menu-social img {
-    width: 36px;
-    height: 36px;
-  }
-  
-  /* MOBILE HEADER WITH HAMBURGER */
-  .mobile-header {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 1.7rem;
-  }
-  
-  .mobile-hamburger {
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    width: 20px;
-  }
-  
-  .mobile-hamburger span {
-    display: block;
-    width: 20px;
-    height: 2px;
-    background: white;
-  }
-  
-  .mobile-title {
-    font-family: 'Playfair Display', serif;
-    font-weight: 500;
-    color: white;
-    font-size: 1.5rem;
-    line-height: 1.1;
-    
-  }
-  
-  /* Hide desktop title on mobile */
-  .landing-hero__title {
-    display: none;
-  }
-  
-  /* HERO SECTION - MOBILE COMPLETE */
+  /* HERO SECTION - MOBILE */
   .landing-hero {
     background-image: url('/landing-hero-bg-mobile.jpg');
     background-size: cover;
@@ -165,20 +57,14 @@
   }
   
   .landing-hero__title {
-    font-family: 'Playfair Display', serif;
-    font-weight: 300;
-    color: white;
-    line-height: 1.1;
-    font-size: 2rem;
-    text-align: left;
-    margin: 0 0 1.5rem 0;
+    display: none;
   }
   
   .landing-hero__subtitle {
     font-weight: 500;
     line-height: 1.4;
     color: rgba(255,255,255,0.95);
-    font-size: 1.8rem;
+    font-size: 1.9rem;
     text-align: left;
     width: 320px;
     margin: 0 0 1.5rem 0;
@@ -392,21 +278,21 @@
   }
   
   .landing-training__grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
   }
   
   .landing-training__box {
     background-color: #3a3a3a;
-    padding: 1.75rem 1.5rem;
-    border-radius: 15px;
+    padding: 1.75rem;
+    border-radius: 12px;
     color: white;
   }
   
   .landing-training__box-title {
     color: #f1e0a7;
-    font-size: 1.125rem;
+    font-size: 1.15rem;
     font-weight: 600;
     margin-bottom: 1rem;
     line-height: 1.3;
@@ -440,8 +326,8 @@
   .landing-founder__content {
     display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 2rem;
+    align-items: center;
   }
   
   .landing-founder__image {
@@ -449,22 +335,21 @@
   }
   
   .landing-founder__photo {
-    width: 160px;
-    height: 160px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     object-fit: cover;
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   }
   
   .landing-founder__name {
-    font-size: 1.125rem;
+    font-size: 1.1rem;
     font-weight: 600;
     color: #030901;
   }
   
   .landing-founder__bio {
-    max-width: 600px;
     padding: 0 0.5rem;
   }
   
@@ -489,18 +374,17 @@
   }
 
   .landing-cta__title {
-  font-family: 'Playfair Display', serif;
-  font-size: 2rem;
-  font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 1.5rem;
-  line-height: 1.2;
-}
+    font-family: 'Poppins', serif;
+    font-size: 1.65rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.3;
+  }
   
   .landing-cta__text {
     font-size: 1rem;
-    line-height: 1.5;
+    line-height: 1.6;
     margin-bottom: 1rem;
+    padding: 0 0.5rem;
   }
   
   .landing-cta__buttons {
@@ -510,393 +394,19 @@
     margin-top: 2rem;
     align-items: center;
   }
-}
-
-/* ============================================ */
-/* TABLET STYLES - 768px to 1023px             */
-/* COMPLETE, STANDALONE DEFINITIONS            */
-/* ============================================ */
-@media (min-width: 768px) and (max-width: 1023px) {
-  /* HERO SECTION - TABLET COMPLETE */
-  .landing-hero {
-    background-image: url('/landing-hero-bg.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    position: relative;
-    min-height: 100vh;
-  }
   
-  .landing-hero__overlay {
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.5));
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 3rem 2rem;
-  }
-  
-  .landing-hero__container {
+  .landing-cta__buttons .landing-button {
     width: 100%;
-    max-width: 700px;
-    margin: 0 auto;
-  }
-  
-  .landing-hero__content {
-    color: white;
-    text-align: center;
-  }
-  
-  .landing-hero__logo {
-    width: 90px;
-    height: 90px;
-    margin: 0 auto 2rem;
-    display: block;
-  }
-  
-  .landing-hero__title {
-    font-family: 'Playfair Display', serif;
-    font-weight: 300;
-    color: white;
-    line-height: 1.1;
-    font-size: 3.5rem;
-    text-align: center;
-    margin: -1rem 0 1rem 0;
-  }
-  
-  .landing-hero__subtitle {
-    font-weight: 600;
-    line-height: 1.4;
-    color: rgba(255,255,255,0.95);
-    font-size: 1.375rem;
-    text-align: center;
-    margin: 2.75rem auto 2.5rem;
-    max-width: 450px;
-  }
-  
-  .landing-hero__tagline {
-    font-style: italic;
-    color: rgba(255,255,255,0.85);
-    line-height: 1.4;
-    font-size: 1.05rem;
-    text-align: center;
-    margin: 0 auto 2rem;
-    max-width: 400px;
-  }
-  
-  .landing-hero__buttons {
-    display: flex;
-    flex-direction: row;
-    gap: 1.5rem;
-    justify-content: center;
-    margin: 0 0 2rem 0;
-  }
-  
-  .landing-hero__mockup-mobile {
-    display: none;
-  }
-  
-  .landing-hero__mockup {
-    display: none;
-  }
-  
-  /* BUTTON STYLES - TABLET */
-  .landing-button {
-    display: inline-block;
-    border-radius: 50px;
-    font-size: 1rem;
-    font-weight: 500;
-    text-decoration: none;
-    text-align: center;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    padding: 0.875rem 2rem;
-    width: auto;
-    min-width: 160px;
-  }
-  
-  .landing-hero__buttons .landing-button {
-    width: 180px;
-    padding: 0.875rem 2rem;
-  }
-  
-  .landing-button--outline {
-    background: transparent;
-    color: white;
-    border: 2px solid white;
-  }
-  
-  .landing-button--outline:hover {
-    background: white;
-    color: #030901;
-  }
-  
-  .landing-button--solid {
-    background: #f1e0a7;
-    color: #030901;
-    border: 2px solid #f1e0a7;
-  }
-  
-  .landing-button--solid:hover {
-    background: #d4af36;
-    border-color: #d4af36;
-  }
-  
-  .landing-button--outline-light {
-    background: transparent;
-    color: white;
-    border: 2px solid white;
-  }
-  
-  .landing-button--outline-light:hover {
-    background: white;
-    color: #2a2a2a;
-  }
-  
-  .landing-button--solid-light {
-    background: #f1e0a7;
-    color: #030901;
-    border: 2px solid #f1e0a7;
-  }
-  
-  .landing-button--solid-light:hover {
-    background: #d4af36;
-    border-color: #d4af36;
-  }
-  
-  /* COSTS SECTION - TABLET */
-  .landing-costs {
-    background-color: #2a2a2a;
-    color: white;
-    padding: 4rem 2rem;
-  }
-  
-  .landing-costs__container {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  .landing-costs__title {
-    font-size: 2rem;
-    font-weight: 600;
-    text-align: center;
-    margin-bottom: 3rem;
-    line-height: 1.3;
-  }
-  
-  .landing-costs__grid {
-    display: flex;
-    flex-direction: row;
-    gap: 2rem;
-    margin-bottom: 2rem;
-  }
-  
-  .landing-costs__item {
-    flex: 1;
-    text-align: center;
-  }
-  
-  .landing-costs__icon {
-    width: 70px;
-    height: 70px;
-    margin: 0 auto 1rem;
-    background: #d32f2f;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .landing-costs__icon img {
-    width: 35px;
-    height: 35px;
-    filter: brightness(0) invert(1);
-  }
-  
-  .landing-costs__number {
-    color: #f1e0a7;
-    font-size: 1.75rem;
-    font-weight: 700;
-    display: block;
-    margin-bottom: 0.5rem;
-  }
-  
-  .landing-costs__label {
-    font-size: 0.95rem;
-    line-height: 1.5;
-    color: rgba(255,255,255,0.9);
-  }
-  
-  .landing-costs__source {
-    font-size: 0.75rem;
-    color: rgba(255,255,255,0.6);
-    font-style: italic;
-    margin-top: 0.5rem;
-  }
-  
-  .landing-costs__tagline {
-    text-align: center;
-    font-style: italic;
-    font-size: 1rem;
-    margin-top: 2.5rem;
-    color: rgba(255,255,255,0.9);
-    line-height: 1.5;
-  }
-  
-  /* TRAINING SECTION - TABLET */
-  .landing-training {
-    background-color: #f5f5f5;
-    padding: 4rem 2rem;
-  }
-  
-  .landing-training__container {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  .landing-training__title {
-    font-size: 2rem;
-    font-weight: 600;
-    text-align: center;
-    margin-bottom: 1rem;
-    color: #030901;
-  }
-  
-  .landing-training__subtitle {
-    text-align: center;
-    font-size: 1rem;
-    color: #666;
-    margin-bottom: 3rem;
-    line-height: 1.5;
-  }
-  
-  .landing-training__grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-  }
-  
-  .landing-training__box {
-    background-color: #3a3a3a;
-    padding: 1.75rem 1.5rem;
-    border-radius: 15px;
-    color: white;
-  }
-  
-  .landing-training__box-title {
-    color: #f1e0a7;
-    font-size: 1.125rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    line-height: 1.3;
-  }
-  
-  .landing-training__box-text {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: rgba(255,255,255,0.9);
-  }
-  
-  /* FOUNDER SECTION - TABLET */
-  .landing-founder {
-    background-color: #f8f8f8;
-    padding: 4rem 2rem;
-  }
-  
-  .landing-founder__container {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  .landing-founder__title {
-    font-size: 2rem;
-    font-weight: 600;
-    text-align: center;
-    margin-bottom: 3rem;
-    color: #030901;
-  }
-  
-  .landing-founder__content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2.5rem;
-  }
-  
-  .landing-founder__image {
-    text-align: center;
-  }
-  
-  .landing-founder__photo {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 1rem;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  }
-  
-  .landing-founder__name {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: #030901;
-  }
-  
-  .landing-founder__bio {
-    max-width: 600px;
-    padding: 0 1rem;
-  }
-  
-  .landing-founder__text {
-    font-size: 1rem;
-    line-height: 1.7;
-    color: #333;
-    margin-bottom: 1.25rem;
-  }
-  
-  /* CTA SECTION - TABLET */
-  .landing-cta {
-    background-color: #2a2a2a;
-    color: white;
-    padding: 4rem 2rem;
-    text-align: center;
-  }
-
-  .landing-cta__title {
-  font-family: 'Playfair Display', serif;
-  font-size: 2rem;
-  font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 1.5rem;
-  line-height: 1.2;
-}
-  
-  .landing-cta__container {
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  
-  .landing-cta__text {
-    font-size: 1.25rem;
-    line-height: 1.5;
-    margin-bottom: 1rem;
-  }
-  
-  .landing-cta__buttons {
-    display: flex;
-    flex-direction: row;
-    gap: 1.5rem;
-    margin-top: 2rem;
-    justify-content: center;
+    max-width: 320px;
   }
 }
 
 /* ============================================ */
-/* DESKTOP STYLES - 1024px and up              */
-/* COMPLETE, STANDALONE DEFINITIONS            */
+/* DESKTOP STYLES - 768px and up               */
 /* ============================================ */
-@media (min-width: 1024px) {
-  /* HERO SECTION - DESKTOP COMPLETE */
+@media (min-width: 768px) {
+  
+  /* HERO SECTION - DESKTOP */
   .landing-hero {
     background-image: url('/landing-hero-bg.jpg');
     background-size: cover;
@@ -1265,8 +775,8 @@
   }
 
   .landing-cta__title {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.5rem;
+    font-family: 'Poppins', serif;
+    font-size: 2.1rem;
     margin-bottom: 2rem;
   }
   

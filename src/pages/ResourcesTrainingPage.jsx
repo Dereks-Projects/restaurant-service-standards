@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Header from '../components/Header';
+import UnifiedHeader from "../components/UnifiedHeader";
 import MobileNav from '../components/MobileNav';
 import DesktopFooter from '../components/DesktopFooter';
 import SEO from '../components/SEO';
@@ -31,7 +31,10 @@ function ResourcesTrainingPage() {
       />
       
       <div className="overview-page">
-      <Header subtitle="Training Resources" />
+      <UnifiedHeader 
+        variant="internal"
+        hideOnDesktop={false}  // ← Or omit entirely (defaults to false)
+      />
       
       <main className="overview-page__content">
         <div className="overview-page__title">Staff Development</div>
