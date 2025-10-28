@@ -1,0 +1,293 @@
+/* 📄 FILE: src/styles/LegalPages.css */
+/* Dedicated styles for Privacy Policy, Terms of Use, and Cookies Policy pages */
+/* Mobile-first approach with no global h1/h2/h3 styles */
+
+/* ============================================ */
+/* PAGE CONTAINER                              */
+/* ============================================ */
+
+.legal-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #fafafa;
+}
+
+.legal-content-wrapper {
+  flex: 1;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 80px 1.5rem 2rem 1.5rem; /* top right bottom left */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ============================================ */
+/* PAGE TITLE (Main heading)                   */
+/* ============================================ */
+
+.legal-page-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #1b1b1b;
+  margin-top: .5rem;
+  margin-bottom: 0.5rem;
+  font-family: 'Poppins', serif;
+  text-align: center;
+}
+
+/* ============================================ */
+/* LAST UPDATED DATE                           */
+/* ============================================ */
+
+.legal-last-updated {
+  font-size: 0.95rem;
+  color: #888;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-style: italic;
+}
+
+/* ============================================ */
+/* CONTENT CONTAINER                           */
+/* ============================================ */
+
+.legal-content {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 2rem;
+}
+
+/* ============================================ */
+/* SECTION HEADINGS                            */
+/* ============================================ */
+
+.legal-section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-family: 'Playfair Display', serif;
+}
+
+.legal-section-title:first-child {
+  margin-top: 0;
+}
+
+.legal-subsection-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #555;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+/* ============================================ */
+/* PARAGRAPHS                                  */
+/* ============================================ */
+
+.legal-paragraph {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 1.25rem;
+}
+
+.legal-paragraph:last-child {
+  margin-bottom: 0;
+}
+
+/* ============================================ */
+/* LISTS (Bullet points and numbered)          */
+/* ============================================ */
+
+.legal-list {
+  margin: 1rem 0 1.25rem 1.5rem;
+  padding: 0;
+}
+
+.legal-list li {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 0.75rem;
+}
+
+.legal-list li:last-child {
+  margin-bottom: 0;
+}
+
+/* Nested lists */
+.legal-list .legal-list {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* ============================================ */
+/* EMPHASIS BOXES (Important notices)          */
+/* ============================================ */
+
+.legal-emphasis-box {
+  background: #f8f8f8;
+  border-left: 4px solid #001f3f;
+  padding: 1.25rem;
+  margin: 1.5rem 0;
+  border-radius: 4px;
+}
+
+.legal-emphasis-box .legal-paragraph {
+  margin-bottom: 0.75rem;
+}
+
+.legal-emphasis-box .legal-paragraph:last-child {
+  margin-bottom: 0;
+}
+
+/* ============================================ */
+/* CONTACT SECTION                             */
+/* ============================================ */
+
+.legal-contact-section {
+  background: #f0f0f0;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.legal-contact-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.legal-contact-email {
+  font-size: 1.1rem;
+  color: #001f3f;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.legal-contact-email:hover {
+  color: #003366;
+  text-decoration: underline;
+}
+
+/* ============================================ */
+/* LINKS WITHIN CONTENT                        */
+/* ============================================ */
+
+.legal-content a {
+  color: #001f3f;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.legal-content a:hover {
+  color: #003366;
+}
+
+/* ============================================ */
+/* TABLE (for cookie details if needed)        */
+/* ============================================ */
+
+.legal-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+}
+
+.legal-table-header {
+  background: #f0f0f0;
+  font-weight: 600;
+  text-align: left;
+  padding: 0.75rem;
+  border-bottom: 2px solid #ddd;
+}
+
+.legal-table-cell {
+  padding: 0.75rem;
+  border-bottom: 1px solid #eee;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* ============================================ */
+/* MOBILE RESPONSIVE                           */
+/* ============================================ */
+
+@media (max-width: 768px) {
+  .legal-content-wrapper {
+    padding: 80px 1rem 1.5rem 1rem; /* top right bottom left */
+  }
+
+  .legal-page-title {
+    font-size: 1.6rem;
+  }
+
+  .legal-content {
+    padding: 1.5rem;
+  }
+
+  .legal-section-title {
+    font-size: 1.3rem;
+  }
+
+  .legal-subsection-title {
+    font-size: 1.1rem;
+  }
+
+  .legal-list {
+    margin-left: 1rem;
+  }
+
+  .legal-table {
+    font-size: 0.85rem;
+  }
+
+  .legal-table-header,
+  .legal-table-cell {
+    padding: 0.5rem;
+  }
+}
+
+/* ============================================ */
+/* SMALL MOBILE (iPhone SE, etc.)              */
+/* ============================================ */
+
+@media (max-width: 375px) {
+  .legal-content-wrapper {
+    padding: 1rem 0.75rem;
+  }
+
+  .legal-page-title {
+    font-size: 1.4rem;
+  }
+
+  .legal-content {
+    padding: 1rem;
+  }
+
+  .legal-section-title {
+    font-size: 1.2rem;
+  }
+}
+
+/* ============================================ */
+/* DESKTOP SPACING ADJUSTMENTS                 */
+/* ============================================ */
+
+@media (min-width: 1024px) {
+  .legal-content-wrapper {
+    padding: 90px 2rem 3rem 2rem; /* top right bottom left */
+  }
+
+  .legal-content {
+    padding: 2.5rem;
+  }
+}

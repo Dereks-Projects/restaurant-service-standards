@@ -51,7 +51,7 @@ function TrainingDashboard() {
             icon={BookOpen}
             iconColor="#2563eb" /* Blue */
             title="Introduction"
-            description="Begin your journey into professional hospitality with foundational principles that drive exceptional service."
+            description="Your blueprint for exceptional service starts here—foundational standards that shape every guest experience."
             onClick={() => navigate("/introduction")}
           />
 
@@ -122,8 +122,8 @@ function TrainingDashboard() {
           <TrainingCard
             icon={ShoppingBag}
             iconColor="#001f3f" /* Navy - brand color */
-            title="Get the Book"
-            description="The complete Restaurant Standards service manual with in-depth guides and applications."
+            title="On Amazon Kindle"
+            description="An in-depth companion to the training platform with detailed scenarios, standards, and real-world applications."
             onClick={() => window.open('https://www.amazon.com/dp/B0FNDMTK5F', '_blank')}
           />
 

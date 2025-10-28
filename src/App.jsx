@@ -14,6 +14,7 @@ import ScrollToTop from './components/ScrollToTop';
 import AboutPage from './pages/AboutPage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import TermsPage from './pages/TermsPage';
+import CookiesPage from './pages/CookiesPage';
 import { initGA, logPageView } from './utils/analytics';
 
 // ✅ Imports for resources subpages
@@ -42,6 +43,7 @@ function AppContent() {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/privacy" element={<PrivacyPolicyPage />} />
         <Route path="/terms" element={<TermsPage />} />
+        <Route path="/cookies" element={<CookiesPage />} />
 
         {/* ✅ OLD /resources route now redirects to /resources/training */}
         <Route path="/resources" element={<Navigate to="/resources/training" replace />} />

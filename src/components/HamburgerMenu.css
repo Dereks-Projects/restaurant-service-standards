@@ -7,11 +7,11 @@
 
 .hamburger-menu {
   position: fixed;
-  top: 60px; /* Below header */
+  top: 59px; /* Below header */
   left: 0;
   width: 100vw;
   height: calc(100vh - 60px);
-  background: rgba(0, 0, 0, 0.95); /* Semi-transparent black */
+  background: rgba(0, 0, 0, 0.92); /* Semi-transparent black */
   z-index: 998;
   overflow: auto;
   
@@ -22,7 +22,7 @@
   align-items: flex-start;
   
   /* Padding and spacing */
-  padding: 5rem 2rem 2rem 3.3rem; /* Extra left padding for indent */
+  padding: 6rem 2rem 2rem 4rem; /* Extra left padding for indent */
   
   /* Animation */
   animation: slideInFromRight 0.3s ease-out;
@@ -99,7 +99,7 @@
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-  margin-top: 2rem;
+  margin-top: 1.4rem;
 }
 
 .hamburger-menu__legal a {
@@ -152,6 +152,7 @@
     align-items: flex-end;
     gap: 1.25rem;
     margin-bottom: 2rem;
+    padding-right: 40px;
   }
   
   .hamburger-menu__nav a {
@@ -180,6 +181,7 @@
   .hamburger-menu__social {
     justify-content: flex-end;
     margin-bottom: 2rem;
+    padding-right: 40px;
   }
   
   /* Desktop legal links - right-aligned */
@@ -187,10 +189,11 @@
     width: 100%;
     align-items: flex-end;
     gap: 0.5rem;
+    padding-right: 40px;
   }
   
   .hamburger-menu__legal a {
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     text-align: right;
   }
 }

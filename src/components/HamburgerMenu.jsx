@@ -71,6 +71,7 @@ function HamburgerMenu({ isOpen, onClose }) {
       <div className="hamburger-menu__legal">
         <Link to="/privacy" onClick={onClose}>Privacy Policy</Link>
         <Link to="/terms" onClick={onClose}>Terms of Use</Link>
+        <Link to="/cookies" onClick={onClose}>Cookies Policy</Link>
       </div>
     </div>
   );
