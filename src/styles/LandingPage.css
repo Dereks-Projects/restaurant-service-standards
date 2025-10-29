@@ -1,6 +1,11 @@
 /* 📄 src/styles/LandingPage.css */
 /* Restaurant Standards Landing Page - Mobile First Design */
-/* Updated: Removed old mobile menu code (now using UnifiedHeader + HamburgerMenu) */
+
+/* Override body background for landing page only */
+.landing {
+  background-color: #000000; /* Black background to match hero */
+  min-height: 100vh;
+}
 
 /* Import Playfair Display for title and Poppins for menu */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500&display=swap');
