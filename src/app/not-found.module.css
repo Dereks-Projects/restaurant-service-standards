@@ -1,0 +1,87 @@
+/*
+ * not-found.module.css — Custom 404 Page
+ *
+ * FILE LOCATION: src/app/not-found.module.css
+ * Same folder as not-found.js.
+ */
+
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 20px;
+  min-height: 60vh;
+}
+
+.code {
+  font-size: 5rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  line-height: 1;
+  margin-bottom: 16px;
+  opacity: 0.8;
+}
+
+.title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: 12px;
+}
+
+.message {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin-bottom: 36px;
+  max-width: 360px;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 28px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  font-family: var(--font-family);
+  color: var(--color-base);
+  background-color: var(--color-accent);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: background-color var(--transition-fast);
+}
+
+.primary:hover {
+  background-color: #d4b23e;
+}
+
+.secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 28px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  font-family: var(--font-family);
+  color: var(--color-accent);
+  background-color: transparent;
+  border: 1px solid rgba(232, 197, 71, 0.35);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: border-color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.secondary:hover {
+  border-color: var(--color-accent);
+  background-color: rgba(232, 197, 71, 0.07);
+}

@@ -151,7 +151,7 @@ export default function Header() {
             );
           })}
 
-          {/* Operator link — gold text, bold, no icon, sits below divider */}
+         {/* Operator link — gold text, bold, no icon, sits below divider */}
           {operatorLink && (
             <>
               <div className={styles.accentDivider} />
@@ -164,6 +164,7 @@ export default function Header() {
               >
                 {operatorLink.label}
               </Link>
+              <div className={styles.accentDivider} />
             </>
           )}
 
