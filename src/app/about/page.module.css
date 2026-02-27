@@ -1,0 +1,107 @@
+/*
+ * about/page.module.css — About Page
+ *
+ * Simple static page. Sections stack vertically.
+ * Ecosystem links get card treatment.
+ */
+
+.page {
+  padding: 32px 20px;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.pageTitle {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: 4px;
+}
+
+.pageSubtitle {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  margin-bottom: 32px;
+}
+
+/* --- Content Sections --- */
+.section {
+  margin-bottom: 32px;
+}
+
+.sectionTitle {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: 10px;
+}
+
+.paragraph {
+  font-size: 0.9rem;
+  color: var(--color-text);
+  line-height: 1.65;
+  margin-bottom: 12px;
+}
+
+/* --- Ecosystem Links --- */
+.ecosystemLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.ecosystemLink {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 16px;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--color-white);
+  transition: background-color var(--transition-fast);
+}
+
+.ecosystemLink:hover {
+  background-color: var(--color-surface-hover);
+}
+
+.ecosystemLinkDesc {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--color-text-muted);
+}
+
+/* --- Author / Meta --- */
+.link {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: opacity var(--transition-fast);
+}
+
+.link:hover {
+  opacity: 0.8;
+}
+
+.meta {
+  padding-top: 24px;
+  border-top: 1px solid var(--color-border);
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+@media (min-width: 769px) {
+  .page {
+    padding: 48px 20px;
+  }
+
+  .pageTitle {
+    font-size: 1.6rem;
+  }
+}

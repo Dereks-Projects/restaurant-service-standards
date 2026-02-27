@@ -1,0 +1,61 @@
+/*
+ * legal/legal.module.css — Shared styles for all legal pages
+ * Same look as the About page.
+ */
+
+.page {
+  padding: 32px 20px;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.pageTitle {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: 4px;
+}
+
+.updated {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  margin-bottom: 28px;
+}
+
+.section {
+  margin-bottom: 28px;
+}
+
+.sectionTitle {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: 10px;
+}
+
+.paragraph {
+  font-size: 0.9rem;
+  color: var(--color-text);
+  line-height: 1.65;
+  margin-bottom: 12px;
+}
+
+.link {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: opacity var(--transition-fast);
+}
+
+.link:hover {
+  opacity: 0.8;
+}
+
+@media (min-width: 769px) {
+  .page {
+    padding: 48px 20px;
+  }
+
+  .pageTitle {
+    font-size: 1.6rem;
+  }
+}

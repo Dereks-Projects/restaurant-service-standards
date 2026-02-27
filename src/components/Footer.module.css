@@ -1,0 +1,63 @@
+/*
+ * Footer.module.css
+ *
+ * WHY HIDDEN ON MOBILE:
+ * The floating BottomNav handles navigation on mobile.
+ * Showing a footer underneath it would be redundant and awkward.
+ * On desktop (769px+), there's no BottomNav, so the footer appears.
+ */
+
+/* Hidden by default (mobile-first) */
+.footer {
+  display: none;
+}
+
+/* Only shows on desktop */
+@media (min-width: 769px) {
+  .footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 32px 20px;
+    border-top: 1px solid var(--color-border);
+    background-color: var(--color-background);
+  }
+}
+
+/* Row of links */
+.links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.link {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  transition: color var(--transition-fast);
+}
+
+.link:hover {
+  color: var(--color-white);
+}
+
+/* For Operators — gold accent in the footer */
+.operatorLink {
+  color: var(--color-accent);
+  font-weight: 600;
+  opacity: 0.85;
+}
+
+.operatorLink:hover {
+  color: var(--color-accent);
+  opacity: 1;
+}
+
+/* Copyright line */
+.copyright {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+}

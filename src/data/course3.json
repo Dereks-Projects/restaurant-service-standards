@@ -1,0 +1,55 @@
+{
+  "id": "class-3-mastering-first-impression",
+  "title": "Mastering the First Impression",
+  "slug": "mastering-the-first-impression",
+  "order": 3,
+  "estimatedTime": "12–15 minutes",
+  "summary": "Understand how arrival protocol, positioning, and environmental control establish trust within the first minutes of guest interaction.",
+
+  "intro": {
+    "headline": "The First Three Minutes Define the Experience",
+    "paragraph": "In elite restaurants, the guest experience is shaped within the first three minutes. Before a menu is opened or an order is placed, guests form impressions about professionalism, attention, cleanliness, and control. Michelin-recognized restaurants and Forbes-rated properties treat arrival as a structured protocol, not a casual greeting. The way a guest is acknowledged, seated, and transitioned sets the tone for everything that follows."
+  },
+
+  "contentBlocks": [
+    {
+      "type": "image",
+      "src": "/images/course-3-arrival-1.jpg",
+      "alt": "Host welcoming guests at entrance"
+    },
+    {
+      "type": "paragraphSplit",
+      "heading": "Immediate Acknowledgment Is Non-Negotiable",
+      "part1": "Elite standards require that every entering guest be acknowledged immediately. This does not always mean seating them instantly. It means eye contact, a composed posture, and a confident greeting within seconds of entry. Even during peak service, guests must feel seen and prioritized.",
+      "part2": "Forbes-level environments eliminate the experience of invisibility. When a guest stands unacknowledged, even briefly, confidence begins to fade. The host stand is not just a checkpoint. It is the control center for the first impression. A calm, organized host communicates that the dining room is under control."
+    },
+    {
+      "type": "paragraphSplit",
+      "heading": "Positioning Communicates Professionalism",
+      "part1": "How a guest is guided to the table matters. Walking too quickly signals rush. Walking too slowly signals uncertainty. Proper arrival protocol includes clear verbal cues, steady pacing, awareness of surroundings, and confident body language. Elite restaurants often ensure that pathways are clear and that chairs are properly positioned before guests arrive at the table.",
+      "part2": "Positioning also includes environmental control. Lighting levels, music volume, cleanliness at the entrance, and the organization of the host area all contribute to perception. Guests evaluate silently. When the environment feels intentional, guests relax more quickly and trust deepens."
+    },
+    {
+      "type": "image",
+      "src": "/images/course-3-arrival-2.jpg",
+      "alt": "Server assisting guests as they are seated"
+    },
+    {
+      "type": "paragraphSplit",
+      "heading": "Transitions Must Be Seamless",
+      "part1": "In luxury-level service, the handoff from host to server is coordinated, not accidental. The server should be aware of new arrivals before reaching the table. Ideally, the initial approach from the server happens within a defined time window. Delays create awkward silence and uncertainty.",
+      "part2": "Seamless transitions demonstrate teamwork. Guests should not feel abandoned during the shift from one team member to another. Eye contact, clear introductions, and confident language establish accountability. When transitions are smooth, the restaurant presents itself as one unified team rather than separate individuals performing separate tasks."
+    }
+  ],
+
+  "keyPoints": [
+    "Every guest must be acknowledged immediately, even during peak service.",
+    "Controlled movement and environmental organization build guest confidence.",
+    "Seamless transitions between team members reinforce professionalism."
+  ],
+
+  "conclusion": {
+    "paragraph": "Mastering the first impression requires discipline, awareness, and coordination. Michelin and Forbes frameworks consistently emphasize anticipation, polish, and environmental control during arrival. These early moments influence how guests interpret every detail that follows. A strong arrival protocol reduces anxiety, increases trust, and establishes the tone for excellence. When the first three minutes are intentional, the remainder of the experience benefits from that foundation.",
+    "callout": "Control the first impression, and you shape the entire experience."
+  }
+}

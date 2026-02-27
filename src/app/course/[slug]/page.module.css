@@ -1,0 +1,209 @@
+.page {
+  padding: 24px 20px;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-bottom: 20px;
+  transition: color var(--transition-fast);
+}
+
+.backLink:hover {
+  color: var(--color-accent);
+}
+
+.classLabel {
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-accent);
+  margin-bottom: 8px;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-white);
+  line-height: 1.25;
+  margin-bottom: 6px;
+}
+
+.time {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.intro {
+  padding: 24px;
+  background-color: var(--color-surface);
+  border-left: 3px solid var(--color-accent);
+  border-radius: var(--radius-sm);
+  margin-bottom: 32px;
+}
+
+.introHeadline {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-white);
+  margin-bottom: 10px;
+}
+
+.introParagraph {
+  font-size: 0.92rem;
+  color: var(--color-text);
+  line-height: 1.65;
+}
+
+.section {
+  margin-bottom: 32px;
+}
+
+.sectionHeading {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: 12px;
+}
+
+.sectionParagraph {
+  font-size: 0.92rem;
+  color: var(--color-text);
+  line-height: 1.65;
+  margin-bottom: 12px;
+}
+
+.articleImage {
+  width: 100%;
+  border-radius: var(--radius-md);
+  margin-bottom: 32px;
+}
+
+.keyPoints {
+  padding: 20px 24px;
+  background-color: var(--color-surface);
+  border-radius: var(--radius-md);
+  margin-bottom: 32px;
+}
+
+.keyPointsTitle {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-white);
+  margin-bottom: 12px;
+}
+
+.keyPointsList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.keyPoint {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.85rem;
+  color: var(--color-text);
+  line-height: 1.5;
+}
+
+.keyPointIcon {
+  flex-shrink: 0;
+  color: var(--color-accent);
+  margin-top: 2px;
+}
+
+.conclusion {
+  padding: 24px;
+  background-color: var(--color-surface);
+  border-left: 3px solid var(--color-accent);
+  border-radius: var(--radius-sm);
+  margin-bottom: 12px;
+}
+
+.conclusionParagraph {
+  font-size: 0.92rem;
+  color: var(--color-text);
+  line-height: 1.65;
+}
+
+.callout {
+  text-align: center;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  padding: 20px;
+  margin-bottom: 32px;
+}
+
+.courseNav {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 24px;
+  border-top: 1px solid var(--color-border);
+}
+
+.navLink {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 14px 16px;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  transition: background-color var(--transition-fast);
+  flex: 1;
+  min-width: 0;
+}
+
+.navLink:hover {
+  background-color: var(--color-surface-hover);
+}
+
+.navLinkNext {
+  text-align: right;
+}
+
+.navDirection {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-accent);
+}
+
+.navTitle {
+  font-size: 0.85rem;
+  color: var(--color-white);
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.navSpacer {
+  flex: 1;
+}
+
+@media (min-width: 769px) {
+  .page {
+    padding: 48px 20px;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+}

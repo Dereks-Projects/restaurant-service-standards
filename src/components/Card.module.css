@@ -1,0 +1,67 @@
+/*
+ * Card.module.css
+ *
+ * WHY THIS EXISTS:
+ * Cards are used everywhere: homepage modules, standards items,
+ * learn more links. This gives us one consistent look.
+ * The "featured" variant gets full-width treatment (like the
+ * "5 Steps to 5 Stars" card on the homepage).
+ */
+
+.card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  color: var(--color-text);
+  transition: background-color var(--transition-fast);
+}
+
+.card:hover {
+  background-color: var(--color-surface-hover);
+}
+
+/* Featured card: stands out from the grid */
+.featured {
+  background-color: var(--color-surface-light);
+  border-color: var(--color-accent);
+}
+
+.featured:hover {
+  background-color: var(--color-surface-hover);
+}
+
+/* Icon circle on the left side of the card */
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-background);
+  color: var(--color-accent);
+}
+
+/* Text area: title + description stacked */
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-white);
+}
+
+.description {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}

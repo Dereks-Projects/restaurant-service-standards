@@ -1,0 +1,57 @@
+/*
+ * BottomNav.module.css
+ *
+ * WHY THIS EXISTS:
+ * The floating bottom nav gives the app feel on mobile.
+ * It's fixed to the bottom of the screen and hides on desktop
+ * where navigation is handled by the header and sidebars.
+ */
+
+.bottomNav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: var(--bottom-nav-height);
+  background-color: var(--color-base);
+  border-top: 1px solid var(--color-border);
+
+  /* Slight padding at bottom for phones with home indicators (iPhone etc.) */
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* Each tab is a vertical stack: icon on top, label below */
+.navItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 0;
+  font-size: 0.65rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+  /* Each tab gets equal width */
+  flex: 1;
+}
+
+.navItem:hover {
+  color: var(--color-text);
+}
+
+/* Active tab (current page) gets the accent color */
+.navItemActive {
+  color: var(--color-accent);
+}
+
+/* Hide entirely on desktop */
+@media (min-width: 769px) {
+  .bottomNav {
+    display: none;
+  }
+}

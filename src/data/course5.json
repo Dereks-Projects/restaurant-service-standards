@@ -1,0 +1,55 @@
+{
+  "id": "class-5-legacy-and-recovery",
+  "title": "Legacy and Recovery",
+  "slug": "legacy-and-recovery",
+  "order": 5,
+  "estimatedTime": "12–15 minutes",
+  "summary": "Understand how structured departure protocols, service recovery, and retention systems protect reputation and build long-term guest loyalty at Michelin and Forbes levels.",
+
+  "intro": {
+    "headline": "The Last Five Minutes Are Often the Most Important",
+    "paragraph": "Elite restaurants understand a simple truth: guests rarely remember every detail of a meal, but they always remember how it ended. The departure sequence and the handling of mistakes carry lasting weight. Michelin-recognized restaurants and Forbes-rated properties treat the final moments of service as carefully as the first. They view service recovery not as damage control, but as an opportunity to reinforce trust. Reputation is built not only on perfection, but on how imperfection is addressed."
+  },
+
+  "contentBlocks": [
+    {
+      "type": "image",
+      "src": "/images/course-5-departure-1.jpg",
+      "alt": "Server presenting check with composed demeanor"
+    },
+    {
+      "type": "paragraphSplit",
+      "heading": "Departure Must Be Intentional",
+      "part1": "An intentional departure begins with attention to timing and gratitude. Guests should not feel rushed out, nor should they wait excessively for the check. In elite environments, servers monitor pacing carefully, offering the check at an appropriate moment and expressing genuine appreciation for the visit.",
+      "part2": "Forbes-level service emphasizes acknowledgment by multiple team members when appropriate. A final thank-you from the host or manager reinforces professionalism. Eye contact, composed tone, and direct farewell language leave guests with a sense of completion. A strong departure closes the experience with confidence."
+    },
+    {
+      "type": "paragraphSplit",
+      "heading": "Service Recovery Is a Structured Skill",
+      "part1": "Mistakes happen in every restaurant. What separates good operations from elite ones is response. Service recovery begins with immediate ownership. The guest must feel heard without interruption. Elite standards require calm acknowledgment, a sincere apology when warranted, and a clear corrective action.",
+      "part2": "Michelin and Forbes frameworks consistently highlight responsiveness and accountability. Avoid defensiveness. Avoid minimizing the issue. Offer solutions aligned with policy, and involve management when appropriate. Recovery is not about avoiding responsibility. It is about protecting trust."
+    },
+    {
+      "type": "image",
+      "src": "/images/course-5-departure-2.jpg",
+      "alt": "Manager speaking attentively with guest"
+    },
+    {
+      "type": "paragraphSplit",
+      "heading": "Retention Is Built Through Follow-Through",
+      "part1": "Legacy service extends beyond the final farewell. Notes in reservation systems, follow-up communication for significant issues, and remembering returning guests signal long-term commitment. High-level operations document preferences and previous concerns so that future experiences are improved.",
+      "part2": "Reputation control is proactive. Elite restaurants monitor feedback channels, respond professionally to reviews, and continuously refine processes. Every departure becomes data for improvement. When standards govern both positive and negative outcomes, retention becomes predictable rather than accidental."
+    }
+  ],
+
+  "keyPoints": [
+    "The departure sequence should be timed, composed, and intentional.",
+    "Service recovery requires ownership, clarity, and structured corrective action.",
+    "Retention is built through documentation, follow-up, and continuous refinement."
+  ],
+
+  "conclusion": {
+    "paragraph": "Legacy and recovery define whether a restaurant remains memorable beyond a single meal. Michelin and Forbes-level service demonstrates that excellence includes humility, accountability, and disciplined follow-through. When teams execute structured departure protocols and respond confidently to setbacks, guests leave with trust intact. In many cases, a well-handled recovery builds stronger loyalty than a flawless evening. Reputation is not preserved by avoiding mistakes alone. It is preserved by responding with discipline and professionalism.",
+    "callout": "A powerful ending secures a lasting impression."
+  }
+}

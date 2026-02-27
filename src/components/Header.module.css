@@ -1,0 +1,297 @@
+/*
+ * Header.module.css
+ *
+ * TWO DROPDOWN PANELS:
+ * 1. Portfolio (left) — ecosystem sites + Informative Media
+ * 2. Menu (right) — page nav + operator link + socials + legal
+ *
+ * BOTH share the base .dropdownPanel style, then get
+ * position overrides via .portfolioPanel / .menuPanel.
+ */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  background-color: var(--color-base);
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* --- Left: Portfolio Dropdown Trigger --- */
+.portfolioBtn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  padding: 4px;
+  border-radius: var(--radius-sm);
+  transition: color var(--transition-fast);
+}
+
+.portfolioBtn:hover {
+  color: var(--color-text);
+}
+
+.chevron {
+  transition: transform var(--transition-fast);
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+/* --- Center: Site Title --- */
+.title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-white);
+  letter-spacing: -0.01em;
+}
+
+/* --- Right: Hamburger Button --- */
+.hamburgerBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  color: var(--color-text);
+  border-radius: var(--radius-sm);
+  transition: color var(--transition-fast);
+}
+
+.hamburgerBtn:hover {
+  color: var(--color-accent);
+}
+
+/* =============================================
+   SHARED DROPDOWN BASE
+   ============================================= */
+.dropdownPanel {
+  position: absolute;
+  top: 100%;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-top: none;
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  z-index: 99;
+  animation: slideDown var(--transition-normal) forwards;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =============================================
+   PORTFOLIO PANEL (LEFT)
+   ============================================= */
+.portfolioPanel {
+  left: 0;
+  width: 260px;
+  border-radius: 0 0 var(--radius-md) var(--radius-md);
+  gap: 2px;
+}
+
+/* "EXPLORE" label at top */
+.panelLabel {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-accent);
+  padding: 4px 12px 10px;
+}
+
+/* Ecosystem site link */
+.ecosystemLink {
+  display: block;
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: background-color var(--transition-fast);
+}
+
+.ecosystemLink:hover {
+  background-color: var(--color-surface-hover);
+}
+
+.ecosystemName {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-white);
+  margin-bottom: 1px;
+}
+
+.ecosystemDesc {
+  display: block;
+  font-size: 0.72rem;
+  color: var(--color-text-muted);
+}
+
+/* Gold accent divider */
+.accentDivider {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    var(--color-accent),
+    transparent
+  );
+  opacity: 0.4;
+  margin: 10px 12px;
+}
+
+/* Parent company link (below divider) */
+.parentLink {
+  display: block;
+  padding: 8px 12px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.parentLink:hover {
+  background-color: var(--color-surface-hover);
+  color: var(--color-text);
+}
+
+/* =============================================
+   HAMBURGER MENU PANEL (RIGHT)
+   ============================================= */
+.menuPanel {
+  right: 0;
+  width: 220px;
+  border-radius: 0 0 var(--radius-md) var(--radius-md);
+  gap: 2px;
+}
+
+/* Page link */
+.menuLink {
+  display: block;
+  padding: 10px 14px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-text);
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.menuLink:hover {
+  background-color: var(--color-surface-hover);
+  color: var(--color-white);
+}
+
+/* Active page indicator */
+.menuLinkActive {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+/* ── Operator Link — Gold Featured Treatment ──────────────────────
+ * Sits below a divider, gold text, subtle gold background,
+ * icon alongside the label. Stands apart from training tools above.
+ * ─────────────────────────────────────────────────────────────── */
+.operatorLink {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  color: var(--color-accent);
+  font-weight: 600;
+  background-color: transparent;
+  border: none;
+  margin-bottom: 4px;
+}
+
+.operatorLink:hover {
+  background-color: var(--color-surface-hover);
+  color: var(--color-accent);
+}
+
+.operatorIcon {
+  flex-shrink: 0;
+  opacity: 0.85;
+}
+
+/* Social icons row */
+.socialRow {
+  display: flex;
+  gap: 8px;
+  padding: 8px 10px 4px;
+}
+
+.socialIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  color: var(--color-text-muted);
+  background-color: var(--color-background);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.socialIcon:hover {
+  color: var(--color-accent);
+  background-color: var(--color-surface-hover);
+}
+
+/* Legal links row (small, gray, horizontal) */
+.legalRow {
+  display: flex;
+  gap: 6px;
+  padding: 4px 10px 2px;
+  flex-wrap: wrap;
+}
+
+.legalLink {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  padding: 4px 6px;
+  border-radius: 4px;
+  transition: color var(--transition-fast);
+}
+
+.legalLink:hover {
+  color: var(--color-text);
+}
+
+/* =============================================
+   BACKDROP (tap outside to close)
+   ============================================= */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 98;
+}
+
+@media (min-width: 769px) {
+  .title {
+    font-size: 1.4rem;
+  }
+}

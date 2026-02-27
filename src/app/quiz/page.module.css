@@ -1,0 +1,446 @@
+/*
+ * quiz/page.module.css — Quiz Interface
+ *
+ * PHASES:
+ * 1. Section picker (pills)
+ * 2. Active quiz (progress bar + question + answers)
+ * 3. Results (score + per-question breakdown)
+ */
+
+.page {
+  padding: 24px 20px;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.pageTitle {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: 4px;
+}
+
+.pageSubtitle {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  margin-bottom: 28px;
+}
+
+/* --- Section Picker --- */
+.selectorGroup {
+  margin-bottom: 20px;
+}
+
+.selectorLabel {
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+  margin-bottom: 10px;
+}
+
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pill {
+  padding: 8px 16px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  transition: all var(--transition-fast);
+}
+
+.pill:hover {
+  background-color: var(--color-surface-hover);
+  color: var(--color-text);
+}
+
+.pillActive {
+  background-color: var(--color-accent);
+  color: var(--color-base);
+  border-color: var(--color-accent);
+  font-weight: 600;
+}
+
+.pillActive:hover {
+  background-color: #d4b23e;
+}
+
+.startBtn {
+  display: block;
+  width: 100%;
+  padding: 14px 24px;
+  margin-top: 24px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: var(--font-family);
+  color: var(--color-base);
+  background-color: var(--color-accent);
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.startBtn:hover {
+  background-color: #d4b23e;
+}
+
+/* Question count preview */
+.questionCount {
+  margin-top: 16px;
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+/* --- Progress Bar --- */
+.progressWrapper {
+  margin-bottom: 24px;
+}
+
+.progressLabel {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  margin-bottom: 8px;
+}
+
+.progressBar {
+  width: 100%;
+  height: 6px;
+  background-color: var(--color-surface);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background-color: var(--color-accent);
+  border-radius: 3px;
+  transition: width var(--transition-normal);
+}
+
+/* --- Question Card --- */
+.questionCard {
+  padding: 24px;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  margin-bottom: 20px;
+}
+
+.sectionBadge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-accent);
+  margin-bottom: 12px;
+}
+
+.questionText {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-white);
+  line-height: 1.45;
+}
+
+/* --- Answer Buttons --- */
+.answers {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.answerBtn {
+  width: 100%;
+  padding: 14px 18px;
+  font-size: 0.88rem;
+  font-family: var(--font-family);
+  font-weight: 500;
+  color: var(--color-text);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  text-align: left;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.answerBtn:hover {
+  background-color: var(--color-surface-hover);
+  border-color: var(--color-text-muted);
+}
+
+/* Disabled state after answering */
+.answerBtnDisabled {
+  cursor: default;
+  opacity: 0.6;
+}
+
+.answerBtnDisabled:hover {
+  background-color: var(--color-surface);
+  border-color: var(--color-border);
+}
+
+/* Correct answer highlight */
+.answerCorrect {
+  background-color: rgba(72, 160, 90, 0.2);
+  border-color: rgba(72, 160, 90, 0.6);
+  color: #6fcf84;
+  opacity: 1;
+}
+
+.answerCorrect:hover {
+  background-color: rgba(72, 160, 90, 0.2);
+  border-color: rgba(72, 160, 90, 0.6);
+}
+
+/* Wrong answer highlight */
+.answerWrong {
+  background-color: rgba(200, 70, 70, 0.2);
+  border-color: rgba(200, 70, 70, 0.6);
+  color: #e08a8a;
+  opacity: 1;
+}
+
+.answerWrong:hover {
+  background-color: rgba(200, 70, 70, 0.2);
+  border-color: rgba(200, 70, 70, 0.6);
+}
+
+/* --- Feedback Panel (shows after answering) --- */
+.feedback {
+  padding: 16px 20px;
+  border-radius: var(--radius-md);
+  margin-bottom: 20px;
+}
+
+.feedbackCorrect {
+  background-color: rgba(72, 160, 90, 0.1);
+  border: 1px solid rgba(72, 160, 90, 0.3);
+}
+
+.feedbackWrong {
+  background-color: rgba(200, 70, 70, 0.1);
+  border: 1px solid rgba(200, 70, 70, 0.3);
+}
+
+.feedbackTitle {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.feedbackTitleCorrect {
+  color: #6fcf84;
+}
+
+.feedbackTitleWrong {
+  color: #e08a8a;
+}
+
+.feedbackCorrectAnswer {
+  font-size: 0.85rem;
+  color: var(--color-text);
+  margin-bottom: 8px;
+}
+
+.feedbackTip {
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  font-style: italic;
+}
+
+.nextBtn {
+  display: block;
+  width: 100%;
+  padding: 14px 24px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: var(--font-family);
+  color: var(--color-base);
+  background-color: var(--color-accent);
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.nextBtn:hover {
+  background-color: #d4b23e;
+}
+
+/* --- Results Screen --- */
+.results {
+  margin-top: 8px;
+}
+
+.scoreCard {
+  text-align: center;
+  padding: 32px 24px;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  margin-bottom: 24px;
+}
+
+.scoreTitle {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: 8px;
+}
+
+.scoreValue {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  margin-bottom: 4px;
+}
+
+.scorePercent {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  margin-bottom: 12px;
+}
+
+.scoreMessage {
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+}
+
+/* Breakdown heading */
+.breakdownTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: 16px;
+}
+
+/* Individual result card in the breakdown */
+.resultCard {
+  padding: 16px;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  margin-bottom: 10px;
+}
+
+.resultHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.resultQuestion {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-white);
+  flex: 1;
+  margin-right: 12px;
+}
+
+.resultBadge {
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+.resultBadgeCorrect {
+  background-color: rgba(72, 160, 90, 0.2);
+  color: #6fcf84;
+}
+
+.resultBadgeWrong {
+  background-color: rgba(200, 70, 70, 0.2);
+  color: #e08a8a;
+}
+
+.resultYourAnswer {
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+  margin-bottom: 4px;
+}
+
+.resultCorrectAnswer {
+  font-size: 0.82rem;
+  color: #6fcf84;
+  margin-bottom: 6px;
+}
+
+.resultTip {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  font-style: italic;
+  padding-top: 8px;
+  border-top: 1px solid var(--color-border);
+  line-height: 1.45;
+}
+
+/* Bottom action buttons on results screen */
+.resultActions {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.resultActions button,
+.resultActions a {
+  flex: 1;
+  padding: 14px 16px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-family: var(--font-family);
+  border-radius: var(--radius-md);
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.restartBtn {
+  color: var(--color-base);
+  background-color: var(--color-accent);
+  border: none;
+}
+
+.restartBtn:hover {
+  background-color: #d4b23e;
+}
+
+.backBtn {
+  color: var(--color-text);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+}
+
+.backBtn:hover {
+  background-color: var(--color-surface-hover);
+}
+
+@media (min-width: 769px) {
+  .page {
+    padding: 48px 20px;
+  }
+
+  .pageTitle {
+    font-size: 1.6rem;
+  }
+}

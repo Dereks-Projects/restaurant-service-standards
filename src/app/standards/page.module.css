@@ -1,0 +1,101 @@
+/*
+ * standards/page.module.css — Standards Index Page
+ *
+ * LAYOUT: Simple vertical stack
+ * Title + subtitle at top, then 5 full-width section cards.
+ * Each card links to /standards/[slug] for the detail view.
+ */
+
+.page {
+  padding: 32px 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.pageTitle {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: 6px;
+}
+
+.pageSubtitle {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  margin-bottom: 28px;
+}
+
+/* Stack of section cards */
+.sections {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Each section card */
+.sectionCard {
+  display: block;
+  padding: 20px;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  color: var(--color-text);
+  transition: background-color var(--transition-fast);
+}
+
+.sectionCard:hover {
+  background-color: var(--color-surface-hover);
+}
+
+/* Top row: icon + title + count */
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.cardIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-background);
+  color: var(--color-accent);
+}
+
+.cardTitle {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-white);
+  flex: 1;
+}
+
+.cardCount {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+/* Intro description text */
+.cardDescription {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+@media (min-width: 769px) {
+  .page {
+    padding: 48px 20px;
+    max-width: 700px;
+  }
+
+  .pageTitle {
+    font-size: 1.6rem;
+  }
+}

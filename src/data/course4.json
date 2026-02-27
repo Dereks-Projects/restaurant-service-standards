@@ -1,0 +1,55 @@
+{
+  "id": "class-4-execution-under-pressure",
+  "title": "Execution Under Pressure",
+  "slug": "execution-under-pressure",
+  "order": 4,
+  "estimatedTime": "15 minutes",
+  "summary": "Learn how precision, timing, communication, and composure during live service create the seamless dining experience associated with Michelin and Forbes-level restaurants.",
+
+  "intro": {
+    "headline": "Service Excellence Is Proven During the Rush",
+    "paragraph": "The true test of a restaurant’s standards is not how it performs during slow hours. It is how it performs when every table is full and pressure is high. Michelin-recognized restaurants and Forbes-rated properties distinguish themselves through controlled execution during peak service. Dining room performance must remain precise, intentional, and calm even when the pace accelerates. Excellence under pressure is not improvised. It is practiced."
+  },
+
+  "contentBlocks": [
+    {
+      "type": "image",
+      "src": "/images/course-4-execution-1.jpg",
+      "alt": "Full dining room in synchronized service"
+    },
+    {
+      "type": "paragraphSplit",
+      "heading": "Timing Is a System, Not a Guess",
+      "part1": "Elite service depends on timing. Courses must be delivered in rhythm with the guest’s pace. Drinks must arrive before thirst becomes visible. Plates must be cleared without interrupting conversation. These are not random instincts. They are structured expectations reinforced through repetition.",
+      "part2": "Forbes-level standards emphasize attentiveness without intrusion. That balance requires awareness of body language, eye contact signals, and plate progression. Servers must read the table while following defined pacing protocols. When timing is consistent, guests feel cared for rather than managed."
+    },
+    {
+      "type": "paragraphSplit",
+      "heading": "Communication Prevents Chaos",
+      "part1": "During peak service, communication determines whether the team functions smoothly or fractures under stress. Clear verbal calls, concise table descriptions, and confirmation between front and back of house prevent small problems from becoming major disruptions. Silence often signals confusion.",
+      "part2": "In elite operations, communication is calm and controlled. Managers circulate visibly. Servers alert one another to allergies, special requests, or pacing concerns. Kitchen timing and dining room timing remain aligned. Structured communication keeps performance steady even as volume increases."
+    },
+    {
+      "type": "image",
+      "src": "/images/course-4-execution-2.jpg",
+      "alt": "Server presenting dish with composed posture"
+    },
+    {
+      "type": "paragraphSplit",
+      "heading": "Composure Is Contagious",
+      "part1": "Guests take emotional cues from the team. If staff appear rushed, frustrated, or scattered, guests feel tension. If staff remain composed and purposeful, guests relax. Michelin-level dining rooms are rarely loud or frantic in demeanor. Even at high volume, movements are steady and controlled.",
+      "part2": "Composure does not mean slow. It means deliberate. Maintaining posture, avoiding rushed gestures, and speaking clearly even during high demand communicates professionalism. Discipline in body language and tone reinforces the perception of excellence."
+    }
+  ],
+
+  "keyPoints": [
+    "Timing must follow defined pacing standards rather than instinct alone.",
+    "Clear communication between team members prevents minor issues from escalating.",
+    "Composure under pressure directly influences the guest’s perception of quality."
+  ],
+
+  "conclusion": {
+    "paragraph": "Execution under pressure is where standards prove their value. Michelin and Forbes frameworks reward not only hospitality but precision, synchronization, and calm professionalism during live service. When teams trust the system and adhere to structured expectations, the dining experience remains seamless even when challenges arise. Controlled execution transforms stress into confidence. The dining room becomes a coordinated performance rather than a reactive scramble.",
+    "callout": "Pressure reveals discipline. Discipline sustains excellence."
+  }
+}

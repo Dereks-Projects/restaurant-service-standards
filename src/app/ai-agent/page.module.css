@@ -1,0 +1,233 @@
+/*
+ * ai-agent/page.module.css — AI Training Agent Interface
+ *
+ * DESIGN: Training console, not a chatbot.
+ * Top: role + touchpoint selectors as pill buttons
+ * Middle: question input
+ * Bottom: structured response in labeled sections
+ */
+
+.page {
+  padding: 24px 20px;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.pageTitle {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: 4px;
+}
+
+.pageSubtitle {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  margin-bottom: 28px;
+}
+
+/* --- Selector Sections (Role + Touchpoint) --- */
+.selectorGroup {
+  margin-bottom: 20px;
+}
+
+.selectorLabel {
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+  margin-bottom: 10px;
+}
+
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pill {
+  padding: 8px 16px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  transition: all var(--transition-fast);
+}
+
+.pill:hover {
+  background-color: var(--color-surface-hover);
+  color: var(--color-text);
+}
+
+.pillActive {
+  background-color: var(--color-accent);
+  color: var(--color-base);
+  border-color: var(--color-accent);
+  font-weight: 600;
+}
+
+.pillActive:hover {
+  background-color: #d4b23e;
+}
+
+/* --- Question Input Area --- */
+.inputGroup {
+  margin-bottom: 24px;
+}
+
+.inputWrapper {
+  display: flex;
+  gap: 10px;
+}
+
+.textInput {
+  flex: 1;
+  padding: 14px 16px;
+  font-size: 0.9rem;
+  font-family: var(--font-family);
+  color: var(--color-white);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  outline: none;
+  transition: border-color var(--transition-fast);
+}
+
+.textInput::placeholder {
+  color: var(--color-text-muted);
+}
+
+.textInput:focus {
+  border-color: var(--color-accent);
+}
+
+.submitBtn {
+  padding: 14px 24px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-family: var(--font-family);
+  color: var(--color-base);
+  background-color: var(--color-accent);
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+  white-space: nowrap;
+}
+
+.submitBtn:hover {
+  background-color: #d4b23e;
+}
+
+.submitBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* --- Loading State --- */
+.loading {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+.loadingDot {
+  display: inline-block;
+  animation: pulse 1.2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+/* --- Response Panel --- */
+.responsePanel {
+  padding: 24px;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  margin-top: 8px;
+}
+
+.responseSection {
+  margin-bottom: 24px;
+}
+
+.responseSection:last-child {
+  margin-bottom: 0;
+}
+
+.responseSectionTitle {
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-accent);
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.responseSectionContent {
+  font-size: 0.88rem;
+  color: var(--color-text);
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+
+/* --- Error Message --- */
+.error {
+  padding: 16px 20px;
+  background-color: rgba(220, 80, 80, 0.1);
+  border: 1px solid rgba(220, 80, 80, 0.3);
+  border-radius: var(--radius-md);
+  color: #e8a0a0;
+  font-size: 0.85rem;
+  margin-top: 8px;
+}
+
+/* --- Out of Scope Redirect --- */
+.outOfScope {
+  text-align: center;
+  padding: 24px;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  margin-top: 8px;
+}
+
+.outOfScope p {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  margin-bottom: 12px;
+}
+
+.learnMoreLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  transition: opacity var(--transition-fast);
+}
+
+.learnMoreLink:hover {
+  opacity: 0.8;
+}
+
+@media (min-width: 769px) {
+  .page {
+    padding: 48px 20px;
+  }
+
+  .pageTitle {
+    font-size: 1.6rem;
+  }
+}

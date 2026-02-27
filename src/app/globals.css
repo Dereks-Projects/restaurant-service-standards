@@ -1,0 +1,104 @@
+/*
+ * globals.css — Design tokens + base styles
+ *
+ * WHY THIS FILE EXISTS:
+ * Sets up the color palette, fonts, and foundational styles
+ * that every page inherits. Uses CSS variables so you can
+ * tweak the entire color scheme from one place.
+ */
+
+/* --- Google Font: Inter --- */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+/* --- Design Tokens (CSS Variables) --- */
+:root {
+  --color-base: #313131;
+  --color-background: #2a2a2a;
+  --color-surface: #3a3a3a;
+  --color-surface-light: #444444;
+  --color-surface-hover: #4a4a4a;
+  --color-accent: #e8c547;
+  --color-text: #f0f0f0;
+  --color-text-muted: #a8a8a8;
+  --color-white: #ffffff;
+  --color-border: #4a4a4a;
+
+  --font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+
+  --transition-fast: 150ms ease;
+  --transition-normal: 200ms ease;
+
+  /* Space for the floating bottom nav on mobile */
+  --bottom-nav-height: 72px;
+}
+
+/* --- Reset + Base --- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--color-background);
+  color: var(--color-text);
+  line-height: 1.6;
+  min-height: 100vh;
+
+  /* Subtle centered radial gradient — barely noticeable, adds depth */
+  background-image: radial-gradient(
+    ellipse at 50% 30%,
+    rgba(70, 70, 70, 0.35) 0%,
+    transparent 60%
+  );
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: var(--font-family);
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* --- Main Content Area --- */
+/* Adds padding below content so the floating bottom nav doesn't cover it on mobile */
+.main-content {
+  padding-bottom: calc(var(--bottom-nav-height) + 16px);
+  min-height: 100vh;
+}
+
+/* On desktop (769px+), no bottom nav so no extra padding needed */
+@media (min-width: 769px) {
+  .main-content {
+    padding-bottom: 0;
+  }
+}

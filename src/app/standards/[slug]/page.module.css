@@ -1,0 +1,182 @@
+/*
+ * standards/[slug]/page.module.css — Section Detail Page
+ *
+ * LAYOUT:
+ * Mobile: intro text, then accordion grouped by classification
+ * Desktop: two-column
+ *   - Left: sticky sidebar with classification filters
+ *   - Right: standard cards for the selected classification (or all)
+ */
+
+.page {
+  padding: 24px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Back link to /standards index */
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-bottom: 20px;
+  transition: color var(--transition-fast);
+}
+
+.backLink:hover {
+  color: var(--color-accent);
+}
+
+.pageTitle {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: 6px;
+}
+
+.intro {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  line-height: 1.55;
+  margin-bottom: 24px;
+}
+
+/* --- Desktop: Two-Column Layout --- */
+.desktopLayout {
+  display: none;
+}
+
+@media (min-width: 769px) {
+  .desktopLayout {
+    display: flex;
+    gap: 32px;
+  }
+}
+
+/* Left sticky sidebar — filter by classification */
+.sidebar {
+  width: 220px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 80px;
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sidebarBtn {
+  text-align: left;
+  padding: 10px 14px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  border-radius: var(--radius-sm);
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.sidebarBtn:hover {
+  background-color: var(--color-surface);
+  color: var(--color-text);
+}
+
+.sidebarBtnActive {
+  background-color: var(--color-surface);
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+/* Right content panel */
+.contentPanel {
+  flex: 1;
+  min-width: 0;
+}
+
+.sectionTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: 16px;
+}
+
+/* --- Mobile: Accordion --- */
+.mobileLayout {
+  display: block;
+}
+
+@media (min-width: 769px) {
+  .mobileLayout {
+    display: none;
+  }
+}
+
+/* --- Standard Card --- */
+.standardCard {
+  padding: 16px;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  margin-bottom: 10px;
+}
+
+.classification {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-accent);
+  margin-bottom: 8px;
+}
+
+.standardText {
+  font-size: 0.92rem;
+  color: var(--color-white);
+  line-height: 1.55;
+  margin-bottom: 10px;
+}
+
+.trainingTip {
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  padding-top: 10px;
+  border-top: 1px solid var(--color-border);
+}
+
+.tipLabel {
+  font-weight: 600;
+  color: var(--color-text);
+  margin-right: 4px;
+}
+
+.count {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--color-text-muted);
+  margin-left: 6px;
+}
+
+/* 404-style message if slug doesn't match any section */
+.notFound {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--color-text-muted);
+}
+
+.notFound h2 {
+  color: var(--color-white);
+  margin-bottom: 8px;
+}
+
+@media (min-width: 769px) {
+  .page {
+    padding: 32px 20px;
+  }
+
+  .pageTitle {
+    font-size: 1.6rem;
+  }
+}

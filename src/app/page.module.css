@@ -1,0 +1,355 @@
+/*
+ * page.module.css — Homepage (System Control Panel)
+ *
+ * LAYOUT:
+ * 1. Hero panel with tagline, subtitle, two CTAs
+ * 2. Stats bar (79 standards, 5 areas, AI coaching)
+ * 3. Flagship featured card (5 Steps to 5 Stars)
+ * 4. Vertical module stack with accent bars
+ * 5. Operators card — gold treatment, separated at bottom
+ */
+
+.page {
+  padding: 24px 20px;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+/* --- Hero Panel --- */
+.hero {
+  padding: 32px 24px;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  text-align: center;
+  margin-bottom: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle inner glow at top */
+.hero::before {
+  display: none;
+}
+
+.heroTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-white);
+  line-height: 1.25;
+  margin-bottom: 10px;
+}
+
+.heroSubtitle {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  line-height: 1.55;
+  margin-bottom: 20px;
+  max-width: 440px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* --- Two CTA buttons side by side --- */
+.heroCtaRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Primary CTA — gold filled (same as before) */
+.heroCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  width: 190px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  font-family: var(--font-family);
+  color: var(--color-base);
+  background-color: var(--color-accent);
+  border: none;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: background-color var(--transition-fast);
+}
+
+.heroCta:hover {
+  background-color: #d4b23e;
+}
+
+/* Secondary CTA — outlined, gold text */
+.heroCtaSecondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 12px 20px;
+  width: 190px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  font-family: var(--font-family);
+  color: var(--color-accent);
+  background-color: transparent;
+  border: 1px solid rgba(232, 197, 71, 0.35);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: border-color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.heroCtaSecondary:hover {
+  border-color: var(--color-accent);
+  background-color: rgba(232, 197, 71, 0.07);
+}
+
+/* --- Stats Bar --- */
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  margin-bottom: 28px;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.stat {
+  flex: 1;
+  text-align: center;
+  padding: 16px 12px;
+}
+
+/* Vertical divider between stats */
+.stat + .stat {
+  border-left: 1px solid var(--color-border);
+}
+
+.statValue {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  margin-bottom: 2px;
+}
+
+.statLabel {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* --- Flagship Featured Card --- */
+.flagship {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 24px;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  color: var(--color-text);
+  margin-bottom: 12px;
+  transition: background-color var(--transition-fast);
+  position: relative;
+  overflow: hidden;
+}
+
+.flagship:hover {
+  background-color: var(--color-surface-hover);
+}
+
+/* Subtle accent glow on left edge */
+.flagship::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background-color: var(--color-accent);
+}
+
+.flagshipIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+  border-radius: var(--radius-md);
+  background-color: var(--color-background);
+  color: var(--color-accent);
+}
+
+.flagshipContent {
+  flex: 1;
+  min-width: 0;
+}
+
+.flagshipTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: 4px;
+}
+
+.flagshipDescription {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  line-height: 1.45;
+  margin-bottom: 6px;
+}
+
+.flagshipMeta {
+  font-size: 0.72rem;
+  color: var(--color-text-muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* --- Module Stack --- */
+.modules {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.moduleCard {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 20px;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  color: var(--color-text);
+  transition: background-color var(--transition-fast);
+  position: relative;
+  overflow: hidden;
+}
+
+.moduleCard:hover {
+  background-color: var(--color-surface-hover);
+}
+
+/* Left accent bar */
+.moduleCard::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background-color: var(--color-accent);
+  opacity: 0.5;
+}
+
+.moduleIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-background);
+  color: var(--color-accent);
+}
+
+.moduleContent {
+  flex: 1;
+  min-width: 0;
+}
+
+.moduleTitle {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-white);
+  margin-bottom: 2px;
+}
+
+.moduleDescription {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  line-height: 1.4;
+}
+
+.moduleArrow {
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+  transition: color var(--transition-fast);
+}
+
+.moduleCard:hover .moduleArrow {
+  color: var(--color-accent);
+}
+
+/* --- Operator Module Card — gold border treatment ---
+ * Visually separated from the training tools above it.
+ * The gold border signals this is a different audience/purpose.
+ */
+.moduleCardOperator {
+  border-color: rgba(232, 197, 71, 0.35);
+  margin-top: 6px; /* extra gap above to separate from training tools */
+}
+
+.moduleCardOperator::before {
+  opacity: 1; /* full gold bar, not dimmed */
+}
+
+.moduleCardOperator:hover {
+  border-color: rgba(232, 197, 71, 0.6);
+  background-color: rgba(232, 197, 71, 0.04);
+}
+
+.moduleIconOperator {
+  background-color: rgba(232, 197, 71, 0.1);
+}
+
+.moduleTitleOperator {
+  color: var(--color-accent);
+}
+
+/* --- Desktop --- */
+@media (min-width: 769px) {
+  .page {
+    padding: 48px 20px;
+    max-width: 900px;
+  }
+
+  /* Remove the "card" container — hero floats open on desktop */
+  .hero {
+    padding: 30px 0 40px;
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 32px;
+  }
+
+  /* Kill the top accent glow since there's no card edge */
+  .hero::before {
+    display: none;
+  }
+
+  .heroTitle {
+    font-size: 2.4rem;
+  }
+
+  .heroSubtitle {
+    font-size: 1.3rem;
+    max-width: 540px;
+  }
+
+  .statValue {
+    font-size: 1.4rem;
+  }
+}

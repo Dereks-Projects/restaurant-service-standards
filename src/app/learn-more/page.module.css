@@ -1,0 +1,175 @@
+/*
+ * learn-more/page.module.css — From the Network Editorial Page
+ *
+ * LAYOUT:
+ * Three site sections stacked vertically.
+ * Each section has a site header, pitch line, and 3 article cards.
+ * Cards show image, title, subtitle, date.
+ */
+
+.page {
+  padding: 24px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.pageTitle {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: 4px;
+}
+
+.pageSubtitle {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  margin-bottom: 32px;
+}
+
+/* --- Site Section --- */
+.siteSection {
+  margin-bottom: 40px;
+}
+
+.siteHeader {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.siteName {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-white);
+}
+
+.siteLink {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  transition: opacity var(--transition-fast);
+}
+
+.siteLink:hover {
+  opacity: 0.8;
+}
+
+.sitePitch {
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+  margin-bottom: 16px;
+}
+
+/* --- Article Cards --- */
+.articles {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.articleCard {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  color: var(--color-text);
+  transition: background-color var(--transition-fast);
+}
+
+.articleCard:hover {
+  background-color: var(--color-surface-hover);
+}
+
+/* Article thumbnail */
+.articleImage {
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+  background-color: var(--color-background);
+}
+
+/* Text area next to the image */
+.articleContent {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.articleTitle {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--color-white);
+  line-height: 1.35;
+  /* Clamp to 2 lines */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.articleSubtitle {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.articleDate {
+  font-size: 0.72rem;
+  color: var(--color-text-muted);
+  margin-top: auto;
+}
+
+/* Loading state */
+.loading {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+/* Error state */
+.error {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+/* Desktop: cards go side by side */
+@media (min-width: 769px) {
+  .page {
+    padding: 48px 20px;
+  }
+
+  .pageTitle {
+    font-size: 1.6rem;
+  }
+
+  .articles {
+    flex-direction: row;
+    gap: 16px;
+  }
+
+  .articleCard {
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .articleImage {
+    width: 100%;
+    height: 140px;
+  }
+}

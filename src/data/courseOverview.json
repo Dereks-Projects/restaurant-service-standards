@@ -1,0 +1,140 @@
+{
+  "courseId": "5-steps-to-5-stars",
+  "title": "5 Steps to 5 Stars",
+  "slug": "5-steps-to-5-stars",
+  "tagline": "A practical framework for consistent, high-performance service.",
+  "subtitle": "A structured, restaurant-first training series inspired by top-tier service environments and built for real-world execution.",
+  "audience": [
+    "Servers",
+    "Hosts",
+    "Bartenders",
+    "Managers",
+    "Trainers"
+  ],
+  "level": "Foundational to Advanced (role-based application)",
+  "estimatedTotalTime": "60–75 minutes",
+  "format": {
+    "type": "course",
+    "delivery": "self-paced",
+    "readingLevel": "front-of-house team friendly",
+    "contentStyle": "short sections, structured blocks, operational language"
+  },
+  "goals": [
+    "Create consistent service behaviors under pressure",
+    "Improve guest confidence through structure and polish",
+    "Build team coordination and predictable execution",
+    "Strengthen recovery and retention systems"
+  ],
+  "thesis": {
+    "headline": "Standards are not restrictions. They are performance amplifiers.",
+    "supportingText": "This course teaches service as a system. When expectations are clear and execution is reinforced, teams move with confidence and guests feel the difference."
+  },
+  "modules": [
+    {
+      "id": "class-1-architecture-of-excellence",
+      "title": "The Architecture of Excellence",
+      "subtitle": "Why Structured Standards Create 5-Star Performance",
+      "slug": "architecture-of-excellence",
+      "order": 1,
+      "estimatedTime": "12–15 minutes",
+      "summary": "Learn why elite restaurants rely on structured standards to create consistent, repeatable guest excellence.",
+      "keyOutcomes": [
+        "Understand how standards reduce variance during busy service",
+        "Recognize excellence as trainable behavior, not personality",
+        "Adopt the mindset that structure amplifies performance"
+      ]
+    },
+    {
+      "id": "class-2-precision-in-preparation",
+      "title": "Precision in Preparation",
+      "subtitle": "Reservation, Pre-Arrival, and Control Systems",
+      "slug": "precision-in-preparation",
+      "order": 2,
+      "estimatedTime": "12–15 minutes",
+      "summary": "Build operational control before service begins using reservation discipline, alignment, and pre-shift systems.",
+      "keyOutcomes": [
+        "Use reservations as a pacing and control tool",
+        "Run pre-shift alignment that prevents confusion later",
+        "Develop anticipation through disciplined preparation"
+      ]
+    },
+    {
+      "id": "class-3-mastering-first-impression",
+      "title": "Mastering the First Impression",
+      "subtitle": "Arrival Protocol and Guest Positioning",
+      "slug": "mastering-the-first-impression",
+      "order": 3,
+      "estimatedTime": "12–15 minutes",
+      "summary": "Control the first three minutes through acknowledgment, movement, and seamless transitions that build immediate trust.",
+      "keyOutcomes": [
+        "Acknowledge every guest immediately, even during peak flow",
+        "Use pace, posture, and environment to communicate control",
+        "Create smooth handoffs that feel unified and intentional"
+      ]
+    },
+    {
+      "id": "class-4-execution-under-pressure",
+      "title": "Execution Under Pressure",
+      "subtitle": "Dining Room Performance and Service Control",
+      "slug": "execution-under-pressure",
+      "order": 4,
+      "estimatedTime": "15 minutes",
+      "summary": "Deliver precise timing, communication, and composure when the dining room is full and expectations are highest.",
+      "keyOutcomes": [
+        "Follow pacing standards instead of relying on instinct",
+        "Use calm, structured communication to prevent chaos",
+        "Maintain composed body language that sets the tone"
+      ]
+    },
+    {
+      "id": "class-5-legacy-and-recovery",
+      "title": "Legacy and Recovery",
+      "subtitle": "Departure, Guest Retention, and Reputation Control",
+      "slug": "legacy-and-recovery",
+      "order": 5,
+      "estimatedTime": "12–15 minutes",
+      "summary": "Close strong, recover confidently, and build retention systems that protect reputation and deepen loyalty.",
+      "keyOutcomes": [
+        "Execute intentional departure protocols",
+        "Handle recovery with ownership and corrective action",
+        "Use follow-through to build repeat business and trust"
+      ]
+    }
+  ],
+  "recommendedFlow": [
+    "Read modules in order for best results",
+    "Apply one behavior shift per shift for one week",
+    "Use the AI Training Assistant to rehearse scenarios",
+    "Reinforce learning with the quiz after completing the course"
+  ],
+  "navigation": {
+    "primaryCTA": {
+      "label": "Start Course",
+      "href": "/course/5-steps-to-5-stars/architecture-of-excellence"
+    },
+    "secondaryCTAs": [
+      {
+        "label": "Open AI Training Assistant",
+        "href": "/ai-agent"
+      },
+      {
+        "label": "Take the Quiz",
+        "href": "/quiz"
+      }
+    ]
+  },
+  "seo": {
+    "metaTitle": "5 Steps to 5 Stars | Restaurant Standards",
+    "metaDescription": "A structured, practical training course that turns service standards into consistent 5-star execution. Built for restaurant teams and operators.",
+    "keywords": [
+      "restaurant service standards",
+      "hospitality training",
+      "fine dining service",
+      "guest experience",
+      "service recovery",
+      "front of house training"
+    ]
+  },
+  "version": "1.0.0",
+  "lastUpdated": "2026-02-24"
+}

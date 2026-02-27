@@ -1,0 +1,60 @@
+/*
+ * Accordion.module.css
+ *
+ * WHY THIS EXISTS:
+ * On the Standards page (mobile), each section is a collapsible panel.
+ * Tap the header to expand/collapse. This keeps long content
+ * manageable on small screens.
+ */
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* The clickable header bar for each section */
+.trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 16px;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-white);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-align: left;
+  transition: background-color var(--transition-fast);
+}
+
+.trigger:hover {
+  background-color: var(--color-surface-hover);
+}
+
+/* When this section is expanded, round only the top corners */
+.triggerOpen {
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+  border-bottom-color: transparent;
+}
+
+/* The chevron icon rotates when open */
+.triggerIcon {
+  transition: transform var(--transition-fast);
+  color: var(--color-text-muted);
+}
+
+.triggerIconOpen {
+  transform: rotate(180deg);
+}
+
+/* The content area that expands below the trigger */
+.panel {
+  padding: 16px;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-top: none;
+  border-radius: 0 0 var(--radius-md) var(--radius-md);
+}
