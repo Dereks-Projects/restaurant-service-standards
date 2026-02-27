@@ -179,7 +179,7 @@
   right: 0;
   width: 220px;
   border-radius: 0 0 var(--radius-md) var(--radius-md);
-  gap: 2px;
+  gap: 1px;
 }
 
 /* Page link */

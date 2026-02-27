@@ -7,13 +7,23 @@
  *
  * 1. User submits a question from the AI Agent page
  * 2. This file receives it (along with their role + touchpoint)
- * 3. We pull relevant standards from your JSON
+ * 3. We load ALL 79 standards from your JSON (no filtering)
  * 4. We build a prompt telling GPT-4o-mini how to respond
  * 5. We send it to OpenAI and return the structured answer
  *
  * WHY route.js:
  * In Next.js App Router, any file named route.js inside /api
  * becomes a server endpoint. This one handles POST requests.
+ *
+ * WHAT CHANGED (v2 upgrade):
+ * - Previously, standards were filtered by touchpoint before GPT saw them.
+ *   This meant GPT could only see 15 of 79 standards on "General" questions,
+ *   causing it to reject valid hospitality questions it couldn't find context for.
+ * - Now ALL 79 standards are sent every time. 79 standards is roughly 5,000–6,000
+ *   tokens — tiny for GPT-4o-mini's 128k context window. Let the AI decide
+ *   what's relevant, not the code.
+ * - Added few-shot examples so GPT understands shorthand and messy input.
+ * - Tightened rejection logic so GPT defaults to answering, not rejecting.
  */
 
 import OpenAI from "openai";
@@ -82,46 +92,23 @@ function isRateLimited(ip) {
   return false;
 }
 
-/*
- * Map touchpoint keywords to section names in standards.json.
- * This lets us pull only the relevant standards for the question.
- * Think of it like a sommelier pulling the right wine list section
- * based on what the guest is asking about.
- */
-const touchpointToSection = {
-  reservations: "Reservation System",
-  arrival: "Arrival & Departure",
-  departure: "Arrival & Departure",
-  dining: "Dinner Service",
-  service: "Dinner Service",
-  food: "Food & Beverage Quality",
-  beverage: "Food & Beverage Quality",
-  facilities: "Presentation of Facilities",
-  complaints: null,   /* pulls from all sections */
-  general: null,       /* pulls from all sections */
-};
+/* ─── Standards Loading ──────────────────────────────────────────────────────
+ *
+ * WHY WE SEND ALL 79 STANDARDS:
+ * Previously, this code filtered standards by touchpoint before GPT saw them.
+ * On "General" questions, GPT only saw ~15 of 79 standards. If the answer
+ * lived in the other 64, GPT would reject the question as "out of scope."
+ *
+ * Restaurant analogy: It was like briefing your server on appetizers only,
+ * then wondering why they couldn't answer dessert questions.
+ *
+ * 79 standards at ~50-80 words each = ~5,000-6,000 tokens.
+ * GPT-4o-mini handles 128,000 tokens. We're using about 4% of its capacity.
+ * There is zero reason to filter. Let the AI find what's relevant.
+ * ─────────────────────────────────────────────────────────────────────────── */
 
-/*
- * Pull relevant standards based on the touchpoint.
- * If no specific match, we send a sample from each section
- * so the AI has broad context without overloading the prompt.
- */
-function getRelevantStandards(touchpoint) {
-  const sectionName = touchpointToSection[touchpoint];
-
-  if (sectionName) {
-    /* Return all standards for that section */
-    return standards.filter((s) => s.section === sectionName);
-  }
-
-  /* For general/complaints, grab a few from each section */
-  const sections = [...new Set(standards.map((s) => s.section))];
-  const sample = [];
-  sections.forEach((sec) => {
-    const items = standards.filter((s) => s.section === sec);
-    sample.push(...items.slice(0, 3)); /* first 3 from each */
-  });
-  return sample;
+function getAllStandards() {
+  return standards;
 }
 
 /*
@@ -130,10 +117,16 @@ function getRelevantStandards(touchpoint) {
  * - Stay in restaurant domain
  * - Use the provided standards
  * - Format the response in a specific structure
- * - Redirect out-of-scope questions
+ * - Redirect out-of-scope questions (only as an absolute last resort)
+ *
+ * WHAT CHANGED (v2 upgrade):
+ * - Added few-shot examples so GPT handles shorthand/messy input correctly
+ * - Flipped the rejection logic: default is ALWAYS answer, reject only for
+ *   clearly non-hospitality topics like coding, math, or car repair
+ * - Touchpoint hint is passed as context, not as a filter
  */
-function buildSystemPrompt(role, relevantStandards) {
-  const standardsText = relevantStandards
+function buildSystemPrompt(role, allStandards, touchpoint) {
+  const standardsText = allStandards
     .map(
       (s) =>
         `[${s.section} | ${s.classification}] ${s.standard} (Tip: ${s.trainingTip})`
@@ -144,7 +137,9 @@ function buildSystemPrompt(role, relevantStandards) {
 
 ROLE CONTEXT: The user is a ${role}. Tailor your language and examples to their specific responsibilities.
 
-AVAILABLE STANDARDS:
+TOUCHPOINT HINT: The user selected "${touchpoint}" as their service touchpoint. Use this as a hint for context, but if their question relates to a different area, answer it anyway using the relevant standards below.
+
+COMPLETE STANDARDS DATABASE (all 79 standards):
 ${standardsText}
 
 RESPONSE FORMAT — You MUST respond using this exact structure with these exact headings:
@@ -159,14 +154,34 @@ Provide a realistic sample script or phrase the ${role} could use in this situat
 Provide 2-3 common mistakes to avoid in this situation.
 
 **Standard Reference**
-Cite the specific standard(s) from the list above that apply. Include the section and classification.
+Cite the specific standard(s) from the database above that apply. Include the section and classification.
+
+FEW-SHOT EXAMPLES — These show you how to interpret messy, shorthand, or abbreviated input from busy restaurant professionals:
+
+Example input: "how long greeting"
+Interpretation: "How long should a guest greeting take?" or "What should be included in a greeting?"
+Action: Answer using Arrival & Departure standards about greeting timing and delivery.
+
+Example input: "wat do wen guest complans"
+Interpretation: "What do I do when a guest complains?"
+Action: Answer using relevant complaint-handling and service recovery standards.
+
+Example input: "wine temp"
+Interpretation: "What temperature should wine be served at?"
+Action: Answer using Food & Beverage Quality standards about wine service.
+
+Example input: "table not clean"
+Interpretation: "What's the standard for table cleanliness?" or "How to handle a dirty table?"
+Action: Answer using Presentation of Facilities or Dinner Service standards.
 
 RULES:
-- The users of this system are working restaurant professionals. They may type quickly with misspellings, abbreviations, slang, shorthand, or incomplete sentences (e.g., "wat do wen guest complans" or "how 2 handle allergys"). Always interpret their intent generously and respond with a clear, professional answer regardless of how the question is written.
+- ALWAYS DEFAULT TO ANSWERING. If there is any possible hospitality interpretation of the question, answer it. You must actively try to connect the question to your standards before even considering a rejection.
+- The users of this system are working restaurant professionals. They may type quickly with misspellings, abbreviations, slang, shorthand, or incomplete sentences. Always interpret their intent generously and respond with a clear, professional answer regardless of how the question is written.
 - ONLY reference the standards, training tips, and information provided above. Never substitute your own knowledge for specific details like timing, procedures, or metrics. If the standards don't specify an exact detail, say "refer to your property's specific guidelines" rather than inventing a number.
 - Keep responses practical and concise. This is for busy restaurant professionals.
 - You should answer ANY question related to restaurants, hospitality, dining, food, beverage, wine, cocktails, guest service, hotel operations, events, or front-of-house/back-of-house operations. Be generous in what you consider "in scope" — if it relates to hospitality in any way, answer it.
-- ONLY respond with the out-of-scope message if the question has absolutely nothing to do with hospitality, restaurants, food, beverage, or service (for example: questions about car repair, math homework, or coding). In that case, respond with exactly: "That topic is outside the scope of this training system. Visit the Learn More section for additional hospitality resources."
+- The ONLY time you should reject a question is if it is clearly and obviously about a non-hospitality topic with zero possible restaurant interpretation. Examples of topics to reject: car repair, calculus homework, coding questions, weather forecasts, sports scores. If you are even 10% unsure whether the question relates to hospitality, ANSWER IT.
+- When you must reject, respond with exactly: "That topic is outside the scope of this training system. Visit the Learn More section for additional hospitality resources."
 - Do not use emojis.
 - Do not add extra sections beyond the four listed above.`;
 }
@@ -219,14 +234,15 @@ export async function POST(request) {
       );
     }
 
-    /* Pull relevant standards based on touchpoint */
-    const relevantStandards = getRelevantStandards(touchpoint || "general");
-    console.log("Standards loaded:", relevantStandards.length);
+    /* Load ALL 79 standards — no filtering, let GPT decide what's relevant */
+    const allStandards = getAllStandards();
+    console.log("Standards loaded:", allStandards.length);
 
-    /* Build the system prompt with role + standards */
+    /* Build the system prompt with role + all standards + touchpoint as hint */
     const systemPrompt = buildSystemPrompt(
       role || "team member",
-      relevantStandards
+      allStandards,
+      touchpoint || "general"
     );
 
     /* Call GPT-4o-mini (non-streaming — response comes all at once) */
