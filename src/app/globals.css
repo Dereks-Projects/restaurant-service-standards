@@ -13,7 +13,7 @@
 /* --- Design Tokens (CSS Variables) --- */
 :root {
   --color-base: #313131;
-  --color-background: #2a2a2a;
+  --color-background: #1e1e1e;
   --color-surface: #3a3a3a;
   --color-surface-light: #444444;
   --color-surface-hover: #4a4a4a;
@@ -61,7 +61,7 @@ body {
   /* Subtle centered radial gradient — barely noticeable, adds depth */
   background-image: radial-gradient(
     ellipse at 50% 30%,
-    rgba(70, 70, 70, 0.35) 0%,
+    rgba(80, 80, 80, 0.45) 0%,
     transparent 60%
   );
   background-repeat: no-repeat;
