@@ -29,7 +29,6 @@ const siteConfig = {
     { name: "Somm.Tips", url: "https://somm.tips", description: "Wine & cocktail recommendations" },
     { name: "Hospitality.fyi", url: "https://hospitality.fyi", description: "Industry insights" },
     { name: "Beverage.fyi", url: "https://beverage.fyi", description: "Encyclopedic reference" },
-    { name: "Backbar.fyi", url: "https://backbar.fyi", description: "Spirits & cocktails" },
   ],
   parentCompany: {
     name: "Informative Media",
