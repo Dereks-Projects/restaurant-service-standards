@@ -82,7 +82,7 @@
   {
     "section": "Reservation System",
     "classification": "Efficiency",
-    "standard": "Always be cognizant of your guests time, including during the phone interactions. All calls should be handled without excessive delays or interruptions, with the reservationist always cognizant of the guests time.",
+    "standard": "Timing: Always be cognizant of your guests time, including during the phone interactions. All calls should be handled without excessive delays or interruptions, with the reservationist always cognizant of the guests time.",
     "trainingTip": "Keep calls under 2 minutes unless the guest needs additional information. Avoid putting guests on hold for long periods, if at all.",
     "quiz": {
       "question": "Which reflects efficient reservation handling?",
@@ -111,10 +111,26 @@
       "answer": "To allow the kitchen to prepare"
     }
   },
+    {
+    "section": "Arrival & Departure",
+    "classification": "Efficiency",
+    "standard": "A strong start: When a guest has a reservation, the table should be ready within five minutes of the appointed time.",
+    "trainingTip": "Ensure timely turnover and coordination with service staff. All staffing levels, from manager to support staff, should be aware and on board with the effort.",
+    "quiz": {
+      "question": "When should a reserved table be ready?",
+      "choices": [
+        "15 minutes after the reservation time",
+        "At any available moment",
+        "Within 5 minutes of the reserved time",
+        "Only when the entire party arrives"
+      ],
+      "answer": "Within 5 minutes of the reserved time"
+    }
+  },
   {
     "section": "Arrival & Departure",
     "classification": "Guest Courtesy",
-    "standard": "Every staff member should politely acknowledge the guest when appropriate, especially an immediate greeting upon arrival.",
+    "standard": "Positive Interactions: Every staff member should politely acknowledge the guest when appropriate, especially an immediate greeting upon arrival.",
     "trainingTip": "Everyone entering your establishment should receive a warm, immediate greeting. Every team member should be comfortable and confident in making a guest feel welcome.",
     "quiz": {
       "question": "What is a correct way to acknowledge a guest's arrival?",
@@ -130,8 +146,8 @@
   {
     "section": "Arrival & Departure",
     "classification": "Guest Courtesy",
-    "standard": "The entire team should always be polite and maintain a gracious tone throughout the interaction. Staff should be highly articulate and avoid slang and excessive use of phrase-fragments.",
-    "trainingTip": "Speak with grace, maintaining a calm and unhurried tone. This holds especially true in the busiest of times.",
+    "standard": "Everyone should remain articulate and avoid slang and excessive use of phrase-fragments when checking in guests and when in hearing distance of guests.",
+    "trainingTip": "Speak with grace, maintaining a calm and unhurried tone. This holds especially true in the busiest of times. Always make eye contact and keep focus on the guest.",
     "quiz": {
       "question": "How should staff speak when addressing a guest?",
       "choices": [
@@ -146,23 +162,7 @@
   {
     "section": "Arrival & Departure",
     "classification": "Guest Courtesy",
-    "standard": "Staff should make an effort to be engaging, and to make eye contact and keep focus on the guest.",
-    "trainingTip": "Make direct eye contact and avoid distractions when speaking, providing your undivided attention.",
-    "quiz": {
-      "question": "What shows the guest they have your full attention?",
-      "choices": [
-        "Looking down at the host stand",
-        "Maintaining eye contact and actively listening",
-        "Scanning the room while talking",
-        "Checking your phone discreetly"
-      ],
-      "answer": "Maintaining eye contact and actively listening"
-    }
-  },
-  {
-    "section": "Arrival & Departure",
-    "classification": "Guest Courtesy",
-    "standard": "Upon arrival, assistance with personal belongings should be proactively offered and an impression of security should be conveyed.",
+    "standard": "Key moment: Upon arrival, assistance with personal belongings should be proactively offered and an impression of security should be conveyed.",
     "trainingTip": "Offer assistance before being asked, and ensure guests feel secure and cared for. Make an extra effort to secure personal belongings of yur patrons.",
     "quiz": {
       "question": "What should staff do when guests arrive with personal items?",
@@ -177,8 +177,40 @@
   },
     {
     "section": "Arrival & Departure",
+    "classification": "Guest Courtesy",
+    "standard": "The extra step: Guests should be fully escorted to their seats, and staff remains beside the table until all guests are seated.",
+    "trainingTip": "Ensure full escort and attentive presence during initial seating. Await for any initial questions or requests before leaving the table.",
+    "quiz": {
+      "question": "What shows thoughtful service during seating?",
+      "choices": [
+        "Point guests to the table",
+        "Walk them halfway and return",
+        "Escort fully and remain until they are seated comfortably",
+        "Send someone else to show them"
+      ],
+      "answer": "Escort fully and remain until they are seated comfortably"
+    }
+  },
+    {
+    "section": "Arrival & Departure",
+    "classification": "Guest Courtesy",
+    "standard": "The guest\u2019s departure should be handled graciously and thoroughly, including at least a partial escort to the doorway.",
+    "trainingTip": "Ensure a thoughtful goodbye and escort the guest toward the exit. Make an effort to walk with the guest and show them the way.",
+    "quiz": {
+      "question": "What is the proper way to conclude a guest\u2019s experience?",
+      "choices": [
+        "Say goodbye from the host stand",
+        "Ignore their exit",
+        "Escort the guest at least partway to the door",
+        "Wave from across the room"
+      ],
+      "answer": "Escort the guest at least partway to the door"
+    }
+  },
+    {
+    "section": "Arrival & Departure",
     "classification": "Attention to Detail",
-    "standard": "If waiting for a reservation is required, the guest should be made to feel comfortable and welcomed.",
+    "standard": "First impressions: If waiting for a reservation is required, the guest should be made to feel comfortable and welcomed.",
     "trainingTip": "Offer seating, updates, and amenities when wait times are necessary. Avoid uncomfortable lingering around the host area.",
     "quiz": {
       "question": "What should a host do if the guest must wait?",
@@ -223,27 +255,12 @@
       "answer": "Acknowledge the reservation and any special requests"
     }
   },
-  {
-    "section": "Arrival & Departure",
-    "classification": "Efficiency",
-    "standard": "True efficiency is always being cognizant of your guests time. When a guest has a reservation, the table should be ready within five minutes of the appointed time.",
-    "trainingTip": "Ensure timely turnover and coordination with service staff. All staffing levels, from manager to support staff, should be aware and on board with the effort.",
-    "quiz": {
-      "question": "When should a reserved table be ready?",
-      "choices": [
-        "15 minutes after the reservation time",
-        "At any available moment",
-        "Within 5 minutes of the reserved time",
-        "Only when the entire party arrives"
-      ],
-      "answer": "Within 5 minutes of the reserved time"
-    }
-  },
+
 
   {
     "section": "Arrival & Departure",
     "classification": "Efficiency",
-    "standard": "In keeping with being mindful of your geusts time, if waiting is required, the host should quote an estimated wait time. The guest should never be seated more than 10 minutes past the quoted time.",
+    "standard": "We should always quote the host should quote an estimated wait time. The guest should never be seated more than 10 minutes past the quoted time.",
     "trainingTip": "Give realistic estimates and monitor seating progress closely. Communicate well with your guests at all times.",
     "quiz": {
       "question": "How long past the quoted wait time can a guest reasonably wait?",
@@ -273,22 +290,7 @@
     }
   },
 
-  {
-    "section": "Arrival & Departure",
-    "classification": "Guest Courtesy",
-    "standard": "Guests should be fully escorted to their seats, and staff remains beside the table until all guests are seated.",
-    "trainingTip": "Ensure full escort and attentive presence during initial seating. Await for any initial questions or requests before leaving the table.",
-    "quiz": {
-      "question": "What shows thoughtful service during seating?",
-      "choices": [
-        "Point guests to the table",
-        "Walk them halfway and return",
-        "Escort fully and remain until they are seated comfortably",
-        "Send someone else to show them"
-      ],
-      "answer": "Escort fully and remain until they are seated comfortably"
-    }
-  },
+
   {
     "section": "Arrival & Departure",
     "classification": "Attention to Detail",
@@ -308,7 +310,7 @@
   {
     "section": "Arrival & Departure",
     "classification": "Attention to Detail",
-    "standard": "When we arrive at the table, a reserved table should be preset for the exact number of guests upon seating.",
+    "standard": "5 Star touch: When we arrive at the table, a reserved table should be preset for the exact number of guests upon seating.",
     "trainingTip": "Ensure preset tables match the guest count in the reservation. Extra place settings should be removed before seating.",
     "quiz": {
       "question": "What detail should be correct before guest arrival?",
@@ -324,7 +326,7 @@
   {
     "section": "Arrival & Departure",
     "classification": "Attention to Detail",
-    "standard": "If the guest has checked coats, staff is aware of this, and retrieves the garments automatically upon departure without reminder from the guest.",
+    "standard": "Above and beyond: If the guest has checked coats, staff is aware of this, and retrieves the garments automatically upon departure without reminder from the guest.",
     "trainingTip": "Keep track of coat check numbers and anticipate guest needs. This step of service is personalized, and shows attention to detail.",
     "quiz": {
       "question": "What should staff do at guest departure regarding coat check?",
@@ -337,22 +339,7 @@
       "answer": "Retrieve checked garments proactively"
     }
   },
-  {
-    "section": "Arrival & Departure",
-    "classification": "Guest Courtesy",
-    "standard": "The guest\u2019s departure should be handled graciously and thoroughly, including at least a partial escort to the doorway.",
-    "trainingTip": "Ensure a thoughtful goodbye and escort the guest toward the exit. Make an effort to walk with the guest and show them the way.",
-    "quiz": {
-      "question": "What is the proper way to conclude a guest\u2019s experience?",
-      "choices": [
-        "Say goodbye from the host stand",
-        "Ignore their exit",
-        "Escort the guest at least partway to the door",
-        "Wave from across the room"
-      ],
-      "answer": "Escort the guest at least partway to the door"
-    }
-  },
+
   {
     "section": "Dinner Service",
     "classification": "Guest Courtesy",
@@ -484,7 +471,7 @@
   {
     "section": "Dinner Service",
     "classification": "Technical Execution",
-    "standard": "All staff should be wearing professional, properly designed, clean and well-fitted uniforms. The entire team encountered by guests should be well-dressed and well-groomed.",
+    "standard": "Personal Presentation: All staff should be wearing professional, properly designed, clean and well-fitted uniforms. The entire team encountered by guests should be well-dressed and well-groomed.",
     "trainingTip": "Maintain grooming standards and ensure uniform neatness. All persons in view of the guest should be in proper uniform.",
     "quiz": {
       "question": "How should uniforms appear?",

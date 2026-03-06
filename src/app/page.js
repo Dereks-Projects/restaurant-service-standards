@@ -53,12 +53,12 @@ export default function HomePage() {
           <span className={styles.statLabel}>Standards</span>
         </div>
         <div className={styles.stat}>
-          <span className={styles.statValue}>5</span>
-          <span className={styles.statLabel}>Operational Areas</span>
+          <span className={styles.statValue}>AI</span>
+          <span className={styles.statLabel}>training Agent</span>
         </div>
         <div className={styles.stat}>
-          <span className={styles.statValue}>AI</span>
-          <span className={styles.statLabel}>Training Coach</span>
+          <span className={styles.statValue}>94</span>
+          <span className={styles.statLabel}>Touchpoints</span>
         </div>
       </div>
 
