@@ -17,7 +17,7 @@ const footerLinks = [
   { label: "Privacy", href: "/legal/privacy" },
   { label: "Terms", href: "/legal/terms" },
   { label: "Cookies", href: "/legal/cookies" },
-  { label: "Contact", href: "/about" },
+  { label: "Contact", href: "mailto:derek@informativemedia.com" },
 ];
 
 export default function Footer() {
@@ -26,17 +26,25 @@ export default function Footer() {
   return (
     <footer className={styles.footer}>
       <nav className={styles.links}>
-        {footerLinks.map((link) => (
-          <Link
-            key={link.href + link.label}
-            href={link.href}
-            className={`${styles.link} ${
-              link.label === "For Operators" ? styles.operatorLink : ""
-            }`}
-          >
-            {link.label}
-          </Link>
-        ))}
+        {footerLinks.map((link) => {
+          const className = `${styles.link} ${
+            link.label === "For Operators" ? styles.operatorLink : ""
+          }`;
+
+          if (link.label === "Contact") {
+            return (
+              <a key={link.href + link.label} href={link.href} className={className}>
+                {link.label}
+              </a>
+            );
+          }
+
+          return (
+            <Link key={link.href + link.label} href={link.href} className={className}>
+              {link.label}
+            </Link>
+          );
+        })}
       </nav>
       <p className={styles.copyright}>
         &copy; {year} Restaurant Standards &middot; Informative Media

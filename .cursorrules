@@ -1,0 +1,65 @@
+# Restaurant Standards — Cursor Rules
+
+## Project
+- Name: Restaurant Standards
+- Live URL: restaurantstandards.com
+- Local folder: service-standards-app
+- GitHub: https://github.com/Dereks-Projects/restaurant-service-standards
+- Framework: Next.js 16.1.6 (App Router)
+- Deployment: git push to main → Vercel auto-deploys
+- DNS: GoDaddy → Vercel (never touch DNS)
+
+## Non-Negotiable Rules
+- CSS Modules only — never Tailwind, never inline styles
+- pnpm only — never npm or yarn
+- Never modify src/proxy.js without a confirmed diagnosis
+- Never modify src/config/siteConfig.js structure — only values
+- All nav and branding changes start in src/config/siteConfig.js
+- Always provide complete files — never partial snippets or surgical edits
+- Always specify exact folder and filename before every file
+- Run pnpm build before every deployment — must be clean
+
+## Environment
+- Windows / VS Code or Cursor / PowerShell
+- PowerShell syntax only (e.g., Remove-Item -Recurse -Force, not rm -rf)
+- pnpm as package manager
+
+## Architecture
+- src/app/ — all pages (Next.js App Router)
+- src/components/ — reusable UI components
+- src/config/siteConfig.js — all branding, nav, links
+- src/data/ — all JSON content files
+- src/lib/sanity.js — Sanity CMS client
+- src/proxy.js — geo-blocking (RU, CN) — do not touch
+- public/ — static assets, images, favicon, social card
+
+## Design System
+- Background: #2a2a2a
+- Surface: #3a3a3a
+- Accent (gold): #e8c547
+- Text: #f0f0f0
+- Muted text: #a8a8a8
+- Font: Inter (Google Fonts)
+- Border radius: 8px / 12px / 16px
+- Mobile breakpoint: 769px
+- Mobile-first — desktop overrides use min-width: 769px at bottom of CSS files
+
+## Key Files
+- src/app/layout.js — root layout, SEO metadata, Google Analytics G-KV806MZ0LT
+- src/app/page.js — homepage
+- src/app/operators/page.js — business-facing operators page
+- src/app/api/agent/route.js — OpenAI GPT-4o-mini endpoint, rate limited
+- src/app/robots.js — auto-generates /robots.txt
+- src/app/sitemap.js — auto-generates /sitemap.xml
+- src/app/not-found.js — custom 404 page
+
+## Environment Variables
+- OPENAI_API_KEY — OpenAI API key (server-side only)
+- NEXT_PUBLIC_SANITY_PROJECT_ID — 21zbxo34
+
+## Developer Context
+- Derek Engles is a novice coder with no formal CS background
+- Explain what and why in plain language before showing code
+- Use restaurant and hospitality analogies for technical concepts
+- One step at a time — wait for confirmation before the next step
+- Never assume prior knowledge of any technical concept
