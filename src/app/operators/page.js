@@ -50,7 +50,7 @@ export default function OperatorsPage() {
           <Link href="/ai-agent" className={styles.heroCta}>
             See the AI Agent <ArrowRight size={16} />
           </Link>
-          <a href="mailto:derekengles@gmail.com" className={styles.heroContact}>
+          <a href="mailto:derek@informativemedia.com" className={styles.heroContact}>
             Contact Us <Mail size={16} />
           </a>
         </div>
@@ -248,7 +248,7 @@ export default function OperatorsPage() {
         <p className={styles.ctaText}>
           If you're evaluating this platform for your property or group, reach out directly. We'll discuss what deployment looks like for your operation, your team size, and your service objectives.
         </p>
-        <a href="mailto:derekengles@gmail.com" className={styles.ctaButton}>
+        <a href="mailto:derek@informativemedia.com" className={styles.ctaButton}>
           Get in Touch <Mail size={16} />
         </a>
         <p className={styles.ctaNote}>
