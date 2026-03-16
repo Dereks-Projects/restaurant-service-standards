@@ -6,6 +6,7 @@
  */
 
 import Link from "next/link";
+import { Mail } from "lucide-react";
 import siteConfig from "@/config/siteConfig";
 import styles from "./page.module.css";
 
@@ -102,6 +103,13 @@ export default function AboutPage() {
           </a>
           .
         </p>
+      </div>
+
+      <div className={styles.contactCtaWrap}>
+        <a href="mailto:derek@informativemedia.com" className={styles.contactCta}>
+          <Mail size={15} />
+          Contact Us
+        </a>
       </div>
     </div>
   );
