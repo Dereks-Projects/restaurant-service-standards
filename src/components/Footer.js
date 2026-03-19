@@ -13,7 +13,6 @@ import styles from "./Footer.module.css";
 const footerLinks = [
   { label: "About", href: "/about" },
   { label: "For Operators", href: "/operators" },
-  { label: "Content Policy", href: "/legal/content-policy" },
   { label: "Privacy", href: "/legal/privacy" },
   { label: "Terms", href: "/legal/terms" },
   { label: "Cookies", href: "/legal/cookies" },
@@ -47,7 +46,7 @@ export default function Footer() {
         })}
       </nav>
       <p className={styles.copyright}>
-        &copy; {year} Restaurant Standards &middot; Informative Media
+        &copy; {year} Restaurant Standards &middot; by Informative Media
       </p>
     </footer>
   );

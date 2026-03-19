@@ -18,13 +18,6 @@ const sites = [
     category: null,
   },
   {
-    name: "Backbar.fyi",
-    value: "backbar",
-    url: "https://backbar.fyi",
-    pitch: "Spirits education, cocktail craft, and bar program development.",
-    category: null,
-  },
-  {
     name: "Somm.Site",
     value: "somm",
     url: "https://somm.site",
@@ -61,7 +54,7 @@ function formatDate(dateString) {
 }
 
 export default async function LearnMorePage() {
-  /* Fetch articles for all 3 sites in parallel */
+  /* Fetch articles for all sites in parallel */
   const results = await Promise.allSettled(
     sites.map((site) => getArticlesForSite(site.value, site.category))
   );

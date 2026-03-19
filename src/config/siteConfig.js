@@ -25,10 +25,10 @@ const siteConfig = {
 
   /* --- Portfolio dropdown (left chevron) --- */
   ecosystem: [
-    { name: "Somm.Site", url: "https://somm.site", description: "Wine education & courses" },
-    { name: "Somm.Tips", url: "https://somm.tips", description: "Wine & cocktail recommendations" },
-    { name: "Hospitality.fyi", url: "https://hospitality.fyi", description: "Industry insights" },
-    { name: "Beverage.fyi", url: "https://beverage.fyi", description: "Encyclopedic reference" },
+    { name: "Somm.Site", url: "https://somm.site", description: "Explore Wine Culture" },
+    { name: "Somm.Tips", url: "https://somm.tips", description: "Wine & Cocktail Recommendations" },
+    { name: "Hospitality.fyi", url: "https://hospitality.fyi", description: "Online Magazine" },
+    { name: "Beverage.fyi", url: "https://beverage.fyi", description: "Online Magazine" },
   ],
   parentCompany: {
     name: "Informative Media",
