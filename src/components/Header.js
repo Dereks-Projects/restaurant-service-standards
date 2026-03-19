@@ -96,7 +96,7 @@ export default function Header() {
       {/* --- Portfolio Dropdown Panel --- */}
       {openPanel === "portfolio" && (
         <nav className={`${styles.dropdownPanel} ${styles.portfolioPanel}`}>
-          <div className={styles.panelLabel}>Explore</div>
+          <div className={styles.panelLabel}>Our Partners</div>
 
           {siteConfig.ecosystem.map((site) => (
             <a

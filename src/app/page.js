@@ -49,7 +49,7 @@ export default function HomePage() {
       {/* --- Stats Bar --- */}
       <div className={styles.stats}>
         <div className={styles.stat}>
-          <span className={styles.statValue}>79</span>
+          <span className={styles.statValue}>76</span>
           <span className={styles.statLabel}>Standards</span>
         </div>
         <div className={styles.stat}>
