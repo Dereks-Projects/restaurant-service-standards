@@ -1,22 +1,8 @@
 /**
  * standards/[slug]/page.js — Individual Section Detail
  *
- * WHAT THIS PAGE DOES:
- * When the user clicks a section card (e.g. "Dinner Service"),
- * they land here at /standards/dinner-service.
- * This page filters standards.json for that section only,
- * groups them by classification, and displays them.
- *
- * DESKTOP: Two-column
- *   - Left sidebar: filter by classification (Guest Courtesy, etc.)
- *   - Right panel: standard cards for selected classification
- *   - "All" option shows everything
- *
- * MOBILE: Accordion grouped by classification
- *
- * NEXT.JS 16 NOTE:
- * In Next.js 16, the "params" prop is a Promise.
- * We use React's use() hook to unwrap it.
+ * DESKTOP: Two-column layout with sidebar filter (unchanged)
+ * MOBILE: Filter pills + full standard list with sequence numbers
  */
 "use client";
 
@@ -25,10 +11,9 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import standards from "@/data/standards.json";
 import intros from "@/data/sectionOverviewsIntro.json";
-import Accordion from "@/components/Accordion";
 import styles from "./page.module.css";
 
-/* Same mapping as the index page — connects slugs to section names */
+/* Connects slugs to section names */
 const sectionMap = {
   "reservation-system": { name: "Reservation System", introKey: "reservation" },
   "arrival-departure": { name: "Arrival & Departure", introKey: "arrival" },
@@ -38,10 +23,17 @@ const sectionMap = {
 };
 
 /* Renders a single standard as a card */
-function StandardCard({ item }) {
+function StandardCard({ item, position, total }) {
   return (
     <div className={styles.standardCard}>
-      <span className={styles.classification}>{item.classification}</span>
+      <div className={styles.cardHeader}>
+        <span className={styles.classification}>{item.classification}</span>
+        {position && (
+          <span className={styles.positionBadge}>
+            {position} of {total}
+          </span>
+        )}
+      </div>
       <p className={styles.standardText}>{item.standard}</p>
       <div className={styles.trainingTip}>
         <span className={styles.tipLabel}>Training Tip:</span>
@@ -70,8 +62,11 @@ export default function SectionDetail({ params }) {
   /* Look up section info from the slug */
   const section = sectionMap[slug];
 
-  /* Track which classification is active on desktop ("All" by default) */
+  /* Desktop sidebar filter */
   const [activeClassification, setActiveClassification] = useState("All");
+
+  /* Mobile pill filter */
+  const [mobileFilter, setMobileFilter] = useState("All");
 
   /* If the slug doesn't match any section, show a friendly message */
   if (!section) {
@@ -102,17 +97,11 @@ export default function SectionDetail({ params }) {
       ? sectionStandards
       : grouped[activeClassification] || [];
 
-  /* Mobile: build accordion items from classifications */
-  const accordionItems = classificationNames.map((cls) => ({
-    title: `${cls} (${grouped[cls].length})`,
-    content: (
-      <div>
-        {grouped[cls].map((item, i) => (
-          <StandardCard key={i} item={item} />
-        ))}
-      </div>
-    ),
-  }));
+  /* Mobile: which standards to show based on pill selection */
+  const mobileVisible =
+    mobileFilter === "All"
+      ? sectionStandards
+      : sectionStandards.filter((s) => s.classification === mobileFilter);
 
   return (
     <div className={styles.page}>
@@ -124,11 +113,10 @@ export default function SectionDetail({ params }) {
       <h1 className={styles.pageTitle}>{section.name}</h1>
       <p className={styles.intro}>{intros[section.introKey]}</p>
 
-      {/* --- Desktop: Two-Column Layout --- */}
+      {/* --- Desktop: Two-Column Layout (unchanged) --- */}
       <div className={styles.desktopLayout}>
         {/* Left: classification sidebar */}
         <nav className={styles.sidebar}>
-          {/* "All" button */}
           <button
             className={`${styles.sidebarBtn} ${
               activeClassification === "All" ? styles.sidebarBtnActive : ""
@@ -139,7 +127,6 @@ export default function SectionDetail({ params }) {
             <span className={styles.count}>{sectionStandards.length}</span>
           </button>
 
-          {/* One button per classification */}
           {classificationNames.map((cls) => (
             <button
               key={cls}
@@ -167,9 +154,44 @@ export default function SectionDetail({ params }) {
         </div>
       </div>
 
-      {/* --- Mobile: Accordion --- */}
+      {/* --- Mobile: Filter Pills + Full List --- */}
       <div className={styles.mobileLayout}>
-        <Accordion items={accordionItems} />
+        <div className={styles.pillRow}>
+          <button
+            className={`${styles.pill} ${
+              mobileFilter === "All" ? styles.pillActive : ""
+            }`}
+            onClick={() => setMobileFilter("All")}
+          >
+            All ({sectionStandards.length})
+          </button>
+
+          {classificationNames.map((cls) => (
+            <button
+              key={cls}
+              className={`${styles.pill} ${
+                mobileFilter === cls ? styles.pillActive : ""
+              }`}
+              onClick={() => setMobileFilter(cls)}
+            >
+              {cls} ({grouped[cls].length})
+            </button>
+          ))}
+        </div>
+
+        <div className={styles.mobileCards}>
+          {mobileVisible.map((item) => {
+            const originalIndex = sectionStandards.indexOf(item);
+            return (
+              <StandardCard
+                key={originalIndex}
+                item={item}
+                position={originalIndex + 1}
+                total={sectionStandards.length}
+              />
+            );
+          })}
+        </div>
       </div>
     </div>
   );
