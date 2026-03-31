@@ -1,232 +1,155 @@
 /**
- * api/agent/route.js — AI Training Agent Server Route
+ * api/agent/route.js — AI Training Coach Server Route
  *
- * WHY THIS FILE EXISTS:
- * This is the secure "back office" that talks to OpenAI.
- * The browser NEVER sees your API key. Here's the flow:
- *
- * 1. User submits a question from the AI Agent page
- * 2. This file receives it (along with their role + touchpoint)
- * 3. We load ALL 79 standards from your JSON (no filtering)
- * 4. We build a prompt telling GPT-4o-mini how to respond
- * 5. We send it to OpenAI and return the structured answer
- *
- * WHY route.js:
- * In Next.js App Router, any file named route.js inside /api
- * becomes a server endpoint. This one handles POST requests.
- *
- * WHAT CHANGED (v2 upgrade):
- * - Previously, standards were filtered by touchpoint before GPT saw them.
- *   This meant GPT could only see 15 of 79 standards on "General" questions,
- *   causing it to reject valid hospitality questions it couldn't find context for.
- * - Now ALL 79 standards are sent every time. 79 standards is roughly 5,000–6,000
- *   tokens — tiny for GPT-4o-mini's 128k context window. Let the AI decide
- *   what's relevant, not the code.
- * - Added few-shot examples so GPT understands shorthand and messy input.
- * - Tightened rejection logic so GPT defaults to answering, not rejecting.
+ * v5 — Clean rewrite.
+ * Model: GPT-4o | Temperature: 0.4 | Max tokens: 1200
  */
 
 import OpenAI from "openai";
 import standards from "@/data/standards.json";
 
-/* Create the OpenAI client using your secret key from .env.local */
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
-/* ─── Rate Limiter ───────────────────────────────────────────────────────────
- *
- * WHY THIS EXISTS:
- * Your AI agent costs money every time it calls OpenAI. Without a limit,
- * a bot or abusive user could send thousands of requests and run up your
- * bill. This is a simple "clipboard" — it tracks how many times each
- * IP address has called this endpoint in the last 60 seconds.
- *
- * HOW IT WORKS (restaurant analogy):
- * Imagine a host with a clipboard. Every time a guest (IP address) walks
- * in, the host marks a tally next to their name and notes the time.
- * If that guest has already walked in 10 times in the last 60 seconds,
- * the host says "I'm sorry, we need a moment" and turns them away.
- * After 60 seconds, old tallies are erased and they can come back.
- *
- * SETTINGS:
- * - MAX_REQUESTS: how many calls allowed per window (default: 10)
- * - WINDOW_MS: the time window in milliseconds (default: 60000 = 60 seconds)
- *
- * LIMITATION TO UNDERSTAND:
- * This counter lives in memory on the server. If the server restarts,
- * counters reset. This is fine for your current scale — it stops casual
- * abuse and bots, which is 95% of the real-world risk here.
- * ─────────────────────────────────────────────────────────────────────────── */
-
-const MAX_REQUESTS = 10;       /* max requests per IP per window */
-const WINDOW_MS = 60 * 1000;  /* 60 seconds in milliseconds */
-
-/* The "clipboard" — stores { count, windowStart } per IP address */
+const MAX_REQUESTS = 10;
+const WINDOW_MS = 60 * 1000;
 const rateLimitMap = new Map();
 
 function isRateLimited(ip) {
   const now = Date.now();
   const entry = rateLimitMap.get(ip);
 
-  /* First time we've seen this IP — create a fresh entry */
   if (!entry) {
     rateLimitMap.set(ip, { count: 1, windowStart: now });
     return false;
   }
 
-  /* If the 60-second window has expired, reset their counter */
   if (now - entry.windowStart > WINDOW_MS) {
     rateLimitMap.set(ip, { count: 1, windowStart: now });
     return false;
   }
 
-  /* Still inside the window — increment their count */
   entry.count += 1;
-
-  /* If they've exceeded the limit, block them */
-  if (entry.count > MAX_REQUESTS) {
-    return true;
-  }
-
-  return false;
+  return entry.count > MAX_REQUESTS;
 }
-
-/* ─── Standards Loading ──────────────────────────────────────────────────────
- *
- * WHY WE SEND ALL 79 STANDARDS:
- * Previously, this code filtered standards by touchpoint before GPT saw them.
- * On "General" questions, GPT only saw ~15 of 79 standards. If the answer
- * lived in the other 64, GPT would reject the question as "out of scope."
- *
- * Restaurant analogy: It was like briefing your server on appetizers only,
- * then wondering why they couldn't answer dessert questions.
- *
- * 79 standards at ~50-80 words each = ~5,000-6,000 tokens.
- * GPT-4o-mini handles 128,000 tokens. We're using about 4% of its capacity.
- * There is zero reason to filter. Let the AI find what's relevant.
- * ─────────────────────────────────────────────────────────────────────────── */
 
 function getAllStandards() {
   return standards;
 }
 
-/*
- * The system prompt — this is the "personality + rules" for the AI.
- * It tells GPT-4o-mini exactly how to behave:
- * - Stay in restaurant domain
- * - Use the provided standards
- * - Format the response in a specific structure
- * - Redirect out-of-scope questions (only as an absolute last resort)
- *
- * WHAT CHANGED (v2 upgrade):
- * - Added few-shot examples so GPT handles shorthand/messy input correctly
- * - Flipped the rejection logic: default is ALWAYS answer, reject only for
- *   clearly non-hospitality topics like coding, math, or car repair
- * - Touchpoint hint is passed as context, not as a filter
- */
 function buildSystemPrompt(role, allStandards, touchpoint) {
   const standardsText = allStandards
     .map(
       (s) =>
-        `[${s.section} | ${s.classification}] ${s.standard} (Tip: ${s.trainingTip})`
+        `[${s.section} | ${s.classification}]\nStandard: ${s.standard}\nTraining Tip: ${s.trainingTip}\n`
     )
     .join("\n");
 
-  return `You are the Restaurant Standards AI Training Coach. You help restaurant professionals improve their service by referencing a structured set of hospitality standards.
+  return `You are a training coach for restaurant professionals. You are knowledgeable, professional, and clear. You are here to train and assist, not to lecture. Your tone is modern and approachable — the way a strong manager talks to their team: respectful, specific, and helpful. Avoid academic language, stiff formality, and motivational filler.
 
-ROLE CONTEXT: The user is a ${role}. Tailor your language and examples to their specific responsibilities.
+The user is a ${role}. Tailor your response to what they would actually encounter and need to know.
+The user selected "${touchpoint}" as their focus area. Use it as context, not a constraint — if their question relates to a different area, answer it.
 
-TOUCHPOINT HINT: The user selected "${touchpoint}" as their service touchpoint. Use this as a hint for context, but if their question relates to a different area, answer it anyway using the relevant standards below.
+Users are working restaurant professionals. They may type quickly with misspellings, abbreviations, or single words. Always interpret generously and answer fully. Never ask for clarification.
 
-COMPLETE STANDARDS DATABASE (all 79 standards):
+STANDARDS DATABASE:
+
 ${standardsText}
 
-RESPONSE FORMAT — You MUST respond using this exact structure with these exact headings:
+TIMING REFERENCE:
 
-**What to Do**
-Provide exactly 3 clear, actionable steps. Number them 1, 2, 3.
+The following service timing expectations are used in Forbes evaluations and elevated operations. Reference them when a question involves speed of service or pacing. Do not reference them when they are not relevant to the question. Before responding to any question about timing, consult this list.
 
-**What to Say**
-Provide a realistic sample script or phrase the ${role} could use in this situation. Keep it natural and professional.
+Table ready after reservation time: 5 minutes
+Maximum wait past quoted time: 10 minutes
+Greet table after seating: 1 minute
+Pre-dinner beverages delivered: 7 minutes
+Beverage refill after empty: 30 seconds
+Check ready after request: 2 minutes
+Water service after seating: 1-2 minutes
+Beverage order taken: 3 minutes
+Wine presented after order: 3 minutes
+Food check-back: 2 minutes
+Clear finished plates: 3 minutes
+Dessert menu after entree cleared: 3 minutes
+Payment returned: 3-5 minutes
+Table touch / visual check: every 3-5 minutes
 
-**What NOT to Do**
-Provide 2-3 common mistakes to avoid in this situation.
+RESPONSE FORMAT:
 
-**Standard Reference**
-Cite the specific standard(s) from the database above that apply. Include the section and classification.
+Every response uses these four sections in this exact order.
 
-FEW-SHOT EXAMPLES — These show you how to interpret messy, shorthand, or abbreviated input from busy restaurant professionals:
+**The Standard**
+Lead with the most relevant standard(s) from the database above. Include the section and classification. Quote the standard directly — this is the authority that everything else builds from. If multiple standards apply, include them.
 
-Example input: "how long greeting"
-Interpretation: "How long should a guest greeting take?" or "What should be included in a greeting?"
-Action: Answer using Arrival & Departure standards about greeting timing and delivery.
+**The Approach**
+Coach the ${role} on how to execute. Three practical steps, numbered 1, 2, 3. Be specific to their role and what they would actually do on the restaurant floor.
 
-Example input: "wat do wen guest complans"
-Interpretation: "What do I do when a guest complains?"
-Action: Answer using relevant complaint-handling and service recovery standards.
+**The Language**
+Take the role and question subject that the user inputs into account before answering. Give them a sentence they can use in this situation. It should sound like something a confident, natural hospitality professional would say — not a script, not rehearsed, not stiff. The way someone good at this job actually talks to guests in a restaurant or hotel setting.
 
-Example input: "wine temp"
-Interpretation: "What temperature should wine be served at?"
-Action: Answer using Food & Beverage Quality standards about wine service.
+**Common Pitfalls**
+Two concrete mistakes teams make in this situation. Be specific enough that someone can actually avoid it. Frame them as coaching: "Where teams tend to slip here is..."
 
-Example input: "table not clean"
-Interpretation: "What's the standard for table cleanliness?" or "How to handle a dirty table?"
-Action: Answer using Presentation of Facilities or Dinner Service standards.
+OUTPUT EXAMPLE:
+
+User: "water service"
+Role: Server
+
+**The Standard**
+Dinner Service | Technical Execution: "A choice of water should always be offered before anything is poured. Bottled water should never be opened or served without the guest's preference being established first."
+
+Dinner Service | Guest Courtesy: "When a bottle of water has been depleted and a new one is needed, the staff should always ask the host's permission before opening it. No chargeable item should appear on the bill without the guest's knowledge or consent."
+
+**The Approach**
+1. As soon as the table is seated, offer a choice of water — still, sparkling, or tap. Do not pour anything before asking. Water should be on the table within the first couple of minutes after seating.
+2. Pour at the table, attentively, and keep an eye on levels throughout the meal. When a glass gets low, refill it quietly without being asked.
+3. When a bottle runs out, always ask before opening a new one. A simple check with the host of the table keeps trust intact and avoids a surprise on the bill.
+
+**The Language**
+"Good evening. May I offer you some water to start? Would you enjoy still, sparkling or regular water this evening?"
+
+When a bottle runs out: "I see we have finished the bottle — would you like me to open another, or would you prefer to switch to regular water?"
+
+**Common Pitfalls**
+- Where teams tend to slip here is pouring sparkling or bottled water without asking first. This is one of the most common guest complaints in elevated dining and it creates a trust issue on the bill.
+- Letting water glasses sit empty for several minutes while focusing on food service. Water is constant — it does not pause between courses.
+- Opening a second bottle without checking with the table. Even if the intent is good, the guest may not want the charge.
 
 RULES:
-- ALWAYS DEFAULT TO ANSWERING. If there is any possible hospitality interpretation of the question, answer it. You must actively try to connect the question to your standards before even considering a rejection.
-- The users of this system are working restaurant professionals. They may type quickly with misspellings, abbreviations, slang, shorthand, or incomplete sentences. Always interpret their intent generously and respond with a clear, professional answer regardless of how the question is written.
-- ONLY reference the standards, training tips, and information provided above. Never substitute your own knowledge for specific details like timing, procedures, or metrics. If the standards don't specify an exact detail, say "refer to your property's specific guidelines" rather than inventing a number.
-- Keep responses practical and concise. This is for busy restaurant professionals.
-- You should answer ANY question related to restaurants, hospitality, dining, food, beverage, wine, cocktails, guest service, hotel operations, events, or front-of-house/back-of-house operations. Be generous in what you consider "in scope" — if it relates to hospitality in any way, answer it.
-- The ONLY time you should reject a question is if it is clearly and obviously about a non-hospitality topic with zero possible restaurant interpretation. Examples of topics to reject: car repair, calculus homework, coding questions, weather forecasts, sports scores. If you are even 10% unsure whether the question relates to hospitality, ANSWER IT.
-- When you must reject, respond with exactly: "That topic is outside the scope of this training system. Visit the Learn More section for additional hospitality resources."
-- Do not use emojis.
-- Do not add extra sections beyond the four listed above.`;
+
+1. Always answer if there is any hospitality interpretation. Only reject topics with zero restaurant or FORBES connection. When rejecting, respond exactly: "That topic is outside the scope of this training system. Visit the Learn More section for additional hospitality resources."
+
+2. Every response must use the four sections above in order. No exceptions.
+
+3. Only reference the standards, training tips, and timing data provided. Do not invent details. If something is not covered, say "check with your property's specific guidelines."
+
+4. Do not start with "Great question" or similar. Start with The Standard.
+
+5. No emojis. No extra sections.`;
 }
 
-/*
- * POST handler — this function runs when the browser sends a request.
- * It receives JSON with: message, role, touchpoint
- */
 export async function POST(request) {
   try {
-
-    /* ── Rate Limit Check ──────────────────────────────────────────────────
-     * Read the visitor's IP address from the request headers.
-     * x-forwarded-for is the standard header Vercel uses to pass the
-     * real IP through its proxy layer. We fall back to "unknown" if
-     * for any reason it isn't present.
-     * ──────────────────────────────────────────────────────────────────── */
     const ip =
       request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
       "unknown";
 
     if (isRateLimited(ip)) {
-      console.log(`Rate limit hit — IP: ${ip}`);
       return Response.json(
-        {
-          error:
-            "You've sent too many requests. Please wait a moment before trying again.",
-        },
-        { status: 429 } /* 429 = "Too Many Requests" — the correct HTTP code */
+        { error: "You've sent too many requests. Please wait a moment before trying again." },
+        { status: 429 }
       );
     }
 
-    /* Parse the incoming request body */
     const { message, role, touchpoint } = await request.json();
 
-    /* --- DEBUG LOGGING (visible in your terminal, not the browser) --- */
     console.log("\n=== AI AGENT REQUEST ===");
     console.log("Question:", message);
     console.log("Role:", role);
     console.log("Touchpoint:", touchpoint);
-    console.log("IP:", ip);
-    console.log("API Key present:", !!process.env.OPENAI_API_KEY);
-    console.log("API Key starts with:", process.env.OPENAI_API_KEY?.slice(0, 7) || "MISSING");
 
-    /* Validate that we have a message */
     if (!message || message.trim().length === 0) {
       return Response.json(
         { error: "Please enter a question." },
@@ -234,42 +157,33 @@ export async function POST(request) {
       );
     }
 
-    /* Load ALL 79 standards — no filtering, let GPT decide what's relevant */
     const allStandards = getAllStandards();
-    console.log("Standards loaded:", allStandards.length);
-
-    /* Build the system prompt with role + all standards + touchpoint as hint */
     const systemPrompt = buildSystemPrompt(
       role || "team member",
       allStandards,
       touchpoint || "general"
     );
 
-    /* Call GPT-4o-mini (non-streaming — response comes all at once) */
     const completion = await openai.chat.completions.create({
-      model: "gpt-4o-mini",
+      model: "gpt-4o",
       messages: [
         { role: "system", content: systemPrompt },
         { role: "user", content: message },
       ],
-      temperature: 0.7,
-      max_tokens: 800,
+      temperature: 0.4,
+      max_tokens: 1200,
     });
 
-    /* Extract the response text */
     const answer = completion.choices[0].message.content;
 
     console.log("Response preview:", answer.slice(0, 100));
     console.log("=== END ===\n");
 
-    /* Send it back to the browser */
     return Response.json({ answer });
 
   } catch (error) {
     console.error("\n=== AI AGENT ERROR ===");
-    console.error("Error type:", error.constructor.name);
-    console.error("Error message:", error.message);
-    console.error("=== END ERROR ===\n");
+    console.error("Error:", error.message);
     return Response.json(
       { error: "Something went wrong. Please try again." },
       { status: 500 }

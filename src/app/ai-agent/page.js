@@ -1,22 +1,13 @@
 /**
- * ai-agent/page.js — AI Training Agent Interface
+ * ai-agent/page.js — AI Training Coach Interface
  *
- * WHAT THIS PAGE DOES:
- * Lets the user pick their role and a touchpoint,
- * type a question, and get a structured training response
- * powered by GPT-4o-mini through our secure server route.
- *
- * THE FLOW:
- * 1. User picks a role (Server, Host, Manager, etc.)
- * 2. User picks a touchpoint (Reservations, Arrival, etc.)
- * 3. User types a question
- * 4. We send it to /api/agent (our server route)
- * 5. Server calls OpenAI, returns structured answer
- * 6. We display it in formatted sections
- *
- * WHY "use client":
- * This page has lots of interactivity: selecting pills,
- * typing input, submitting, and displaying responses.
+ * LAYOUT (v3):
+ * 1. Title + subtitle
+ * 2. Role selector (top — affects AI coaching voice)
+ * 3. Category selector (matches real standards sections)
+ * 4. Input field (hero — the draw)
+ * 5. Quick questions (subtle suggestions below input)
+ * 6. Response panel (four coaching sections)
  */
 "use client";
 
@@ -25,39 +16,60 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import styles from "./page.module.css";
 
-/* Role options the user can pick from */
 const roles = ["Server", "Host", "Bartender", "Manager", "Trainer"];
 
-/* Touchpoint options — these map to sections in the server route */
-const touchpoints = [
+const categories = [
+  { label: "All", value: "general" },
   { label: "Reservations", value: "reservations" },
-  { label: "Arrival", value: "arrival" },
-  { label: "Dining Service", value: "dining" },
+  { label: "Arrival & Departure", value: "arrival" },
+  { label: "Dinner Service", value: "dining" },
   { label: "Food & Beverage", value: "food" },
-  { label: "Departure", value: "departure" },
   { label: "Facilities", value: "facilities" },
-  { label: "Complaints", value: "complaints" },
-  { label: "General", value: "general" },
 ];
 
-/*
- * Parse the AI response into sections.
- * The server returns text with **What to Do**, **What to Say**, etc.
- * We split it into an array of { title, content } objects
- * so we can render each one in its own styled panel.
- */
+const quickQuestions = {
+  general: [
+    "How quickly should I get drinks to the table after seating?",
+    "How do I handle a guest complaint on the floor?",
+    "What does anticipatory service look like in practice?",
+  ],
+  reservations: [
+    "How should I greet a guest calling to book?",
+    "What information should I be able to answer during a reservation call?",
+    "How do we handle dietary restrictions at the reservation stage?",
+  ],
+  arrival: [
+    "How quickly should a reserved table be ready?",
+    "What happens when the table is not ready on time?",
+    "What is the standard for escorting guests to their seats?",
+  ],
+  dining: [
+    "How long do I have to greet a table after seating?",
+    "What is the protocol for bottled water service?",
+    "When should refills be offered?",
+  ],
+  food: [
+    "What are the wine service standards for by-the-glass pours?",
+    "What should I know about presenting an amuse bouche?",
+    "How do I handle a guest who asks about seasonal menu items?",
+  ],
+  facilities: [
+    "How often should restrooms be checked during service?",
+    "What is the standard for table condition and setup?",
+    "What defines proper lighting and ambiance?",
+  ],
+};
+
 function parseResponse(text) {
   const sections = [];
   const pattern = /\*\*(.+?)\*\*/g;
   const titles = [];
   let match;
 
-  /* Find all **bold headings** */
   while ((match = pattern.exec(text)) !== null) {
     titles.push({ title: match[1], index: match.index, length: match[0].length });
   }
 
-  /* Split content between headings */
   for (let i = 0; i < titles.length; i++) {
     const start = titles[i].index + titles[i].length;
     const end = i + 1 < titles.length ? titles[i + 1].index : text.length;
@@ -70,29 +82,28 @@ function parseResponse(text) {
 
 export default function AIAgentPage() {
   const [role, setRole] = useState("Server");
-  const [touchpoint, setTouchpoint] = useState("general");
+  const [category, setCategory] = useState("general");
   const [question, setQuestion] = useState("");
   const [response, setResponse] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  async function handleSubmit() {
-    /* Don't submit if empty or already loading */
-    if (!question.trim() || loading) return;
+  async function handleSubmit(submittedQuestion) {
+    const q = submittedQuestion || question;
+    if (!q.trim() || loading) return;
 
     setLoading(true);
     setError(null);
     setResponse(null);
 
     try {
-      /* Send the question to our server route */
       const res = await fetch("/api/agent", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          message: question.trim(),
+          message: q.trim(),
           role: role.toLowerCase(),
-          touchpoint,
+          touchpoint: category,
         }),
       });
 
@@ -111,7 +122,11 @@ export default function AIAgentPage() {
     }
   }
 
-  /* Handle Enter key to submit */
+  function handleQuickQuestion(q) {
+    setQuestion(q);
+    handleSubmit(q);
+  }
+
   function handleKeyDown(e) {
     if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
@@ -119,19 +134,18 @@ export default function AIAgentPage() {
     }
   }
 
-  /* Check if the response is an out-of-scope redirect */
   const isOutOfScope =
     response && response.includes("outside the scope of this training system");
 
-  /* Parse the response into sections for display */
   const parsedSections = response && !isOutOfScope ? parseResponse(response) : [];
+
+  const activeQuestions = quickQuestions[category] || quickQuestions.general;
 
   return (
     <div className={styles.page}>
-      <h1 className={styles.pageTitle}>AI Training Agent</h1>
+      <h1 className={styles.pageTitle}>AI Training Coach</h1>
       <p className={styles.pageSubtitle}>
-        Select your role and a service touchpoint, then ask a question.
-        Responses are guided by the Restaurant Standards system.
+        Coaching powered by 79 service standards and Forbes timing benchmarks.
       </p>
 
       {/* Role selector */}
@@ -150,25 +164,25 @@ export default function AIAgentPage() {
         </div>
       </div>
 
-      {/* Touchpoint selector */}
+      {/* Category selector */}
       <div className={styles.selectorGroup}>
-        <div className={styles.selectorLabel}>Service Touchpoint</div>
+        <div className={styles.selectorLabel}>Category</div>
         <div className={styles.pills}>
-          {touchpoints.map((t) => (
+          {categories.map((c) => (
             <button
-              key={t.value}
+              key={c.value}
               className={`${styles.pill} ${
-                touchpoint === t.value ? styles.pillActive : ""
+                category === c.value ? styles.pillActive : ""
               }`}
-              onClick={() => setTouchpoint(t.value)}
+              onClick={() => setCategory(c.value)}
             >
-              {t.label}
+              {c.label}
             </button>
           ))}
         </div>
       </div>
 
-      {/* Question input */}
+      {/* Input area — hero */}
       <div className={styles.inputGroup}>
         <div className={styles.inputWrapper}>
           <input
@@ -182,7 +196,7 @@ export default function AIAgentPage() {
           />
           <button
             className={styles.submitBtn}
-            onClick={handleSubmit}
+            onClick={() => handleSubmit()}
             disabled={loading || !question.trim()}
           >
             {loading ? "Thinking..." : "Ask"}
@@ -190,10 +204,30 @@ export default function AIAgentPage() {
         </div>
       </div>
 
+      {/* Quick questions — subtle suggestions */}
+      {!response && !loading && (
+        <div className={styles.suggestions}>
+          <div className={styles.suggestionsLabel}>Try asking</div>
+          <div className={styles.suggestionsList}>
+            {activeQuestions.map((q, i) => (
+              <button
+                key={i}
+                className={styles.suggestion}
+                onClick={() => handleQuickQuestion(q)}
+              >
+                {q}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
+
       {/* Loading state */}
       {loading && (
         <div className={styles.loading}>
-          <span className={styles.loadingDot}>Analyzing standards and preparing your training response</span>
+          <span className={styles.loadingDot}>
+            Analyzing standards and preparing your coaching response
+          </span>
         </div>
       )}
 
@@ -223,6 +257,17 @@ export default function AIAgentPage() {
               </div>
             </div>
           ))}
+
+          <button
+            className={styles.newQuestionBtn}
+            onClick={() => {
+              setResponse(null);
+              setQuestion("");
+              setError(null);
+            }}
+          >
+            Ask Another Question
+          </button>
         </div>
       )}
     </div>
