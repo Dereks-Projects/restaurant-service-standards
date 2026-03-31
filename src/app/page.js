@@ -107,19 +107,6 @@ export default function HomePage() {
           <ChevronRight size={18} className={styles.moduleArrow} />
         </Link>
 
-        <Link href="/quiz" className={styles.moduleCard}>
-          <div className={styles.moduleIcon}>
-            <Target size={20} />
-          </div>
-          <div className={styles.moduleContent}>
-            <div className={styles.moduleTitle}>Quiz</div>
-            <div className={styles.moduleDescription}>
-              Test your service knowledge with section-based assessments
-            </div>
-          </div>
-          <ChevronRight size={18} className={styles.moduleArrow} />
-        </Link>
-
         <Link href="/checklists" className={styles.moduleCard}>
           <div className={styles.moduleIcon}>
             <ClipboardList size={20} />
@@ -128,6 +115,19 @@ export default function HomePage() {
             <div className={styles.moduleTitle}>Operational Checklists</div>
             <div className={styles.moduleDescription}>
               Pre-shift walkthroughs and service audit tools for the floor
+            </div>
+          </div>
+          <ChevronRight size={18} className={styles.moduleArrow} />
+        </Link>
+
+        <Link href="/quiz" className={styles.moduleCard}>
+          <div className={styles.moduleIcon}>
+            <Target size={20} />
+          </div>
+          <div className={styles.moduleContent}>
+            <div className={styles.moduleTitle}>Quiz</div>
+            <div className={styles.moduleDescription}>
+              Test your service knowledge with section-based assessments
             </div>
           </div>
           <ChevronRight size={18} className={styles.moduleArrow} />
