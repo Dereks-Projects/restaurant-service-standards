@@ -1,0 +1,86 @@
+[
+  {
+    "benchmark": "Table ready after reservation time",
+    "target": "5 minutes",
+    "context": "A reserved table should be ready within five minutes of the appointed time. This requires coordination between the host, bussers, and floor managers well before the guest arrives.",
+    "roles": ["host", "manager"]
+  },
+  {
+    "benchmark": "Maximum wait past quoted time",
+    "target": "10 minutes",
+    "context": "If a wait has been quoted, the guest should never wait more than ten minutes beyond that estimate. Exceeding this window signals a breakdown in floor management.",
+    "roles": ["host", "manager"]
+  },
+  {
+    "benchmark": "Greet table after seating",
+    "target": "1 minute",
+    "context": "Once seated, the table should be acknowledged within one minute. This first interaction sets the tone and opens the opportunity for a beverage order.",
+    "roles": ["server", "manager", "trainer"]
+  },
+  {
+    "benchmark": "Water service after seating",
+    "target": "1-2 minutes",
+    "context": "Water should be offered and on the table within the first two minutes of seating. A choice of still, sparkling, or tap should always be presented before anything is poured.",
+    "roles": ["server", "bartender"]
+  },
+  {
+    "benchmark": "Beverage order taken",
+    "target": "3 minutes",
+    "context": "The initial beverage order should be taken within three minutes of seating. This is the first service touchpoint that creates momentum for the meal.",
+    "roles": ["server", "bartender"]
+  },
+  {
+    "benchmark": "Pre-dinner beverages delivered",
+    "target": "7 minutes",
+    "context": "All pre-dinner beverages, whether ordered at the table, the bar, or the lounge, should be served within seven minutes of being ordered. Delays here undermine the momentum of the entire experience.",
+    "roles": ["server", "bartender", "manager"]
+  },
+  {
+    "benchmark": "Wine presented after order",
+    "target": "3 minutes",
+    "context": "Once a wine selection has been made, the bottle should be presented to the guest within three minutes. Label presentation and a tasting pour precede the full service.",
+    "roles": ["server", "bartender"]
+  },
+  {
+    "benchmark": "Beverage refill after empty",
+    "target": "30 seconds",
+    "context": "When a guest's glass is empty, a refill or follow-up should be offered within thirty seconds. This is one of the most visible indicators of attentive service.",
+    "roles": ["server", "bartender"]
+  },
+  {
+    "benchmark": "Food check-back",
+    "target": "2 minutes",
+    "context": "A check-back should occur within two minutes of the course being delivered. This confirms satisfaction and catches issues before they compound.",
+    "roles": ["server", "manager"]
+  },
+  {
+    "benchmark": "Clear finished plates",
+    "target": "3 minutes",
+    "context": "Finished plates should be cleared within three minutes. All guests at a table should be cleared together, never one at a time.",
+    "roles": ["server"]
+  },
+  {
+    "benchmark": "Dessert menu after entree cleared",
+    "target": "3 minutes",
+    "context": "The dessert menu or dessert conversation should happen within three minutes of clearing the entree course. This maintains the flow and opens an additional revenue opportunity.",
+    "roles": ["server"]
+  },
+  {
+    "benchmark": "Check ready after request",
+    "target": "2 minutes",
+    "context": "When a guest requests the check, it should be presented within two minutes. A slow check is one of the most common complaints in elevated dining.",
+    "roles": ["server", "manager"]
+  },
+  {
+    "benchmark": "Payment returned",
+    "target": "3-5 minutes",
+    "context": "Once payment has been collected, the processed receipt should be returned within three to five minutes. The departure experience should feel as smooth as the arrival.",
+    "roles": ["server", "manager"]
+  },
+  {
+    "benchmark": "Table touch and visual check",
+    "target": "every 3-5 minutes",
+    "context": "Every table should receive a visual check or light touch every three to five minutes throughout the meal. The goal is consistent awareness without intrusion.",
+    "roles": ["server", "manager", "trainer"]
+  }
+]

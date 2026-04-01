@@ -7,7 +7,7 @@
  * 3. Category selector (matches real standards sections)
  * 4. Input field (hero — the draw)
  * 5. Quick questions (subtle suggestions below input)
- * 6. Response panel (four coaching sections)
+ * 6. Response panel (three coaching sections)
  */
 "use client";
 
@@ -29,7 +29,7 @@ const categories = [
 
 const quickQuestions = {
   general: [
-    "How quickly should I get drinks to the table after seating?",
+    "What are the Forbes timing benchmarks for drink service?",
     "How do I handle a guest complaint on the floor?",
     "What does anticipatory service look like in practice?",
   ],
