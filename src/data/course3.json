@@ -8,7 +8,7 @@
 
   "intro": {
     "headline": "The First Three Minutes Define the Experience",
-    "paragraph": "In elite restaurants, the guest experience is shaped within the first three minutes. Before a menu is opened or an order is placed, guests form impressions about professionalism, attention, cleanliness, and control. Michelin-recognized restaurants and Forbes-rated properties treat arrival as a structured protocol, not a casual greeting. The way a guest is acknowledged, seated, and transitioned sets the tone for everything that follows."
+    "paragraph": "A guest has already decided how they feel about your restaurant before they sit down. It happens fast. The moment they walk through the door, they are reading the room. Is someone there to greet them? Does the space feel organized? Does the team look like they have it together? Those first few minutes carry more weight than most people realize. Michelin and Forbes evaluations both treat arrival as one of the highest-impact touchpoints in the entire dining experience. What happens between the door and the chair sets the ceiling for everything that follows."
   },
 
   "contentBlocks": [
@@ -19,15 +19,15 @@
     },
     {
       "type": "paragraphSplit",
-      "heading": "Immediate Acknowledgment Is Non-Negotiable",
-      "part1": "Elite standards require that every entering guest be acknowledged immediately. This does not always mean seating them instantly. It means eye contact, a composed posture, and a confident greeting within seconds of entry. Even during peak service, guests must feel seen and prioritized.",
-      "part2": "Forbes-level environments eliminate the experience of invisibility. When a guest stands unacknowledged, even briefly, confidence begins to fade. The host stand is not just a checkpoint. It is the control center for the first impression. A calm, organized host communicates that the dining room is under control."
+      "heading": "The Guest Knows Immediately",
+      "part1": "When a guest walks in and no one looks up, the message is clear: you are not a priority. It does not matter how busy the floor is. It does not matter if the host is on the phone. Every guest who enters should be acknowledged within seconds. Eye contact, a composed posture, and a confident greeting. That is all it takes. You are not promising a table instantly. You are telling the guest that someone is aware they are here and that they matter.",
+      "part2": "Forbes evaluations specifically watch for this. A guest who stands at the entrance without acknowledgment, even for thirty seconds, registers it. That brief moment of feeling invisible is difficult to recover from, no matter how good the rest of the night is. The host stand is the control center for the entire first impression. When it is calm, organized, and staffed by someone who looks ready, the guest relaxes before they even reach the table."
     },
     {
       "type": "paragraphSplit",
-      "heading": "Positioning Communicates Professionalism",
-      "part1": "How a guest is guided to the table matters. Walking too quickly signals rush. Walking too slowly signals uncertainty. Proper arrival protocol includes clear verbal cues, steady pacing, awareness of surroundings, and confident body language. Elite restaurants often ensure that pathways are clear and that chairs are properly positioned before guests arrive at the table.",
-      "part2": "Positioning also includes environmental control. Lighting levels, music volume, cleanliness at the entrance, and the organization of the host area all contribute to perception. Guests evaluate silently. When the environment feels intentional, guests relax more quickly and trust deepens."
+      "heading": "How You Move Says Everything",
+      "part1": "The walk from the door to the table is a small moment that communicates a lot. Moving too quickly tells the guest you are rushing them. Moving too slowly suggests uncertainty. The right pace is steady and confident, with the host leading clearly, aware of the path ahead, and making sure the guest is with them. Pathways should be clear. The table should be set and ready before the guest arrives at it. Chair assistance is offered, not waited on.",
+      "part2": "Guests are also reading the environment during this walk. The lighting, the noise level, the condition of the tables they pass, the appearance of the staff. All of it registers. None of it is conscious, but all of it shapes how the guest feels when they finally sit down. Rated restaurants understand that the physical environment is doing half the work during arrival. When the space feels intentional and well-maintained, trust builds before a single word about the menu is spoken."
     },
     {
       "type": "image",
@@ -36,20 +36,20 @@
     },
     {
       "type": "paragraphSplit",
-      "heading": "Transitions Must Be Seamless",
-      "part1": "In luxury-level service, the handoff from host to server is coordinated, not accidental. The server should be aware of new arrivals before reaching the table. Ideally, the initial approach from the server happens within a defined time window. Delays create awkward silence and uncertainty.",
-      "part2": "Seamless transitions demonstrate teamwork. Guests should not feel abandoned during the shift from one team member to another. Eye contact, clear introductions, and confident language establish accountability. When transitions are smooth, the restaurant presents itself as one unified team rather than separate individuals performing separate tasks."
+      "heading": "The Handoff Is Where Teams Win or Lose",
+      "part1": "The transition from host to server is one of the most common places where service breaks down. The host walks away. The table sits. Nobody comes over. Thirty seconds feels like three minutes when you are sitting in a new place with nothing in front of you. In rated operations, the server is already aware of the new seating before the guest arrives at the table. The first approach should happen within a minute. That is not a suggestion. That is the Forbes benchmark.",
+      "part2": "What makes this work is communication, not speed. The host signals the server. The server acknowledges the table. The greeting is confident and clear. There is no awkward gap where the guest wonders if anyone knows they are there. This is where teamwork becomes visible to the guest. When the handoff is smooth, the restaurant feels like one coordinated team. When it is not, it feels like a collection of people working near each other. Guests notice the difference immediately."
     }
   ],
 
   "keyPoints": [
-    "Every guest must be acknowledged immediately, even during peak service.",
-    "Controlled movement and environmental organization build guest confidence.",
-    "Seamless transitions between team members reinforce professionalism."
+    "A guest who feels invisible at the door will carry that impression through the entire meal. Acknowledge every arrival within seconds.",
+    "The walk to the table, the environment, and the body language of the team are all being evaluated before a word is spoken.",
+    "The host-to-server handoff is where most service breakdowns begin. Communication and timing close the gap."
   ],
 
   "conclusion": {
-    "paragraph": "Mastering the first impression requires discipline, awareness, and coordination. Michelin and Forbes frameworks consistently emphasize anticipation, polish, and environmental control during arrival. These early moments influence how guests interpret every detail that follows. A strong arrival protocol reduces anxiety, increases trust, and establishes the tone for excellence. When the first three minutes are intentional, the remainder of the experience benefits from that foundation.",
+    "paragraph": "The first three minutes are not a warm-up. They are the foundation. Michelin and Forbes evaluations consistently grade arrival protocol as one of the defining moments of the guest experience. How quickly the guest is seen, how confidently they are guided to the table, and how smoothly the team transitions around them all determine whether the rest of the evening starts from a position of trust or recovery. When arrival is handled with discipline and awareness, the guest enters the meal already confident that they are in the right place.",
     "callout": "Control the first impression, and you shape the entire experience."
   }
 }

@@ -8,7 +8,7 @@
 
   "intro": {
     "headline": "Service Begins Before the Guest Arrives",
-    "paragraph": "At the highest levels of hospitality, service does not begin at the table. It begins long before the guest walks through the door. Michelin-recognized restaurants and Forbes-rated properties understand that arrival is only one moment in a larger system of preparation. Reservation accuracy, table management, communication between departments, and pre-shift coordination determine whether the service feels calm and intentional or rushed and reactive. Excellence is built in the quiet hours before the dining room fills."
+    "paragraph": "You know the difference between a shift that was set up right and one that was not. When prep is tight, the floor moves. When it is not, you spend the whole night catching up. That gap has nothing to do with how hard the team works. It comes down to what happened before the doors opened. The best restaurants in the world, the ones carrying Michelin stars and Forbes ratings, treat preparation as the first act of service. Reservations are reviewed, stations are ready, and every person on the floor knows the plan. This class breaks down how that preparation works and how this platform helps you build it into your operation."
   },
 
   "contentBlocks": [
@@ -19,15 +19,15 @@
     },
     {
       "type": "paragraphSplit",
-      "heading": "Reservation Systems Are Operational Control",
-      "part1": "A reservation book is not just a list of names. It is a control system for pacing, staffing, and guest expectation. In elite restaurants, reservations are reviewed in advance with detail. Allergies are flagged. Celebrations are noted. VIP histories are understood. Seating times are staggered to prevent bottlenecks in the kitchen and bar. These actions reduce chaos before it begins.",
-      "part2": "Forbes-level operations treat reservation accuracy as part of guest respect. Double bookings, unclear notes, or rushed seating create tension that guests immediately sense. Precision in preparation means confirming availability, managing walk-ins with professionalism, and aligning kitchen timing with front-of-house flow. When the system is tight, the dining room feels effortless."
+      "heading": "Your Reservation Book Is a Control System",
+      "part1": "A reservation list is not just names and times. It is the tool that controls the pace of your entire evening. When it is managed well, the kitchen is not slammed all at once, the bar is not backed up, and the host is not scrambling to find tables. In rated restaurants, reservations are reviewed well before service. Allergies are flagged. Celebrations are noted. Guest histories are pulled. Seating is staggered so every part of the operation can keep up.",
+      "part2": "Forbes evaluations treat reservation handling as a direct reflection of how much a restaurant respects its guests. Double bookings, unclear notes, or a host who sounds unprepared on the phone all register. Precision here means confirming details in advance, managing walk-ins without disrupting the floor plan, and making sure the kitchen and front of house are working from the same timeline. When your reservation system is tight, the rest of the night gets easier. The standards in this platform cover what that looks like at every step, from the initial call to the moment the guest is seated."
     },
     {
       "type": "paragraphSplit",
-      "heading": "Pre-Shift Alignment Builds Confidence",
-      "part1": "Pre-shift meetings are not optional routines. They are performance briefings. In Michelin-caliber environments, teams review menu changes, special ingredients, expected VIP guests, and pacing challenges. Everyone understands the game plan before doors open. That shared clarity prevents confusion once service begins.",
-      "part2": "Alignment across roles matters. Hosts must know when large parties are expected. Servers must understand the evening’s culinary focus. Managers must anticipate peak seating waves. Preparation transforms service from reactive to controlled. When employees know what is coming, they move with purpose instead of scrambling."
+      "heading": "Pre-Shift Is Where the Shift Is Won",
+      "part1": "A pre-shift meeting is not a formality. It is the ten minutes that determines whether your team walks onto the floor ready or spends the first hour figuring things out. In Michelin-caliber operations, pre-shift covers menu changes, ingredient callouts, expected VIPs, reservation volume, and any pacing challenges the team should expect. Everyone hears the same plan at the same time. That shared clarity prevents miscommunication once the dining room is live.",
+      "part2": "This matters across every role. The host needs to know when large parties are arriving. Servers need to understand what the kitchen is pushing and what is limited. Bartenders need to know if there are any cocktail modifications or wine features for the evening. Managers need to see the full picture and anticipate where pressure will build. When every person on the team knows what is coming, they move with purpose instead of reacting. The operational checklists in this system are designed to support exactly this kind of preparation."
     },
     {
       "type": "image",
@@ -36,20 +36,20 @@
     },
     {
       "type": "paragraphSplit",
-      "heading": "Anticipation Is a Skill, Not Luck",
-      "part1": "Luxury service depends on anticipation. But anticipation is not intuition alone. It is built on systems. Confirming reservations the day prior. Tracking guest preferences. Noting previous complaints and following up. Ensuring proper table settings and cleanliness before doors open. These habits eliminate avoidable mistakes.",
-      "part2": "Elite restaurants operate under the principle that problems prevented are better than problems solved. A clean host stand, prepared side stations, pre-polished glassware, and stocked stations signal readiness. Guests feel confidence when the environment looks controlled. Anticipation creates calm, and calm creates trust."
+      "heading": "Anticipation Is Built, Not Improvised",
+      "part1": "The best service feels like the team read your mind. But that is not intuition. It is preparation. Reservations were confirmed the day before. Guest preferences were reviewed. Previous issues were flagged and addressed before the guest arrived. Table settings were checked. Side stations were stocked. Glassware was polished. None of that happens by accident. It happens because someone built it into the routine.",
+      "part2": "Rated restaurants operate on a simple principle: a problem prevented is always better than a problem solved. When the dining room looks controlled and the team looks ready, guests feel it immediately. They may not be able to name what is different, but they trust the experience. That trust starts with the work nobody sees. The standards and checklists in this platform give your team a repeatable framework for that preparation so it does not depend on one strong manager holding it all together."
     }
   ],
 
   "keyPoints": [
-    "A reservation system is a pacing and control tool, not just a scheduling list.",
-    "Pre-shift meetings align the entire team under one operational plan.",
-    "Anticipation is built through disciplined preparation, not guesswork."
+    "Your reservation system controls the pace of the entire evening. Treat it as an operational tool, not a scheduling list.",
+    "Pre-shift is the most valuable ten minutes of the night. A clear plan prevents confusion once service starts.",
+    "Anticipation is a system, not a talent. Build it into your prep routine and your team stops guessing."
   ],
 
   "conclusion": {
-    "paragraph": "Precision in preparation separates good restaurants from elite ones. Michelin and Forbes frameworks both emphasize anticipation, organization, and seamless coordination long before service begins. When reservation systems are accurate, when pre-shift communication is clear, and when every team member knows the plan, the dining room operates with intentional control. Service feels smooth because it has been engineered to be smooth. Excellence begins before the first guest ever enters the building.",
+    "paragraph": "The restaurants that earn top ratings are not just better during service. They are better before it. Reservation accuracy, pre-shift communication, and disciplined preparation are what create the calm, controlled dining rooms that Michelin and Forbes reward. When every detail is handled before the doors open, the team is free to focus on the guest instead of chasing problems. This platform is built to support that process. The standards define what preparation looks like. The checklists make it repeatable. The next class takes you onto the floor and into the guest interaction itself.",
     "callout": "Preparation reduces pressure. Control creates confidence."
   }
 }
