@@ -16,24 +16,24 @@
  * The browser form POSTs JSON to /api/auth/signup. This route:
  *   1. Validates all inputs server-side
  *   2. Checks for duplicate org slugs
- *   3. Creates the organization using the service role client
- *   4. Creates the auth user with org metadata
+ *   3. Creates the organization using the service role client (bypasses RLS)
+ *   4. Creates the auth user via auth.signUp() which triggers a
+ *      confirmation email through the configured SMTP provider (Resend)
  *   5. If step 4 fails, deletes the org from step 3 (rollback)
- *   6. Returns success or a specific error message
+ *   6. Returns success with a verification-required flag
  *
  * The handle_new_user database trigger automatically creates
  * the profiles row when the auth user is created in step 4.
  *
  * EMAIL VERIFICATION:
- * Supabase Auth is configured to require email confirmation.
- * After signup, the user receives a confirmation email. They
- * cannot access protected routes until they confirm. The API
- * returns a flag indicating verification is required so the
- * frontend can show the appropriate message.
+ * auth.signUp() sends a confirmation email automatically via the
+ * SMTP provider configured in Supabase (Resend → restaurantstandards.com).
+ * The user cannot log in until they click the confirmation link.
  */
 
 import { NextResponse } from "next/server";
 import { createServiceClient } from "@/lib/supabase-server";
+import { createClient } from "@supabase/supabase-js";
 
 /* ── Input validation ──────────────────────────────────────────────────── */
 
@@ -106,10 +106,23 @@ export async function POST(request) {
       );
     }
 
-    const supabase = createServiceClient();
+    /* Service client for database operations (bypasses RLS) */
+    const serviceClient = createServiceClient();
+
+    /* Standard client for auth.signUp() (triggers confirmation email) */
+    const authClient = createClient(
+      process.env.NEXT_PUBLIC_SUPABASE_URL,
+      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
+      {
+        auth: {
+          autoRefreshToken: false,
+          persistSession: false,
+        },
+      }
+    );
 
     /* Step 2: Check for duplicate slug */
-    const { data: existingOrg } = await supabase
+    const { data: existingOrg } = await serviceClient
       .from("organizations")
       .select("id")
       .eq("slug", slug)
@@ -122,8 +135,23 @@ export async function POST(request) {
       );
     }
 
-    /* Step 3: Create the organization */
-    const { data: orgData, error: orgError } = await supabase
+    /* Step 3: Check for existing email */
+    const { data: existingUsers } = await serviceClient
+      .auth.admin.listUsers();
+
+    const emailTaken = existingUsers?.users?.some(
+      (u) => u.email === email.trim().toLowerCase()
+    );
+
+    if (emailTaken) {
+      return NextResponse.json(
+        { error: "An account with this email already exists. Please sign in instead." },
+        { status: 409 }
+      );
+    }
+
+    /* Step 4: Create the organization */
+    const { data: orgData, error: orgError } = await serviceClient
       .from("organizations")
       .insert({
         name: orgName.trim(),
@@ -139,31 +167,23 @@ export async function POST(request) {
       );
     }
 
-    /* Step 4: Create the auth user */
-    const { data: authData, error: authError } =
-      await supabase.auth.admin.createUser({
-        email: email.trim().toLowerCase(),
-        password,
-        email_confirm: false,
-        user_metadata: {
+    /* Step 5: Create the auth user via signUp (triggers confirmation email) */
+    const { data: authData, error: authError } = await authClient.auth.signUp({
+      email: email.trim().toLowerCase(),
+      password,
+      options: {
+        data: {
           organization_id: orgData.id,
           role: "owner",
           first_name: firstName.trim(),
           last_name: lastName.trim(),
         },
-      });
+      },
+    });
 
     if (authError) {
-      /* Rollback: delete the org we just created */
-      await supabase.from("organizations").delete().eq("id", orgData.id);
-
-      /* Provide user-friendly error messages */
-      if (authError.message.includes("already been registered")) {
-        return NextResponse.json(
-          { error: "An account with this email already exists. Please sign in instead." },
-          { status: 409 }
-        );
-      }
+      /* Rollback: delete the org since user creation failed */
+      await serviceClient.from("organizations").delete().eq("id", orgData.id);
 
       return NextResponse.json(
         { error: authError.message },
@@ -171,7 +191,7 @@ export async function POST(request) {
       );
     }
 
-    /* Step 5: Success */
+    /* Step 6: Success */
     return NextResponse.json(
       {
         success: true,
