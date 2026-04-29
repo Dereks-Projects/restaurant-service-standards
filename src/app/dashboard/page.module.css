@@ -1,0 +1,301 @@
+/*
+ * page.module.css — Dashboard Page
+ *
+ * FILE LOCATION: src/app/dashboard/page.module.css
+ *
+ * Matches the Restaurant Standards design system.
+ * Mobile-first with desktop overrides at 769px.
+ */
+
+.page {
+  padding: 24px 20px;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+/* --- Welcome Header --- */
+
+.welcome {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.welcomeText {
+  min-width: 0;
+}
+
+.welcomeTitle {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: 2px;
+}
+
+.welcomeMeta {
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+}
+
+.signOutButton {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  font-family: var(--font-family);
+  color: var(--color-text-muted);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.signOutButton:hover {
+  color: var(--color-text);
+  border-color: var(--color-text-muted);
+}
+
+/* --- Organization Overview (Managers) --- */
+
+.orgOverview {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 20px;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  margin-bottom: 28px;
+}
+
+.overviewStat {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.overviewIcon {
+  color: var(--color-accent);
+}
+
+.overviewValue {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-white);
+  line-height: 1.2;
+}
+
+.overviewLabel {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.overviewActions {
+  display: flex;
+  gap: 8px;
+}
+
+.overviewLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 7px 12px;
+  font-size: 0.76rem;
+  font-weight: 600;
+  font-family: var(--font-family);
+  color: var(--color-accent);
+  background-color: rgba(232, 197, 71, 0.08);
+  border: 1px solid rgba(232, 197, 71, 0.2);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: background-color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.overviewLink:hover {
+  background-color: rgba(232, 197, 71, 0.14);
+  border-color: rgba(232, 197, 71, 0.4);
+}
+
+/* --- Sections --- */
+
+.section {
+  margin-bottom: 28px;
+}
+
+.sectionTitle {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 12px;
+  padding-left: 2px;
+}
+
+/* --- Training Module Cards --- */
+
+.modules {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.moduleCard {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  color: var(--color-text);
+  transition: background-color var(--transition-fast);
+  position: relative;
+  overflow: hidden;
+}
+
+.moduleCard:hover {
+  background-color: var(--color-surface-hover);
+}
+
+.moduleCard::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background-color: var(--color-accent);
+  opacity: 0.4;
+}
+
+.moduleCard:hover::before {
+  opacity: 0.8;
+}
+
+.moduleIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-background);
+  color: var(--color-accent);
+}
+
+.moduleContent {
+  flex: 1;
+  min-width: 0;
+}
+
+.moduleTitle {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-white);
+  margin-bottom: 2px;
+}
+
+.moduleDescription {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  line-height: 1.4;
+}
+
+.moduleArrow {
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+  transition: color var(--transition-fast);
+}
+
+.moduleCard:hover .moduleArrow {
+  color: var(--color-accent);
+}
+
+/* --- Organization Card (Owner) --- */
+
+.orgCard {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 20px;
+  background-color: var(--color-surface);
+  border: 1px solid rgba(232, 197, 71, 0.25);
+  border-radius: var(--radius-md);
+}
+
+.orgIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  border-radius: var(--radius-sm);
+  background-color: rgba(232, 197, 71, 0.1);
+  color: var(--color-accent);
+}
+
+.orgContent {
+  flex: 1;
+  min-width: 0;
+}
+
+.orgName {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--color-white);
+  margin-bottom: 2px;
+}
+
+.orgSlug {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+.orgSettingsLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  color: var(--color-text-muted);
+  border-radius: var(--radius-sm);
+  transition: color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.orgSettingsLink:hover {
+  color: var(--color-accent);
+  background-color: var(--color-surface-hover);
+}
+
+/* --- Desktop --- */
+
+@media (min-width: 769px) {
+  .page {
+    padding: 48px 20px;
+    max-width: 800px;
+  }
+
+  .welcomeTitle {
+    font-size: 1.8rem;
+  }
+}
