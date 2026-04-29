@@ -5,25 +5,20 @@
  *
  * FILE LOCATION: src/components/SignupForm.js
  *
- * WHY THIS IS A SEPARATE COMPONENT:
- * Same pattern as LoginForm. Interactive form logic lives in a
- * "use client" component. The page file stays as a server component
- * for SEO metadata and clean prerendering.
+ * ARCHITECTURE:
+ * This form submits to /api/auth/signup (a server-side API route)
+ * instead of talking to Supabase directly. The API route handles
+ * org creation, user creation, and rollback as a single atomic
+ * operation using the service role key.
  *
- * WHAT HAPPENS ON SUBMIT:
- * 1. Creates a row in the organizations table (name, slug)
- * 2. Signs up the user via Supabase Auth with metadata
- *    (org_id, role=owner, first_name, last_name)
- * 3. The database trigger (handle_new_user) automatically
- *    creates the matching profiles row
- * 4. Redirects to the dashboard
+ * After successful signup, the form shows a verification message
+ * instructing the user to check their email. No redirect to the
+ * dashboard happens until email is confirmed.
  */
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { Building2, Eye, EyeOff, AlertCircle } from "lucide-react";
-import { createBrowserClient } from "@/lib/supabase";
+import { Building2, Eye, EyeOff, AlertCircle, Mail } from "lucide-react";
 import styles from "@/app/signup/page.module.css";
 
 function generateSlug(name) {
@@ -36,9 +31,6 @@ function generateSlug(name) {
 }
 
 export default function SignupForm() {
-  const router = useRouter();
-  const [supabase] = useState(() => createBrowserClient());
-
   const [orgName, setOrgName] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -47,6 +39,7 @@ export default function SignupForm() {
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
 
   async function handleSignup(e) {
     e.preventDefault();
@@ -67,51 +60,66 @@ export default function SignupForm() {
       return;
     }
 
-    /* Step 1: Create the organization */
-    const { data: orgData, error: orgError } = await supabase
-      .from("organizations")
-      .insert({ name: orgName.trim(), slug })
-      .select()
-      .single();
+    try {
+      const response = await fetch("/api/auth/signup", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          orgName: orgName.trim(),
+          firstName: firstName.trim(),
+          lastName: lastName.trim(),
+          email: email.trim().toLowerCase(),
+          password,
+        }),
+      });
 
-    if (orgError) {
-      if (orgError.code === "23505") {
-        setError(
-          "An organization with that name already exists. Please choose a different name."
-        );
-      } else {
-        setError(orgError.message);
+      const data = await response.json();
+
+      if (!response.ok) {
+        setError(data.error || "Something went wrong. Please try again.");
+        setLoading(false);
+        return;
       }
+
+      setSuccess(true);
       setLoading(false);
-      return;
-    }
-
-    /* Step 2: Create the auth user with metadata */
-    /* The handle_new_user trigger auto-creates the profiles row */
-    const { error: authError } = await supabase.auth.signUp({
-      email: email.trim().toLowerCase(),
-      password,
-      options: {
-        data: {
-          organization_id: orgData.id,
-          role: "owner",
-          first_name: firstName.trim(),
-          last_name: lastName.trim(),
-        },
-      },
-    });
-
-    if (authError) {
-      /* Clean up: remove the org since signup failed */
-      await supabase.from("organizations").delete().eq("id", orgData.id);
-      setError(authError.message);
+    } catch {
+      setError("Unable to connect. Please check your internet and try again.");
       setLoading(false);
-      return;
     }
-
-    router.push("/dashboard");
   }
 
+  /* ── Success state: show verification message ── */
+  if (success) {
+    return (
+      <div className={styles.page}>
+        <div className={styles.card}>
+          <div className={styles.header}>
+            <div className={styles.iconWrap}>
+              <Mail size={24} />
+            </div>
+            <h1 className={styles.title}>Check Your Email</h1>
+            <p className={styles.subtitle}>
+              We sent a verification link to <strong>{email}</strong>.
+              Click the link in your email to activate your account,
+              then return here to sign in.
+            </p>
+          </div>
+
+          <div className={styles.footer}>
+            <p className={styles.footerText}>
+              Already verified?{" "}
+              <Link href="/login" className={styles.footerLink}>
+                Sign in
+              </Link>
+            </p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  /* ── Signup form ── */
   return (
     <div className={styles.page}>
       <div className={styles.card}>
