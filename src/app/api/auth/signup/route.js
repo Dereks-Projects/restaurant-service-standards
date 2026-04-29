@@ -2,33 +2,6 @@
  * route.js — Signup API Route
  *
  * FILE LOCATION: src/app/api/auth/signup/route.js
- *
- * WHY THIS EXISTS:
- * Signup requires two database operations: create an organization,
- * then create a user linked to that organization. If either fails,
- * both must be rolled back. This cannot be done safely from the
- * browser because:
- *   1. RLS blocks unauthenticated inserts into organizations
- *   2. Client-side rollback is unreliable (network failures, tab closes)
- *   3. The service role key must never reach the browser
- *
- * HOW IT WORKS:
- * The browser form POSTs JSON to /api/auth/signup. This route:
- *   1. Validates all inputs server-side
- *   2. Checks for duplicate org slugs
- *   3. Creates the organization using the service role client (bypasses RLS)
- *   4. Creates the auth user via auth.signUp() which triggers a
- *      confirmation email through the configured SMTP provider (Resend)
- *   5. If step 4 fails, deletes the org from step 3 (rollback)
- *   6. Returns success with a verification-required flag
- *
- * The handle_new_user database trigger automatically creates
- * the profiles row when the auth user is created in step 4.
- *
- * EMAIL VERIFICATION:
- * auth.signUp() sends a confirmation email automatically via the
- * SMTP provider configured in Supabase (Resend → restaurantstandards.com).
- * The user cannot log in until they click the confirmation link.
  */
 
 import { NextResponse } from "next/server";
@@ -107,7 +80,16 @@ export async function POST(request) {
     }
 
     /* Service client for database operations (bypasses RLS) */
-    const serviceClient = createServiceClient();
+    let serviceClient;
+    try {
+      serviceClient = createServiceClient();
+    } catch (err) {
+      console.error("[SIGNUP] Service client creation failed:", err.message);
+      return NextResponse.json(
+        { error: "Server configuration error. Please contact support." },
+        { status: 500 }
+      );
+    }
 
     /* Standard client for auth.signUp() (triggers confirmation email) */
     const authClient = createClient(
@@ -122,11 +104,19 @@ export async function POST(request) {
     );
 
     /* Step 2: Check for duplicate slug */
-    const { data: existingOrg } = await serviceClient
+    const { data: existingOrg, error: slugCheckError } = await serviceClient
       .from("organizations")
       .select("id")
       .eq("slug", slug)
       .single();
+
+    if (slugCheckError && slugCheckError.code !== "PGRST116") {
+      console.error("[SIGNUP] Slug check error:", slugCheckError.message, slugCheckError.code);
+      return NextResponse.json(
+        { error: "Failed to verify organization name. Please try again." },
+        { status: 500 }
+      );
+    }
 
     if (existingOrg) {
       return NextResponse.json(
@@ -135,22 +125,7 @@ export async function POST(request) {
       );
     }
 
-    /* Step 3: Check for existing email */
-    const { data: existingUsers } = await serviceClient
-      .auth.admin.listUsers();
-
-    const emailTaken = existingUsers?.users?.some(
-      (u) => u.email === email.trim().toLowerCase()
-    );
-
-    if (emailTaken) {
-      return NextResponse.json(
-        { error: "An account with this email already exists. Please sign in instead." },
-        { status: 409 }
-      );
-    }
-
-    /* Step 4: Create the organization */
+    /* Step 3: Create the organization */
     const { data: orgData, error: orgError } = await serviceClient
       .from("organizations")
       .insert({
@@ -161,13 +136,14 @@ export async function POST(request) {
       .single();
 
     if (orgError) {
+      console.error("[SIGNUP] Org creation error:", orgError.message, orgError.code, orgError.details);
       return NextResponse.json(
         { error: "Failed to create organization. Please try again." },
         { status: 500 }
       );
     }
 
-    /* Step 5: Create the auth user via signUp (triggers confirmation email) */
+    /* Step 4: Create the auth user via signUp (triggers confirmation email) */
     const { data: authData, error: authError } = await authClient.auth.signUp({
       email: email.trim().toLowerCase(),
       password,
@@ -182,6 +158,7 @@ export async function POST(request) {
     });
 
     if (authError) {
+      console.error("[SIGNUP] Auth error:", authError.message);
       /* Rollback: delete the org since user creation failed */
       await serviceClient.from("organizations").delete().eq("id", orgData.id);
 
@@ -191,7 +168,9 @@ export async function POST(request) {
       );
     }
 
-    /* Step 6: Success */
+    console.log("[SIGNUP] Success for:", email.trim().toLowerCase());
+
+    /* Step 5: Success */
     return NextResponse.json(
       {
         success: true,
@@ -201,6 +180,7 @@ export async function POST(request) {
       { status: 201 }
     );
   } catch (err) {
+    console.error("[SIGNUP] Unexpected error:", err.message, err.stack);
     return NextResponse.json(
       { error: "An unexpected error occurred. Please try again." },
       { status: 500 }
