@@ -4,6 +4,11 @@
  * In Next.js App Router, layout.js wraps EVERY page automatically.
  * Whatever you put here shows on every single page of the site.
  * The {children} prop is whatever page the user is currently on.
+ *
+ * WHAT CHANGED:
+ * Added AuthProvider import and wrapper around {children}.
+ * This gives every page access to auth state (logged in? who? what role?).
+ * Everything else is unchanged.
  */
 
 import "./globals.css";
@@ -12,6 +17,7 @@ import Header from "@/components/Header";
 import BottomNav from "@/components/BottomNav";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
+import { AuthProvider } from "@/components/AuthProvider";
 
 export const metadata = {
   metadataBase: new URL("https://restaurantstandards.com"),
@@ -103,9 +109,11 @@ export default function RootLayout({ children }) {
         <ScrollToTop />
         <Header />
 
-        <main className="main-content">
-          {children}
-        </main>
+        <AuthProvider>
+          <main className="main-content">
+            {children}
+          </main>
+        </AuthProvider>
 
         <Footer />
         <BottomNav />
