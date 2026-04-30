@@ -113,6 +113,25 @@
   background-color: rgba(232, 197, 71, 0.06);
 }
 
+/* --- Hero Login Link --- */
+
+.heroLogin {
+  margin-top: 20px;
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+}
+
+.heroLoginLink {
+  color: var(--color-accent);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.heroLoginLink:hover {
+  color: #d4b23e;
+}
+
 /* ══════════════════════════════════════════════════════════════
    STATS BAR
    ══════════════════════════════════════════════════════════════ */

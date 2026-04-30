@@ -1,0 +1,262 @@
+/*
+ * page.module.css — Admin Dashboard
+ *
+ * FILE LOCATION: src/app/admin/page.module.css
+ *
+ * Data-dense layout. Tables, stats, alerts.
+ * Mobile-first with horizontal scroll on tables.
+ */
+
+.page {
+  padding: 24px 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/* --- Header --- */
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 28px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.headerIcon {
+  color: var(--color-accent);
+}
+
+.pageTitle {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-white);
+}
+
+.backLink {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.backLink:hover {
+  color: var(--color-accent);
+}
+
+/* --- Stats Grid --- */
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.statCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 16px 8px;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  text-align: center;
+}
+
+.statValue {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-accent);
+}
+
+.statLabel {
+  font-size: 0.65rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* --- Alerts --- */
+
+.alert {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 18px;
+  margin-bottom: 24px;
+  font-size: 0.84rem;
+  color: #fbbf24;
+  background-color: rgba(251, 191, 36, 0.06);
+  border: 1px solid rgba(251, 191, 36, 0.2);
+  border-radius: var(--radius-md);
+  line-height: 1.45;
+}
+
+.alert svg {
+  flex-shrink: 0;
+}
+
+/* --- Collapsible Sections --- */
+
+.section {
+  margin-bottom: 16px;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.sectionToggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 14px 18px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  font-family: var(--font-family);
+  color: var(--color-white);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.sectionToggle:hover {
+  background-color: var(--color-surface-hover);
+}
+
+.sectionToggleLeft {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sectionToggleLeft svg {
+  color: var(--color-accent);
+}
+
+/* --- Tables --- */
+
+.tableWrap {
+  overflow-x: auto;
+  border-top: 1px solid var(--color-border);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+  min-width: 600px;
+}
+
+.table thead tr {
+  background-color: var(--color-background);
+}
+
+.table th {
+  padding: 10px 16px;
+  text-align: left;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.table td {
+  padding: 12px 16px;
+  color: var(--color-text);
+  border-top: 1px solid var(--color-border);
+  white-space: nowrap;
+}
+
+.cellBold {
+  font-weight: 600;
+  color: var(--color-white);
+}
+
+.cellMuted {
+  color: var(--color-text-muted);
+  font-size: 0.8rem;
+}
+
+/* --- Status Badges --- */
+
+.statusActive {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #4ade80;
+  background-color: rgba(74, 222, 128, 0.1);
+  padding: 3px 10px;
+  border-radius: 12px;
+  text-transform: capitalize;
+}
+
+.statusInactive {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  background-color: var(--color-background);
+  padding: 3px 10px;
+  border-radius: 12px;
+  text-transform: capitalize;
+}
+
+/* --- Icons --- */
+
+.iconGreen {
+  color: #4ade80;
+}
+
+.iconRed {
+  color: #f87171;
+}
+
+.adminBadge {
+  color: var(--color-accent);
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+/* --- Empty State --- */
+
+.emptyState {
+  padding: 24px 18px;
+  font-size: 0.84rem;
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+/* --- Desktop --- */
+
+@media (min-width: 769px) {
+  .page {
+    padding: 48px 24px;
+  }
+
+  .pageTitle {
+    font-size: 1.5rem;
+  }
+
+  .statsGrid {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+  }
+}

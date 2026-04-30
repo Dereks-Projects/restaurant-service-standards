@@ -4,7 +4,7 @@
  * FILE LOCATION: src/components/LandingPage.js
  *
  * NARRATIVE ARC:
- * 1. Hero — the one-liner
+ * 1. Hero — the one-liner + login link
  * 2. Stats — key numbers
  * 3. Pain — three problems the buyer already knows
  * 4. The Framework — standards + course as foundation and conviction
@@ -63,9 +63,14 @@ export default function LandingPage() {
               See It With Your Brand
             </Link>
           </div>
-        </div>
 
-        <div className={styles.heroAccent} aria-hidden="true" />
+          <p className={styles.heroLogin}>
+            Already have an account?{" "}
+            <Link href="/login" className={styles.heroLoginLink}>
+              Sign in
+            </Link>
+          </p>
+        </div>
       </section>
 
       {/* ══════════════════════════════════════════════════════════
