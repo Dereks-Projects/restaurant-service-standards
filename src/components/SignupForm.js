@@ -5,15 +5,13 @@
  *
  * FILE LOCATION: src/components/SignupForm.js
  *
- * ARCHITECTURE:
- * This form submits to /api/auth/signup (a server-side API route)
- * instead of talking to Supabase directly. The API route handles
- * org creation, user creation, and rollback as a single atomic
- * operation using the service role key.
+ * THIS IS THE ORG CREATION FLOW:
+ * Only the buyer/decision-maker uses this page. They create
+ * the organization and become the owner. Everyone else on
+ * their team enters via invitation only.
  *
- * After successful signup, the form shows a verification message
- * instructing the user to check their email. No redirect to the
- * dashboard happens until email is confirmed.
+ * The messaging makes this clear: headline, subtitle, and a
+ * notice for employees who landed here by mistake.
  */
 
 import { useState } from "react";
@@ -127,9 +125,10 @@ export default function SignupForm() {
           <div className={styles.iconWrap}>
             <Building2 size={24} />
           </div>
-          <h1 className={styles.title}>Create Your Account</h1>
+          <h1 className={styles.title}>Set Up Your Organization</h1>
           <p className={styles.subtitle}>
-            Set up your organization and start training your team today.
+            Register your restaurant, hotel, or group to deploy
+            Restaurant Standards across your team.
           </p>
         </div>
 
@@ -164,7 +163,7 @@ export default function SignupForm() {
           <div className={styles.fieldRow}>
             <div className={styles.field}>
               <label htmlFor="firstName" className={styles.label}>
-                First Name
+                Your First Name
               </label>
               <input
                 id="firstName"
@@ -180,7 +179,7 @@ export default function SignupForm() {
 
             <div className={styles.field}>
               <label htmlFor="lastName" className={styles.label}>
-                Last Name
+                Your Last Name
               </label>
               <input
                 id="lastName"
@@ -242,7 +241,7 @@ export default function SignupForm() {
             disabled={loading}
             className={styles.submitButton}
           >
-            {loading ? "Creating account..." : "Get Started"}
+            {loading ? "Creating organization..." : "Get Started"}
           </button>
         </form>
 
@@ -252,6 +251,10 @@ export default function SignupForm() {
             <Link href="/login" className={styles.footerLink}>
               Sign in
             </Link>
+          </p>
+          <p className={styles.inviteNotice}>
+            Were you invited by your manager?{" "}
+            Check your email for an invite link.
           </p>
         </div>
       </div>

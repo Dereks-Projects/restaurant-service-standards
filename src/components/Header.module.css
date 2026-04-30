@@ -84,7 +84,7 @@
   padding: 16px 20px;
   display: flex;
   flex-direction: column;
-  z-index: 99;
+  z-index: 200;
   animation: slideDown var(--transition-normal) forwards;
 }
 
@@ -177,6 +177,8 @@
   width: 240px;
   border-radius: 0 0 var(--radius-md) var(--radius-md);
   gap: 1px;
+  max-height: calc(100vh - 60px);
+  overflow-y: auto;
 }
 
 /* --- Auth CTAs (logged out) --- */
@@ -332,7 +334,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 98;
+  z-index: 199;
 }
 
 /* =============================================

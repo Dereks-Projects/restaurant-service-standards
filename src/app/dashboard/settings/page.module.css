@@ -2,9 +2,6 @@
  * page.module.css — Dashboard Settings Page
  *
  * FILE LOCATION: src/app/dashboard/settings/page.module.css
- *
- * Card-based layout with sections for org info, team members,
- * invitations, and the invite form. Matches the design system.
  */
 
 .page {
@@ -187,6 +184,16 @@
   flex-shrink: 0;
 }
 
+.statusFailed {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #f87171;
+  background-color: rgba(248, 113, 113, 0.1);
+  padding: 3px 10px;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
 /* --- Invitation Rows --- */
 
 .inviteRow {
@@ -227,7 +234,42 @@
   color: var(--color-text-muted);
 }
 
-/* --- Invite Form --- */
+/* --- Invite Tab Toggle --- */
+
+.inviteTabs {
+  display: flex;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.inviteTab {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 12px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  font-family: var(--font-family);
+  color: var(--color-text-muted);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.inviteTab:hover {
+  color: var(--color-text);
+  background-color: var(--color-surface-hover);
+}
+
+.inviteTabActive {
+  color: var(--color-accent);
+  font-weight: 600;
+  box-shadow: inset 0 -2px 0 var(--color-accent);
+}
+
+/* --- Invite Form (shared) --- */
 
 .inviteForm {
   display: flex;
@@ -304,6 +346,31 @@
   border-color: var(--color-accent);
 }
 
+.textarea {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 0.84rem;
+  font-family: var(--font-family);
+  color: var(--color-text);
+  background-color: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  outline: none;
+  resize: vertical;
+  min-height: 120px;
+  line-height: 1.6;
+  transition: border-color var(--transition-fast);
+}
+
+.textarea::placeholder {
+  color: var(--color-text-muted);
+  opacity: 0.5;
+}
+
+.textarea:focus {
+  border-color: var(--color-accent);
+}
+
 /* --- Role Note --- */
 
 .roleNote {
@@ -321,7 +388,7 @@
   margin-top: 1px;
 }
 
-/* --- Invite Button --- */
+/* --- Buttons --- */
 
 .inviteButton {
   width: 100%;
@@ -344,6 +411,119 @@
 .inviteButton:disabled {
   opacity: 0.6;
   cursor: not-allowed;
+}
+
+/* --- Bulk Invite Specific --- */
+
+.bulkHint {
+  font-size: 0.74rem;
+  color: var(--color-text-muted);
+  padding-left: 2px;
+}
+
+.bulkActions {
+  display: flex;
+  gap: 10px;
+}
+
+.uploadButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 16px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  font-family: var(--font-family);
+  color: var(--color-text);
+  background-color: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: border-color var(--transition-fast);
+}
+
+.uploadButton:hover {
+  border-color: var(--color-text-muted);
+}
+
+.previewButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 16px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  font-family: var(--font-family);
+  color: var(--color-accent);
+  background-color: transparent;
+  border: 1px solid rgba(232, 197, 71, 0.3);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: border-color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.previewButton:hover {
+  border-color: var(--color-accent);
+  background-color: rgba(232, 197, 71, 0.06);
+}
+
+.previewButton:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* --- Bulk Preview / Results --- */
+
+.bulkPreview {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.bulkPreviewHeader {
+  padding: 10px 14px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  background-color: var(--color-background);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.bulkPreviewList {
+  max-height: 240px;
+  overflow-y: auto;
+}
+
+.bulkPreviewItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 14px;
+  border-top: 1px solid var(--color-border);
+}
+
+.bulkPreviewEmail {
+  font-size: 0.82rem;
+  color: var(--color-text);
+}
+
+.bulkPreviewRole {
+  font-size: 0.72rem;
+  color: var(--color-text-muted);
+}
+
+.bulkResultsMixed {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  font-size: 0.82rem;
+  color: #fbbf24;
+  background-color: rgba(251, 191, 36, 0.08);
+  border: 1px solid rgba(251, 191, 36, 0.2);
+  border-radius: var(--radius-sm);
+  line-height: 1.4;
 }
 
 /* --- Error / Success Messages --- */
@@ -396,5 +576,9 @@
 
   .inviteFields .field:last-child {
     flex: 1;
+  }
+
+  .bulkActions {
+    flex-direction: column;
   }
 }
