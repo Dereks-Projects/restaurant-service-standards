@@ -1,30 +1,31 @@
-/**
- * Header.js — Top navigation bar
-*/
 "use client";
+
+/**
+ * Header.js — Top Navigation Bar
+ *
+ * FILE LOCATION: src/components/Header.js
+ *
+ * AUTH-AWARE NAVIGATION:
+ * - Logged out: Sign In + Start Free Trial (prominent), product links below
+ * - Logged in: Dashboard at top, product links, Sign Out at bottom
+ *
+ * TWO DROPDOWN PANELS:
+ * 1. Portfolio (left chevron) — ecosystem sites
+ * 2. Menu (right hamburger) — auth-aware navigation
+ */
 
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ChevronDown, Menu, X } from "lucide-react";
+import { ChevronDown, Menu, X, LogOut } from "lucide-react";
+import { useAuth } from "@/components/AuthProvider";
 import siteConfig from "@/config/siteConfig";
 import styles from "./Header.module.css";
 
-/**
- * Inline SVG icons for Instagram and LinkedIn.
- */
 function InstagramIcon() {
   return (
-    <svg
-      width="20"
-      height="20"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
       <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
       <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
@@ -34,16 +35,8 @@ function InstagramIcon() {
 
 function LinkedInIcon() {
   return (
-    <svg
-      width="20"
-      height="20"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
       <rect x="2" y="9" width="4" height="12" />
       <circle cx="4" cy="4" r="2" />
@@ -54,14 +47,21 @@ function LinkedInIcon() {
 export default function Header() {
   const [openPanel, setOpenPanel] = useState(null);
   const pathname = usePathname();
+  const { user, profile, signOut, loading } = useAuth();
+
+  const isLoggedIn = !loading && !!user;
 
   function togglePanel(panel) {
     setOpenPanel((current) => (current === panel ? null : panel));
   }
 
-  /* Separate regular links from the operator link */
+  async function handleSignOut() {
+    setOpenPanel(null);
+    await signOut();
+    window.location.href = "/";
+  }
+
   const regularLinks = siteConfig.menuLinks.filter((l) => !l.operator);
-  const operatorLink = siteConfig.menuLinks.find((l) => l.operator);
 
   return (
     <header className={styles.header}>
@@ -130,7 +130,50 @@ export default function Header() {
       {openPanel === "menu" && (
         <nav className={`${styles.dropdownPanel} ${styles.menuPanel}`}>
 
-          {/* Regular page links */}
+          {/* ── Auth Section ── */}
+          {isLoggedIn ? (
+            <>
+              <Link
+                href="/dashboard"
+                className={`${styles.menuLink} ${styles.dashboardLink} ${
+                  pathname === "/dashboard" ? styles.menuLinkActive : ""
+                }`}
+                onClick={() => setOpenPanel(null)}
+              >
+                Dashboard
+              </Link>
+              <Link
+                href="/dashboard/settings"
+                className={`${styles.menuLink} ${
+                  pathname === "/dashboard/settings" ? styles.menuLinkActive : ""
+                }`}
+                onClick={() => setOpenPanel(null)}
+              >
+                Settings
+              </Link>
+              <div className={styles.accentDivider} />
+            </>
+          ) : (
+            <>
+              <Link
+                href="/signup"
+                className={styles.menuCtaPrimary}
+                onClick={() => setOpenPanel(null)}
+              >
+                Start Free Trial
+              </Link>
+              <Link
+                href="/login"
+                className={styles.menuCtaSecondary}
+                onClick={() => setOpenPanel(null)}
+              >
+                Sign In
+              </Link>
+              <div className={styles.accentDivider} />
+            </>
+          )}
+
+          {/* ── Product Links ── */}
           {regularLinks.map((link) => {
             const isActive =
               link.href === "/"
@@ -151,24 +194,9 @@ export default function Header() {
             );
           })}
 
-         {/* Operator link — gold text, bold, no icon, sits below divider */}
-          {operatorLink && (
-            <>
-              <div className={styles.accentDivider} />
-              <Link
-                href={operatorLink.href}
-                className={`${styles.menuLink} ${styles.operatorLink} ${
-                  pathname === operatorLink.href ? styles.menuLinkActive : ""
-                }`}
-                onClick={() => setOpenPanel(null)}
-              >
-                {operatorLink.label}
-              </Link>
-              <div className={styles.accentDivider} />
-            </>
-          )}
+          <div className={styles.accentDivider} />
 
-          {/* Social icons */}
+          {/* ── Social Icons ── */}
           <div className={styles.socialRow}>
             {siteConfig.socials.map((social) => (
               <a
@@ -188,7 +216,7 @@ export default function Header() {
 
           <div className={styles.accentDivider} />
 
-          {/* Legal links (small, gray) */}
+          {/* ── Legal Links ── */}
           <div className={styles.legalRow}>
             {siteConfig.legalLinks.map((link) => (
               <Link
@@ -201,10 +229,24 @@ export default function Header() {
               </Link>
             ))}
           </div>
+
+          {/* ── Sign Out (logged in only) ── */}
+          {isLoggedIn && (
+            <>
+              <div className={styles.accentDivider} />
+              <button
+                onClick={handleSignOut}
+                className={styles.signOutLink}
+              >
+                <LogOut size={15} />
+                Sign Out
+              </button>
+            </>
+          )}
         </nav>
       )}
 
-      {/* --- Backdrop overlay to close on outside tap --- */}
+      {/* --- Backdrop --- */}
       {openPanel && (
         <div
           className={styles.backdrop}

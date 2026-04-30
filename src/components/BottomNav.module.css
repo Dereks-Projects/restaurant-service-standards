@@ -1,10 +1,10 @@
 /*
  * BottomNav.module.css
  *
- * WHY THIS EXISTS:
- * The floating bottom nav gives the app feel on mobile.
- * It's fixed to the bottom of the screen and hides on desktop
- * where navigation is handled by the header and sidebars.
+ * FILE LOCATION: src/components/BottomNav.module.css
+ *
+ * Fixed bottom tab bar on mobile. Hidden on desktop.
+ * Auth-aware tab content handled in the component.
  */
 
 .bottomNav {
@@ -19,12 +19,9 @@
   height: var(--bottom-nav-height);
   background-color: var(--color-base);
   border-top: 1px solid var(--color-border);
-
-  /* Slight padding at bottom for phones with home indicators (iPhone etc.) */
   padding-bottom: env(safe-area-inset-bottom, 0px);
 }
 
-/* Each tab is a vertical stack: icon on top, label below */
 .navItem {
   display: flex;
   flex-direction: column;
@@ -36,7 +33,6 @@
   color: var(--color-text-muted);
   text-decoration: none;
   transition: color var(--transition-fast);
-  /* Each tab gets equal width */
   flex: 1;
 }
 
@@ -44,12 +40,10 @@
   color: var(--color-text);
 }
 
-/* Active tab (current page) gets the accent color */
 .navItemActive {
   color: var(--color-accent);
 }
 
-/* Hide entirely on desktop */
 @media (min-width: 769px) {
   .bottomNav {
     display: none;

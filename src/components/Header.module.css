@@ -1,12 +1,11 @@
 /*
  * Header.module.css
  *
- * TWO DROPDOWN PANELS:
- * 1. Portfolio (left) — ecosystem sites + Informative Media
- * 2. Menu (right) — page nav + operator link + socials + legal
+ * FILE LOCATION: src/components/Header.module.css
  *
- * BOTH share the base .dropdownPanel style, then get
- * position overrides via .portfolioPanel / .menuPanel.
+ * Auth-aware hamburger menu. Logged-out visitors see
+ * Sign In and Start Free Trial prominently. Logged-in
+ * users see Dashboard, Settings, and Sign Out.
  */
 
 .header {
@@ -22,6 +21,7 @@
 }
 
 /* --- Left: Portfolio Dropdown Trigger --- */
+
 .portfolioBtn {
   display: flex;
   align-items: center;
@@ -46,6 +46,7 @@
 }
 
 /* --- Center: Site Title --- */
+
 .title {
   font-size: 1.2rem;
   font-weight: 500;
@@ -54,6 +55,7 @@
 }
 
 /* --- Right: Hamburger Button --- */
+
 .hamburgerBtn {
   display: flex;
   align-items: center;
@@ -72,6 +74,7 @@
 /* =============================================
    SHARED DROPDOWN BASE
    ============================================= */
+
 .dropdownPanel {
   position: absolute;
   top: 100%;
@@ -99,6 +102,7 @@
 /* =============================================
    PORTFOLIO PANEL (LEFT)
    ============================================= */
+
 .portfolioPanel {
   left: 0;
   width: 260px;
@@ -106,7 +110,6 @@
   gap: 2px;
 }
 
-/* "EXPLORE" label at top */
 .panelLabel {
   font-size: 0.68rem;
   font-weight: 700;
@@ -116,7 +119,6 @@
   padding: 4px 12px 10px;
 }
 
-/* Ecosystem site link */
 .ecosystemLink {
   display: block;
   padding: 10px 12px;
@@ -143,19 +145,13 @@
   color: var(--color-text-muted);
 }
 
-/* Gold accent divider */
 .accentDivider {
   height: 1px;
-  background: linear-gradient(
-    90deg,
-    var(--color-accent),
-    transparent
-  );
+  background: linear-gradient(90deg, var(--color-accent), transparent);
   opacity: 0.4;
   margin: 10px 12px;
 }
 
-/* Parent company link (below divider) */
 .parentLink {
   display: block;
   padding: 8px 12px;
@@ -175,14 +171,62 @@
 /* =============================================
    HAMBURGER MENU PANEL (RIGHT)
    ============================================= */
+
 .menuPanel {
   right: 0;
-  width: 220px;
+  width: 240px;
   border-radius: 0 0 var(--radius-md) var(--radius-md);
   gap: 1px;
 }
 
-/* Page link */
+/* --- Auth CTAs (logged out) --- */
+
+.menuCtaPrimary {
+  display: block;
+  padding: 11px 14px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-base);
+  background-color: var(--color-accent);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  text-align: center;
+  margin-bottom: 6px;
+  transition: background-color var(--transition-fast);
+}
+
+.menuCtaPrimary:hover {
+  background-color: #d4b23e;
+}
+
+.menuCtaSecondary {
+  display: block;
+  padding: 10px 14px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  background-color: transparent;
+  border: 1px solid rgba(232, 197, 71, 0.3);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  text-align: center;
+  transition: border-color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.menuCtaSecondary:hover {
+  border-color: var(--color-accent);
+  background-color: rgba(232, 197, 71, 0.06);
+}
+
+/* --- Dashboard Link (logged in) --- */
+
+.dashboardLink {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+/* --- Page Links --- */
+
 .menuLink {
   display: block;
   padding: 10px 14px;
@@ -199,39 +243,38 @@
   color: var(--color-white);
 }
 
-/* Active page indicator */
 .menuLinkActive {
   color: var(--color-accent);
   font-weight: 600;
 }
 
-/* ── Operator Link — Gold Featured Treatment ──────────────────────
- * Sits below a divider, gold text, subtle gold background,
- * icon alongside the label. Stands apart from training tools above.
- * ─────────────────────────────────────────────────────────────── */
-.operatorLink {
+/* --- Sign Out (logged in) --- */
+
+.signOutLink {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: 8px;
-  color: var(--color-accent);
-  font-weight: 600;
-  background-color: transparent;
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  font-family: var(--font-family);
+  color: var(--color-text-muted);
+  background: none;
   border: none;
-  margin-bottom: 4px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  text-align: left;
+  transition: color var(--transition-fast), background-color var(--transition-fast);
 }
 
-.operatorLink:hover {
+.signOutLink:hover {
+  color: var(--color-text);
   background-color: var(--color-surface-hover);
-  color: var(--color-accent);
 }
 
-.operatorIcon {
-  flex-shrink: 0;
-  opacity: 0.85;
-}
+/* --- Social Icons --- */
 
-/* Social icons row */
 .socialRow {
   display: flex;
   gap: 8px;
@@ -256,7 +299,8 @@
   background-color: var(--color-surface-hover);
 }
 
-/* Legal links row (small, gray, horizontal) */
+/* --- Legal Links --- */
+
 .legalRow {
   display: flex;
   gap: 6px;
@@ -279,8 +323,9 @@
 }
 
 /* =============================================
-   BACKDROP (tap outside to close)
+   BACKDROP
    ============================================= */
+
 .backdrop {
   position: fixed;
   top: 0;
@@ -289,6 +334,10 @@
   bottom: 0;
   z-index: 98;
 }
+
+/* =============================================
+   DESKTOP
+   ============================================= */
 
 @media (min-width: 769px) {
   .title {

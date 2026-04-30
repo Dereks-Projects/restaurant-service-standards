@@ -1,10 +1,14 @@
-/**
- * BottomNav.js — Floating bottom tab bar (mobile only)
- *
- * Updated icon set to match homepage:
- * Home, Award, MessageSquareText, ClipboardCheck, Lightbulb
- */
 "use client";
+
+/**
+ * BottomNav.js — Floating Bottom Tab Bar (Mobile Only)
+ *
+ * FILE LOCATION: src/components/BottomNav.js
+ *
+ * AUTH-AWARE:
+ * - Logged out: Home, Course, AI Agent, Standards, Sign In
+ * - Logged in: Dashboard, Course, AI Agent, Standards, Quiz
+ */
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -13,28 +17,40 @@ import {
   Award,
   MessageSquareText,
   ClipboardCheck,
-  Lightbulb,
+  Target,
+  LayoutDashboard,
+  LogIn,
 } from "lucide-react";
-import siteConfig from "@/config/siteConfig";
+import { useAuth } from "@/components/AuthProvider";
 import styles from "./BottomNav.module.css";
 
-/* Map icon name strings from siteConfig to actual components */
-const iconMap = {
-  Home,
-  Award,
-  MessageSquareText,
-  ClipboardCheck,
-  Lightbulb,
-};
+const loggedOutTabs = [
+  { href: "/", icon: Home, label: "Home" },
+  { href: "/course", icon: Award, label: "Course" },
+  { href: "/ai-agent", icon: MessageSquareText, label: "AI Agent" },
+  { href: "/standards", icon: ClipboardCheck, label: "Standards" },
+  { href: "/login", icon: LogIn, label: "Sign In" },
+];
+
+const loggedInTabs = [
+  { href: "/dashboard", icon: LayoutDashboard, label: "Dashboard" },
+  { href: "/course", icon: Award, label: "Course" },
+  { href: "/ai-agent", icon: MessageSquareText, label: "AI Agent" },
+  { href: "/standards", icon: ClipboardCheck, label: "Standards" },
+  { href: "/quiz", icon: Target, label: "Quiz" },
+];
 
 export default function BottomNav() {
   const pathname = usePathname();
+  const { user, loading } = useAuth();
+
+  const isLoggedIn = !loading && !!user;
+  const tabs = isLoggedIn ? loggedInTabs : loggedOutTabs;
 
   return (
     <nav className={styles.bottomNav}>
-      {siteConfig.bottomNav.map((tab) => {
-        const IconComponent = iconMap[tab.icon];
-
+      {tabs.map((tab) => {
+        const IconComponent = tab.icon;
         const isActive =
           tab.href === "/"
             ? pathname === "/"
@@ -48,7 +64,7 @@ export default function BottomNav() {
               isActive ? styles.navItemActive : ""
             }`}
           >
-            {IconComponent && <IconComponent size={22} />}
+            <IconComponent size={22} />
             {tab.label}
           </Link>
         );

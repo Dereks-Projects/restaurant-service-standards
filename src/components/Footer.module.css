@@ -1,63 +1,158 @@
 /*
  * Footer.module.css
  *
- * WHY HIDDEN ON MOBILE:
- * The floating BottomNav handles navigation on mobile.
- * Showing a footer underneath it would be redundant and awkward.
- * On desktop (769px+), there's no BottomNav, so the footer appears.
+ * FILE LOCATION: src/components/Footer.module.css
+ *
+ * Multi-column SaaS footer. Visible on all screen sizes.
+ * Brand + tagline on left, link columns, CTA bar, copyright.
  */
 
-/* Hidden by default (mobile-first) */
 .footer {
-  display: none;
+  border-top: 1px solid var(--color-border);
+  background-color: var(--color-base);
+  padding: 0 0 24px;
 }
 
-/* Only shows on desktop */
-@media (min-width: 769px) {
-  .footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    padding: 32px 20px;
-    border-top: 1px solid var(--color-border);
-    background-color: var(--color-background);
-  }
+/* ── Footer Inner (columns) ── */
+
+.footerInner {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 48px 24px 32px;
 }
 
-/* Row of links */
-.links {
+/* ── Brand Column ── */
+
+.brandColumn {
+  max-width: 280px;
+}
+
+.brandName {
+  display: block;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-white);
+  text-decoration: none;
+  margin-bottom: 10px;
+}
+
+.brandTagline {
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+  line-height: 1.55;
+  margin-bottom: 18px;
+}
+
+.socialRow {
+  display: flex;
+  gap: 8px;
+}
+
+.socialIcon {
   display: flex;
   align-items: center;
-  gap: 24px;
-  flex-wrap: wrap;
   justify-content: center;
-}
-
-.link {
-  font-size: 0.85rem;
+  width: 34px;
+  height: 34px;
   color: var(--color-text-muted);
-  transition: color var(--transition-fast);
+  background-color: var(--color-surface);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: color var(--transition-fast), background-color var(--transition-fast);
 }
 
-.link:hover {
+.socialIcon:hover {
+  color: var(--color-accent);
+  background-color: var(--color-surface-hover);
+}
+
+/* ── Link Columns ── */
+
+.linkColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.columnTitle {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 4px;
+}
+
+.footerLink {
+  font-size: 0.84rem;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+  line-height: 1.4;
+}
+
+.footerLink:hover {
   color: var(--color-white);
 }
 
-/* For Operators — gold accent in the footer */
-.operatorLink {
-  color: var(--color-accent);
+/* ── CTA Bar ── */
+
+.ctaBar {
+  display: flex;
+  justify-content: center;
+  padding: 24px 24px 0;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  font-size: 0.86rem;
   font-weight: 600;
-  opacity: 0.85;
+  font-family: var(--font-family);
+  color: var(--color-base);
+  background-color: var(--color-accent);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: background-color var(--transition-fast);
 }
 
-.operatorLink:hover {
-  color: var(--color-accent);
-  opacity: 1;
+.ctaButton:hover {
+  background-color: #d4b23e;
 }
 
-/* Copyright line */
+/* ── Copyright ── */
+
 .copyright {
-  font-size: 0.78rem;
+  text-align: center;
+  padding: 24px 24px 0;
+  font-size: 0.74rem;
   color: var(--color-text-muted);
+}
+
+/* ══════════════════════════════════════════════════════════════
+   DESKTOP
+   ══════════════════════════════════════════════════════════════ */
+
+@media (min-width: 769px) {
+  .footerInner {
+    flex-direction: row;
+    gap: 48px;
+    padding: 56px 40px 36px;
+  }
+
+  .brandColumn {
+    flex: 1.3;
+    max-width: 300px;
+  }
+
+  .linkColumn {
+    flex: 1;
+  }
 }

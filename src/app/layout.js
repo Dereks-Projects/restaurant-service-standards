@@ -1,14 +1,11 @@
 /**
  * layout.js — Root Layout
  *
- * In Next.js App Router, layout.js wraps EVERY page automatically.
- * Whatever you put here shows on every single page of the site.
- * The {children} prop is whatever page the user is currently on.
+ * FILE LOCATION: src/app/layout.js
  *
- * WHAT CHANGED:
- * Added AuthProvider import and wrapper around {children}.
- * This gives every page access to auth state (logged in? who? what role?).
- * Everything else is unchanged.
+ * AuthProvider wraps ALL rendered components (Header, main,
+ * Footer, BottomNav) so any component can access auth state
+ * via the useAuth hook.
  */
 
 import "./globals.css";
@@ -106,17 +103,17 @@ export default function RootLayout({ children }) {
           `}
         </Script>
 
-        <ScrollToTop />
-        <Header />
-
         <AuthProvider>
+          <ScrollToTop />
+          <Header />
+
           <main className="main-content">
             {children}
           </main>
-        </AuthProvider>
 
-        <Footer />
-        <BottomNav />
+          <Footer />
+          <BottomNav />
+        </AuthProvider>
       </body>
     </html>
   );

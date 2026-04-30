@@ -2,16 +2,11 @@
  * page.module.css — Sales Landing Page
  *
  * FILE LOCATION: src/app/page.module.css
- *
- * Luxury typographic design. Each section is a full moment.
- * Generous spacing, large headlines, gold accents.
- * Mobile-first with desktop overrides at 769px.
  */
-
-/* --- Page Container --- */
 
 .landing {
   width: 100%;
+  overflow-x: hidden;
 }
 
 /* ══════════════════════════════════════════════════════════════
@@ -23,13 +18,20 @@
   align-items: center;
   justify-content: center;
   min-height: calc(100vh - 80px);
-  padding: 60px 24px;
+  padding: 60px 24px 48px;
   text-align: center;
+  position: relative;
 }
 
 .heroInner {
   max-width: 680px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.heroAccent {
+  display: none;
 }
 
 .heroTag {
@@ -55,12 +57,12 @@
   color: var(--color-text-muted);
   line-height: 1.65;
   margin-bottom: 36px;
-  max-width: 520px;
+  max-width: 480px;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* --- CTAs --- */
+/* --- CTAs (shared) --- */
 
 .heroCtas {
   display: flex;
@@ -116,7 +118,7 @@
    ══════════════════════════════════════════════════════════════ */
 
 .stats {
-  padding: 0 24px;
+  padding: 0 24px 80px;
 }
 
 .statsInner {
@@ -146,7 +148,7 @@
 
 .statLabel {
   display: block;
-  font-size: 0.65rem;
+  font-size: 0.63rem;
   font-weight: 500;
   color: var(--color-text-muted);
   text-transform: uppercase;
@@ -196,18 +198,17 @@
    ══════════════════════════════════════════════════════════════ */
 
 .painSection {
-  padding: 100px 0;
-  border-top: 1px solid var(--color-border);
+  padding: 80px 0;
 }
 
 .painGrid {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 14px;
 }
 
 .painCard {
-  padding: 32px 28px;
+  padding: 28px 24px;
   background-color: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
@@ -235,70 +236,244 @@
   border-radius: var(--radius-sm);
   background-color: var(--color-background);
   color: var(--color-accent);
-  margin-bottom: 18px;
+  margin-bottom: 16px;
 }
 
-.painTitle {
-  font-size: 1.05rem;
+.painCardTitle {
+  font-size: 1rem;
   font-weight: 700;
   color: var(--color-white);
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   line-height: 1.35;
 }
 
-.painDescription {
-  font-size: 0.88rem;
+.painCardText {
+  font-size: 0.86rem;
   color: var(--color-text-muted);
   line-height: 1.6;
 }
 
 /* ══════════════════════════════════════════════════════════════
-   SOLUTION SECTION
+   FRAMEWORK SECTION
    ══════════════════════════════════════════════════════════════ */
 
-.solutionSection {
-  padding: 100px 0;
-  border-top: 1px solid var(--color-border);
+.frameworkSection {
+  padding: 80px 0;
 }
 
-.solutionGrid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 12px;
+.frameworkGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
-.solutionCard {
-  padding: 28px 24px;
+.frameworkCard {
+  padding: 32px 24px;
   background-color: var(--color-surface);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  transition: border-color var(--transition-fast);
+  border-radius: var(--radius-lg);
+  position: relative;
+  overflow: hidden;
 }
 
-.solutionCard:hover {
-  border-color: rgba(232, 197, 71, 0.3);
+.frameworkCardAccent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--color-accent) 50%,
+    transparent 100%
+  );
+  opacity: 0.5;
 }
 
-.solutionIcon {
+.frameworkIcon {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
-  border-radius: var(--radius-sm);
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
   background-color: var(--color-background);
   color: var(--color-accent);
+  margin-bottom: 18px;
+}
+
+.frameworkCardTitle {
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 4px;
+}
+
+.frameworkCardLabel {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: 14px;
+}
+
+.frameworkCardText {
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  line-height: 1.65;
+  margin-bottom: 20px;
+}
+
+.frameworkModules {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.frameworkModule {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  background-color: var(--color-background);
+  border-radius: var(--radius-sm);
+}
+
+.frameworkModule svg {
+  color: var(--color-accent);
+}
+
+/* ══════════════════════════════════════════════════════════════
+   AI COACH SECTION
+   ══════════════════════════════════════════════════════════════ */
+
+.aiSection {
+  padding: 80px 24px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.aiSection::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(232, 197, 71, 0.04) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.aiInner {
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.aiIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: var(--radius-lg);
+  background-color: rgba(232, 197, 71, 0.1);
+  border: 1px solid rgba(232, 197, 71, 0.2);
+  color: var(--color-accent);
+  margin-bottom: 20px;
+}
+
+.aiTitle {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-white);
+  line-height: 1.3;
   margin-bottom: 16px;
 }
 
-.solutionCardTitle {
-  font-size: 0.98rem;
+.aiDescription {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  line-height: 1.65;
+  margin-bottom: 36px;
+}
+
+.aiFeatures {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: left;
+}
+
+.aiFeature {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 18px 20px;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.aiFeatureLabel {
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--color-white);
+}
+
+.aiFeatureText {
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   BUYER SECTION
+   ══════════════════════════════════════════════════════════════ */
+
+.buyerSection {
+  padding: 80px 0;
+}
+
+.buyerGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.buyerCard {
+  padding: 24px 22px;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.buyerCardIcon {
+  color: var(--color-accent);
+  margin-bottom: 14px;
+}
+
+.buyerCardTitle {
+  font-size: 0.95rem;
   font-weight: 700;
   color: var(--color-white);
   margin-bottom: 8px;
 }
 
-.solutionCardDescription {
+.buyerCardText {
   font-size: 0.85rem;
   color: var(--color-text-muted);
   line-height: 1.6;
@@ -309,13 +484,12 @@
    ══════════════════════════════════════════════════════════════ */
 
 .credibilitySection {
-  padding: 100px 24px;
-  border-top: 1px solid var(--color-border);
+  padding: 80px 24px;
   text-align: center;
 }
 
 .credibilityInner {
-  max-width: 640px;
+  max-width: 600px;
   margin: 0 auto;
 }
 
@@ -325,22 +499,22 @@
   justify-content: center;
   gap: 6px;
   color: var(--color-accent);
-  margin-bottom: 28px;
+  margin-bottom: 24px;
 }
 
 .credibilityTitle {
-  font-size: 1.35rem;
+  font-size: 1.3rem;
   font-weight: 700;
   color: var(--color-white);
   line-height: 1.4;
-  margin-bottom: 18px;
+  margin-bottom: 16px;
 }
 
 .credibilitySubtitle {
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   color: var(--color-text-muted);
   line-height: 1.65;
-  margin-bottom: 32px;
+  margin-bottom: 28px;
 }
 
 .credibilityPillars {
@@ -351,7 +525,7 @@
 }
 
 .pillar {
-  font-size: 0.82rem;
+  font-size: 0.78rem;
   font-weight: 700;
   color: var(--color-accent);
   text-transform: uppercase;
@@ -368,12 +542,11 @@
    ══════════════════════════════════════════════════════════════ */
 
 .previewSection {
-  padding: 100px 0;
-  border-top: 1px solid var(--color-border);
+  padding: 80px 0;
 }
 
 .previewContent {
-  max-width: 560px;
+  max-width: 520px;
   margin: 0 auto;
   text-align: center;
 }
@@ -391,14 +564,14 @@
 }
 
 .previewTitle {
-  font-size: 1.5rem;
+  font-size: 1.45rem;
   font-weight: 700;
   color: var(--color-white);
   margin-bottom: 16px;
 }
 
 .previewDescription {
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   color: var(--color-text-muted);
   line-height: 1.65;
   margin-bottom: 32px;
@@ -409,18 +582,17 @@
    ══════════════════════════════════════════════════════════════ */
 
 .finalCta {
-  padding: 100px 24px;
-  border-top: 1px solid var(--color-border);
+  padding: 80px 24px;
   text-align: center;
 }
 
 .finalCtaInner {
-  max-width: 600px;
+  max-width: 560px;
   margin: 0 auto;
 }
 
 .finalCtaTitle {
-  font-size: 1.4rem;
+  font-size: 1.35rem;
   font-weight: 700;
   color: var(--color-white);
   line-height: 1.35;
@@ -428,7 +600,7 @@
 }
 
 .finalCtaSubtitle {
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   color: var(--color-text-muted);
   line-height: 1.5;
   margin-bottom: 32px;
@@ -439,18 +611,40 @@
    ══════════════════════════════════════════════════════════════ */
 
 @media (min-width: 769px) {
+  .hero {
+    min-height: calc(100vh - 80px);
+    padding: 80px 40px 60px;
+  }
+
+  .heroInner {
+    max-width: 800px;
+  }
+
+  .heroTag {
+    font-size: 0.78rem;
+    letter-spacing: 0.15em;
+    margin-bottom: 28px;
+  }
+
   .heroTitle {
-    font-size: 2.6rem;
-    line-height: 1.2;
-    letter-spacing: -0.02em;
+    font-size: 2.8rem;
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+    margin-bottom: 24px;
   }
 
   .heroSubtitle {
-    font-size: 1.1rem;
+    font-size: 1.12rem;
+    max-width: 520px;
+    margin-bottom: 44px;
+  }
+
+  .stats {
+    padding-bottom: 100px;
   }
 
   .statsInner {
-    max-width: 800px;
+    max-width: 780px;
   }
 
   .statValue {
@@ -458,12 +652,16 @@
   }
 
   .statLabel {
-    font-size: 0.72rem;
+    font-size: 0.7rem;
   }
 
   .sectionTitle {
-    font-size: 1.9rem;
-    max-width: 700px;
+    font-size: 1.8rem;
+    max-width: 650px;
+  }
+
+  .painSection {
+    padding: 100px 0;
   }
 
   .painGrid {
@@ -473,36 +671,74 @@
 
   .painCard {
     flex: 1;
+    padding: 32px 24px;
   }
 
-  .solutionGrid {
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
+  .frameworkSection {
+    padding: 100px 0;
   }
 
-  .credibilityTitle {
-    font-size: 1.8rem;
+  .frameworkGrid {
+    flex-direction: row;
+    gap: 18px;
   }
 
-  .previewTitle {
-    font-size: 2rem;
+  .frameworkCard {
+    flex: 1;
+    padding: 36px 28px;
   }
 
-  .finalCtaTitle {
+  .aiSection {
+    padding: 100px 40px;
+  }
+
+  .aiTitle {
     font-size: 1.9rem;
   }
 
-  .painSection,
-  .solutionSection,
-  .credibilitySection,
-  .previewSection,
-  .finalCta {
-    padding: 120px 0;
+  .aiFeatures {
+    flex-direction: row;
+    gap: 14px;
   }
 
-  .credibilitySection,
+  .aiFeature {
+    flex: 1;
+  }
+
+  .buyerSection {
+    padding: 100px 0;
+  }
+
+  .buyerGrid {
+    flex-direction: row;
+    gap: 16px;
+  }
+
+  .buyerCard {
+    flex: 1;
+  }
+
+  .credibilitySection {
+    padding: 100px 40px;
+  }
+
+  .credibilityTitle {
+    font-size: 1.7rem;
+  }
+
+  .previewSection {
+    padding: 100px 0;
+  }
+
+  .previewTitle {
+    font-size: 1.9rem;
+  }
+
   .finalCta {
-    padding-left: 24px;
-    padding-right: 24px;
+    padding: 100px 40px;
+  }
+
+  .finalCtaTitle {
+    font-size: 1.8rem;
   }
 }
