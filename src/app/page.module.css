@@ -1,73 +1,81 @@
 /*
- * page.module.css — Homepage (System Control Panel)
+ * page.module.css — Sales Landing Page
  *
- * LAYOUT:
- * 1. Hero panel with tagline, subtitle, two CTAs
- * 2. Stats bar (79 standards, 5 areas, AI coaching)
- * 3. Flagship featured card (5 Steps to 5 Stars)
- * 4. Vertical module stack with accent bars
- * 5. Operators card — gold treatment, separated at bottom
+ * FILE LOCATION: src/app/page.module.css
+ *
+ * Luxury typographic design. Each section is a full moment.
+ * Generous spacing, large headlines, gold accents.
+ * Mobile-first with desktop overrides at 769px.
  */
 
-.page {
-  padding: 24px 20px;
-  max-width: 640px;
+/* --- Page Container --- */
+
+.landing {
+  width: 100%;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   HERO
+   ══════════════════════════════════════════════════════════════ */
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 80px);
+  padding: 60px 24px;
+  text-align: center;
+}
+
+.heroInner {
+  max-width: 680px;
   margin: 0 auto;
 }
 
-/* --- Hero Panel --- */
-.hero {
-  padding: 32px 24px;
-  background-color: transparent;
-  border: none;
-  border-radius: 0;
-  text-align: center;
-  margin-bottom: 24px;
-  position: relative;
-  overflow: hidden;
-}
-
-/* Subtle inner glow at top */
-.hero::before {
-  display: none;
+.heroTag {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-accent);
+  margin-bottom: 20px;
 }
 
 .heroTitle {
-  font-size: 1.6rem;
+  font-size: 1.65rem;
   font-weight: 700;
   color: var(--color-white);
-  line-height: 1.25;
-  margin-bottom: 10px;
-  
+  line-height: 1.3;
+  margin-bottom: 20px;
+  letter-spacing: -0.01em;
 }
 
 .heroSubtitle {
-  font-size: .95rem;
+  font-size: 0.95rem;
   color: var(--color-text-muted);
-  line-height: 1.55;
-  margin-bottom: 20px;
-  max-width: 460px;
+  line-height: 1.65;
+  margin-bottom: 36px;
+  max-width: 520px;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* --- Two CTA buttons side by side --- */
-.heroCtaRow {
+/* --- CTAs --- */
+
+.heroCtas {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 12px;
   flex-wrap: wrap;
 }
 
-/* Primary CTA — gold filled (same as before) */
-.heroCta {
+.ctaPrimary {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 12px 24px;
-  width: 190px;
-  font-size: 0.88rem;
+  padding: 14px 28px;
+  font-size: 0.9rem;
   font-weight: 600;
   font-family: var(--font-family);
   color: var(--color-base);
@@ -78,39 +86,44 @@
   transition: background-color var(--transition-fast);
 }
 
-.heroCta:hover {
+.ctaPrimary:hover {
   background-color: #d4b23e;
 }
 
-/* Secondary CTA — outlined, gold text */
-.heroCtaSecondary {
+.ctaSecondary {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
-  padding: 12px 20px;
-  width: 190px;
-  font-size: 0.88rem;
+  gap: 8px;
+  padding: 14px 28px;
+  font-size: 0.9rem;
   font-weight: 600;
   font-family: var(--font-family);
   color: var(--color-accent);
   background-color: transparent;
-  border: 1px solid rgba(232, 197, 71, 0.35);
+  border: 1px solid rgba(232, 197, 71, 0.3);
   border-radius: var(--radius-sm);
   text-decoration: none;
   transition: border-color var(--transition-fast), background-color var(--transition-fast);
 }
 
-.heroCtaSecondary:hover {
+.ctaSecondary:hover {
   border-color: var(--color-accent);
-  background-color: rgba(232, 197, 71, 0.07);
+  background-color: rgba(232, 197, 71, 0.06);
 }
 
-/* --- Stats Bar --- */
+/* ══════════════════════════════════════════════════════════════
+   STATS BAR
+   ══════════════════════════════════════════════════════════════ */
+
 .stats {
+  padding: 0 24px;
+}
+
+.statsInner {
   display: flex;
   justify-content: center;
-  gap: 0;
-  margin-bottom: 28px;
+  max-width: 680px;
+  margin: 0 auto;
   background-color: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
@@ -120,54 +133,89 @@
 .stat {
   flex: 1;
   text-align: center;
-  padding: 16px 12px;
-}
-
-/* Vertical divider between stats */
-.stat + .stat {
-  border-left: 1px solid var(--color-border);
+  padding: 20px 8px;
 }
 
 .statValue {
   display: block;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: 700;
   color: var(--color-accent);
-  margin-bottom: 2px;
+  margin-bottom: 3px;
 }
 
 .statLabel {
   display: block;
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   font-weight: 500;
   color: var(--color-text-muted);
   text-transform: uppercase;
   letter-spacing: 0.04em;
 }
 
-/* --- Flagship Featured Card --- */
-.flagship {
+.statDivider {
+  width: 1px;
+  background-color: var(--color-border);
+  align-self: stretch;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   SHARED SECTION STYLES
+   ══════════════════════════════════════════════════════════════ */
+
+.sectionInner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.sectionTag {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-accent);
+  margin-bottom: 14px;
+  text-align: center;
+}
+
+.sectionTitle {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-white);
+  line-height: 1.35;
+  text-align: center;
+  margin-bottom: 48px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   PAIN SECTION
+   ══════════════════════════════════════════════════════════════ */
+
+.painSection {
+  padding: 100px 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.painGrid {
   display: flex;
-  align-items: center;
-  gap: 20px;
-  padding: 24px;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.painCard {
+  padding: 32px 28px;
   background-color: var(--color-surface);
-  border: 1px solid var(--color-accent);
-  border-radius: var(--radius-lg);
-  text-decoration: none;
-  color: var(--color-text);
-  margin-bottom: 12px;
-  transition: background-color var(--transition-fast);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
   position: relative;
   overflow: hidden;
 }
 
-.flagship:hover {
-  background-color: var(--color-surface-hover);
-}
-
-/* Subtle accent glow on left edge */
-.flagship::before {
+.painCard::before {
   content: "";
   position: absolute;
   left: 0;
@@ -175,182 +223,286 @@
   bottom: 0;
   width: 3px;
   background-color: var(--color-accent);
+  opacity: 0.4;
 }
 
-.flagshipIcon {
+.painIcon {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-background);
+  color: var(--color-accent);
+  margin-bottom: 18px;
+}
+
+.painTitle {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: 10px;
+  line-height: 1.35;
+}
+
+.painDescription {
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   SOLUTION SECTION
+   ══════════════════════════════════════════════════════════════ */
+
+.solutionSection {
+  padding: 100px 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.solutionGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.solutionCard {
+  padding: 28px 24px;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition: border-color var(--transition-fast);
+}
+
+.solutionCard:hover {
+  border-color: rgba(232, 197, 71, 0.3);
+}
+
+.solutionIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-background);
+  color: var(--color-accent);
+  margin-bottom: 16px;
+}
+
+.solutionCardTitle {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: 8px;
+}
+
+.solutionCardDescription {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   CREDIBILITY SECTION
+   ══════════════════════════════════════════════════════════════ */
+
+.credibilitySection {
+  padding: 100px 24px;
+  border-top: 1px solid var(--color-border);
+  text-align: center;
+}
+
+.credibilityInner {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.credibilityStars {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  color: var(--color-accent);
+  margin-bottom: 28px;
+}
+
+.credibilityTitle {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-white);
+  line-height: 1.4;
+  margin-bottom: 18px;
+}
+
+.credibilitySubtitle {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  line-height: 1.65;
+  margin-bottom: 32px;
+}
+
+.credibilityPillars {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+
+.pillar {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.pillarDot {
+  color: var(--color-border);
+  font-size: 1.2rem;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   WHITE-LABEL PREVIEW SECTION
+   ══════════════════════════════════════════════════════════════ */
+
+.previewSection {
+  padding: 100px 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.previewContent {
+  max-width: 560px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.previewIcon {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 56px;
   height: 56px;
-  flex-shrink: 0;
   border-radius: var(--radius-md);
-  background-color: var(--color-background);
+  background-color: rgba(232, 197, 71, 0.1);
   color: var(--color-accent);
+  margin-bottom: 20px;
 }
 
-.flagshipContent {
-  flex: 1;
-  min-width: 0;
-}
-
-.flagshipTitle {
-  font-size: 1.1rem;
+.previewTitle {
+  font-size: 1.5rem;
   font-weight: 700;
   color: var(--color-white);
-  margin-bottom: 4px;
+  margin-bottom: 16px;
 }
 
-.flagshipDescription {
-  font-size: 0.85rem;
+.previewDescription {
+  font-size: 0.9rem;
   color: var(--color-text-muted);
-  line-height: 1.45;
-  margin-bottom: 6px;
+  line-height: 1.65;
+  margin-bottom: 32px;
 }
 
-.flagshipMeta {
-  font-size: 0.72rem;
-  color: var(--color-text-muted);
-  display: flex;
-  align-items: center;
-  gap: 6px;
+/* ══════════════════════════════════════════════════════════════
+   FINAL CTA
+   ══════════════════════════════════════════════════════════════ */
+
+.finalCta {
+  padding: 100px 24px;
+  border-top: 1px solid var(--color-border);
+  text-align: center;
 }
 
-/* --- Module Stack --- */
-.modules {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+.finalCtaInner {
+  max-width: 600px;
+  margin: 0 auto;
 }
 
-.moduleCard {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  padding: 18px 20px;
-  background-color: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  text-decoration: none;
-  color: var(--color-text);
-  transition: background-color var(--transition-fast);
-  position: relative;
-  overflow: hidden;
-}
-
-.moduleCard:hover {
-  background-color: var(--color-surface-hover);
-}
-
-/* Left accent bar */
-.moduleCard::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 3px;
-  background-color: var(--color-accent);
-  opacity: 0.5;
-}
-
-.moduleIcon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  flex-shrink: 0;
-  border-radius: var(--radius-sm);
-  background-color: var(--color-background);
-  color: var(--color-accent);
-}
-
-.moduleContent {
-  flex: 1;
-  min-width: 0;
-}
-
-.moduleTitle {
-  font-size: 0.95rem;
-  font-weight: 600;
+.finalCtaTitle {
+  font-size: 1.4rem;
+  font-weight: 700;
   color: var(--color-white);
-  margin-bottom: 2px;
+  line-height: 1.35;
+  margin-bottom: 14px;
 }
 
-.moduleDescription {
-  font-size: 0.8rem;
+.finalCtaSubtitle {
+  font-size: 0.9rem;
   color: var(--color-text-muted);
-  line-height: 1.4;
+  line-height: 1.5;
+  margin-bottom: 32px;
 }
 
-.moduleArrow {
-  color: var(--color-text-muted);
-  flex-shrink: 0;
-  transition: color var(--transition-fast);
-}
+/* ══════════════════════════════════════════════════════════════
+   DESKTOP
+   ══════════════════════════════════════════════════════════════ */
 
-.moduleCard:hover .moduleArrow {
-  color: var(--color-accent);
-}
-
-/* --- Operator Module Card — gold border treatment ---
- * Visually separated from the training tools above it.
- * The gold border signals this is a different audience/purpose.
- */
-.moduleCardOperator {
-  border-color: rgba(232, 197, 71, 0.35);
-  margin-top: 6px; /* extra gap above to separate from training tools */
-}
-
-.moduleCardOperator::before {
-  opacity: 1; /* full gold bar, not dimmed */
-}
-
-.moduleCardOperator:hover {
-  border-color: rgba(232, 197, 71, 0.6);
-  background-color: rgba(232, 197, 71, 0.04);
-}
-
-.moduleIconOperator {
-  background-color: rgba(232, 197, 71, 0.1);
-}
-
-.moduleTitleOperator {
-  color: var(--color-accent);
-}
-
-/* --- Desktop --- */
 @media (min-width: 769px) {
-  .page {
-    padding: 48px 20px;
-    max-width: 900px;
-  }
-
-  /* Remove the "card" container — hero floats open on desktop */
-  .hero {
-    padding: 30px 0 40px;
-    background-color: transparent;
-    border: none;
-    border-radius: 0;
-    margin-bottom: 32px;
-  }
-
-  /* Kill the top accent glow since there's no card edge */
-  .hero::before {
-    display: none;
-  }
-
   .heroTitle {
-    font-size: 2.4rem;
+    font-size: 2.6rem;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
   }
 
   .heroSubtitle {
-    font-size: 1.3rem;
-    max-width: 540px;
+    font-size: 1.1rem;
+  }
+
+  .statsInner {
+    max-width: 800px;
   }
 
   .statValue {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
+  }
+
+  .statLabel {
+    font-size: 0.72rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.9rem;
+    max-width: 700px;
+  }
+
+  .painGrid {
+    flex-direction: row;
+    gap: 16px;
+  }
+
+  .painCard {
+    flex: 1;
+  }
+
+  .solutionGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .credibilityTitle {
+    font-size: 1.8rem;
+  }
+
+  .previewTitle {
+    font-size: 2rem;
+  }
+
+  .finalCtaTitle {
+    font-size: 1.9rem;
+  }
+
+  .painSection,
+  .solutionSection,
+  .credibilitySection,
+  .previewSection,
+  .finalCta {
+    padding: 120px 0;
+  }
+
+  .credibilitySection,
+  .finalCta {
+    padding-left: 24px;
+    padding-right: 24px;
   }
 }
