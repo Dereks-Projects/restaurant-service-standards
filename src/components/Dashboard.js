@@ -5,13 +5,6 @@
  *
  * FILE LOCATION: src/components/Dashboard.js
  *
- * WHY THIS IS A CLIENT COMPONENT:
- * The page.js server component handles auth and data fetching.
- * This component receives that data as props and renders the
- * interactive dashboard UI. Client-side because it uses the
- * useAuth hook for sign-out and will later handle interactive
- * features like progress updates.
- *
  * ROLE-BASED RENDERING:
  * - Owner: org overview, team stats, management actions, training access
  * - Manager: team stats, management actions, training access
@@ -47,6 +40,11 @@ export default function Dashboard({ profile, organization, teamCount }) {
     return "Team Member";
   }
 
+  async function handleSignOut() {
+    await signOut();
+    window.location.href = "/";
+  }
+
   return (
     <div className={styles.page}>
 
@@ -59,7 +57,7 @@ export default function Dashboard({ profile, organization, teamCount }) {
             {organization && <> &middot; {organization.name}</>}
           </p>
         </div>
-        <button onClick={signOut} className={styles.signOutButton}>
+        <button onClick={handleSignOut} className={styles.signOutButton}>
           <LogOut size={16} />
           <span>Sign Out</span>
         </button>
