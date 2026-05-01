@@ -1,78 +1,102 @@
 /**
- * proxy.js — Geo-Blocking (Network Edge Layer)
+ * proxy.js — Edge Middleware
  *
  * FILE LOCATION: src/proxy.js
- * This file MUST live in your src/ folder, at the same level as your
- * app/ folder. Not inside app/. Not in components/. In src/ directly.
  *
- * WHY THIS FILE EXISTS:
- * This is Next.js 16's replacement for the old middleware.js file.
- * Think of it as the bouncer at the restaurant entrance — it runs
- * BEFORE any page loads and decides who gets in.
+ * Three responsibilities, in order of execution:
  *
- * It intercepts every incoming request and checks the visitor's country
- * using Vercel's geo-detection headers. If the request originates from
- * a blocked country, it returns a 451 (Unavailable for Legal Reasons)
- * response immediately — the visitor never sees your app at all.
+ *   1. Geo-block: deny requests from regions associated with high
+ *      scraping/bot traffic. Fails fast before any other work.
  *
- * WHY 451 (not 403)?
- * HTTP 451 is the standard code for "blocked for legal/regional reasons."
- * It's more accurate than 403 (Forbidden) and signals to crawlers that
- * the block is intentional and geo-based, not a security issue.
+ *   2. Session refresh: validate the Supabase auth session on every
+ *      request, refreshing the access token if it has expired. This
+ *      is required by @supabase/ssr to keep sessions alive between
+ *      requests. Without this, sessions decay over time and pages
+ *      hang on auth checks.
  *
- * WHY BLOCK RU + CN?
- * These regions generate high volumes of scraping and bot traffic on
- * training and content platforms. Blocking them at the edge protects
- * your content, your AI agent from abuse, and your Vercel bandwidth.
+ *   3. Security headers: applied to every response. Standard
+ *      enterprise hardening: HSTS, MIME-type protection, clickjack
+ *      protection, referrer privacy.
  *
- * HOW TO ADD/REMOVE COUNTRIES:
- * Add or remove 2-letter country codes to the BLOCKED_COUNTRIES array.
- * Full list of codes: https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
- *
- * NOTE ON LOCAL DEVELOPMENT:
- * Vercel geo headers are only available on Vercel deployments.
- * In local dev (pnpm dev), request.geo?.country will be undefined,
- * so no blocking occurs. This is expected behavior — works on deploy.
+ * proxy.js replaces the older middleware.js convention in Next.js 16+.
+ * The matcher excludes static assets so the function only runs on
+ * actual page and API requests.
  */
 
 import { NextResponse } from "next/server";
+import { createServerClient } from "@supabase/ssr";
 
-/* ─── Blocked Country Codes ─────────────────────────────────────────────────
- * RU = Russia
- * CN = China
- * Add more ISO 3166-1 alpha-2 codes as needed.
- * ─────────────────────────────────────────────────────────────────────────── */
-const BLOCKED_COUNTRIES = ["RU", "CN"];
+/* Countries blocked at the edge. Update as needed. */
+const BLOCKED_COUNTRIES = ["RU", "CN", "KP"];
 
-export function proxy(request) {
-  /* Get the visitor's country from Vercel's geo detection */
+export async function proxy(request) {
+  /* ── 1. Geo-block (fast exit) ── */
   const country = request.geo?.country;
-
-  /* If country is detected and is on the blocked list, deny access */
   if (country && BLOCKED_COUNTRIES.includes(country)) {
     return new NextResponse(
       "Access to this service is not available in your region.",
       {
         status: 451,
-        headers: {
-          "Content-Type": "text/plain",
-        },
+        headers: { "Content-Type": "text/plain" },
       }
     );
   }
 
-  /* Everyone else passes through normally */
-  return NextResponse.next();
+  /* ── 2. Session refresh ──
+     `response` is reassigned inside `setAll` if Supabase needs to
+     write refreshed cookies. Closures keep the latest reference. */
+  let response = NextResponse.next({ request });
+
+  const supabase = createServerClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
+    {
+      cookies: {
+        getAll() {
+          return request.cookies.getAll();
+        },
+        setAll(cookiesToSet) {
+          cookiesToSet.forEach(({ name, value }) => {
+            request.cookies.set(name, value);
+          });
+          response = NextResponse.next({ request });
+          cookiesToSet.forEach(({ name, value, options }) => {
+            response.cookies.set(name, value, options);
+          });
+        },
+      },
+    }
+  );
+
+  /* getUser() forces session validation. If the access token has
+     expired, Supabase uses the refresh token to issue a new one,
+     and setAll above writes it back to the browser. Wrapped in
+     try/catch so a transient Supabase failure cannot hard-fail
+     every request — pages handle anonymous users on their own. */
+  try {
+    await supabase.auth.getUser();
+  } catch (err) {
+    console.warn("[proxy] Session refresh skipped:", err?.message);
+  }
+
+  /* ── 3. Security headers (every response) ── */
+  response.headers.set(
+    "Strict-Transport-Security",
+    "max-age=31536000; includeSubDomains"
+  );
+  response.headers.set("X-Content-Type-Options", "nosniff");
+  response.headers.set("X-Frame-Options", "DENY");
+  response.headers.set("Referrer-Policy", "strict-origin-when-cross-origin");
+
+  return response;
 }
 
-/* ─── Matcher Config ─────────────────────────────────────────────────────────
- * Tells Next.js which routes this proxy runs on.
- * This pattern runs on ALL routes EXCEPT:
- * - _next (Next.js internal assets like JS bundles, CSS)
- * - favicon.ico (browser favicon requests)
- * Excluding these prevents the proxy from running on static assets,
- * which would add unnecessary overhead.
- * ─────────────────────────────────────────────────────────────────────────── */
+/* ── Matcher ──
+   Run on all routes except static assets and Next.js internals.
+   This keeps the proxy off image/JS/CSS requests where it would
+   add latency without delivering value. */
 export const config = {
-  matcher: "/((?!_next|favicon.ico).*)",
+  matcher: [
+    "/((?!_next/static|_next/image|favicon.ico|robots.txt|sitemap.xml|.*\\.(?:png|jpg|jpeg|gif|svg|webp|ico)$).*)",
+  ],
 };
