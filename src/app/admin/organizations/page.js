@@ -13,6 +13,11 @@
  *   - Service client used only after both checks pass
  *   - Query is scoped to is_preview = true; customer org data
  *     is structurally unreachable from this route
+ *
+ * PERFORMANCE:
+ *   - The two service-client reads (organizations + preview_visits)
+ *     are dispatched in parallel via Promise.all to minimize total
+ *     response latency on cold-start production environments.
  */
 
 import { cookies } from "next/headers";
@@ -55,22 +60,29 @@ export default async function AdminOrganizationsPage() {
   /* Service client: cross-org reads bypass RLS */
   const serviceClient = createServiceClient();
 
-  const { data: previewOrgs } = await serviceClient
-    .from("organizations")
-    .select("id, name, slug, logo_url, brand_primary, brand_secondary, created_at, updated_at")
-    .eq("is_preview", true)
-    .order("created_at", { ascending: false });
+  /* Run both reads in parallel — independent queries, no need to await sequentially */
+  const [orgsResult, visitsResult] = await Promise.all([
+    serviceClient
+      .from("organizations")
+      .select(
+        "id, name, slug, logo_url, brand_primary, brand_secondary, created_at, updated_at"
+      )
+      .eq("is_preview", true)
+      .order("created_at", { ascending: false }),
+    serviceClient
+      .from("preview_visits")
+      .select("organization_id, visited_at")
+      .eq("event_type", "page_view")
+      .order("visited_at", { ascending: false }),
+  ]);
 
-  const { data: visitData } = await serviceClient
-    .from("preview_visits")
-    .select("organization_id, visited_at")
-    .eq("event_type", "page_view")
-    .order("visited_at", { ascending: false });
+  const previewOrgs = orgsResult.data || [];
+  const visitData = visitsResult.data || [];
 
   /* Aggregate visits per org. visitData is sorted DESC, so the first
      entry seen for each org is the most recent visit. */
   const visitStats = {};
-  (visitData || []).forEach((v) => {
+  visitData.forEach((v) => {
     if (!visitStats[v.organization_id]) {
       visitStats[v.organization_id] = { count: 0, lastVisit: null };
     }
@@ -80,7 +92,7 @@ export default async function AdminOrganizationsPage() {
     }
   });
 
-  const orgsWithStats = (previewOrgs || []).map((org) => ({
+  const orgsWithStats = previewOrgs.map((org) => ({
     ...org,
     visitCount: visitStats[org.id]?.count || 0,
     lastVisit: visitStats[org.id]?.lastVisit || null,
