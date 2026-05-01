@@ -1,8 +1,8 @@
 # Restaurant Standards
 
-**The Modern Restaurant Performance System**
+**The training platform that turns Forbes, Michelin, and AAA service criteria into a working system for the floor.**
 
-A JSON-driven training platform for luxury hospitality, built to elevate service, reinforce consistency, and deliver 5-star results. Part of the [Informative Media](https://informativemedia.com) portfolio.
+A multi-tenant SaaS platform for luxury hospitality training, built for restaurants and hotels operating at the Forbes, Michelin, and AAA tier. Part of the [Informative Media](https://informativemedia.com) portfolio.
 
 Live: [restaurantstandards.com](https://restaurantstandards.com)
 
@@ -10,9 +10,9 @@ Live: [restaurantstandards.com](https://restaurantstandards.com)
 
 ## Overview
 
-Restaurant Standards is a web-based training system designed for fine dining and luxury hospitality operations. It provides a structured framework of 79 service standards, a 5-class course, AI-powered coaching, interactive quizzes, and operational checklists — all driven by JSON data files for easy content updates and white-label capability.
+Restaurant Standards is an enterprise training platform that reverse-engineers the published evaluation criteria from Forbes, Michelin, and AAA into a structured, deployable system. It provides 79 codified service standards, a 5-class training course, an AI coaching agent, interactive quizzes, operational checklists, team management, and a white-label deployment model for hotel groups and multi-location operators.
 
-The platform targets managers, trainers, and service staff at properties pursuing Michelin, Forbes, or AAA Diamond recognition.
+The platform serves two audiences: the buyer (GM, F&B director, hotel executive, restaurant group owner) and the user (floor-level service staff, bartenders, hosts, managers). The buyer creates the organization, invites their team, and monitors training progress. The user accesses the training content, practices with the AI coach, and completes assessments.
 
 ---
 
@@ -20,14 +20,19 @@ The platform targets managers, trainers, and service staff at properties pursuin
 
 | Layer | Technology |
 |-------|-----------|
-| Framework | Next.js 16 (App Router) |
+| Framework | Next.js 16 (App Router, `src/` directory, Turbopack) |
 | Styling | CSS Modules (no Tailwind) |
 | Icons | Lucide React |
-| CMS | Sanity (shared instance, project ID: `21zbxo34`) |
-| AI | OpenAI GPT-4o-mini (via API route) |
+| Database / Auth | Supabase (PostgreSQL, Row-Level Security, PKCE auth) |
+| Email | Resend (SMTP for auth emails, API for invitations) |
+| AI | OpenAI GPT-4o-mini (via API route, temperature 0.4) |
+| CMS (legacy) | Sanity (shared instance, project ID: `21zbxo34`) |
 | Package Manager | pnpm |
 | Font | Inter (Google Fonts) |
-| Deployment | Vercel |
+| Analytics | Google Analytics (`G-KV806MZ0LT`) |
+| Deployment | Vercel (auto-deploy on push to main) |
+| DNS | GoDaddy |
+| Domain | restaurantstandards.com (canonical: non-www) |
 
 ---
 
@@ -41,8 +46,8 @@ The platform targets managers, trainers, and service staff at properties pursuin
 ### Installation
 
 ```bash
-git clone https://github.com/your-repo/restaurant-standards-v2.git
-cd restaurant-standards-v2
+git clone https://github.com/Dereks-Projects/restaurant-service-standards.git
+cd service-standards-app
 pnpm install
 ```
 
@@ -51,14 +56,24 @@ pnpm install
 Create a `.env.local` file in the project root:
 
 ```
-OPENAI_API_KEY=your_openai_api_key_here
+OPENAI_API_KEY=your_openai_api_key
+NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_publishable_key
+SUPABASE_SERVICE_ROLE_KEY=your_service_role_key
+RESEND_API_KEY=your_resend_api_key
 NEXT_PUBLIC_SANITY_PROJECT_ID=21zbxo34
 ```
 
-| Variable | Purpose |
-|----------|---------|
-| `OPENAI_API_KEY` | Powers the AI Training Agent (server-side only) |
-| `NEXT_PUBLIC_SANITY_PROJECT_ID` | Connects to the shared Sanity CMS for Learn More articles |
+| Variable | Purpose | Scope |
+|----------|---------|-------|
+| `OPENAI_API_KEY` | Powers the AI Training Agent | Server-side only |
+| `NEXT_PUBLIC_SUPABASE_URL` | Supabase project URL | Client + Server |
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Supabase publishable key (RLS-enforced) | Client + Server |
+| `SUPABASE_SERVICE_ROLE_KEY` | Supabase admin key (bypasses RLS) | Server-side only |
+| `RESEND_API_KEY` | Sends invitation emails via Resend API | Server-side only |
+| `NEXT_PUBLIC_SANITY_PROJECT_ID` | Sanity CMS for Learn More articles | Client |
+
+All variables must also be set in **Vercel > Settings > Environment Variables** for production deployment.
 
 ### Development
 
@@ -66,14 +81,16 @@ NEXT_PUBLIC_SANITY_PROJECT_ID=21zbxo34
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
-
-### Build
+### Build & Deploy
 
 ```bash
 pnpm build
-pnpm start
+git add .
+git commit -m "description"
+git push origin main
 ```
+
+Vercel auto-deploys on push to main.
 
 ---
 
@@ -81,157 +98,194 @@ pnpm start
 
 ```
 src/
-├── app/                          # Next.js App Router pages
-│   ├── layout.js                 # Global shell (Header + BottomNav + Footer)
-│   ├── page.js                   # Homepage (system control panel)
-│   ├── globals.css               # Design tokens + base styles
+├── app/
+│   ├── layout.js                     # Root layout (AuthProvider wraps all)
+│   ├── page.js                       # Homepage (auth-aware: landing or redirect)
+│   ├── page.module.css               # Landing page styles
+│   ├── globals.css                   # Design tokens + base styles
+│   │
+│   ├── login/
+│   │   ├── page.js                   # Login page (server component)
+│   │   └── page.module.css
+│   │
+│   ├── signup/
+│   │   ├── page.js                   # Org signup page (server component)
+│   │   ├── page.module.css
+│   │   └── invite/
+│   │       └── page.js               # Invite acceptance page (token-based)
+│   │
+│   ├── dashboard/
+│   │   ├── page.js                   # Authenticated dashboard (role-based)
+│   │   ├── page.module.css
+│   │   └── settings/
+│   │       ├── page.js               # Org settings, team, invitations
+│   │       └── page.module.css
+│   │
+│   ├── admin/
+│   │   ├── page.js                   # Super-admin platform dashboard
+│   │   └── page.module.css
+│   │
+│   ├── auth/
+│   │   └── callback/
+│   │       └── route.js              # Email verification callback (PKCE + token_hash)
+│   │
+│   ├── api/
+│   │   ├── agent/route.js            # AI Agent (OpenAI)
+│   │   └── auth/
+│   │       ├── signup/route.js       # Org + user creation (atomic, server-side)
+│   │       └── invite/
+│   │           ├── route.js          # Single invitation
+│   │           ├── accept/route.js   # Invitation acceptance
+│   │           └── bulk/route.js     # Bulk invite (CSV/paste, up to 50)
 │   │
 │   ├── course/
-│   │   ├── page.js               # Course overview (5 Steps to 5 Stars)
-│   │   └── [slug]/page.js        # Individual class articles
+│   │   ├── page.js                   # Course overview
+│   │   └── [slug]/page.js           # Individual class articles
 │   │
-│   ├── ai-agent/page.js          # AI Training Agent interface
-│   │
+│   ├── ai-agent/page.js             # AI Training Agent
 │   ├── standards/
-│   │   ├── page.js               # Standards index (5 section cards)
-│   │   └── [slug]/page.js        # Section detail (filterable by classification)
+│   │   ├── page.js                   # Standards index
+│   │   └── [slug]/page.js           # Section detail
 │   │
-│   ├── quiz/page.js              # Interactive quiz system
-│   ├── checklists/page.js        # Operational checklists (sequential touchpoints)
-│   ├── learn-more/page.js        # Articles from Sanity CMS ecosystem
-│   ├── about/page.js             # About page
+│   ├── quiz/page.js                 # Interactive quiz system
+│   ├── checklists/page.js           # Operational checklists
+│   ├── about/page.js
+│   ├── operators/page.js            # (legacy, to be replaced by /demo)
+│   ├── learn-more/page.js           # Sanity CMS articles
 │   │
-│   ├── legal/
-│   │   ├── legal.module.css      # Shared legal page styles
-│   │   ├── privacy/page.js       # Privacy policy
-│   │   ├── terms/page.js         # Terms of service
-│   │   └── cookies/page.js       # Cookie policy
-│   │
-│   └── api/
-│       └── agent/route.js        # AI Agent server route (OpenAI)
+│   └── legal/
+│       ├── privacy/page.js
+│       ├── terms/page.js
+│       └── cookies/page.js
 │
-├── components/                   # Reusable UI components
-│   ├── Header.js                 # Sticky header (portfolio dropdown + hamburger menu)
-│   ├── BottomNav.js              # Floating mobile tab bar
-│   ├── Footer.js                 # Desktop footer
-│   ├── Card.js                   # Generic card component
-│   ├── Button.js                 # Generic button component
-│   └── Accordion.js              # Expandable accordion component
+├── components/
+│   ├── AuthProvider.js               # Auth context (wraps entire app)
+│   ├── Header.js                     # Auth-aware header + hamburger
+│   ├── Footer.js                     # Multi-column SaaS footer
+│   ├── BottomNav.js                  # Auth-aware mobile bottom nav
+│   ├── LandingPage.js               # Sales landing page
+│   ├── LoginForm.js                  # Login form (client component)
+│   ├── SignupForm.js                 # Org signup form (client component)
+│   ├── InviteSignupForm.js           # Invite acceptance form
+│   ├── Dashboard.js                  # Role-based dashboard UI
+│   ├── DashboardSettings.js          # Settings with single + bulk invite
+│   ├── AdminDashboard.js             # Super-admin platform view
+│   ├── ScrollToTop.js
+│   ├── Card.js
+│   ├── Button.js
+│   └── Accordion.js
 │
 ├── config/
-│   └── siteConfig.js             # All branding, nav labels, links (white-label config)
+│   └── siteConfig.js                 # Branding, nav, links (white-label config)
 │
-├── data/                         # JSON content (the "database")
-│   ├── standards.json            # 79 service standards
-│   ├── sectionOverviewsIntro.json # Section intro paragraphs (standards pages)
-│   ├── checklists.json           # 94 operational touchpoints
-│   ├── courseOverview.json        # Course metadata and class summaries
-│   ├── course1.json              # Class 1: The Architecture of Service
-│   ├── course2.json              # Class 2: Precision in Guest Interaction
-│   ├── course3.json              # Class 3: Operational Flow
-│   ├── course4.json              # Class 4: Food & Beverage Mastery
-│   └── course5.json              # Class 5: Environment & Atmosphere
+├── data/                             # JSON content
+│   ├── standards.json                # 79 service standards
+│   ├── sectionOverviewsIntro.json
+│   ├── checklists.json               # 94 operational touchpoints
+│   ├── courseOverview.json
+│   ├── course1.json through course5.json
+│   ├── timing.json                   # Role-filtered benchmarks (AI agent)
+│   └── coachingBriefs.json           # Operational philosophy (AI agent)
 │
 ├── lib/
-│   └── sanity.js                 # Sanity client + image URL utility
+│   ├── supabase.js                   # Browser + server client (anon key, RLS)
+│   ├── supabase-server.js            # Service role client (bypasses RLS)
+│   └── sanity.js                     # Sanity client
 │
 public/
-├── images/                       # Course article images
-├── rs-favicon.png                # Favicon
-└── rs-socialcard.png             # Open Graph social card
+├── images/
+├── rs-favicon.png
+└── rs-socialcard.png
 ```
 
 ---
 
-## Pages & Features
+## Database Schema (Supabase)
 
-### Homepage
-System control panel layout with hero panel, stats bar (79 Standards / 5 Areas / AI Coach), flagship course card, and module navigation stack.
+Six tables with Row-Level Security enabled on all:
 
-### 5 Steps to 5 Stars (Course)
-Five-class curriculum on luxury guest service. Two-level architecture: overview index with class cards, and individual article pages with section content, images, key takeaways, and prev/next navigation.
+| Table | Purpose |
+|-------|---------|
+| `organizations` | Account-level: name, slug, logo, brand colors, subscription tier/status, seat limits |
+| `profiles` | Extends auth.users: org membership, role (owner/manager/employee), name, job title, is_super_admin |
+| `invitations` | Invite tokens with email, role, status (pending/accepted/expired), 7-day expiration |
+| `course_progress` | Per-user per-class completion tracking |
+| `quiz_attempts` | Every quiz submission with scores (all attempts kept) |
+| `preview_visits` | White-label demo link visit tracking |
 
-### AI Training Agent
-Role-based coaching powered by GPT-4o-mini. Users select a role (Server, Host, Bartender, Manager, Trainer) and a touchpoint (Reservations, Arrival, Dining, etc.), then ask a question. The AI responds with structured guidance: What to Do, What to Say, What NOT to Do, and the relevant Standard Reference. Out-of-scope questions redirect to Learn More.
+### Key RLS Policies
 
-### Guest Service Excellence (Standards)
-The 79-standard reference library organized across 5 operational areas. Index page shows section cards with counts. Detail pages feature a two-column desktop layout (sticky classification filter sidebar + scrollable standards) and mobile accordion grouped by classification. Each standard shows its classification label, full text, and training tip.
+- Users can only read/write data within their own organization
+- Managers can read all team member progress within their org
+- Owners can update org settings
+- Public can read org branding (for preview system)
+- Public can insert preview visits (no auth required)
+- `get_user_org_id()` helper function prevents circular policy issues on profiles
 
-### Operational Checklists
-94 sequential touchpoints organized by the guest journey — what happens first, second, third during each phase of service. Expandable section cards reveal numbered touchpoint lists with a timeline connector. Tap any touchpoint to reveal the deeper standard behind it. Designed as a quick-reference tool for the floor, not a study document.
+### Database Triggers
 
-### Quiz
-Section-based knowledge assessments pulled from the quiz fields in standards.json. Three phases: section picker → active quiz with progress bar and immediate feedback → results breakdown with per-question analysis and training tips.
-
-### From the Network (Learn More)
-Live articles pulled from the shared Sanity CMS. Three sections: Hospitality.fyi, Backbar.fyi, and Somm.Site (wine category only). Article cards link out to the original sites.
-
-### About
-Platform description, philosophy, ecosystem links, bio, and Informative Media credit.
-
-### Legal
-Privacy Policy, Terms of Service, and Cookie Policy. Minimal data collection (Google Analytics only, anonymous). Shared CSS module for consistent styling.
-
----
-
-## Data Architecture
-
-All content is JSON-driven. To update standards, course content, or checklists, edit the files in `src/data/`. No database required for Phase 1.
-
-### standards.json
-```json
-{
-  "section": "Dinner Service",
-  "classification": "Technical Execution",
-  "standard": "Full standard text...",
-  "trainingTip": "Practical training guidance...",
-  "quiz": {
-    "question": "Quiz question text?",
-    "choices": ["A", "B", "C", "D"],
-    "answer": "B"
-  }
-}
-```
-
-Used by: Standards pages, Quiz, AI Agent
-
-### checklists.json
-```json
-{
-  "Topic": "Arrival & Departure",
-  "Item": "Warm and Timely Greeting at the Door",
-  "Standard": "Guests are welcomed immediately upon arrival..."
-}
-```
-
-Used by: Operational Checklists page
-
-### course[1-5].json
-```json
-{
-  "classLabel": "Class 1",
-  "title": "The Architecture of Service",
-  "slug": "architecture-of-service",
-  "timeEstimate": "12-15 minutes",
-  "introBlock": "Opening paragraph...",
-  "sections": [...],
-  "keyTakeaways": [...],
-  "conclusion": {...}
-}
-```
-
-Used by: Course detail pages
+- `handle_new_user()` — auto-creates a profiles row when a user signs up via auth
+- `update_updated_at()` — auto-sets updated_at on organizations and profiles
+- `cleanup_unverified_accounts()` — daily cron (4am UTC) deletes unverified accounts and orphaned orgs older than 48 hours
 
 ---
 
-## White-Label Configuration
+## Authentication Architecture
 
-All branding, navigation, and external links are centralized in `src/config/siteConfig.js`. To rebrand for a different restaurant or hospitality company:
+### Signup Flow (Org Creation)
 
-1. Update `siteConfig.js` (name, tagline, nav labels, ecosystem links)
-2. Replace JSON content files in `src/data/`
-3. Swap images in `public/images/`
-4. Update `.env.local` with new API keys if needed
+1. Browser form submits to `/api/auth/signup` (server-side API route)
+2. API route validates inputs, creates org (service role, bypasses RLS)
+3. Creates auth user via `auth.signUp()` (triggers confirmation email via Resend SMTP)
+4. `handle_new_user` trigger auto-creates profiles row
+5. If user creation fails, org is rolled back
+6. User sees "Check Your Email" screen
+7. User clicks verification link in email
+8. `/auth/callback` exchanges token_hash for session
+9. User is redirected to `/dashboard`
+
+### Invite Flow (Team Members)
+
+1. Owner/manager sends invite from Settings page (single or bulk)
+2. `/api/auth/invite` or `/api/auth/invite/bulk` creates invitation record and sends email via Resend API
+3. Invited user clicks "Accept Invitation" in email
+4. Lands on `/signup/invite?token=xxx` with email pre-filled and locked
+5. Submits name and password
+6. `/api/auth/invite/accept` creates user, marks invitation as accepted
+7. User verifies email, logs in
+
+### Role-Based Access
+
+| Role | Dashboard | Settings | Invite | Admin |
+|------|-----------|----------|--------|-------|
+| Owner | Full + org info | Yes | Yes | No |
+| Manager | Full | Yes | Yes | No |
+| Employee | Training only | No | No | No |
+| Super Admin | Full | Yes | Yes | `/admin` |
+
+---
+
+## Email Configuration
+
+- **Provider:** Resend
+- **Domain:** restaurantstandards.com (DKIM, SPF, MX records configured in GoDaddy)
+- **SMTP:** Connected to Supabase for auth emails (verification, password reset)
+- **API:** Used directly for invitation emails (branded HTML templates)
+- **Sender:** `noreply@restaurantstandards.com` / "Restaurant Standards"
+
+---
+
+## AI Agent Architecture
+
+Three-layer RAG with category-based filtering:
+
+| Layer | Source | Purpose |
+|-------|--------|---------|
+| Primary | `standards.json` | Category-filtered standards (main authority) |
+| Secondary | `timing.json` | Role-filtered timing benchmarks |
+| Tertiary | `coachingBriefs.json` | Operational philosophy anchors |
+
+Model: GPT-4o-mini, temperature 0.4, max tokens 1200. Timing data only appears as a list when explicitly requested. Forbes classification names are never altered.
 
 ---
 
@@ -247,24 +301,37 @@ All branding, navigation, and external links are centralized in `src/config/site
 | Font | Inter |
 | Border radius | 8px / 12px / 16px |
 
-Mobile-first responsive design. Floating bottom nav on mobile (<769px), footer on desktop (≥769px). Two-column layouts on desktop where appropriate.
+Mobile-first responsive design. Auth-aware navigation: Header hamburger and BottomNav render different links for logged-in vs. logged-out users. Multi-column SaaS footer with auth-aware CTA.
 
-### Icon Set (Lucide)
+---
 
-| Feature | Icon | Rationale |
-|---------|------|-----------|
-| Course | Award | Excellence, achievement |
-| AI Agent | MessageSquareText | Conversation without robot face |
-| Standards | ClipboardCheck | Reference system, checklist |
-| Checklists | ClipboardList | Working document (distinct from ClipboardCheck) |
-| Quiz | Target | Precision, accuracy |
-| Learn More | Lightbulb | Insight, knowledge |
+## Key Architectural Decisions
+
+- **Server components for auth-gated pages.** Auth checks and data fetching happen server-side. Client components handle interactive UI only. This prevents content flash and ensures clean prerendering.
+- **Service role client for server-side operations.** Org creation, admin queries, and invite processing use `supabase-server.js` (bypasses RLS). Browser-facing operations use `supabase.js` (RLS-enforced).
+- **Atomic signup with rollback.** Org + user creation happens in a single API route. If user creation fails, the org is deleted. No orphaned data.
+- **Invite-only team onboarding.** Public signup is for org creation only. Team members enter exclusively via invitation. Prevents rogue account creation.
+- **Email verification required.** No access to protected routes until email is confirmed. Auth callback handles both PKCE code exchange and token_hash verification.
+- **JSON-driven content.** Standards, course material, and checklists are JSON files. No database dependency for training content. Enables rapid iteration without migrations.
+- **proxy.js is never modified** without a confirmed diagnosis. It handles geo-blocking and is considered stable infrastructure.
+
+---
+
+## Supabase Configuration Checklist
+
+- [x] RLS enabled on all tables (enabled by default setting)
+- [x] API enabled
+- [x] Auto-expose tables via API: OFF (manual GRANT statements used)
+- [x] Site URL: `https://restaurantstandards.com`
+- [x] Redirect URLs: `https://restaurantstandards.com/dashboard`, `https://restaurantstandards.com/auth/callback`
+- [x] Custom SMTP: Resend (host: smtp.resend.com, port: 587, username: resend)
+- [x] Email template updated for token_hash confirmation flow
+- [x] pg_cron extension enabled (ghost account cleanup)
+- [x] GRANT ALL on public schema to service_role, authenticated, anon, supabase_auth_admin
 
 ---
 
 ## Ecosystem
-
-Restaurant Standards is part of the Informative Media portfolio:
 
 | Site | Focus |
 |------|-------|
@@ -278,35 +345,6 @@ All sites share a single Sanity CMS instance (project: somm-site, ID: 21zbxo34).
 
 ---
 
-## Deployment
-
-Deployed via Vercel with Git integration. Push to main triggers automatic deployment.
-
-```bash
-vercel --prod
-```
-
-Environment variables must be set in the Vercel dashboard:
-- `OPENAI_API_KEY`
-- `NEXT_PUBLIC_SANITY_PROJECT_ID`
-
----
-
-## Phase 2 Roadmap
-
-| Feature | Description |
-|---------|-------------|
-| Supabase Auth | User accounts, login, role-based access |
-| Progress Tracking | Course completion, quiz scores, checklist history |
-| Preview Gating | Show partial content, redirect to signup |
-| Rate Limiting | Protect AI Agent from abuse |
-| Analytics Dashboard | Usage metrics, completion rates |
-| Enterprise Packaging | Multi-property deployment, team management |
-| Google Analytics | Traffic and engagement tracking |
-| Checklist Persistence | Shift logs, manager sign-offs via Supabase |
-
----
-
 ## Author
 
 Created by **Derek Engles** — certified sommelier with 20+ years of luxury hospitality experience at properties including Wynn Resort and MGM Grand. Credentials from Harvard Business School and Northwestern University.
@@ -317,4 +355,4 @@ Created by **Derek Engles** — certified sommelier with 20+ years of luxury hos
 
 ## License
 
-All rights reserved. © Informative Media.
+All rights reserved. &copy; Informative Media.
